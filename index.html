@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdOps Interview Kit v2</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="kit-header">
+  <div class="kit-version">v2.0 · 2025</div>
+  <h1 class="kit-title">AdOps Interview Kit</h1>
+  <p class="kit-subtitle">
+    <span data-lang="pt">Guia completo de preparação para entrevistas em Ad Operations</span>
+    <span data-lang="en" style="display:none">Complete interview preparation guide for Ad Operations</span>
+    <span data-lang="es" style="display:none">Guía completa de preparación para entrevistas en Ad Operations</span>
+  </p>
+  <div class="kit-stats">
+    <div class="stat"><span class="stat-num">8</span><span class="stat-label">Plataformas</span></div>
+    <div class="stat"><span class="stat-num">80+</span><span class="stat-label">Perguntas</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Idiomas</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Níveis</span></div>
+  </div>
+</header>
+
+<div class="lang-bar">
+  <span class="lang-label">Idioma / Language</span>
+  <div class="lang-btns">
+    <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+  </div>
+  <div class="global-btns">
+    <button class="global-btn" id="btn-expand"   onclick="expandAll()">▼ Expandir tudo</button>
+    <button class="global-btn" id="btn-collapse" onclick="collapseAll()">▲ Fechar tudo</button>
+  </div>
+</div>
+
+<nav class="platform-nav" id="platform-nav"></nav>
+
+<main class="main">
+  <div id="main-content"></div>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
