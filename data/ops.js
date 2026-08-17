@@ -1,262 +1,689 @@
-// Módulo Ops — AdOps Interview Kit v2
+// Módulo Operacional — AdOps Interview Kit v2
 window.__adopsData = window.__adopsData || {};
 window.__adopsData['ops'] = {
   icon: '⚙️',
-  name: {
-    pt: 'Operacional & Processos',
-    en: 'Operational & Processes',
-    es: 'Operacional & Procesos',
-  },
+  name: { pt: 'Operacional AdOps', en: 'AdOps Operations', es: 'Operaciones AdOps' },
   desc: {
-    pt: 'QA, comunicação com cliente, gestão de campanhas e resolução de problemas.',
-    en: 'QA, client communication, campaign management and problem solving.',
-    es: 'QA, comunicación con cliente, gestión de campañas y resolución de problemas.',
+    pt: 'Processos, QA, comunicação com cliente, troubleshoot e boas práticas do dia a dia em operações de mídia digital.',
+    en: 'Processes, QA, client communication, troubleshooting and daily best practices in digital media operations.',
+    es: 'Procesos, QA, comunicación con cliente, troubleshooting y buenas prácticas del día a día en operaciones de medios digitales.',
   },
   tiers: [
     {
-      id: 'ops',
+      id: 'easy',
       questions: [
         {
           q: {
-            pt: 'Descreva seu processo de QA antes de lançar uma campanha no CM360.',
-            en: 'Describe your QA process before launching a campaign in CM360.',
-            es: 'Describe tu proceso de QA antes de lanzar una campaña en CM360.',
+            pt: 'O que é QA em AdOps e quais os itens básicos de um checklist de QA antes de uma campanha ir ao ar?',
+            en: 'What is QA in AdOps and what are the basic items of a QA checklist before a campaign goes live?',
+            es: '¿Qué es QA en AdOps y cuáles son los ítems básicos de un checklist de QA antes de que una campaña salga al aire?',
           },
           a: {
-            pt: `<strong>Checklist pré-live (CM360):</strong>
-<ol>
-  <li><strong>Estrutura:</strong> nomenclatura correta de Campaign, Placement, Ad e Creative conforme taxonomia do cliente</li>
-  <li><strong>Datas:</strong> start/end corretas; fuso horário alinhado com o briefing</li>
-  <li><strong>Creatives:</strong> preview em todos os tamanhos; HTML5 funcionando; click tag apontando para URL correta</li>
-  <li><strong>Floodlight:</strong> disparar manualmente via GTM Preview e confirmar no CM360 Activity Report (aguardar até 1h)</li>
-  <li><strong>Tags ao publisher:</strong> confirmar recebimento e implementação correta</li>
-  <li><strong>Targeting:</strong> geos, audiences e brand safety lists configurados</li>
-  <li><strong>Frequência:</strong> cap configurado para evitar saturação</li>
-  <li><strong>Ad Preview:</strong> usar URL de preview do CM360 para ver a peça como o usuário verá</li>
-</ol>
-<strong>Regra de ouro:</strong> nunca lançar sem confirmar que pelo menos um Floodlight disparou em QA.`,
-            en: `<strong>Pre-live checklist (CM360):</strong>
-<ol>
-  <li><strong>Structure:</strong> correct naming of Campaign, Placement, Ad and Creative per client taxonomy</li>
-  <li><strong>Dates:</strong> correct start/end; timezone aligned with the brief</li>
-  <li><strong>Creatives:</strong> preview at all sizes; HTML5 working; click tag pointing to correct URL</li>
-  <li><strong>Floodlight:</strong> manually fire via GTM Preview and confirm in CM360 Activity Report (wait up to 1h)</li>
-  <li><strong>Tags to publisher:</strong> confirm receipt and correct implementation</li>
-  <li><strong>Targeting:</strong> geos, audiences and brand safety lists configured</li>
-  <li><strong>Frequency:</strong> cap configured to avoid saturation</li>
-  <li><strong>Ad Preview:</strong> use CM360 preview URL to see the creative as the user will see it</li>
-</ol>
-<strong>Golden rule:</strong> never launch without confirming at least one Floodlight fired in QA.`,
-            es: `<strong>Checklist pre-live (CM360):</strong>
-<ol>
-  <li><strong>Estructura:</strong> nomenclatura correcta de Campaign, Placement, Ad y Creative según taxonomía del cliente</li>
-  <li><strong>Fechas:</strong> start/end correctas; zona horaria alineada con el briefing</li>
-  <li><strong>Creatives:</strong> preview en todos los tamaños; HTML5 funcionando; click tag apuntando a URL correcta</li>
-  <li><strong>Floodlight:</strong> disparar manualmente via GTM Preview y confirmar en CM360 Activity Report (esperar hasta 1h)</li>
-  <li><strong>Tags al publisher:</strong> confirmar recepción e implementación correcta</li>
-  <li><strong>Targeting:</strong> geos, audiences y listas de brand safety configuradas</li>
-  <li><strong>Frecuencia:</strong> cap configurado para evitar saturación</li>
-  <li><strong>Ad Preview:</strong> usar URL de preview de CM360 para ver la pieza como la verá el usuario</li>
-</ol>
-<strong>Regla de oro:</strong> nunca lanzar sin confirmar que al menos un Floodlight disparó en QA.`,
+            pt: `QA (Quality Assurance) em AdOps é o processo de verificação sistemática de todos os elementos de uma campanha <strong>antes da ativação</strong>, para evitar erros em produção.<br><br>
+<strong>Checklist básico pré-live:</strong>
+<ul>
+  <li>✅ <strong>Datas:</strong> start/end corretos, fuso horário validado</li>
+  <li>✅ <strong>Budget:</strong> valor total e daily cap conferidos com o media plan</li>
+  <li>✅ <strong>Criativos:</strong> todos aprovados, sem tags quebradas, dimensões corretas</li>
+  <li>✅ <strong>Tracking:</strong> Floodlight/pixels disparando corretamente (Preview Tool ou Tag Assistant)</li>
+  <li>✅ <strong>URLs de destino:</strong> todas funcionando, redirecionamentos testados, UTMs corretos</li>
+  <li>✅ <strong>Targeting:</strong> geo, device, audience conforme o briefing</li>
+  <li>✅ <strong>Frequency cap:</strong> configurado no nível correto</li>
+  <li>✅ <strong>Nomenclatura:</strong> nome de campaign/IO/LI/creative seguindo a taxonomia acordada</li>
+  <li>✅ <strong>Status:</strong> tudo ativo (não pausado acidentalmente)</li>
+  <li>✅ <strong>Preview:</strong> criativos renderizando corretamente em todos os formatos</li>
+</ul>
+<strong>Regra de ouro:</strong> QA deve ser feito por uma pessoa diferente de quem traficou a campanha. "Olho viciado" erra o mesmo erro.`,
+            en: `QA (Quality Assurance) in AdOps is the process of systematically checking all campaign elements <strong>before activation</strong> to prevent production errors.<br><br>
+<strong>Basic pre-live checklist:</strong>
+<ul>
+  <li>✅ <strong>Dates:</strong> start/end correct, timezone validated</li>
+  <li>✅ <strong>Budget:</strong> total amount and daily cap confirmed against media plan</li>
+  <li>✅ <strong>Creatives:</strong> all approved, no broken tags, correct dimensions</li>
+  <li>✅ <strong>Tracking:</strong> Floodlight/pixels firing correctly (Preview Tool or Tag Assistant)</li>
+  <li>✅ <strong>Destination URLs:</strong> all working, redirects tested, UTMs correct</li>
+  <li>✅ <strong>Targeting:</strong> geo, device, audience per briefing</li>
+  <li>✅ <strong>Frequency cap:</strong> configured at the correct level</li>
+  <li>✅ <strong>Naming:</strong> campaign/IO/LI/creative names following agreed taxonomy</li>
+  <li>✅ <strong>Status:</strong> everything active (not accidentally paused)</li>
+  <li>✅ <strong>Preview:</strong> creatives rendering correctly across all formats</li>
+</ul>
+<strong>Golden rule:</strong> QA should be done by someone different from who trafficked the campaign. The person who built it misses the same mistakes.`,
+            es: `QA (Quality Assurance) en AdOps es el proceso de verificación sistemática de todos los elementos de una campaña <strong>antes de la activación</strong>, para evitar errores en producción.<br><br>
+<strong>Checklist básico pre-live:</strong>
+<ul>
+  <li>✅ <strong>Fechas:</strong> inicio/fin correctos, zona horaria validada</li>
+  <li>✅ <strong>Presupuesto:</strong> monto total y daily cap verificados contra el media plan</li>
+  <li>✅ <strong>Creativos:</strong> todos aprobados, sin tags rotas, dimensiones correctas</li>
+  <li>✅ <strong>Tracking:</strong> Floodlight/pixels disparando correctamente (Preview Tool o Tag Assistant)</li>
+  <li>✅ <strong>URLs de destino:</strong> todas funcionando, redirecciones probadas, UTMs correctos</li>
+  <li>✅ <strong>Targeting:</strong> geo, device, audiencia conforme el briefing</li>
+  <li>✅ <strong>Frequency cap:</strong> configurado en el nivel correcto</li>
+  <li>✅ <strong>Nomenclatura:</strong> nombres de campaign/IO/LI/creative siguiendo la taxonomía acordada</li>
+  <li>✅ <strong>Estado:</strong> todo activo (no pausado accidentalmente)</li>
+  <li>✅ <strong>Preview:</strong> creativos renderizando correctamente en todos los formatos</li>
+</ul>
+<strong>Regla de oro:</strong> el QA debe hacerlo una persona diferente a quien trafficked la campaña. El "ojo viciado" comete el mismo error.`,
           },
-          tags: ['QA', 'pre-launch', 'checklist', 'floodlight'],
+          tags: ['QA', 'checklist', 'pre-live', 'trafficking'],
         },
         {
           q: {
-            pt: 'Como você gerencia uma campanha que está underdelivering?',
-            en: 'How do you manage an underdelivering campaign?',
-            es: '¿Cómo gestionas una campaña que está underdelivering?',
+            pt: 'O que é uma Trafficking Sheet (TS) e qual sua função no fluxo de AdOps?',
+            en: 'What is a Trafficking Sheet (TS) and what is its function in the AdOps workflow?',
+            es: '¿Qué es una Trafficking Sheet (TS) y cuál es su función en el flujo de AdOps?',
           },
           a: {
-            pt: `<strong>Diagnóstico primeiro — identificar a causa:</strong>
+            pt: `A <strong>Trafficking Sheet</strong> é o documento central do fluxo de AdOps — a "planta baixa" de uma campanha.<br><br>
+<strong>O que contém:</strong>
 <ul>
-  <li><em>Pacing lento:</em> entregando devagar mas sem erro — problema de budget, bid ou targeting</li>
-  <li><em>Eligibility zero:</em> campanha não está competindo — erro de configuração, creative rejeitado ou conflito de targeting</li>
+  <li>Estrutura completa: advertiser, campaign, placements, ads, criativos</li>
+  <li>Especificações de cada formato: dimensão, peso máximo, duração de vídeo</li>
+  <li>URLs de destino por peça</li>
+  <li>Floodlight Activities associadas</li>
+  <li>Nomenclatura de cada elemento (seguindo a taxonomia)</li>
+  <li>Status de aprovação dos criativos</li>
 </ul>
-<strong>Ações por causa:</strong>
+<strong>Fluxo típico:</strong>
+<ol>
+  <li>Planejamento de mídia gera o media plan</li>
+  <li>AdOps cria a TS baseada no media plan</li>
+  <li>Cliente/criação aprova a TS</li>
+  <li>Criativos são entregues conforme as specs da TS</li>
+  <li>AdOps trafega no ad server usando a TS como referência</li>
+  <li>Publisher recebe as tags geradas pelo ad server</li>
+</ol>
+<strong>Formatos comuns:</strong> Google Sheets, Excel, ou templates proprietários de cada agência. Algumas plataformas (CM360) têm TS nativa com upload automatizado.`,
+            en: `The <strong>Trafficking Sheet</strong> is the central document in the AdOps workflow — the campaign blueprint.<br><br>
+<strong>What it contains:</strong>
 <ul>
-  <li><strong>Budget baixo / CPM floor alto:</strong> aumentar budget ou reduzir floor</li>
-  <li><strong>Targeting muito restrito:</strong> ampliar geos, afrouxar audience segments, adicionar inventário</li>
-  <li><strong>Creative rejeitado:</strong> revisar políticas da plataforma, corrigir e resubmeter</li>
-  <li><strong>Freq cap muito baixo:</strong> aumentar cap ou checar se audience é muito pequena</li>
-  <li><strong>Campanha pausada indevida:</strong> verificar status em todos os níveis da hierarquia</li>
+  <li>Complete structure: advertiser, campaign, placements, ads, creatives</li>
+  <li>Specifications for each format: dimension, max weight, video duration</li>
+  <li>Destination URLs per piece</li>
+  <li>Associated Floodlight Activities</li>
+  <li>Naming for each element (following the taxonomy)</li>
+  <li>Creative approval status</li>
 </ul>
-<strong>Comunicação:</strong> reportar proativamente ao cliente com diagnóstico + plano de ação. Nunca esperar o cliente notar o problema.`,
-            en: `<strong>Diagnose first — identify the cause:</strong>
+<strong>Typical flow:</strong>
+<ol>
+  <li>Media planning generates the media plan</li>
+  <li>AdOps creates the TS based on the media plan</li>
+  <li>Client/creative team approves the TS</li>
+  <li>Creatives are delivered per TS specs</li>
+  <li>AdOps traffics in the ad server using the TS as reference</li>
+  <li>Publisher receives the tags generated by the ad server</li>
+</ol>
+<strong>Common formats:</strong> Google Sheets, Excel, or agency-proprietary templates. Some platforms (CM360) have a native TS with automated upload.`,
+            es: `La <strong>Trafficking Sheet</strong> es el documento central del flujo de AdOps — el "plano" de una campaña.<br><br>
+<strong>Qué contiene:</strong>
 <ul>
-  <li><em>Slow pacing:</em> delivering slowly but without error — budget, bid or targeting issue</li>
-  <li><em>Zero eligibility:</em> campaign not competing — configuration error, rejected creative or targeting conflict</li>
+  <li>Estructura completa: advertiser, campaign, placements, ads, creativos</li>
+  <li>Especificaciones de cada formato: dimensión, peso máximo, duración de video</li>
+  <li>URLs de destino por pieza</li>
+  <li>Floodlight Activities asociadas</li>
+  <li>Nomenclatura de cada elemento (siguiendo la taxonomía)</li>
+  <li>Estado de aprobación de los creativos</li>
 </ul>
-<strong>Actions by cause:</strong>
-<ul>
-  <li><strong>Low budget / high CPM floor:</strong> increase budget or reduce floor</li>
-  <li><strong>Targeting too restrictive:</strong> expand geos, loosen audience segments, add inventory</li>
-  <li><strong>Rejected creative:</strong> review platform policies, fix and resubmit</li>
-  <li><strong>Freq cap too low:</strong> increase cap or check if audience is too small</li>
-  <li><strong>Campaign paused unintentionally:</strong> check status at all hierarchy levels</li>
-</ul>
-<strong>Communication:</strong> proactively report to client with diagnosis + action plan. Never wait for the client to notice the problem.`,
-            es: `<strong>Diagnóstico primero — identificar la causa:</strong>
-<ul>
-  <li><em>Pacing lento:</em> entregando lento pero sin error — problema de budget, bid o targeting</li>
-  <li><em>Eligibility cero:</em> campaña no compite — error de configuración, creativo rechazado o conflicto de targeting</li>
-</ul>
-<strong>Acciones por causa:</strong>
-<ul>
-  <li><strong>Budget bajo / CPM floor alto:</strong> aumentar budget o reducir floor</li>
-  <li><strong>Targeting muy restrictivo:</strong> ampliar geos, aflojar audience segments, agregar inventario</li>
-  <li><strong>Creative rechazado:</strong> revisar políticas de la plataforma, corregir y resubmitir</li>
-  <li><strong>Freq cap muy bajo:</strong> aumentar cap o verificar si el audience es muy pequeño</li>
-  <li><strong>Campaña pausada involuntariamente:</strong> verificar status en todos los niveles de la jerarquía</li>
-</ul>
-<strong>Comunicación:</strong> reportar proactivamente al cliente con diagnóstico + plan de acción. Nunca esperar a que el cliente note el problema.`,
+<strong>Flujo típico:</strong>
+<ol>
+  <li>Planeación de medios genera el media plan</li>
+  <li>AdOps crea la TS basándose en el media plan</li>
+  <li>Cliente/equipo creativo aprueba la TS</li>
+  <li>Creativos se entregan según las specs de la TS</li>
+  <li>AdOps traffica en el ad server usando la TS como referencia</li>
+  <li>Publisher recibe los tags generados por el ad server</li>
+</ol>
+<strong>Formatos comunes:</strong> Google Sheets, Excel, o templates propietarios de cada agencia. Algunas plataformas (CM360) tienen TS nativa con carga automatizada.`,
           },
-          tags: ['pacing', 'underdelivery', 'troubleshooting', 'client-comms'],
+          tags: ['trafficking-sheet', 'workflow', 'ad-server', 'taxonomy'],
         },
         {
           q: {
-            pt: 'Como você prioriza múltiplas campanhas simultâneas com prazos conflitantes?',
-            en: 'How do you prioritize multiple simultaneous campaigns with conflicting deadlines?',
-            es: '¿Cómo priorizas múltiples campañas simultáneas con plazos en conflicto?',
+            pt: 'O que é taxonomia de nomenclatura e por que ela é crítica em AdOps?',
+            en: 'What is naming taxonomy and why is it critical in AdOps?',
+            es: '¿Qué es la taxonomía de nomenclatura y por qué es crítica en AdOps?',
           },
           a: {
-            pt: `<strong>Framework de priorização (ordem decrescente):</strong>
-<ol>
-  <li>Campanhas ao vivo com problema (impacto imediato no cliente)</li>
-  <li>Lançamentos agendados para hoje</li>
-  <li>Lançamentos desta semana</li>
-  <li>Otimizações e ajustes em campanhas saudáveis</li>
-  <li>Relatórios e tarefas administrativas</li>
-</ol>
-<strong>Boas práticas de gestão:</strong>
+            pt: `<strong>Taxonomia</strong> é o sistema de nomenclatura padronizado para todos os elementos de campanha — campaigns, IOs, line items, ads e criativos.<br><br>
+<strong>Por que é crítica:</strong>
 <ul>
-  <li>Nunca agendar tráfego para o mesmo dia do live — buffer mínimo de 24h</li>
-  <li>Checklist padronizado por campanha (reduz retrabalho e erros)</li>
-  <li>Planilha de pacing diário com status por campanha</li>
-  <li>Alertas de budget e entrega configurados na plataforma</li>
+  <li><strong>Relatórios:</strong> filtros e pivôs nos dashboards dependem de nomes consistentes. Um nome errado = dado perdido nos relatórios</li>
+  <li><strong>Automatização:</strong> scripts de extração de dados e APIs usam o nome como chave. Inconsistência quebra automações</li>
+  <li><strong>Auditoria:</strong> conseguir entender o que foi feito meses depois sem precisar abrir cada elemento</li>
+  <li><strong>Escalabilidade:</strong> em contas com centenas de campanhas, taxonomia é o único jeito de manter organização</li>
 </ul>
-<strong>Gestão de expectativas:</strong> comunicar proativamente ao cliente/gestor quando há risco de não cumprir prazo, apresentando alternativas (ex: lançamento parcial, prioritização de formatos).`,
-            en: `<strong>Prioritization framework (descending order):</strong>
-<ol>
-  <li>Live campaigns with issues (immediate client impact)</li>
-  <li>Launches scheduled for today</li>
-  <li>Launches this week</li>
-  <li>Optimizations and adjustments on healthy campaigns</li>
-  <li>Reports and administrative tasks</li>
-</ol>
-<strong>Management best practices:</strong>
+<strong>Estrutura típica de nomenclatura:</strong><br>
+<code>[Cliente]_[Produto]_[Objetivo]_[Canal]_[Formato]_[Período]</code><br><br>
+Exemplo: <code>COCA_COCA-ZERO_AWARENESS_DV360_BANNER-300x250_2024Q1</code><br><br>
+<strong>Boas práticas:</strong>
 <ul>
-  <li>Never schedule trafficking for the same day as live — minimum 24h buffer</li>
-  <li>Standardized checklist per campaign (reduces rework and errors)</li>
-  <li>Daily pacing spreadsheet with status per campaign</li>
-  <li>Budget and delivery alerts configured on the platform</li>
-</ul>
-<strong>Expectation management:</strong> proactively communicate to client/manager when there's a deadline risk, presenting alternatives (e.g., partial launch, format prioritization).`,
-            es: `<strong>Framework de priorización (orden decreciente):</strong>
-<ol>
-  <li>Campañas en vivo con problemas (impacto inmediato en el cliente)</li>
-  <li>Lanzamientos programados para hoy</li>
-  <li>Lanzamientos de esta semana</li>
-  <li>Optimizaciones y ajustes en campañas saludables</li>
-  <li>Reportes y tareas administrativas</li>
-</ol>
-<strong>Buenas prácticas de gestión:</strong>
-<ul>
-  <li>Nunca programar el tráfico para el mismo día del live — buffer mínimo de 24h</li>
-  <li>Checklist estandarizado por campaña (reduce retrabajo y errores)</li>
-  <li>Planilla de pacing diario con status por campaña</li>
-  <li>Alertas de budget y entrega configuradas en la plataforma</li>
-</ul>
-<strong>Gestión de expectativas:</strong> comunicar proactivamente al cliente/manager cuando hay riesgo de incumplir plazo, presentando alternativas (ej: lanzamiento parcial, priorización de formatos).`,
-          },
-          tags: ['prioritization', 'project-management', 'pacing', 'workflow'],
-        },
-        {
-          q: {
-            pt: 'Como você explica uma discrepância de dados para um cliente não técnico?',
-            en: 'How do you explain a data discrepancy to a non-technical client?',
-            es: '¿Cómo explicas una discrepancia de datos a un cliente no técnico?',
-          },
-          a: {
-            pt: `<strong>Princípio:</strong> nunca falar "os números estão errados" — explicar que diferentes ferramentas medem de formas diferentes, o que é normal no mercado.<br><br>
-<strong>Estrutura de comunicação (3 partes):</strong>
-<ol>
-  <li><strong>Reconhecer e contextualizar:</strong> "Identificamos uma diferença entre os dados do CM360 e os do publisher. Isso é comum no mercado digital e tem causas técnicas conhecidas."</li>
-  <li><strong>Explicar a causa (linguagem simples):</strong> "A diferença acontece porque o sistema do publisher conta o anúncio como exibido um pouco antes de o nosso sistema de tracking registrar — é como dois cronômetros iniciando em momentos ligeiramente diferentes."</li>
-  <li><strong>Apresentar o próximo passo:</strong> "Abrimos uma investigação com o publisher. A diferença está dentro do limite aceitável do mercado (até 15%), mas vamos monitorar e acionar formalmente se ultrapassar esse threshold."</li>
-</ol>
-<strong>O que nunca fazer:</strong> entrar em detalhes técnicos de ITP, ad blockers ou latência sem que o cliente pergunte — isso gera mais dúvida do que clareza.`,
-            en: `<strong>Principle:</strong> never say "the numbers are wrong" — explain that different tools measure in different ways, which is normal in the market.<br><br>
-<strong>Communication structure (3 parts):</strong>
-<ol>
-  <li><strong>Acknowledge and contextualize:</strong> "We identified a difference between CM360 data and the publisher's. This is common in digital advertising and has known technical causes."</li>
-  <li><strong>Explain the cause (simple language):</strong> "The difference happens because the publisher's system counts the ad as served slightly before our tracking system records it — like two stopwatches starting at slightly different moments."</li>
-  <li><strong>Present the next step:</strong> "We've opened an investigation with the publisher. The difference is within the acceptable market threshold (up to 15%), but we'll monitor and escalate formally if it exceeds that."</li>
-</ol>
-<strong>What never to do:</strong> go into technical details about ITP, ad blockers or latency unless the client asks — it creates more confusion than clarity.`,
-            es: `<strong>Principio:</strong> nunca decir "los números están mal" — explicar que diferentes herramientas miden de maneras distintas, lo cual es normal en el mercado.<br><br>
-<strong>Estructura de comunicación (3 partes):</strong>
-<ol>
-  <li><strong>Reconocer y contextualizar:</strong> "Identificamos una diferencia entre los datos de CM360 y los del publisher. Esto es común en la publicidad digital y tiene causas técnicas conocidas."</li>
-  <li><strong>Explicar la causa (lenguaje simple):</strong> "La diferencia ocurre porque el sistema del publisher cuenta el anuncio como servido un poco antes de que nuestro sistema de tracking lo registre — como dos cronómetros iniciando en momentos ligeramente distintos."</li>
-  <li><strong>Presentar el próximo paso:</strong> "Abrimos una investigación con el publisher. La diferencia está dentro del umbral aceptable del mercado (hasta 15%), pero monitorearemos y escalaremos formalmente si supera ese threshold."</li>
-</ol>
-<strong>Lo que nunca hacer:</strong> entrar en detalles técnicos de ITP, ad blockers o latencia sin que el cliente lo pregunte — genera más confusión que claridad.`,
-          },
-          tags: ['discrepancy', 'client-communication', 'non-technical', 'escalation'],
-        },
-        {
-          q: {
-            pt: 'O que é brand safety e como você garante isso operacionalmente?',
-            en: 'What is brand safety and how do you ensure it operationally?',
-            es: '¿Qué es brand safety y cómo lo garantizas operacionalmente?',
-          },
-          a: {
-            pt: `<strong>Brand safety</strong> é o conjunto de práticas que garantem que o anúncio de uma marca não apareça ao lado de conteúdo inadequado (violência, desinformação, conteúdo adulto, discurso de ódio, etc.).<br><br>
-<strong>Camadas de proteção operacional:</strong>
-<ol>
-  <li><strong>Configurações de plataforma:</strong> Content Labels, Sensitive Categories e Publisher Blocklists no DV360/CM360</li>
-  <li><strong>Parceiros de verificação:</strong> IAS ou DoubleVerify — pre-bid filtering (bloqueia antes de comprar) e post-bid reporting (audita o que foi entregue)</li>
-  <li><strong>Allowlists:</strong> para clientes mais sensíveis, comprar APENAS em lista de publishers aprovados</li>
-  <li><strong>Revisão pós-campanha:</strong> relatório de placement level para identificar sites inadequados e adicionar à blocklist</li>
-</ol>
-<strong>Responsabilidade operacional:</strong>
-<ul>
-  <li>Documentar as configurações de brand safety aplicadas em cada campanha</li>
-  <li>Alertar o cliente quando inventário inadequado for detectado, antes que ele pergunte</li>
-  <li>Manter blocklist atualizada e reutilizável entre campanhas do mesmo anunciante</li>
+  <li>Sem espaços — usar underscores ou hífens</li>
+  <li>Sem acentos ou caracteres especiais</li>
+  <li>Datas em formato consistente (YYYYMM ou QX)</li>
+  <li>Documentar a taxonomia em um wiki ou README acessível a toda a equipe</li>
 </ul>`,
-            en: `<strong>Brand safety</strong> is the set of practices that ensure a brand's ad doesn't appear next to inappropriate content (violence, misinformation, adult content, hate speech, etc.).<br><br>
-<strong>Operational protection layers:</strong>
-<ol>
-  <li><strong>Platform settings:</strong> Content Labels, Sensitive Categories and Publisher Blocklists in DV360/CM360</li>
-  <li><strong>Verification partners:</strong> IAS or DoubleVerify — pre-bid filtering (blocks before buying) and post-bid reporting (audits what was delivered)</li>
-  <li><strong>Allowlists:</strong> for more sensitive clients, buy ONLY on approved publisher lists</li>
-  <li><strong>Post-campaign review:</strong> placement-level report to identify inappropriate sites and add to blocklist</li>
-</ol>
-<strong>Operational responsibility:</strong>
+            en: `<strong>Taxonomy</strong> is the standardized naming system for all campaign elements — campaigns, IOs, line items, ads and creatives.<br><br>
+<strong>Why it's critical:</strong>
 <ul>
-  <li>Document brand safety settings applied in each campaign</li>
-  <li>Alert the client when inappropriate inventory is detected, before they ask</li>
-  <li>Keep blocklist updated and reusable across campaigns from the same advertiser</li>
+  <li><strong>Reporting:</strong> dashboard filters and pivots depend on consistent names. A wrong name = data lost in reports</li>
+  <li><strong>Automation:</strong> data extraction scripts and APIs use the name as a key. Inconsistency breaks automations</li>
+  <li><strong>Audit:</strong> being able to understand what was done months later without opening each element</li>
+  <li><strong>Scalability:</strong> in accounts with hundreds of campaigns, taxonomy is the only way to maintain organization</li>
+</ul>
+<strong>Typical naming structure:</strong><br>
+<code>[Client]_[Product]_[Goal]_[Channel]_[Format]_[Period]</code><br><br>
+Example: <code>COCA_COCA-ZERO_AWARENESS_DV360_BANNER-300x250_2024Q1</code><br><br>
+<strong>Best practices:</strong>
+<ul>
+  <li>No spaces — use underscores or hyphens</li>
+  <li>No accents or special characters</li>
+  <li>Dates in consistent format (YYYYMM or QX)</li>
+  <li>Document taxonomy in a wiki or README accessible to the whole team</li>
 </ul>`,
-            es: `<strong>Brand safety</strong> es el conjunto de prácticas que garantizan que el anuncio de una marca no aparezca junto a contenido inadecuado (violencia, desinformación, contenido adulto, discurso de odio, etc.).<br><br>
-<strong>Capas de protección operacional:</strong>
-<ol>
-  <li><strong>Configuraciones de plataforma:</strong> Content Labels, Sensitive Categories y Publisher Blocklists en DV360/CM360</li>
-  <li><strong>Partners de verificación:</strong> IAS o DoubleVerify — filtrado pre-bid (bloquea antes de comprar) y reporte post-bid (audita lo entregado)</li>
-  <li><strong>Allowlists:</strong> para clientes más sensibles, comprar SOLO en lista de publishers aprobados</li>
-  <li><strong>Revisión post-campaña:</strong> reporte de placement level para identificar sitios inadecuados y agregar a la blocklist</li>
-</ol>
-<strong>Responsabilidad operacional:</strong>
+            es: `<strong>Taxonomía</strong> es el sistema de nomenclatura estandarizado para todos los elementos de campaña — campaigns, IOs, line items, ads y creativos.<br><br>
+<strong>Por qué es crítica:</strong>
 <ul>
-  <li>Documentar las configuraciones de brand safety aplicadas en cada campaña</li>
-  <li>Alertar al cliente cuando se detecte inventario inadecuado, antes de que pregunte</li>
-  <li>Mantener blocklist actualizada y reutilizable entre campañas del mismo anunciante</li>
+  <li><strong>Reportes:</strong> los filtros y pivots de dashboards dependen de nombres consistentes. Un nombre incorrecto = dato perdido en los reportes</li>
+  <li><strong>Automatización:</strong> los scripts de extracción de datos y APIs usan el nombre como clave. La inconsistencia rompe las automatizaciones</li>
+  <li><strong>Auditoría:</strong> poder entender qué se hizo meses después sin abrir cada elemento</li>
+  <li><strong>Escalabilidad:</strong> en cuentas con cientos de campañas, la taxonomía es la única forma de mantener organización</li>
+</ul>
+<strong>Estructura típica de nomenclatura:</strong><br>
+<code>[Cliente]_[Producto]_[Objetivo]_[Canal]_[Formato]_[Período]</code><br><br>
+Ejemplo: <code>COCA_COCA-ZERO_AWARENESS_DV360_BANNER-300x250_2024Q1</code><br><br>
+<strong>Buenas prácticas:</strong>
+<ul>
+  <li>Sin espacios — usar underscores o guiones</li>
+  <li>Sin acentos ni caracteres especiales</li>
+  <li>Fechas en formato consistente (YYYYMM o QX)</li>
+  <li>Documentar la taxonomía en un wiki o README accesible a todo el equipo</li>
 </ul>`,
           },
-          tags: ['brand-safety', 'IAS', 'DoubleVerify', 'blocklist', 'allowlist'],
+          tags: ['taxonomia', 'nomenclatura', 'naming', 'organização'],
+        },
+        {
+          q: {
+            pt: 'Como você lida com um erro em uma campanha que já está no ar? Descreva o processo.',
+            en: 'How do you handle an error in a live campaign? Describe the process.',
+            es: '¿Cómo manejas un error en una campaña que ya está en el aire? Describe el proceso.',
+          },
+          a: {
+            pt: `<strong>Protocolo de gestão de erros em campanha live:</strong><br><br>
+<strong>1. Identificar e conter (imediato)</strong>
+<ul>
+  <li>Pausar o elemento com problema (não a campanha toda, se possível)</li>
+  <li>Avaliar impacto: qual o volume afetado? Quanto tempo o erro existe?</li>
+</ul>
+<strong>2. Diagnosticar (5-15 min)</strong>
+<ul>
+  <li>Isolar a causa: foi mudança recente? Problema técnico? Erro de tráfego?</li>
+  <li>Verificar logs de alterações na plataforma (Change History)</li>
+</ul>
+<strong>3. Comunicar (antes de corrigir)</strong>
+<ul>
+  <li>Avisar o cliente/supervisor ANTES de corrigir — nunca "esconder" um erro</li>
+  <li>Informar: o que aconteceu, qual o impacto estimado, o que será feito</li>
+</ul>
+<strong>4. Corrigir e reativar</strong>
+<ul>
+  <li>Fazer a correção com um segundo par de olhos validando</li>
+  <li>Reativar e monitorar por 30 min para confirmar normalidade</li>
+</ul>
+<strong>5. Post-mortem</strong>
+<ul>
+  <li>Documentar: causa raiz, impacto real, solução aplicada, como evitar recorrência</li>
+  <li>Atualizar checklist de QA se necessário</li>
+</ul>
+<strong>Postura crítica:</strong> transparência imediata com o cliente é mais importante do que ter a solução perfeita antes de avisar.`,
+            en: `<strong>Error management protocol for live campaigns:</strong><br><br>
+<strong>1. Identify and contain (immediate)</strong>
+<ul>
+  <li>Pause the problematic element (not the entire campaign if possible)</li>
+  <li>Assess impact: what volume was affected? How long has the error existed?</li>
+</ul>
+<strong>2. Diagnose (5-15 min)</strong>
+<ul>
+  <li>Isolate the cause: was it a recent change? Technical issue? Trafficking error?</li>
+  <li>Check platform change logs (Change History)</li>
+</ul>
+<strong>3. Communicate (before fixing)</strong>
+<ul>
+  <li>Notify the client/supervisor BEFORE fixing — never "hide" an error</li>
+  <li>Inform: what happened, estimated impact, what will be done</li>
+</ul>
+<strong>4. Fix and reactivate</strong>
+<ul>
+  <li>Make the correction with a second pair of eyes validating</li>
+  <li>Reactivate and monitor for 30 min to confirm normality</li>
+</ul>
+<strong>5. Post-mortem</strong>
+<ul>
+  <li>Document: root cause, actual impact, solution applied, how to prevent recurrence</li>
+  <li>Update QA checklist if necessary</li>
+</ul>
+<strong>Critical attitude:</strong> immediate transparency with the client is more important than having the perfect solution before informing them.`,
+            es: `<strong>Protocolo de gestión de errores en campaña live:</strong><br><br>
+<strong>1. Identificar y contener (inmediato)</strong>
+<ul>
+  <li>Pausar el elemento con problema (no toda la campaña si es posible)</li>
+  <li>Evaluar impacto: ¿qué volumen fue afectado? ¿Cuánto tiempo lleva el error?</li>
+</ul>
+<strong>2. Diagnosticar (5-15 min)</strong>
+<ul>
+  <li>Aislar la causa: ¿fue un cambio reciente? ¿Problema técnico? ¿Error de tráfico?</li>
+  <li>Verificar logs de cambios en la plataforma (Change History)</li>
+</ul>
+<strong>3. Comunicar (antes de corregir)</strong>
+<ul>
+  <li>Avisar al cliente/supervisor ANTES de corregir — nunca "esconder" un error</li>
+  <li>Informar: qué pasó, cuál es el impacto estimado, qué se hará</li>
+</ul>
+<strong>4. Corregir y reactivar</strong>
+<ul>
+  <li>Hacer la corrección con un segundo par de ojos validando</li>
+  <li>Reactivar y monitorear por 30 min para confirmar normalidad</li>
+</ul>
+<strong>5. Post-mortem</strong>
+<ul>
+  <li>Documentar: causa raíz, impacto real, solución aplicada, cómo evitar recurrencia</li>
+  <li>Actualizar checklist de QA si es necesario</li>
+</ul>
+<strong>Actitud crítica:</strong> la transparencia inmediata con el cliente es más importante que tener la solución perfecta antes de avisar.`,
+          },
+          tags: ['erro', 'live', 'comunicação', 'protocolo', 'post-mortem'],
+        },
+      ],
+    },
+    {
+      id: 'mid',
+      questions: [
+        {
+          q: {
+            pt: 'Como montar um relatório de performance para o cliente? Quais métricas incluir e como estruturar a narrativa?',
+            en: 'How to build a performance report for the client? Which metrics to include and how to structure the narrative?',
+            es: '¿Cómo armar un reporte de performance para el cliente? ¿Qué métricas incluir y cómo estructurar la narrativa?',
+          },
+          a: {
+            pt: `<strong>Estrutura de relatório de performance:</strong><br><br>
+<strong>1. Executive Summary (1 parágrafo)</strong>
+<ul>
+  <li>O que foi entregue vs. o que foi planejado</li>
+  <li>Principal insight do período</li>
+  <li>Recomendação ou próximo passo</li>
+</ul>
+<strong>2. Métricas por objetivo:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Objetivo</th><th style="padding:6px">Métricas primárias</th><th style="padding:6px">Métricas secundárias</th></tr>
+<tr><td style="padding:6px">Awareness</td><td style="padding:6px">Impressões, Reach, Freq.</td><td style="padding:6px">Viewability, CPM, VCR</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Consideração</td><td style="padding:6px">CTR, Cliques, Sessões</td><td style="padding:6px">Bounce rate, Tempo na página</td></tr>
+<tr><td style="padding:6px">Conversão</td><td style="padding:6px">Conversões, CPA, ROAS</td><td style="padding:6px">Funil, Atribuição</td></tr>
+</table><br>
+<strong>3. Análise de pacing:</strong> budget investido vs. programado<br>
+<strong>4. Top e bottom performers:</strong> quais criativos, publishers, geos, devices entregaram melhor/pior<br>
+<strong>5. Próximas ações:</strong> otimizações recomendadas com justificativa<br><br>
+<strong>Princípio fundamental:</strong> cliente não quer ver número — quer entender o que o número significa para o negócio dele. Traduza métricas em linguagem de negócio.`,
+            en: `<strong>Performance report structure:</strong><br><br>
+<strong>1. Executive Summary (1 paragraph)</strong>
+<ul>
+  <li>What was delivered vs. what was planned</li>
+  <li>Main insight of the period</li>
+  <li>Recommendation or next step</li>
+</ul>
+<strong>2. Metrics by objective:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Objective</th><th style="padding:6px">Primary metrics</th><th style="padding:6px">Secondary metrics</th></tr>
+<tr><td style="padding:6px">Awareness</td><td style="padding:6px">Impressions, Reach, Freq.</td><td style="padding:6px">Viewability, CPM, VCR</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Consideration</td><td style="padding:6px">CTR, Clicks, Sessions</td><td style="padding:6px">Bounce rate, Time on page</td></tr>
+<tr><td style="padding:6px">Conversion</td><td style="padding:6px">Conversions, CPA, ROAS</td><td style="padding:6px">Funnel, Attribution</td></tr>
+</table><br>
+<strong>3. Pacing analysis:</strong> budget invested vs. planned<br>
+<strong>4. Top and bottom performers:</strong> which creatives, publishers, geos, devices performed best/worst<br>
+<strong>5. Next actions:</strong> recommended optimizations with rationale<br><br>
+<strong>Fundamental principle:</strong> clients don't want to see numbers — they want to understand what the number means for their business. Translate metrics into business language.`,
+            es: `<strong>Estructura de reporte de performance:</strong><br><br>
+<strong>1. Executive Summary (1 párrafo)</strong>
+<ul>
+  <li>Qué se entregó vs. qué se planeó</li>
+  <li>Principal insight del período</li>
+  <li>Recomendación o próximo paso</li>
+</ul>
+<strong>2. Métricas por objetivo:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Objetivo</th><th style="padding:6px">Métricas primarias</th><th style="padding:6px">Métricas secundarias</th></tr>
+<tr><td style="padding:6px">Awareness</td><td style="padding:6px">Impresiones, Reach, Frec.</td><td style="padding:6px">Viewability, CPM, VCR</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Consideración</td><td style="padding:6px">CTR, Clics, Sesiones</td><td style="padding:6px">Bounce rate, Tiempo en página</td></tr>
+<tr><td style="padding:6px">Conversión</td><td style="padding:6px">Conversiones, CPA, ROAS</td><td style="padding:6px">Embudo, Atribución</td></tr>
+</table><br>
+<strong>3. Análisis de pacing:</strong> presupuesto invertido vs. planeado<br>
+<strong>4. Top y bottom performers:</strong> qué creativos, publishers, geos, dispositivos rindieron mejor/peor<br>
+<strong>5. Próximas acciones:</strong> optimizaciones recomendadas con justificación<br><br>
+<strong>Principio fundamental:</strong> el cliente no quiere ver números — quiere entender qué significa el número para su negocio. Traduce métricas a lenguaje de negocio.`,
+          },
+          tags: ['relatório', 'KPI', 'performance', 'cliente', 'narrativa'],
+        },
+        {
+          q: {
+            pt: 'Como gerenciar prazos e prioridades quando você tem múltiplas campanhas para trafegar ao mesmo tempo?',
+            en: 'How do you manage deadlines and priorities when you have multiple campaigns to traffic at the same time?',
+            es: '¿Cómo manejas plazos y prioridades cuando tienes múltiples campañas para trafiquear al mismo tiempo?',
+          },
+          a: {
+            pt: `<strong>Framework de priorização em AdOps:</strong><br><br>
+<strong>Critérios de prioridade (em ordem):</strong>
+<ol>
+  <li><strong>Go-live iminente:</strong> campanhas que entram no ar hoje ou amanhã vêm primeiro, sempre</li>
+  <li><strong>Impacto financeiro:</strong> campanhas com maior budget ou cliente estratégico</li>
+  <li><strong>Complexidade técnica:</strong> o que precisa de mais tempo de QA vai antes</li>
+  <li><strong>Dependências externas:</strong> o que depende de aprovação do cliente ou publisher tem margem menor</li>
+</ol>
+<strong>Organização prática:</strong>
+<ul>
+  <li>Lista de tarefas com data de go-live de cada campanha visível</li>
+  <li>Buffer de QA: nunca trafegar no mesmo dia do go-live — mínimo 24h antes</li>
+  <li>Template de TS padronizado reduz tempo de tráfego em 30-40%</li>
+  <li>Comunicar ao cliente/supervisor proativamente se houver risco de atraso</li>
+</ul>
+<strong>Quando o volume é impossível:</strong>
+<ul>
+  <li>Escalar para supervisor com evidências (lista de demandas + horas estimadas)</li>
+  <li>Nunca aceitar trabalho inviável em silêncio — isso gera erros</li>
+  <li>Propor priorização junto com o cliente quando necessário</li>
+</ul>`,
+            en: `<strong>Prioritization framework in AdOps:</strong><br><br>
+<strong>Priority criteria (in order):</strong>
+<ol>
+  <li><strong>Imminent go-live:</strong> campaigns going live today or tomorrow always come first</li>
+  <li><strong>Financial impact:</strong> campaigns with larger budgets or strategic clients</li>
+  <li><strong>Technical complexity:</strong> what needs more QA time goes first</li>
+  <li><strong>External dependencies:</strong> what depends on client or publisher approval has less margin</li>
+</ol>
+<strong>Practical organization:</strong>
+<ul>
+  <li>Task list with each campaign's go-live date visible</li>
+  <li>QA buffer: never traffic on the same day as go-live — minimum 24h before</li>
+  <li>Standardized TS template reduces trafficking time by 30-40%</li>
+  <li>Proactively communicate to client/supervisor if there's a delay risk</li>
+</ul>
+<strong>When volume is impossible:</strong>
+<ul>
+  <li>Escalate to supervisor with evidence (demand list + estimated hours)</li>
+  <li>Never silently accept unfeasible work — this generates errors</li>
+  <li>Propose prioritization with the client when necessary</li>
+</ul>`,
+            es: `<strong>Framework de priorización en AdOps:</strong><br><br>
+<strong>Criterios de prioridad (en orden):</strong>
+<ol>
+  <li><strong>Go-live inminente:</strong> campañas que entran al aire hoy o mañana siempre van primero</li>
+  <li><strong>Impacto financiero:</strong> campañas con mayor presupuesto o cliente estratégico</li>
+  <li><strong>Complejidad técnica:</strong> lo que necesita más tiempo de QA va antes</li>
+  <li><strong>Dependencias externas:</strong> lo que depende de aprobación del cliente o publisher tiene menor margen</li>
+</ol>
+<strong>Organización práctica:</strong>
+<ul>
+  <li>Lista de tareas con fecha de go-live de cada campaña visible</li>
+  <li>Buffer de QA: nunca trafiquear el mismo día del go-live — mínimo 24h antes</li>
+  <li>Template de TS estandarizado reduce el tiempo de tráfico en 30-40%</li>
+  <li>Comunicar proactivamente al cliente/supervisor si hay riesgo de atraso</li>
+</ul>
+<strong>Cuando el volumen es imposible:</strong>
+<ul>
+  <li>Escalar al supervisor con evidencias (lista de demandas + horas estimadas)</li>
+  <li>Nunca aceptar trabajo inviable en silencio — esto genera errores</li>
+  <li>Proponer priorización junto con el cliente cuando sea necesario</li>
+</ul>`,
+          },
+          tags: ['priorização', 'prazos', 'organização', 'gestão'],
+        },
+        {
+          q: {
+            pt: 'Como você explica uma discrepância de dados entre o ad server e o relatório do publisher para o cliente?',
+            en: 'How do you explain a data discrepancy between the ad server and the publisher report to the client?',
+            es: '¿Cómo explicas una discrepancia de datos entre el ad server y el reporte del publisher al cliente?',
+          },
+          a: {
+            pt: `Discrepâncias entre ad server e publisher são normais — o problema é quando ultrapassam o threshold aceitável.<br><br>
+<strong>Threshold padrão da indústria:</strong> até ~10% de discrepância é considerada normal. Acima de 20% exige investigação.<br><br>
+<strong>Causas comuns:</strong>
+<ul>
+  <li><strong>Diferença de contagem:</strong> ad server conta quando o ad é requisitado; publisher conta quando é renderizado</li>
+  <li><strong>Latência de tag:</strong> usuário fecha a página antes da tag do ad server registrar</li>
+  <li><strong>Ad blockers:</strong> bloqueiam a tag do ad server mas o publisher já serviu o anúncio</li>
+  <li><strong>Fuso horário:</strong> ad server e publisher em fusos diferentes reportam dias diferentes</li>
+  <li><strong>Tag mal implementada:</strong> publisher duplicou ou omitiu parte da tag</li>
+</ul>
+<strong>Como comunicar ao cliente:</strong>
+<ol>
+  <li>Explique que discrepâncias são normais e esperadas na indústria</li>
+  <li>Apresente o % de discrepância (ex: 8% = dentro do esperado)</li>
+  <li>Informe qual número é a fonte de verdade para billing (geralmente o ad server)</li>
+  <li>Se estiver acima do threshold, relate o que está sendo investigado</li>
+</ol>
+<strong>Fonte de verdade:</strong> em contratos com CM360 como ad server, o número do CM360 é o oficial para billing.`,
+            en: `Discrepancies between ad server and publisher are normal — the issue is when they exceed the acceptable threshold.<br><br>
+<strong>Industry standard threshold:</strong> up to ~10% discrepancy is considered normal. Above 20% requires investigation.<br><br>
+<strong>Common causes:</strong>
+<ul>
+  <li><strong>Counting difference:</strong> ad server counts when the ad is requested; publisher counts when it's rendered</li>
+  <li><strong>Tag latency:</strong> user closes page before the ad server tag registers</li>
+  <li><strong>Ad blockers:</strong> block the ad server tag but publisher already served the ad</li>
+  <li><strong>Timezone:</strong> ad server and publisher in different timezones report different days</li>
+  <li><strong>Poorly implemented tag:</strong> publisher duplicated or omitted part of the tag</li>
+</ul>
+<strong>How to communicate to client:</strong>
+<ol>
+  <li>Explain that discrepancies are normal and expected in the industry</li>
+  <li>Present the % discrepancy (e.g. 8% = within expected)</li>
+  <li>Inform which number is the source of truth for billing (usually the ad server)</li>
+  <li>If above threshold, report what is being investigated</li>
+</ol>
+<strong>Source of truth:</strong> in contracts with CM360 as ad server, the CM360 number is official for billing.`,
+            es: `Las discrepancias entre ad server y publisher son normales — el problema es cuando superan el umbral aceptable.<br><br>
+<strong>Umbral estándar de la industria:</strong> hasta ~10% de discrepancia se considera normal. Más del 20% requiere investigación.<br><br>
+<strong>Causas comunes:</strong>
+<ul>
+  <li><strong>Diferencia de conteo:</strong> ad server cuenta cuando el anuncio es solicitado; publisher cuenta cuando se renderiza</li>
+  <li><strong>Latencia de tag:</strong> usuario cierra la página antes de que la tag del ad server registre</li>
+  <li><strong>Ad blockers:</strong> bloquean la tag del ad server pero el publisher ya sirvió el anuncio</li>
+  <li><strong>Zona horaria:</strong> ad server y publisher en zonas horarias distintas reportan días diferentes</li>
+  <li><strong>Tag mal implementada:</strong> publisher duplicó u omitió parte de la tag</li>
+</ul>
+<strong>Cómo comunicar al cliente:</strong>
+<ol>
+  <li>Explicar que las discrepancias son normales y esperadas en la industria</li>
+  <li>Presentar el % de discrepancia (ej: 8% = dentro de lo esperado)</li>
+  <li>Informar qué número es la fuente de verdad para facturación (generalmente el ad server)</li>
+  <li>Si está por encima del umbral, reportar qué se está investigando</li>
+</ol>
+<strong>Fuente de verdad:</strong> en contratos con CM360 como ad server, el número de CM360 es el oficial para facturación.`,
+          },
+          tags: ['discrepância', 'publisher', 'ad-server', 'billing', 'cliente'],
+        },
+      ],
+    },
+    {
+      id: 'hard',
+      questions: [
+        {
+          q: {
+            pt: 'Como construir e documentar um processo de onboarding de novo cliente em AdOps? Quais os elementos críticos?',
+            en: 'How to build and document a new client onboarding process in AdOps? What are the critical elements?',
+            es: '¿Cómo construir y documentar un proceso de onboarding de nuevo cliente en AdOps? ¿Cuáles son los elementos críticos?',
+          },
+          a: {
+            pt: `<strong>Onboarding de novo cliente — framework completo:</strong><br><br>
+<strong>Fase 1: Discovery (semana 1)</strong>
+<ul>
+  <li>Kick-off com cliente: objetivos de negócio, KPIs esperados, budget anual estimado</li>
+  <li>Mapeamento de plataformas: quais ad servers, DSPs e social já usam</li>
+  <li>Acesso e permissões: solicitar acesso às contas existentes (CM360, DV360, Meta BM)</li>
+  <li>Auditoria de conta: verificar estrutura, histórico de campanhas, naming, pixels</li>
+</ul>
+<strong>Fase 2: Setup (semanas 2-3)</strong>
+<ul>
+  <li>Definir e documentar taxonomia de nomenclatura</li>
+  <li>Validar/criar Floodlights e pixels de conversão</li>
+  <li>Configurar brand safety: blocklists, sensitive categories</li>
+  <li>Criar audiences de 1st party (remarketing, customer match)</li>
+  <li>Definir template de Trafficking Sheet</li>
+  <li>Definir template de relatório e cadência de reporting</li>
+</ul>
+<strong>Fase 3: Piloto (semana 4)</strong>
+<ul>
+  <li>Campanha piloto pequena para validar fluxo end-to-end</li>
+  <li>QA duplo em todos os elementos</li>
+  <li>Reunião de alinhamento pós-piloto</li>
+</ul>
+<strong>Documentação obrigatória:</strong>
+<ul>
+  <li>README de conta: todos os acessos, contatos do cliente, plataformas e regras específicas</li>
+  <li>Taxonomia documentada e aprovada pelo cliente</li>
+  <li>Mapa de Floodlights: cada activity, o que tracka, qual URL</li>
+</ul>`,
+            en: `<strong>New client onboarding — complete framework:</strong><br><br>
+<strong>Phase 1: Discovery (week 1)</strong>
+<ul>
+  <li>Kick-off with client: business objectives, expected KPIs, estimated annual budget</li>
+  <li>Platform mapping: which ad servers, DSPs and social they already use</li>
+  <li>Access and permissions: request access to existing accounts (CM360, DV360, Meta BM)</li>
+  <li>Account audit: check structure, campaign history, naming, pixels</li>
+</ul>
+<strong>Phase 2: Setup (weeks 2-3)</strong>
+<ul>
+  <li>Define and document naming taxonomy</li>
+  <li>Validate/create Floodlights and conversion pixels</li>
+  <li>Configure brand safety: blocklists, sensitive categories</li>
+  <li>Create 1st party audiences (remarketing, customer match)</li>
+  <li>Create Trafficking Sheet template</li>
+  <li>Define report template and reporting cadence</li>
+</ul>
+<strong>Phase 3: Pilot (week 4)</strong>
+<ul>
+  <li>Small pilot campaign to validate end-to-end flow</li>
+  <li>Double QA on all elements</li>
+  <li>Post-pilot alignment meeting</li>
+</ul>
+<strong>Required documentation:</strong>
+<ul>
+  <li>Account README: all accesses, client contacts, platforms and specific rules</li>
+  <li>Taxonomy documented and approved by client</li>
+  <li>Floodlight map: each activity, what it tracks, which URL</li>
+</ul>`,
+            es: `<strong>Onboarding de nuevo cliente — framework completo:</strong><br><br>
+<strong>Fase 1: Discovery (semana 1)</strong>
+<ul>
+  <li>Kick-off con cliente: objetivos de negocio, KPIs esperados, presupuesto anual estimado</li>
+  <li>Mapeo de plataformas: qué ad servers, DSPs y social ya usan</li>
+  <li>Accesos y permisos: solicitar acceso a cuentas existentes (CM360, DV360, Meta BM)</li>
+  <li>Auditoría de cuenta: verificar estructura, historial de campañas, naming, pixels</li>
+</ul>
+<strong>Fase 2: Setup (semanas 2-3)</strong>
+<ul>
+  <li>Definir y documentar taxonomía de nomenclatura</li>
+  <li>Validar/crear Floodlights y pixels de conversión</li>
+  <li>Configurar brand safety: blocklists, categorías sensibles</li>
+  <li>Crear audiencias de 1st party (remarketing, customer match)</li>
+  <li>Crear template de Trafficking Sheet</li>
+  <li>Definir template de reporte y cadencia de reporting</li>
+</ul>
+<strong>Fase 3: Piloto (semana 4)</strong>
+<ul>
+  <li>Campaña piloto pequeña para validar el flujo end-to-end</li>
+  <li>QA doble en todos los elementos</li>
+  <li>Reunión de alineación post-piloto</li>
+</ul>
+<strong>Documentación obligatoria:</strong>
+<ul>
+  <li>README de cuenta: todos los accesos, contactos del cliente, plataformas y reglas específicas</li>
+  <li>Taxonomía documentada y aprobada por el cliente</li>
+  <li>Mapa de Floodlights: cada activity, qué trackea, qué URL</li>
+</ul>`,
+          },
+          tags: ['onboarding', 'cliente', 'setup', 'documentação', 'processo'],
+        },
+        {
+          q: {
+            pt: 'Como você avaliaria e proporia melhorias no processo de AdOps de uma agência que você acabou de entrar?',
+            en: 'How would you evaluate and propose improvements to the AdOps process at an agency you just joined?',
+            es: '¿Cómo evaluarías y propondrías mejoras al proceso de AdOps de una agencia a la que acabas de entrar?',
+          },
+          a: {
+            pt: `<strong>Framework de diagnóstico e melhoria de processo:</strong><br><br>
+<strong>1. Mapeamento (primeiros 30 dias — observar, não mudar)</strong>
+<ul>
+  <li>Documentar o fluxo atual end-to-end: como uma campanha passa desde o briefing até o relatório final</li>
+  <li>Identificar onde estão os gargalos: onde o time perde mais tempo? Onde ocorrem mais erros?</li>
+  <li>Entrevistar os colegas: quais as principais dores e quais "gambiarras" já existem</li>
+</ul>
+<strong>2. Auditoria de ferramentas e templates</strong>
+<ul>
+  <li>Existe Trafficking Sheet padronizada? Se não, é a primeira melhoria</li>
+  <li>QA checklist formal existe? Se não, criar é ganho imediato</li>
+  <li>Taxonomia está documentada e seguida? Inconsistências = problema de dados</li>
+  <li>Relatório é feito manualmente? Automatizar via Looker Studio ou scripts economiza horas/semana</li>
+</ul>
+<strong>3. Priorizar por impacto × esforço</strong>
+<ul>
+  <li><strong>Quick wins (fazer primeiro):</strong> checklist de QA, template de TS, taxonomia documentada</li>
+  <li><strong>Médio prazo:</strong> automação de relatórios, biblioteca de criativos, processo de onboarding</li>
+  <li><strong>Longo prazo:</strong> integração de dados cross-plataforma, dashboards em tempo real</li>
+</ul>
+<strong>4. Apresentar como proposta, não como crítica</strong>
+<ul>
+  <li>Usar dados para embasar ("esse processo leva X horas, com esse template seria Y")</li>
+  <li>Envolver o time na solução — mudança de cima pra baixo sem buy-in não funciona</li>
+</ul>`,
+            en: `<strong>Process diagnosis and improvement framework:</strong><br><br>
+<strong>1. Mapping (first 30 days — observe, don't change)</strong>
+<ul>
+  <li>Document the current end-to-end flow: how a campaign moves from briefing to final report</li>
+  <li>Identify bottlenecks: where does the team lose the most time? Where do most errors occur?</li>
+  <li>Interview colleagues: what are the main pain points and what workarounds already exist</li>
+</ul>
+<strong>2. Tools and templates audit</strong>
+<ul>
+  <li>Is there a standardized Trafficking Sheet? If not, that's the first improvement</li>
+  <li>Does a formal QA checklist exist? Creating one is an immediate gain</li>
+  <li>Is taxonomy documented and followed? Inconsistencies = data problems</li>
+  <li>Is reporting done manually? Automating via Looker Studio or scripts saves hours/week</li>
+</ul>
+<strong>3. Prioritize by impact × effort</strong>
+<ul>
+  <li><strong>Quick wins (do first):</strong> QA checklist, TS template, documented taxonomy</li>
+  <li><strong>Medium term:</strong> report automation, creative library, onboarding process</li>
+  <li><strong>Long term:</strong> cross-platform data integration, real-time dashboards</li>
+</ul>
+<strong>4. Present as a proposal, not a criticism</strong>
+<ul>
+  <li>Use data to support ("this process takes X hours, with this template it would be Y")</li>
+  <li>Involve the team in the solution — top-down change without buy-in doesn't work</li>
+</ul>`,
+            es: `<strong>Framework de diagnóstico y mejora de proceso:</strong><br><br>
+<strong>1. Mapeo (primeros 30 días — observar, no cambiar)</strong>
+<ul>
+  <li>Documentar el flujo actual end-to-end: cómo pasa una campaña desde el briefing hasta el reporte final</li>
+  <li>Identificar cuellos de botella: ¿dónde pierde más tiempo el equipo? ¿Dónde ocurren más errores?</li>
+  <li>Entrevistar colegas: cuáles son los principales dolores y qué "soluciones provisorias" ya existen</li>
+</ul>
+<strong>2. Auditoría de herramientas y templates</strong>
+<ul>
+  <li>¿Existe Trafficking Sheet estandarizada? Si no, es la primera mejora</li>
+  <li>¿Existe checklist formal de QA? Crearlo es una ganancia inmediata</li>
+  <li>¿La taxonomía está documentada y se sigue? Inconsistencias = problema de datos</li>
+  <li>¿El reporte se hace manualmente? Automatizar via Looker Studio o scripts ahorra horas/semana</li>
+</ul>
+<strong>3. Priorizar por impacto × esfuerzo</strong>
+<ul>
+  <li><strong>Quick wins (hacer primero):</strong> checklist de QA, template de TS, taxonomía documentada</li>
+  <li><strong>Mediano plazo:</strong> automatización de reportes, biblioteca de creativos, proceso de onboarding</li>
+  <li><strong>Largo plazo:</strong> integración de datos cross-plataforma, dashboards en tiempo real</li>
+</ul>
+<strong>4. Presentar como propuesta, no como crítica</strong>
+<ul>
+  <li>Usar datos para fundamentar ("este proceso toma X horas, con este template serían Y")</li>
+  <li>Involucrar al equipo en la solución — el cambio de arriba hacia abajo sin buy-in no funciona</li>
+</ul>`,
+          },
+          tags: ['processo', 'melhoria', 'agência', 'diagnóstico', 'liderança'],
         },
       ],
     },

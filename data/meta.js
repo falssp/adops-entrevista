@@ -1,12 +1,12 @@
-// Módulo Meta — AdOps Interview Kit v2
+// Módulo Meta Ads — AdOps Interview Kit v2
 window.__adopsData = window.__adopsData || {};
 window.__adopsData['meta'] = {
   icon: '📘',
   name: { pt: 'Meta Ads', en: 'Meta Ads', es: 'Meta Ads' },
   desc: {
-    pt: 'Facebook, Instagram, WhatsApp e Audience Network — maior plataforma social de mídia paga.',
-    en: 'Facebook, Instagram, WhatsApp and Audience Network — largest paid social platform.',
-    es: 'Facebook, Instagram, WhatsApp y Audience Network — mayor plataforma social de medios pagos.',
+    pt: 'Plataforma de anúncios do Facebook, Instagram, Messenger e Audience Network — o maior ecossistema de social advertising do mundo.',
+    en: 'Facebook, Instagram, Messenger and Audience Network advertising platform — the largest social advertising ecosystem in the world.',
+    es: 'Plataforma de anuncios de Facebook, Instagram, Messenger y Audience Network — el ecosistema de social advertising más grande del mundo.',
   },
   tiers: [
     {
@@ -14,37 +14,101 @@ window.__adopsData['meta'] = {
       questions: [
         {
           q: {
-            pt: 'Explique a estrutura de conta Meta: Business Manager → Ad Account → Campaign → Ad Set → Ad.',
-            en: 'Explain the Meta account structure: Business Manager → Ad Account → Campaign → Ad Set → Ad.',
-            es: 'Explica la estructura de cuenta Meta: Business Manager → Ad Account → Campaign → Ad Set → Ad.',
+            pt: 'Explique a estrutura hierárquica do Meta Ads: Business Manager → Ad Account → Campaign → Ad Set → Ad.',
+            en: 'Explain the Meta Ads hierarchy: Business Manager → Ad Account → Campaign → Ad Set → Ad.',
+            es: 'Explica la jerarquía de Meta Ads: Business Manager → Ad Account → Campaign → Ad Set → Ad.',
           },
           a: {
             pt: `<ul>
-  <li><strong>Business Manager:</strong> hub administrativo — gerencia múltiplas Ad Accounts, Pages, pixels, catálogos e permissões.</li>
-  <li><strong>Ad Account:</strong> unidade de cobrança — tem seu próprio pixel, audiences e limites de gasto.</li>
-  <li><strong>Campaign:</strong> define o <em>objetivo</em> (Awareness, Traffic, Engagement, Leads, App, Sales). O objetivo determina quais otimizações ficam disponíveis.</li>
-  <li><strong>Ad Set:</strong> define <em>quem, quando e quanto</em> — targeting, placements, schedule, orçamento e bid strategy.</li>
-  <li><strong>Ad:</strong> a peça criativa — formato (image, carousel, vídeo, collection), copy, CTA e URL.</li>
+  <li><strong>Business Manager (Meta Business Suite):</strong> Hub central da empresa — gerencia múltiplas Ad Accounts, Pages, pixels, catálogos e usuários. Essencial para agências que gerenciam múltiplos clientes.</li>
+  <li><strong>Ad Account:</strong> Container financeiro — cada conta tem seu próprio billing, moeda e limite de gasto. Um BM pode ter múltiplas Ad Accounts.</li>
+  <li><strong>Campaign:</strong> Define o <strong>objetivo</strong> de marketing (Awareness, Traffic, Engagement, Leads, App Promotion, Sales). O objetivo determina o algoritmo de otimização disponível.</li>
+  <li><strong>Ad Set:</strong> Define <strong>quem</strong> (audience), <strong>onde</strong> (placements), <strong>quando</strong> (schedule) e <strong>quanto</strong> (budget/bid). É o nível de targeting.</li>
+  <li><strong>Ad:</strong> O criativo em si — combinação de formato (imagem, vídeo, carrossel, collection), copy, CTA e URL de destino.</li>
 </ul>
-<strong>Budget:</strong> pode ser definido no Ad Set (ABO) ou na Campaign (CBO / Advantage Campaign Budget).`,
+<strong>Regra importante:</strong> o objetivo da Campaign não pode ser alterado depois de criado — se errar o objetivo, precisa criar uma nova campanha do zero.`,
             en: `<ul>
-  <li><strong>Business Manager:</strong> admin hub — manages multiple Ad Accounts, Pages, pixels, catalogs and permissions.</li>
-  <li><strong>Ad Account:</strong> billing unit — has its own pixel, audiences and spend limits.</li>
-  <li><strong>Campaign:</strong> defines the <em>objective</em> (Awareness, Traffic, Engagement, Leads, App, Sales). The objective determines available optimizations.</li>
-  <li><strong>Ad Set:</strong> defines <em>who, when and how much</em> — targeting, placements, schedule, budget and bid strategy.</li>
-  <li><strong>Ad:</strong> the creative — format (image, carousel, video, collection), copy, CTA and URL.</li>
+  <li><strong>Business Manager (Meta Business Suite):</strong> Company central hub — manages multiple Ad Accounts, Pages, pixels, catalogs and users. Essential for agencies managing multiple clients.</li>
+  <li><strong>Ad Account:</strong> Financial container — each account has its own billing, currency and spend limit. One BM can have multiple Ad Accounts.</li>
+  <li><strong>Campaign:</strong> Defines the <strong>marketing objective</strong> (Awareness, Traffic, Engagement, Leads, App Promotion, Sales). The objective determines the available optimization algorithm.</li>
+  <li><strong>Ad Set:</strong> Defines <strong>who</strong> (audience), <strong>where</strong> (placements), <strong>when</strong> (schedule) and <strong>how much</strong> (budget/bid). This is the targeting level.</li>
+  <li><strong>Ad:</strong> The creative itself — combination of format (image, video, carousel, collection), copy, CTA and destination URL.</li>
 </ul>
-<strong>Budget:</strong> can be set at Ad Set level (ABO) or Campaign level (CBO / Advantage Campaign Budget).`,
+<strong>Important rule:</strong> the Campaign objective cannot be changed after creation — if you get it wrong, you need to create a new campaign from scratch.`,
             es: `<ul>
-  <li><strong>Business Manager:</strong> hub administrativo — gestiona múltiples Ad Accounts, Pages, pixels, catálogos y permisos.</li>
-  <li><strong>Ad Account:</strong> unidad de facturación — tiene su propio pixel, audiences y límites de gasto.</li>
-  <li><strong>Campaign:</strong> define el <em>objetivo</em> (Awareness, Traffic, Engagement, Leads, App, Sales). El objetivo determina las optimizaciones disponibles.</li>
-  <li><strong>Ad Set:</strong> define <em>quién, cuándo y cuánto</em> — targeting, placements, schedule, presupuesto y bid strategy.</li>
-  <li><strong>Ad:</strong> la pieza creativa — formato (image, carousel, video, collection), copy, CTA y URL.</li>
+  <li><strong>Business Manager (Meta Business Suite):</strong> Hub central de la empresa — gestiona múltiples Ad Accounts, Pages, pixels, catálogos y usuarios. Esencial para agencias que gestionan múltiples clientes.</li>
+  <li><strong>Ad Account:</strong> Contenedor financiero — cada cuenta tiene su propio billing, moneda y límite de gasto. Un BM puede tener múltiples Ad Accounts.</li>
+  <li><strong>Campaign:</strong> Define el <strong>objetivo</strong> de marketing (Awareness, Traffic, Engagement, Leads, App Promotion, Sales). El objetivo determina el algoritmo de optimización disponible.</li>
+  <li><strong>Ad Set:</strong> Define <strong>quién</strong> (audiencia), <strong>dónde</strong> (placements), <strong>cuándo</strong> (schedule) y <strong>cuánto</strong> (budget/bid). Es el nivel de targeting.</li>
+  <li><strong>Ad:</strong> El creativo en sí — combinación de formato (imagen, video, carrusel, collection), copy, CTA y URL de destino.</li>
 </ul>
-<strong>Budget:</strong> puede definirse en el Ad Set (ABO) o en la Campaign (CBO / Advantage Campaign Budget).`,
+<strong>Regla importante:</strong> el objetivo de la Campaign no puede cambiarse después de creado — si se equivoca, hay que crear una nueva campaña desde cero.`,
           },
-          tags: ['meta', 'structure', 'CBO', 'ABO'],
+          tags: ['hierarquia', 'Business-Manager', 'campaign', 'ad-set'],
+        },
+        {
+          q: {
+            pt: 'O que é o Meta Pixel e como ele funciona? Qual a diferença entre o Pixel e a Conversions API?',
+            en: 'What is the Meta Pixel and how does it work? What is the difference between the Pixel and the Conversions API?',
+            es: '¿Qué es el Meta Pixel y cómo funciona? ¿Cuál es la diferencia entre el Pixel y la Conversions API?',
+          },
+          a: {
+            pt: `<strong>Meta Pixel</strong> é um snippet de JavaScript instalado no site que envia eventos ao Meta quando usuários realizam ações.<br><br>
+<strong>Como funciona:</strong>
+<ol>
+  <li>Usuário visita o site → Pixel carrega no browser</li>
+  <li>Usuário realiza uma ação (PageView, AddToCart, Purchase)</li>
+  <li>Pixel dispara um evento para os servidores do Meta via browser</li>
+  <li>Meta usa esse dado para otimizar campanhas e medir conversões</li>
+</ol>
+<strong>Eventos padrão mais comuns:</strong> PageView, ViewContent, AddToCart, InitiateCheckout, Purchase, Lead, CompleteRegistration.<br><br>
+<strong>Pixel vs Conversions API (CAPI):</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Característica</th><th style="padding:6px">Pixel (browser)</th><th style="padding:6px">CAPI (server)</th></tr>
+<tr><td style="padding:6px">Via</td><td style="padding:6px">JavaScript no browser</td><td style="padding:6px">Servidor para servidor</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Afetado por ad blockers</td><td style="padding:6px">Sim</td><td style="padding:6px">Não</td></tr>
+<tr><td style="padding:6px">Afetado por iOS 14+</td><td style="padding:6px">Sim (ATT)</td><td style="padding:6px">Menos impactado</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Latência</td><td style="padding:6px">Instantânea</td><td style="padding:6px">Pode ter delay</td></tr>
+</table><br>
+<strong>Melhor prática:</strong> usar Pixel + CAPI juntos (redundância) com deduplication habilitada para evitar dupla contagem. O Meta deduplica pelos campos event_name + event_id.`,
+            en: `<strong>Meta Pixel</strong> is a JavaScript snippet installed on the website that sends events to Meta when users perform actions.<br><br>
+<strong>How it works:</strong>
+<ol>
+  <li>User visits the site → Pixel loads in browser</li>
+  <li>User performs an action (PageView, AddToCart, Purchase)</li>
+  <li>Pixel fires an event to Meta's servers via browser</li>
+  <li>Meta uses this data to optimize campaigns and measure conversions</li>
+</ol>
+<strong>Most common standard events:</strong> PageView, ViewContent, AddToCart, InitiateCheckout, Purchase, Lead, CompleteRegistration.<br><br>
+<strong>Pixel vs Conversions API (CAPI):</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Feature</th><th style="padding:6px">Pixel (browser)</th><th style="padding:6px">CAPI (server)</th></tr>
+<tr><td style="padding:6px">Via</td><td style="padding:6px">JavaScript in browser</td><td style="padding:6px">Server to server</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Affected by ad blockers</td><td style="padding:6px">Yes</td><td style="padding:6px">No</td></tr>
+<tr><td style="padding:6px">Affected by iOS 14+</td><td style="padding:6px">Yes (ATT)</td><td style="padding:6px">Less impacted</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Latency</td><td style="padding:6px">Instant</td><td style="padding:6px">May have delay</td></tr>
+</table><br>
+<strong>Best practice:</strong> use Pixel + CAPI together (redundancy) with deduplication enabled to avoid double counting. Meta deduplicates by event_name + event_id fields.`,
+            es: `<strong>Meta Pixel</strong> es un snippet de JavaScript instalado en el sitio que envía eventos a Meta cuando los usuarios realizan acciones.<br><br>
+<strong>Cómo funciona:</strong>
+<ol>
+  <li>Usuario visita el sitio → Pixel carga en el browser</li>
+  <li>Usuario realiza una acción (PageView, AddToCart, Purchase)</li>
+  <li>Pixel dispara un evento a los servidores de Meta via browser</li>
+  <li>Meta usa este dato para optimizar campañas y medir conversiones</li>
+</ol>
+<strong>Eventos estándar más comunes:</strong> PageView, ViewContent, AddToCart, InitiateCheckout, Purchase, Lead, CompleteRegistration.<br><br>
+<strong>Pixel vs Conversions API (CAPI):</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Característica</th><th style="padding:6px">Pixel (browser)</th><th style="padding:6px">CAPI (servidor)</th></tr>
+<tr><td style="padding:6px">Vía</td><td style="padding:6px">JavaScript en browser</td><td style="padding:6px">Servidor a servidor</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Afectado por ad blockers</td><td style="padding:6px">Sí</td><td style="padding:6px">No</td></tr>
+<tr><td style="padding:6px">Afectado por iOS 14+</td><td style="padding:6px">Sí (ATT)</td><td style="padding:6px">Menos impactado</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Latencia</td><td style="padding:6px">Instantánea</td><td style="padding:6px">Puede tener delay</td></tr>
+</table><br>
+<strong>Mejor práctica:</strong> usar Pixel + CAPI juntos (redundancia) con deduplicación habilitada para evitar doble conteo. Meta deduplica por los campos event_name + event_id.`,
+          },
+          tags: ['pixel', 'CAPI', 'conversions-api', 'tracking', 'iOS14'],
         },
         {
           q: {
@@ -53,35 +117,38 @@ window.__adopsData['meta'] = {
             es: '¿Cuáles son los principales objetivos de campaña en Meta y cuándo usar cada uno?',
           },
           a: {
-            pt: `<ul>
-  <li><strong>Awareness:</strong> maximizar alcance e reconhecimento de marca — CPM otimizado para impressões. Usar para lançamentos.</li>
-  <li><strong>Traffic:</strong> gerar cliques para site ou app — otimiza para Link Clicks ou Landing Page Views. Usar no topo/meio de funil.</li>
-  <li><strong>Engagement:</strong> maximizar interações (curtidas, comentários, compartilhamentos, saves). Usar para conteúdo orgânico impulsionado.</li>
-  <li><strong>Leads:</strong> captar leads via Lead Forms nativos (sem sair do app) ou via site. Usar para B2B e formulários de cadastro.</li>
-  <li><strong>App Promotion:</strong> installs e eventos in-app — integra com SKAdNetwork (iOS) e SDK do Meta.</li>
-  <li><strong>Sales:</strong> conversões no site, catálogo dinâmico ou WhatsApp. Requer pixel ou CAPI configurado. Usar para e-commerce e performance.</li>
+            pt: `<strong>Objetivos de campanha no Meta (estrutura ODAX):</strong><br><br>
+<ul>
+  <li><strong>Awareness:</strong> maximizar alcance e lembrança de marca. Usar para lançamentos, rebranding, share of voice. KPIs: Reach, Impressões, Estimated Ad Recall Lift.</li>
+  <li><strong>Traffic:</strong> direcionar usuários para URL externa, app ou WhatsApp. Usar quando o objetivo é sessões no site sem conversão específica. KPIs: Cliques, CTR, Landing Page Views.</li>
+  <li><strong>Engagement:</strong> maximizar interações (curtidas, comentários, compartilhamentos, mensagens). Usar para construção de comunidade ou social proof. KPIs: Post Engagement, Reach.</li>
+  <li><strong>Leads:</strong> coletar dados via Lead Forms (dentro do Meta) ou site. Usar para funis B2B ou quando o site tem alta taxa de abandono. KPIs: CPL (Custo por Lead), Lead Quality Score.</li>
+  <li><strong>App Promotion:</strong> instalações ou eventos dentro de apps mobile. Requer integração com SDK (Facebook SDK ou SKAdNetwork para iOS). KPIs: CPI, In-app events.</li>
+  <li><strong>Sales:</strong> otimização para compras ou conversões de valor. Requer Pixel/CAPI configurado. KPIs: CPA, ROAS, Conversões.</li>
 </ul>
-<strong>Regra:</strong> o objetivo define o evento de otimização disponível — nunca rodar campanha de Sales sem pixel ou CAPI funcionando.`,
-            en: `<ul>
-  <li><strong>Awareness:</strong> maximize reach and brand recognition — CPM optimized for impressions. Use for launches.</li>
-  <li><strong>Traffic:</strong> drive clicks to website or app — optimizes for Link Clicks or Landing Page Views. Use for top/mid funnel.</li>
-  <li><strong>Engagement:</strong> maximize interactions (likes, comments, shares, saves). Use for boosted organic content.</li>
-  <li><strong>Leads:</strong> capture leads via native Lead Forms (without leaving the app) or via website. Use for B2B and registration forms.</li>
-  <li><strong>App Promotion:</strong> installs and in-app events — integrates with SKAdNetwork (iOS) and Meta SDK.</li>
-  <li><strong>Sales:</strong> website conversions, dynamic catalog or WhatsApp. Requires pixel or CAPI. Use for e-commerce and performance.</li>
+<strong>Dica:</strong> o objetivo determina o algoritmo de otimização e o pool de usuários elegíveis. Escolher o objetivo errado é o erro mais custoso em Meta Ads.`,
+            en: `<strong>Meta campaign objectives (ODAX structure):</strong><br><br>
+<ul>
+  <li><strong>Awareness:</strong> maximize reach and brand recall. Use for launches, rebranding, share of voice. KPIs: Reach, Impressions, Estimated Ad Recall Lift.</li>
+  <li><strong>Traffic:</strong> direct users to external URL, app or WhatsApp. Use when the goal is website sessions without a specific conversion. KPIs: Clicks, CTR, Landing Page Views.</li>
+  <li><strong>Engagement:</strong> maximize interactions (likes, comments, shares, messages). Use for community building or social proof. KPIs: Post Engagement, Reach.</li>
+  <li><strong>Leads:</strong> collect data via Lead Forms (within Meta) or site. Use for B2B funnels or when the site has high abandonment rate. KPIs: CPL (Cost per Lead), Lead Quality Score.</li>
+  <li><strong>App Promotion:</strong> installs or events within mobile apps. Requires SDK integration (Facebook SDK or SKAdNetwork for iOS). KPIs: CPI, In-app events.</li>
+  <li><strong>Sales:</strong> optimization for purchases or value conversions. Requires Pixel/CAPI configured. KPIs: CPA, ROAS, Conversions.</li>
 </ul>
-<strong>Rule:</strong> the objective defines the available optimization event — never run a Sales campaign without pixel or CAPI working.`,
-            es: `<ul>
-  <li><strong>Awareness:</strong> maximizar alcance y reconocimiento de marca — CPM optimizado para impresiones. Usar para lanzamientos.</li>
-  <li><strong>Traffic:</strong> generar clics al sitio o app — optimiza para Link Clicks o Landing Page Views. Usar en top/medio de embudo.</li>
-  <li><strong>Engagement:</strong> maximizar interacciones (likes, comentarios, compartidos, saves). Usar para contenido orgánico impulsado.</li>
-  <li><strong>Leads:</strong> captar leads via Lead Forms nativos (sin salir de la app) o via sitio. Usar para B2B y formularios de registro.</li>
-  <li><strong>App Promotion:</strong> installs y eventos in-app — integra con SKAdNetwork (iOS) y SDK de Meta.</li>
-  <li><strong>Sales:</strong> conversiones en el sitio, catálogo dinámico o WhatsApp. Requiere pixel o CAPI. Usar para e-commerce y performance.</li>
+<strong>Tip:</strong> the objective determines the optimization algorithm and pool of eligible users. Choosing the wrong objective is the most costly mistake in Meta Ads.`,
+            es: `<strong>Objetivos de campaña en Meta (estructura ODAX):</strong><br><br>
+<ul>
+  <li><strong>Awareness:</strong> maximizar alcance y recuerdo de marca. Usar para lanzamientos, rebranding, share of voice. KPIs: Reach, Impresiones, Estimated Ad Recall Lift.</li>
+  <li><strong>Traffic:</strong> dirigir usuarios a URL externa, app o WhatsApp. Usar cuando el objetivo son sesiones en el sitio sin conversión específica. KPIs: Clics, CTR, Landing Page Views.</li>
+  <li><strong>Engagement:</strong> maximizar interacciones (me gusta, comentarios, compartidos, mensajes). Usar para construcción de comunidad o social proof. KPIs: Post Engagement, Reach.</li>
+  <li><strong>Leads:</strong> recopilar datos via Lead Forms (dentro de Meta) o sitio. Usar para embudos B2B o cuando el sitio tiene alta tasa de abandono. KPIs: CPL (Costo por Lead), Lead Quality Score.</li>
+  <li><strong>App Promotion:</strong> instalaciones o eventos dentro de apps móviles. Requiere integración con SDK (Facebook SDK o SKAdNetwork para iOS). KPIs: CPI, Eventos in-app.</li>
+  <li><strong>Sales:</strong> optimización para compras o conversiones de valor. Requiere Pixel/CAPI configurado. KPIs: CPA, ROAS, Conversiones.</li>
 </ul>
-<strong>Regla:</strong> el objetivo define el evento de optimización disponible — nunca correr campaña de Sales sin pixel o CAPI funcionando.`,
+<strong>Consejo:</strong> el objetivo determina el algoritmo de optimización y el pool de usuarios elegibles. Elegir el objetivo incorrecto es el error más costoso en Meta Ads.`,
           },
-          tags: ['objectives', 'awareness', 'sales', 'leads', 'funnel'],
+          tags: ['objetivo', 'ODAX', 'awareness', 'conversão', 'leads'],
         },
       ],
     },
@@ -90,62 +157,180 @@ window.__adopsData['meta'] = {
       questions: [
         {
           q: {
-            pt: 'O que é o Meta Pixel e como ele se diferencia da Conversions API (CAPI)?',
-            en: 'What is the Meta Pixel and how does it differ from the Conversions API (CAPI)?',
-            es: '¿Qué es el Meta Pixel y cómo se diferencia de la Conversions API (CAPI)?',
+            pt: 'O que é o Advantage+ e como ele mudou a forma de fazer campanhas no Meta?',
+            en: 'What is Advantage+ and how has it changed the way campaigns are run in Meta?',
+            es: '¿Qué es Advantage+ y cómo cambió la forma de hacer campañas en Meta?',
           },
           a: {
-            pt: `<strong>Meta Pixel:</strong> código JavaScript (client-side) no site. Coleta eventos do browser e envia para o Meta. Fácil de instalar, mas bloqueado por ad blockers e ITP (Safari).<br><br>
-<strong>Conversions API (CAPI):</strong> integração server-side — o servidor do anunciante envia eventos diretamente para a API do Meta, sem depender do browser. Não é afetada por blockers ou ITP, mas requer desenvolvimento técnico.<br><br>
-<strong>Melhor prática — implementação redundante:</strong> Pixel + CAPI simultaneamente com <em>Event Deduplication</em> via <code>event_id</code> para o Meta não contar o mesmo evento duas vezes.<br><br>
-<strong>Por que importa pós-iOS 14.5:</strong> com o App Tracking Transparency, eventos de usuários iOS têm cobertura reduzida via pixel. CAPI recupera parte desse sinal.`,
-            en: `<strong>Meta Pixel:</strong> JavaScript code (client-side) on the site. Collects browser events and sends them to Meta. Easy to install, but blocked by ad blockers and ITP (Safari).<br><br>
-<strong>Conversions API (CAPI):</strong> server-side integration — the advertiser's server sends events directly to Meta's API, without relying on the browser. Not affected by blockers or ITP, but requires technical development.<br><br>
-<strong>Best practice — redundant implementation:</strong> Pixel + CAPI simultaneously with <em>Event Deduplication</em> via <code>event_id</code> so Meta doesn't count the same event twice.<br><br>
-<strong>Why it matters post-iOS 14.5:</strong> with App Tracking Transparency, iOS user events have reduced pixel coverage. CAPI recovers part of that signal.`,
-            es: `<strong>Meta Pixel:</strong> código JavaScript (client-side) en el sitio. Recopila eventos del browser y los envía a Meta. Fácil de instalar, pero bloqueado por ad blockers e ITP (Safari).<br><br>
-<strong>Conversions API (CAPI):</strong> integración server-side — el servidor del anunciante envía eventos directamente a la API de Meta, sin depender del browser. No es afectada por blockers ni ITP, pero requiere desarrollo técnico.<br><br>
-<strong>Mejor práctica — implementación redundante:</strong> Pixel + CAPI simultáneamente con <em>Event Deduplication</em> via <code>event_id</code> para que Meta no cuente el mismo evento dos veces.<br><br>
-<strong>Por qué importa post-iOS 14.5:</strong> con App Tracking Transparency, los eventos de usuarios iOS tienen cobertura reducida via pixel. CAPI recupera parte de esa señal.`,
+            pt: `<strong>Advantage+</strong> é o conjunto de ferramentas de automação e IA do Meta, que transfere decisões de targeting, placement e criativo para o algoritmo.<br><br>
+<strong>Principais produtos Advantage+:</strong>
+<ul>
+  <li><strong>Advantage+ Audience:</strong> o Meta expande ou substitui o targeting definido se detectar oportunidades de melhor performance. Anunciante define o público como "sugestão", não como limite fixo.</li>
+  <li><strong>Advantage+ Placements:</strong> Meta distribui automaticamente o budget entre todos os placements (Feed, Stories, Reels, Audience Network) conforme performance. Mais eficiente que selecionar manualmente.</li>
+  <li><strong>Advantage+ Shopping Campaigns (ASC):</strong> campanha de e-commerce totalmente automatizada — combina prospecting + retargeting em um único Ad Set com budget único.</li>
+  <li><strong>Advantage+ Creative:</strong> Meta pode ajustar automaticamente o criativo (brilho, contraste, proporção, adicionar música) para cada placement.</li>
+</ul>
+<strong>Impacto na operação:</strong>
+<ul>
+  <li>Menos controle granular de targeting — operadores precisam focar mais em dados de qualidade (Pixel/CAPI bem configurados)</li>
+  <li>Testes A/B de audience se tornaram menos relevantes — algoritmo já testa internamente</li>
+  <li>Criativo se torna o principal diferencial — com targeting automatizado, o creative é o targeting</li>
+</ul>`,
+            en: `<strong>Advantage+</strong> is Meta's set of automation and AI tools that transfers targeting, placement and creative decisions to the algorithm.<br><br>
+<strong>Main Advantage+ products:</strong>
+<ul>
+  <li><strong>Advantage+ Audience:</strong> Meta expands or replaces the defined targeting if it detects better performance opportunities. Advertiser sets audience as a "suggestion," not a fixed limit.</li>
+  <li><strong>Advantage+ Placements:</strong> Meta automatically distributes budget across all placements (Feed, Stories, Reels, Audience Network) based on performance. More efficient than manual selection.</li>
+  <li><strong>Advantage+ Shopping Campaigns (ASC):</strong> fully automated e-commerce campaign — combines prospecting + retargeting in a single Ad Set with a single budget.</li>
+  <li><strong>Advantage+ Creative:</strong> Meta can automatically adjust the creative (brightness, contrast, ratio, add music) for each placement.</li>
+</ul>
+<strong>Operational impact:</strong>
+<ul>
+  <li>Less granular targeting control — operators need to focus more on data quality (well-configured Pixel/CAPI)</li>
+  <li>Audience A/B tests became less relevant — algorithm already tests internally</li>
+  <li>Creative becomes the main differentiator — with automated targeting, the creative IS the targeting</li>
+</ul>`,
+            es: `<strong>Advantage+</strong> es el conjunto de herramientas de automatización e IA de Meta, que transfiere decisiones de targeting, placement y creativo al algoritmo.<br><br>
+<strong>Principales productos Advantage+:</strong>
+<ul>
+  <li><strong>Advantage+ Audience:</strong> Meta expande o reemplaza el targeting definido si detecta oportunidades de mejor performance. El anunciante define la audiencia como "sugerencia", no como límite fijo.</li>
+  <li><strong>Advantage+ Placements:</strong> Meta distribuye automáticamente el budget entre todos los placements (Feed, Stories, Reels, Audience Network) según performance. Más eficiente que la selección manual.</li>
+  <li><strong>Advantage+ Shopping Campaigns (ASC):</strong> campaña de e-commerce totalmente automatizada — combina prospecting + retargeting en un único Ad Set con presupuesto único.</li>
+  <li><strong>Advantage+ Creative:</strong> Meta puede ajustar automáticamente el creativo (brillo, contraste, proporción, agregar música) para cada placement.</li>
+</ul>
+<strong>Impacto en la operación:</strong>
+<ul>
+  <li>Menos control granular de targeting — los operadores necesitan enfocarse más en calidad de datos (Pixel/CAPI bien configurados)</li>
+  <li>Los tests A/B de audiencias se volvieron menos relevantes — el algoritmo ya prueba internamente</li>
+  <li>El creativo se convierte en el principal diferencial — con targeting automatizado, el creativo ES el targeting</li>
+</ul>`,
           },
-          tags: ['pixel', 'CAPI', 'server-side', 'iOS14', 'deduplication'],
+          tags: ['Advantage+', 'automação', 'IA', 'ASC', 'criativo'],
         },
         {
           q: {
-            pt: 'O que é Advantage+ Audience e como ela difere do targeting manual?',
-            en: 'What is Advantage+ Audience and how does it differ from manual targeting?',
-            es: '¿Qué es Advantage+ Audience y cómo difiere del targeting manual?',
+            pt: 'Como o iOS 14+ impactou as campanhas no Meta e quais são as soluções?',
+            en: 'How did iOS 14+ impact Meta campaigns and what are the solutions?',
+            es: '¿Cómo impactó iOS 14+ en las campañas de Meta y cuáles son las soluciones?',
           },
           a: {
-            pt: `<strong>Targeting manual:</strong> o anunciante define explicitamente interesses, comportamentos, idade, gênero e geos. O algoritmo entrega apenas para esse público definido.<br><br>
-<strong>Advantage+ Audience (antes: Broad Audience / ASC):</strong> o anunciante fornece sugestões (interesse, custom audience) mas o algoritmo do Meta tem liberdade para expandir além dessas sugestões se identificar oportunidade de conversão melhor.<br><br>
-<strong>Quando usar Advantage+:</strong>
+            pt: `<strong>Impacto do iOS 14+ (ATT — App Tracking Transparency):</strong><br><br>
+A partir do iOS 14.5 (abril 2021), a Apple exige que apps solicitem permissão explícita para rastrear usuários. A maioria dos usuários recusa → Meta perde dados de conversão dos usuários Apple.<br><br>
+<strong>Consequências práticas:</strong>
 <ul>
-  <li>Contas com histórico suficiente de conversão (mínimo ~50 eventos/semana)</li>
-  <li>Objetivo Sales com pixel/CAPI funcionando</li>
-  <li>Quando o targeting manual está saturando ou com CPAs altos</li>
+  <li>Janela de atribuição forçada para 7 dias clique / 1 dia view (era 28 dias)</li>
+  <li>Limite de 8 eventos de conversão por domínio (Aggregated Event Measurement)</li>
+  <li>Dados de performance subrepresentados — conversões reais > conversões reportadas</li>
+  <li>Retargeting de usuários iOS drasticamente reduzido</li>
+  <li>Lookalike audiences baseadas em eventos do Pixel menos precisas</li>
 </ul>
-<strong>Quando manter manual:</strong> campanhas de nicho muito específico, conteúdo regulado (saúde, crédito, emprego) onde Meta restringe a expansão de audience.`,
-            en: `<strong>Manual targeting:</strong> the advertiser explicitly defines interests, behaviors, age, gender and geos. The algorithm delivers only to that defined audience.<br><br>
-<strong>Advantage+ Audience (formerly: Broad Audience / ASC):</strong> the advertiser provides suggestions (interest, custom audience) but Meta's algorithm has freedom to expand beyond those suggestions if it identifies a better conversion opportunity.<br><br>
-<strong>When to use Advantage+:</strong>
+<strong>Soluções implementadas pelo Meta:</strong>
 <ul>
-  <li>Accounts with sufficient conversion history (minimum ~50 events/week)</li>
-  <li>Sales objective with pixel/CAPI working</li>
-  <li>When manual targeting is saturating or CPAs are high</li>
+  <li><strong>Conversions API (CAPI):</strong> envio de eventos direto do servidor — não depende do browser iOS</li>
+  <li><strong>Aggregated Event Measurement:</strong> priorizar os 8 eventos mais importantes por domínio</li>
+  <li><strong>Modelagem estatística:</strong> Meta estima conversões não reportadas via modelos preditivos</li>
+  <li><strong>Verificação de domínio:</strong> obrigatória para usar AEM</li>
 </ul>
-<strong>When to keep manual:</strong> very specific niche campaigns, regulated content (health, credit, employment) where Meta restricts audience expansion.`,
-            es: `<strong>Targeting manual:</strong> el anunciante define explícitamente intereses, comportamientos, edad, género y geos. El algoritmo entrega solo a ese público definido.<br><br>
-<strong>Advantage+ Audience (antes: Broad Audience / ASC):</strong> el anunciante proporciona sugerencias (interés, custom audience) pero el algoritmo de Meta tiene libertad para expandirse más allá de esas sugerencias si identifica mejor oportunidad de conversión.<br><br>
-<strong>Cuándo usar Advantage+:</strong>
+<strong>Melhor prática atual:</strong> Pixel + CAPI + verificação de domínio + priorizar eventos de maior valor no AEM.`,
+            en: `<strong>iOS 14+ impact (ATT — App Tracking Transparency):</strong><br><br>
+Starting with iOS 14.5 (April 2021), Apple requires apps to explicitly request permission to track users. Most users decline → Meta loses conversion data from Apple users.<br><br>
+<strong>Practical consequences:</strong>
 <ul>
-  <li>Cuentas con historial suficiente de conversión (mínimo ~50 eventos/semana)</li>
-  <li>Objetivo Sales con pixel/CAPI funcionando</li>
-  <li>Cuando el targeting manual está saturando o los CPAs son altos</li>
+  <li>Attribution window forced to 7-day click / 1-day view (was 28 days)</li>
+  <li>Limit of 8 conversion events per domain (Aggregated Event Measurement)</li>
+  <li>Underrepresented performance data — actual conversions > reported conversions</li>
+  <li>iOS user retargeting drastically reduced</li>
+  <li>Pixel event-based lookalike audiences less precise</li>
 </ul>
-<strong>Cuándo mantener manual:</strong> campañas de nicho muy específico, contenido regulado (salud, crédito, empleo) donde Meta restringe la expansión de audience.`,
+<strong>Solutions implemented by Meta:</strong>
+<ul>
+  <li><strong>Conversions API (CAPI):</strong> sending events directly from the server — doesn't depend on iOS browser</li>
+  <li><strong>Aggregated Event Measurement:</strong> prioritize the 8 most important events per domain</li>
+  <li><strong>Statistical modeling:</strong> Meta estimates unreported conversions via predictive models</li>
+  <li><strong>Domain verification:</strong> required to use AEM</li>
+</ul>
+<strong>Current best practice:</strong> Pixel + CAPI + domain verification + prioritize highest-value events in AEM.`,
+            es: `<strong>Impacto de iOS 14+ (ATT — App Tracking Transparency):</strong><br><br>
+A partir de iOS 14.5 (abril 2021), Apple exige que las apps soliciten permiso explícito para rastrear usuarios. La mayoría rechaza → Meta pierde datos de conversión de usuarios Apple.<br><br>
+<strong>Consecuencias prácticas:</strong>
+<ul>
+  <li>Ventana de atribución forzada a 7 días clic / 1 día view (era 28 días)</li>
+  <li>Límite de 8 eventos de conversión por dominio (Aggregated Event Measurement)</li>
+  <li>Datos de performance subrepresentados — conversiones reales > conversiones reportadas</li>
+  <li>Retargeting de usuarios iOS drásticamente reducido</li>
+  <li>Audiencias lookalike basadas en eventos del Pixel menos precisas</li>
+</ul>
+<strong>Soluciones implementadas por Meta:</strong>
+<ul>
+  <li><strong>Conversions API (CAPI):</strong> envío de eventos directo desde el servidor — no depende del browser iOS</li>
+  <li><strong>Aggregated Event Measurement:</strong> priorizar los 8 eventos más importantes por dominio</li>
+  <li><strong>Modelado estadístico:</strong> Meta estima conversiones no reportadas via modelos predictivos</li>
+  <li><strong>Verificación de dominio:</strong> obligatoria para usar AEM</li>
+</ul>
+<strong>Mejor práctica actual:</strong> Pixel + CAPI + verificación de dominio + priorizar eventos de mayor valor en AEM.`,
           },
-          tags: ['Advantage+', 'targeting', 'broad-audience', 'automation'],
+          tags: ['iOS14', 'ATT', 'privacidade', 'CAPI', 'atribuição'],
+        },
+        {
+          q: {
+            pt: 'Como estruturar testes A/B no Meta Ads de forma eficiente?',
+            en: 'How to efficiently structure A/B tests in Meta Ads?',
+            es: '¿Cómo estructurar pruebas A/B en Meta Ads de forma eficiente?',
+          },
+          a: {
+            pt: `<strong>Framework de testes A/B no Meta:</strong><br><br>
+<strong>Ferramenta nativa:</strong> Meta tem a funcionalidade "A/B Test" que divide o audience aleatoriamente e garante que as mesmas pessoas não vejam os dois grupos — elimina sobreposição e garante validade estatística.<br><br>
+<strong>O que testar (por prioridade de impacto):</strong>
+<ol>
+  <li><strong>Criativo</strong> — maior impacto. Testar: formato (vídeo vs. imagem), copy, CTA, thumbnail</li>
+  <li><strong>Audience</strong> — interest targeting vs. broad vs. lookalike</li>
+  <li><strong>Placement</strong> — feed vs. stories vs. reels</li>
+  <li><strong>Bid strategy</strong> — lowest cost vs. cost cap vs. bid cap</li>
+</ol>
+<strong>Regras de um bom teste:</strong>
+<ul>
+  <li><strong>Uma variável por vez</strong> — nunca mudar criativo E audience ao mesmo tempo</li>
+  <li><strong>Budget suficiente</strong> — Meta recomenda budget para pelo menos 50 conversões por variação para atingir significância</li>
+  <li><strong>Duração mínima:</strong> 7 dias (evitar efeito dia-da-semana)</li>
+  <li><strong>Métrica principal definida antes</strong> — não escolher o vencedor depois de ver os dados</li>
+</ul>
+<strong>Pós-teste:</strong> implementar o vencedor, documentar o aprendizado, e testar a próxima variável.`,
+            en: `<strong>A/B testing framework in Meta:</strong><br><br>
+<strong>Native tool:</strong> Meta has the "A/B Test" feature that randomly splits the audience and ensures the same people don't see both groups — eliminates overlap and ensures statistical validity.<br><br>
+<strong>What to test (by impact priority):</strong>
+<ol>
+  <li><strong>Creative</strong> — highest impact. Test: format (video vs. image), copy, CTA, thumbnail</li>
+  <li><strong>Audience</strong> — interest targeting vs. broad vs. lookalike</li>
+  <li><strong>Placement</strong> — feed vs. stories vs. reels</li>
+  <li><strong>Bid strategy</strong> — lowest cost vs. cost cap vs. bid cap</li>
+</ol>
+<strong>Rules for a good test:</strong>
+<ul>
+  <li><strong>One variable at a time</strong> — never change creative AND audience simultaneously</li>
+  <li><strong>Sufficient budget</strong> — Meta recommends budget for at least 50 conversions per variation to reach significance</li>
+  <li><strong>Minimum duration:</strong> 7 days (avoid day-of-week effect)</li>
+  <li><strong>Primary metric defined beforehand</strong> — don't pick the winner after seeing the data</li>
+</ul>
+<strong>Post-test:</strong> implement the winner, document the learning, and test the next variable.`,
+            es: `<strong>Framework de pruebas A/B en Meta:</strong><br><br>
+<strong>Herramienta nativa:</strong> Meta tiene la funcionalidad "A/B Test" que divide aleatoriamente la audiencia y garantiza que las mismas personas no vean ambos grupos — elimina superposición y garantiza validez estadística.<br><br>
+<strong>Qué probar (por prioridad de impacto):</strong>
+<ol>
+  <li><strong>Creativo</strong> — mayor impacto. Probar: formato (video vs. imagen), copy, CTA, thumbnail</li>
+  <li><strong>Audiencia</strong> — interest targeting vs. broad vs. lookalike</li>
+  <li><strong>Placement</strong> — feed vs. stories vs. reels</li>
+  <li><strong>Estrategia de bid</strong> — lowest cost vs. cost cap vs. bid cap</li>
+</ol>
+<strong>Reglas de una buena prueba:</strong>
+<ul>
+  <li><strong>Una variable a la vez</strong> — nunca cambiar creativo Y audiencia al mismo tiempo</li>
+  <li><strong>Presupuesto suficiente</strong> — Meta recomienda presupuesto para al menos 50 conversiones por variación para alcanzar significancia</li>
+  <li><strong>Duración mínima:</strong> 7 días (evitar efecto día de la semana)</li>
+  <li><strong>Métrica principal definida antes</strong> — no elegir el ganador después de ver los datos</li>
+</ul>
+<strong>Post-prueba:</strong> implementar el ganador, documentar el aprendizaje, y probar la siguiente variable.`,
+          },
+          tags: ['AB-test', 'teste', 'criativo', 'audience', 'significância'],
         },
       ],
     },
@@ -154,61 +339,58 @@ window.__adopsData['meta'] = {
       questions: [
         {
           q: {
-            pt: 'Como estruturar testes A/B no Meta de forma estatisticamente válida?',
-            en: 'How to structure statistically valid A/B tests in Meta?',
-            es: '¿Cómo estructurar tests A/B estadísticamente válidos en Meta?',
+            pt: 'Como estruturar uma estratégia full-funnel no Meta? Como integrar Awareness, Consideração e Conversão sem canibalização?',
+            en: 'How to structure a full-funnel strategy in Meta? How to integrate Awareness, Consideration and Conversion without cannibalization?',
+            es: '¿Cómo estructurar una estrategia full-funnel en Meta? ¿Cómo integrar Awareness, Consideración y Conversión sin canibalización?',
           },
           a: {
-            pt: `<strong>Usar o recurso nativo de Experiment no Meta Ads Manager</strong> — ele garante audiences mutuamente exclusivas sem sobreposição, o que um teste manual entre Ad Sets não garante.<br><br>
-<strong>Configuração:</strong>
-<ol>
-  <li>Em Ads Manager, clicar em <em>Experiments</em></li>
-  <li>Escolher o tipo: A/B Test, Holdout Test ou Brand Survey</li>
-  <li>Selecionar as campanhas/Ad Sets a comparar</li>
-  <li>Definir a métrica primária (CPA, CPL, ROAS, etc.)</li>
-  <li>O Meta calcula automaticamente o tamanho de amostra necessário</li>
-</ol>
-<strong>Regras para validade estatística:</strong>
+            pt: `<strong>Estratégia full-funnel no Meta:</strong><br><br>
+<strong>Estrutura de campanhas por etapa:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Etapa</th><th style="padding:6px">Objetivo</th><th style="padding:6px">Audience</th><th style="padding:6px">Creative</th></tr>
+<tr><td style="padding:6px">TOFU</td><td style="padding:6px">Awareness</td><td style="padding:6px">Broad / Interests / LAL 5-10%</td><td style="padding:6px">Vídeo curto, storytelling de marca</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">MOFU</td><td style="padding:6px">Traffic/Engagement</td><td style="padding:6px">Video viewers 50-75% / Page engagers</td><td style="padding:6px">Conteúdo educativo, demonstrações</td></tr>
+<tr><td style="padding:6px">BOFU</td><td style="padding:6px">Conversão</td><td style="padding:6px">Site visitors, Adicionou ao carrinho</td><td style="padding:6px">Oferta direta, prova social, urgência</td></tr>
+</table><br>
+<strong>Como evitar canibalização entre etapas:</strong>
 <ul>
-  <li>Testar <strong>uma variável por vez</strong> (criativo, audience, placement, objetivo)</li>
-  <li>Budget mínimo suficiente para atingir pelo menos 100 eventos de conversão por variante</li>
-  <li>Duração mínima recomendada: 7–14 dias (para capturar variações de dia da semana)</li>
-  <li>Não interromper antes do Meta indicar significância estatística (&gt;95%)</li>
-</ul>`,
-            en: `<strong>Use the native Experiment feature in Meta Ads Manager</strong> — it guarantees mutually exclusive audiences without overlap, which a manual test between Ad Sets does not.<br><br>
-<strong>Setup:</strong>
-<ol>
-  <li>In Ads Manager, click <em>Experiments</em></li>
-  <li>Choose the type: A/B Test, Holdout Test or Brand Survey</li>
-  <li>Select the campaigns/Ad Sets to compare</li>
-  <li>Define the primary metric (CPA, CPL, ROAS, etc.)</li>
-  <li>Meta automatically calculates the required sample size</li>
-</ol>
-<strong>Rules for statistical validity:</strong>
+  <li><strong>Exclusões:</strong> excluir do TOFU quem já está no MOFU e BOFU; excluir do MOFU quem já converteu</li>
+  <li><strong>Audiences separadas:</strong> nunca usar a mesma audience em campanhas de etapas diferentes simultaneamente</li>
+  <li><strong>Budget allocation:</strong> regra prática 60/20/20 (TOFU/MOFU/BOFU) ajustável por volume de negócio</li>
+</ul>
+<strong>Com Advantage+ (nova realidade):</strong> o Meta tende a mesclar etapas internamente. Monitorar o relatório de breakdown por "audience type" (new vs. existing customers) para garantir equilíbrio.`,
+            en: `<strong>Full-funnel strategy in Meta:</strong><br><br>
+<strong>Campaign structure by stage:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Stage</th><th style="padding:6px">Objective</th><th style="padding:6px">Audience</th><th style="padding:6px">Creative</th></tr>
+<tr><td style="padding:6px">TOFU</td><td style="padding:6px">Awareness</td><td style="padding:6px">Broad / Interests / LAL 5-10%</td><td style="padding:6px">Short video, brand storytelling</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">MOFU</td><td style="padding:6px">Traffic/Engagement</td><td style="padding:6px">Video viewers 50-75% / Page engagers</td><td style="padding:6px">Educational content, demonstrations</td></tr>
+<tr><td style="padding:6px">BOFU</td><td style="padding:6px">Conversion</td><td style="padding:6px">Site visitors, Added to cart</td><td style="padding:6px">Direct offer, social proof, urgency</td></tr>
+</table><br>
+<strong>How to avoid cannibalization between stages:</strong>
 <ul>
-  <li>Test <strong>one variable at a time</strong> (creative, audience, placement, objective)</li>
-  <li>Minimum budget sufficient for at least 100 conversion events per variant</li>
-  <li>Recommended minimum duration: 7–14 days (to capture day-of-week variation)</li>
-  <li>Do not stop before Meta indicates statistical significance (&gt;95%)</li>
-</ul>`,
-            es: `<strong>Usar el recurso nativo de Experiment en Meta Ads Manager</strong> — garantiza audiences mutuamente exclusivas sin sobreposición, lo que un test manual entre Ad Sets no garantiza.<br><br>
-<strong>Configuración:</strong>
-<ol>
-  <li>En Ads Manager, hacer clic en <em>Experiments</em></li>
-  <li>Elegir el tipo: A/B Test, Holdout Test o Brand Survey</li>
-  <li>Seleccionar las campañas/Ad Sets a comparar</li>
-  <li>Definir la métrica primaria (CPA, CPL, ROAS, etc.)</li>
-  <li>Meta calcula automáticamente el tamaño de muestra necesario</li>
-</ol>
-<strong>Reglas para validez estadística:</strong>
+  <li><strong>Exclusions:</strong> exclude from TOFU those already in MOFU and BOFU; exclude from MOFU those who already converted</li>
+  <li><strong>Separate audiences:</strong> never use the same audience in campaigns of different stages simultaneously</li>
+  <li><strong>Budget allocation:</strong> practical rule 60/20/20 (TOFU/MOFU/BOFU) adjustable by business volume</li>
+</ul>
+<strong>With Advantage+ (new reality):</strong> Meta tends to merge stages internally. Monitor the breakdown report by "audience type" (new vs. existing customers) to ensure balance.`,
+            es: `<strong>Estrategia full-funnel en Meta:</strong><br><br>
+<strong>Estructura de campañas por etapa:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Etapa</th><th style="padding:6px">Objetivo</th><th style="padding:6px">Audiencia</th><th style="padding:6px">Creativo</th></tr>
+<tr><td style="padding:6px">TOFU</td><td style="padding:6px">Awareness</td><td style="padding:6px">Broad / Interests / LAL 5-10%</td><td style="padding:6px">Video corto, storytelling de marca</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">MOFU</td><td style="padding:6px">Traffic/Engagement</td><td style="padding:6px">Video viewers 50-75% / Page engagers</td><td style="padding:6px">Contenido educativo, demostraciones</td></tr>
+<tr><td style="padding:6px">BOFU</td><td style="padding:6px">Conversión</td><td style="padding:6px">Visitantes del sitio, Añadió al carrito</td><td style="padding:6px">Oferta directa, prueba social, urgencia</td></tr>
+</table><br>
+<strong>Cómo evitar canibalización entre etapas:</strong>
 <ul>
-  <li>Testear <strong>una variable por vez</strong> (creativo, audience, placement, objetivo)</li>
-  <li>Budget mínimo suficiente para al menos 100 eventos de conversión por variante</li>
-  <li>Duración mínima recomendada: 7–14 días (para capturar variaciones de día de semana)</li>
-  <li>No interrumpir antes de que Meta indique significancia estadística (&gt;95%)</li>
-</ul>`,
+  <li><strong>Exclusiones:</strong> excluir del TOFU a quienes ya están en MOFU y BOFU; excluir del MOFU a quienes ya convirtieron</li>
+  <li><strong>Audiencias separadas:</strong> nunca usar la misma audiencia en campañas de etapas diferentes simultáneamente</li>
+  <li><strong>Asignación de budget:</strong> regla práctica 60/20/20 (TOFU/MOFU/BOFU) ajustable por volumen de negocio</li>
+</ul>
+<strong>Con Advantage+ (nueva realidad):</strong> Meta tiende a fusionar etapas internamente. Monitorear el reporte de breakdown por "audience type" (new vs. existing customers) para garantizar equilibrio.`,
           },
-          tags: ['A/B-test', 'experiment', 'statistical-significance', 'holdout'],
+          tags: ['full-funnel', 'TOFU', 'BOFU', 'retargeting', 'exclusão'],
         },
       ],
     },

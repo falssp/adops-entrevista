@@ -2,11 +2,11 @@
 window.__adopsData = window.__adopsData || {};
 window.__adopsData['gtm'] = {
   icon: '🏷️',
-  name: { pt: 'Google Tag Manager / GA4', en: 'Google Tag Manager / GA4', es: 'Google Tag Manager / GA4' },
+  name: { pt: 'GTM / GA4', en: 'GTM / GA4', es: 'GTM / GA4' },
   desc: {
-    pt: 'Gerenciamento de tags sem código e analytics de próxima geração do Google.',
-    en: "Codeless tag management and Google's next-generation analytics.",
-    es: 'Gestión de tags sin código y analytics de próxima generación de Google.',
+    pt: 'Google Tag Manager para gestão de tags e Google Analytics 4 para mensuração — o duo fundamental de tracking na web.',
+    en: 'Google Tag Manager for tag management and Google Analytics 4 for measurement — the fundamental tracking duo on the web.',
+    es: 'Google Tag Manager para gestión de tags y Google Analytics 4 para medición — el dúo fundamental de tracking en la web.',
   },
   tiers: [
     {
@@ -14,55 +14,195 @@ window.__adopsData['gtm'] = {
       questions: [
         {
           q: {
-            pt: 'O que é o GTM e quais são seus três componentes principais?',
-            en: 'What is GTM and what are its three main components?',
-            es: '¿Qué es GTM y cuáles son sus tres componentes principales?',
+            pt: 'O que é o Google Tag Manager e por que ele é usado em vez de colocar tags diretamente no código do site?',
+            en: 'What is Google Tag Manager and why is it used instead of placing tags directly in the site code?',
+            es: '¿Qué es Google Tag Manager y por qué se usa en lugar de colocar tags directamente en el código del sitio?',
           },
           a: {
-            pt: `O <strong>Google Tag Manager</strong> é um sistema de gerenciamento de tags que permite instalar e atualizar snippets de código em sites sem modificar o código-fonte diretamente.<br><br>
-<strong>Três componentes:</strong>
+            pt: `<strong>Google Tag Manager (GTM)</strong> é um sistema de gestão de tags que permite adicionar, editar e remover snippets de código (tags) em um site sem precisar mexer diretamente no código-fonte.<br><br>
+<strong>Por que usar GTM em vez de tags diretas no código:</strong>
 <ul>
-  <li><strong>Tag:</strong> o código a ser executado (Floodlight, Meta Pixel, GA4, LinkedIn Insight, etc.)</li>
-  <li><strong>Trigger:</strong> quando a tag deve disparar (Page View, clique em elemento, scroll, envio de formulário, evento customizado via dataLayer)</li>
-  <li><strong>Variable:</strong> valores dinâmicos usados em tags e triggers (URL atual, ID de produto, valor de transação, texto de botão clicado)</li>
+  <li><strong>Autonomia:</strong> marketing/AdOps pode publicar tags sem depender do time de desenvolvimento</li>
+  <li><strong>Velocidade:</strong> adicionar uma nova tag leva minutos, não dias (sem fila de dev)</li>
+  <li><strong>Controle centralizado:</strong> todas as tags em um único lugar, com histórico de versões</li>
+  <li><strong>Rollback fácil:</strong> se uma tag causar problema, basta reverter para a versão anterior</li>
+  <li><strong>Organização:</strong> tags, triggers e variáveis gerenciados com clareza</li>
+  <li><strong>Preview mode:</strong> testar antes de publicar, sem afetar usuários reais</li>
 </ul>
-<strong>Por que é essencial em AdOps:</strong>
+<strong>Componentes básicos do GTM:</strong>
 <ul>
-  <li>Instalar pixels de conversão sem depender do dev</li>
-  <li>Gestão centralizada de todas as tags de terceiros</li>
-  <li>Preview Mode para debug antes de publicar</li>
-  <li>Versionamento com rollback fácil em caso de erro</li>
+  <li><strong>Tag:</strong> o snippet a ser executado (ex: Google Analytics, Floodlight, Meta Pixel)</li>
+  <li><strong>Trigger:</strong> a condição que dispara a tag (ex: pageview, clique em botão, tempo na página)</li>
+  <li><strong>Variable:</strong> valor dinâmico usado por tags e triggers (ex: URL atual, ID de transação)</li>
 </ul>`,
-            en: `<strong>Google Tag Manager</strong> is a tag management system that allows installing and updating code snippets on websites without modifying the source code directly.<br><br>
-<strong>Three components:</strong>
+            en: `<strong>Google Tag Manager (GTM)</strong> is a tag management system that allows adding, editing and removing code snippets (tags) on a website without directly touching the source code.<br><br>
+<strong>Why use GTM instead of direct code tags:</strong>
 <ul>
-  <li><strong>Tag:</strong> the code to execute (Floodlight, Meta Pixel, GA4, LinkedIn Insight, etc.)</li>
-  <li><strong>Trigger:</strong> when the tag should fire (Page View, element click, scroll, form submission, custom event via dataLayer)</li>
-  <li><strong>Variable:</strong> dynamic values used in tags and triggers (current URL, product ID, transaction value, clicked button text)</li>
+  <li><strong>Autonomy:</strong> marketing/AdOps can publish tags without depending on the development team</li>
+  <li><strong>Speed:</strong> adding a new tag takes minutes, not days (no dev queue)</li>
+  <li><strong>Centralized control:</strong> all tags in one place, with version history</li>
+  <li><strong>Easy rollback:</strong> if a tag causes a problem, just revert to the previous version</li>
+  <li><strong>Organization:</strong> tags, triggers and variables managed with clarity</li>
+  <li><strong>Preview mode:</strong> test before publishing, without affecting real users</li>
 </ul>
-<strong>Why it's essential in AdOps:</strong>
+<strong>Basic GTM components:</strong>
 <ul>
-  <li>Install conversion pixels without depending on developers</li>
-  <li>Centralized management of all third-party tags</li>
-  <li>Preview Mode for debugging before publishing</li>
-  <li>Versioning with easy rollback in case of error</li>
+  <li><strong>Tag:</strong> the snippet to be executed (e.g. Google Analytics, Floodlight, Meta Pixel)</li>
+  <li><strong>Trigger:</strong> the condition that fires the tag (e.g. pageview, button click, time on page)</li>
+  <li><strong>Variable:</strong> dynamic value used by tags and triggers (e.g. current URL, transaction ID)</li>
 </ul>`,
-            es: `<strong>Google Tag Manager</strong> es un sistema de gestión de tags que permite instalar y actualizar snippets de código en sitios web sin modificar el código fuente directamente.<br><br>
-<strong>Tres componentes:</strong>
+            es: `<strong>Google Tag Manager (GTM)</strong> es un sistema de gestión de tags que permite agregar, editar y eliminar fragmentos de código (tags) en un sitio sin necesidad de tocar directamente el código fuente.<br><br>
+<strong>Por qué usar GTM en lugar de tags directas en el código:</strong>
 <ul>
-  <li><strong>Tag:</strong> el código a ejecutar (Floodlight, Meta Pixel, GA4, LinkedIn Insight, etc.)</li>
-  <li><strong>Trigger:</strong> cuándo debe disparar la tag (Page View, clic en elemento, scroll, envío de formulario, evento personalizado via dataLayer)</li>
-  <li><strong>Variable:</strong> valores dinámicos usados en tags y triggers (URL actual, ID de producto, valor de transacción, texto de botón clickeado)</li>
+  <li><strong>Autonomía:</strong> marketing/AdOps puede publicar tags sin depender del equipo de desarrollo</li>
+  <li><strong>Velocidad:</strong> agregar una nueva tag tarda minutos, no días (sin cola de dev)</li>
+  <li><strong>Control centralizado:</strong> todas las tags en un solo lugar, con historial de versiones</li>
+  <li><strong>Rollback fácil:</strong> si una tag causa un problema, solo hay que revertir a la versión anterior</li>
+  <li><strong>Organización:</strong> tags, triggers y variables gestionados con claridad</li>
+  <li><strong>Preview mode:</strong> probar antes de publicar, sin afectar a usuarios reales</li>
 </ul>
-<strong>Por qué es esencial en AdOps:</strong>
+<strong>Componentes básicos de GTM:</strong>
 <ul>
-  <li>Instalar pixels de conversión sin depender del dev</li>
-  <li>Gestión centralizada de todas las tags de terceros</li>
-  <li>Preview Mode para debug antes de publicar</li>
-  <li>Versionado con rollback fácil en caso de error</li>
+  <li><strong>Tag:</strong> el snippet a ejecutar (ej: Google Analytics, Floodlight, Meta Pixel)</li>
+  <li><strong>Trigger:</strong> la condición que dispara la tag (ej: pageview, clic en botón, tiempo en página)</li>
+  <li><strong>Variable:</strong> valor dinámico usado por tags y triggers (ej: URL actual, ID de transacción)</li>
 </ul>`,
           },
-          tags: ['GTM', 'tag-management', 'trigger', 'variable'],
+          tags: ['GTM', 'tag-manager', 'tracking', 'autonomia'],
+        },
+        {
+          q: {
+            pt: 'Qual a diferença entre o Universal Analytics (UA) e o Google Analytics 4 (GA4)?',
+            en: 'What is the difference between Universal Analytics (UA) and Google Analytics 4 (GA4)?',
+            es: '¿Cuál es la diferencia entre Universal Analytics (UA) y Google Analytics 4 (GA4)?',
+          },
+          a: {
+            pt: `<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Característica</th><th style="padding:6px">Universal Analytics (UA)</th><th style="padding:6px">GA4</th></tr>
+<tr><td style="padding:6px">Modelo de dados</td><td style="padding:6px">Sessão-based (hits)</td><td style="padding:6px">Event-based</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Cookies</td><td style="padding:6px">3rd party cookies</td><td style="padding:6px">1st party + cookieless modeling</td></tr>
+<tr><td style="padding:6px">Cross-platform</td><td style="padding:6px">Apenas web</td><td style="padding:6px">Web + App (Firebase) unificados</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Relatórios</td><td style="padding:6px">Interface fixa</td><td style="padding:6px">Explorations + BigQuery export</td></tr>
+<tr><td style="padding:6px">IA/ML</td><td style="padding:6px">Limitado</td><td style="padding:6px">Predictive metrics nativas (churn, purchase probability)</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Status</td><td style="padding:6px">Descontinuado (julho 2023)</td><td style="padding:6px">Atual — obrigatório</td></tr>
+</table><br>
+<strong>Mudança de mindset UA → GA4:</strong>
+<ul>
+  <li>No UA: "quantas sessões com pageview na página X?" → No GA4: "quantos eventos page_view na página X?"</li>
+  <li>GA4 não tem bounce rate tradicional — usa "engaged sessions" (sessão com 10s+ ou 2+ pageviews ou conversão)</li>
+  <li>GA4 não tem "views" — é "data streams" (web, iOS, Android)</li>
+  <li>Metas no UA = Conversions no GA4 (eventos marcados como conversion)</li>
+</ul>`,
+            en: `<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Feature</th><th style="padding:6px">Universal Analytics (UA)</th><th style="padding:6px">GA4</th></tr>
+<tr><td style="padding:6px">Data model</td><td style="padding:6px">Session-based (hits)</td><td style="padding:6px">Event-based</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Cookies</td><td style="padding:6px">3rd party cookies</td><td style="padding:6px">1st party + cookieless modeling</td></tr>
+<tr><td style="padding:6px">Cross-platform</td><td style="padding:6px">Web only</td><td style="padding:6px">Web + App (Firebase) unified</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Reports</td><td style="padding:6px">Fixed interface</td><td style="padding:6px">Explorations + BigQuery export</td></tr>
+<tr><td style="padding:6px">AI/ML</td><td style="padding:6px">Limited</td><td style="padding:6px">Native predictive metrics (churn, purchase probability)</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Status</td><td style="padding:6px">Discontinued (July 2023)</td><td style="padding:6px">Current — required</td></tr>
+</table><br>
+<strong>Mindset shift UA → GA4:</strong>
+<ul>
+  <li>In UA: "how many sessions with pageview on page X?" → In GA4: "how many page_view events on page X?"</li>
+  <li>GA4 doesn't have traditional bounce rate — uses "engaged sessions" (session with 10s+ or 2+ pageviews or conversion)</li>
+  <li>GA4 doesn't have "views" — it has "data streams" (web, iOS, Android)</li>
+  <li>Goals in UA = Conversions in GA4 (events marked as conversion)</li>
+</ul>`,
+            es: `<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Característica</th><th style="padding:6px">Universal Analytics (UA)</th><th style="padding:6px">GA4</th></tr>
+<tr><td style="padding:6px">Modelo de datos</td><td style="padding:6px">Basado en sesión (hits)</td><td style="padding:6px">Basado en eventos</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Cookies</td><td style="padding:6px">3rd party cookies</td><td style="padding:6px">1st party + modelado cookieless</td></tr>
+<tr><td style="padding:6px">Cross-platform</td><td style="padding:6px">Solo web</td><td style="padding:6px">Web + App (Firebase) unificados</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Reportes</td><td style="padding:6px">Interfaz fija</td><td style="padding:6px">Explorations + exportación BigQuery</td></tr>
+<tr><td style="padding:6px">IA/ML</td><td style="padding:6px">Limitado</td><td style="padding:6px">Métricas predictivas nativas (churn, probabilidad de compra)</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Estado</td><td style="padding:6px">Descontinuado (julio 2023)</td><td style="padding:6px">Actual — obligatorio</td></tr>
+</table><br>
+<strong>Cambio de mindset UA → GA4:</strong>
+<ul>
+  <li>En UA: "¿cuántas sesiones con pageview en la página X?" → En GA4: "¿cuántos eventos page_view en la página X?"</li>
+  <li>GA4 no tiene bounce rate tradicional — usa "engaged sessions" (sesión con 10s+ o 2+ pageviews o conversión)</li>
+  <li>GA4 no tiene "views" — tiene "data streams" (web, iOS, Android)</li>
+  <li>Metas en UA = Conversiones en GA4 (eventos marcados como conversión)</li>
+</ul>`,
+          },
+          tags: ['GA4', 'Universal-Analytics', 'migração', 'events', 'sessão'],
+        },
+        {
+          q: {
+            pt: 'Como configurar um evento personalizado no GA4 via GTM? Descreva o passo a passo.',
+            en: 'How to configure a custom event in GA4 via GTM? Describe the step by step.',
+            es: '¿Cómo configurar un evento personalizado en GA4 via GTM? Describe el paso a paso.',
+          },
+          a: {
+            pt: `<strong>Exemplo: rastrear clique em botão "Solicitar Orçamento"</strong><br><br>
+<strong>1. Criar Trigger no GTM:</strong>
+<ul>
+  <li>Triggers → New → Click - All Elements (ou Just Links)</li>
+  <li>Condition: Click Text contains "Solicitar Orçamento" (ou usar CSS selector/ID)</li>
+  <li>Nomear: "Click - Botão Orçamento"</li>
+</ul>
+<strong>2. Criar Tag GA4 Event:</strong>
+<ul>
+  <li>Tags → New → Google Analytics: GA4 Event</li>
+  <li>Configuration Tag: selecionar sua tag de configuração GA4 (ou inserir Measurement ID)</li>
+  <li>Event Name: <code>solicitar_orcamento</code> (snake_case, sem espaços)</li>
+  <li>Event Parameters (opcional): adicionar parâmetros como <code>button_location: {{Page Path}}</code></li>
+</ul>
+<strong>3. Associar o Trigger à Tag</strong><br><br>
+<strong>4. Preview e Debug:</strong>
+<ul>
+  <li>GTM Preview Mode → abrir o site → clicar no botão → verificar no GTM Debug se a tag disparou</li>
+  <li>GA4 DebugView: Admin → DebugView → verificar o evento chegando em tempo real</li>
+</ul>
+<strong>5. Publicar</strong> — versão com nome e descrição documentando a mudança<br><br>
+<strong>6. Marcar como Conversão no GA4 (se necessário):</strong> Admin → Events → ativar "Mark as conversion"`,
+            en: `<strong>Example: tracking click on "Request a Quote" button</strong><br><br>
+<strong>1. Create Trigger in GTM:</strong>
+<ul>
+  <li>Triggers → New → Click - All Elements (or Just Links)</li>
+  <li>Condition: Click Text contains "Request a Quote" (or use CSS selector/ID)</li>
+  <li>Name: "Click - Quote Button"</li>
+</ul>
+<strong>2. Create GA4 Event Tag:</strong>
+<ul>
+  <li>Tags → New → Google Analytics: GA4 Event</li>
+  <li>Configuration Tag: select your GA4 configuration tag (or enter Measurement ID)</li>
+  <li>Event Name: <code>request_quote</code> (snake_case, no spaces)</li>
+  <li>Event Parameters (optional): add parameters like <code>button_location: {{Page Path}}</code></li>
+</ul>
+<strong>3. Associate the Trigger to the Tag</strong><br><br>
+<strong>4. Preview and Debug:</strong>
+<ul>
+  <li>GTM Preview Mode → open the site → click the button → verify in GTM Debug if the tag fired</li>
+  <li>GA4 DebugView: Admin → DebugView → verify the event arriving in real time</li>
+</ul>
+<strong>5. Publish</strong> — version with name and description documenting the change<br><br>
+<strong>6. Mark as Conversion in GA4 (if needed):</strong> Admin → Events → enable "Mark as conversion"`,
+            es: `<strong>Ejemplo: rastrear clic en botón "Solicitar Presupuesto"</strong><br><br>
+<strong>1. Crear Trigger en GTM:</strong>
+<ul>
+  <li>Triggers → New → Click - All Elements (o Just Links)</li>
+  <li>Condition: Click Text contains "Solicitar Presupuesto" (o usar CSS selector/ID)</li>
+  <li>Nombre: "Click - Botón Presupuesto"</li>
+</ul>
+<strong>2. Crear Tag GA4 Event:</strong>
+<ul>
+  <li>Tags → New → Google Analytics: GA4 Event</li>
+  <li>Configuration Tag: seleccionar tu tag de configuración GA4 (o ingresar Measurement ID)</li>
+  <li>Event Name: <code>solicitar_presupuesto</code> (snake_case, sin espacios)</li>
+  <li>Event Parameters (opcional): agregar parámetros como <code>button_location: {{Page Path}}</code></li>
+</ul>
+<strong>3. Asociar el Trigger a la Tag</strong><br><br>
+<strong>4. Preview y Debug:</strong>
+<ul>
+  <li>GTM Preview Mode → abrir el sitio → hacer clic en el botón → verificar en GTM Debug si la tag disparó</li>
+  <li>GA4 DebugView: Admin → DebugView → verificar el evento llegando en tiempo real</li>
+</ul>
+<strong>5. Publicar</strong> — versión con nombre y descripción documentando el cambio<br><br>
+<strong>6. Marcar como Conversión en GA4 (si es necesario):</strong> Admin → Events → activar "Mark as conversion"`,
+          },
+          tags: ['GTM', 'GA4', 'evento-customizado', 'debug', 'conversão'],
         },
       ],
     },
@@ -71,116 +211,161 @@ window.__adopsData['gtm'] = {
       questions: [
         {
           q: {
-            pt: 'O que é o dataLayer e como ele é usado para passar informações para o GTM?',
-            en: 'What is the dataLayer and how is it used to pass information to GTM?',
-            es: '¿Qué es el dataLayer y cómo se usa para pasar información a GTM?',
+            pt: 'Como usar o DataLayer no GTM? Qual a vantagem em relação ao scraping de DOM?',
+            en: 'How to use the DataLayer in GTM? What is the advantage over DOM scraping?',
+            es: '¿Cómo usar el DataLayer en GTM? ¿Cuál es la ventaja frente al scraping de DOM?',
           },
           a: {
-            pt: `O <strong>dataLayer</strong> é um array JavaScript que serve como ponte entre o site e o GTM. O desenvolvedor "empurra" objetos para o dataLayer, e o GTM captura esses valores via variáveis.<br><br>
-<strong>Exemplo de push:</strong>
-<code>window.dataLayer = window.dataLayer || [];
-dataLayer.push({
+            pt: `<strong>DataLayer</strong> é um array JavaScript que o site popula com dados estruturados para o GTM consumir.<br><br>
+<strong>Como funciona:</strong>
+<pre style="background:#f5f5f5;padding:8px;border-radius:4px;font-size:0.85em">// O dev insere no código do site:
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
   event: 'purchase',
-  transaction_id: 'TXN-001',
+  transaction_id: '12345',
   value: 299.90,
-  currency: 'BRL'
-});</code><br><br>
-<strong>No GTM:</strong>
-<ol>
-  <li>Criar Variable do tipo <em>Data Layer Variable</em> com o nome da chave (ex: <code>value</code>)</li>
-  <li>Criar Trigger de <em>Custom Event</em> com o nome do evento (ex: <code>purchase</code>)</li>
-  <li>Criar Tag (ex: Floodlight Sales) que dispara com esse trigger e usa as variables para popular valor e transaction ID</li>
-</ol>
-<strong>Por que é importante:</strong> sem dataLayer, o GTM só consegue capturar dados estáticos da página. Com ele, é possível trackear eventos dinâmicos como e-commerce, logins e interações de app.`,
-            en: `The <strong>dataLayer</strong> is a JavaScript array that serves as a bridge between the website and GTM. The developer "pushes" objects to the dataLayer, and GTM captures those values via variables.<br><br>
-<strong>Push example:</strong>
-<code>window.dataLayer = window.dataLayer || [];
-dataLayer.push({
+  currency: 'BRL',
+  items: [{item_name: 'Produto X', price: 299.90}]
+});</pre>
+<strong>No GTM:</strong> criar uma variável do tipo "Data Layer Variable" com o nome do campo desejado (ex: <code>transaction_id</code>) → usar essa variável na tag GA4 como parâmetro.<br><br>
+<strong>DataLayer vs. Scraping de DOM:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Critério</th><th style="padding:6px">DataLayer</th><th style="padding:6px">DOM Scraping</th></tr>
+<tr><td style="padding:6px">Confiabilidade</td><td style="padding:6px">Alta — dado estruturado</td><td style="padding:6px">Baixa — quebra com mudança de layout</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Manutenção</td><td style="padding:6px">Baixa — mudança no dev, não no GTM</td><td style="padding:6px">Alta — qualquer redesign quebra</td></tr>
+<tr><td style="padding:6px">Dados ricos</td><td style="padding:6px">Sim (arrays, objetos)</td><td style="padding:6px">Apenas texto visível na página</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Setup inicial</td><td style="padding:6px">Requer dev</td><td style="padding:6px">Não requer dev</td></tr>
+</table>
+<strong>Conclusão:</strong> DataLayer é sempre preferível para dados de negócio (transações, leads). DOM scraping é aceitável apenas para dados simples que nunca mudam (ex: texto fixo de um título).`,
+            en: `<strong>DataLayer</strong> is a JavaScript array that the site populates with structured data for GTM to consume.<br><br>
+<strong>How it works:</strong>
+<pre style="background:#f5f5f5;padding:8px;border-radius:4px;font-size:0.85em">// Dev inserts in site code:
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
   event: 'purchase',
-  transaction_id: 'TXN-001',
+  transaction_id: '12345',
   value: 299.90,
-  currency: 'BRL'
-});</code><br><br>
-<strong>In GTM:</strong>
-<ol>
-  <li>Create a Variable of type <em>Data Layer Variable</em> with the key name (e.g., <code>value</code>)</li>
-  <li>Create a Trigger of <em>Custom Event</em> with the event name (e.g., <code>purchase</code>)</li>
-  <li>Create a Tag (e.g., Floodlight Sales) that fires on that trigger and uses variables to populate value and transaction ID</li>
-</ol>
-<strong>Why it matters:</strong> without dataLayer, GTM can only capture static page data. With it, dynamic events like e-commerce, logins and app interactions can be tracked.`,
-            es: `El <strong>dataLayer</strong> es un array JavaScript que sirve como puente entre el sitio y GTM. El desarrollador "empuja" objetos al dataLayer, y GTM captura esos valores via variables.<br><br>
-<strong>Ejemplo de push:</strong>
-<code>window.dataLayer = window.dataLayer || [];
-dataLayer.push({
+  currency: 'USD',
+  items: [{item_name: 'Product X', price: 299.90}]
+});</pre>
+<strong>In GTM:</strong> create a "Data Layer Variable" type variable with the desired field name (e.g. <code>transaction_id</code>) → use that variable in the GA4 tag as a parameter.<br><br>
+<strong>DataLayer vs. DOM Scraping:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Criterion</th><th style="padding:6px">DataLayer</th><th style="padding:6px">DOM Scraping</th></tr>
+<tr><td style="padding:6px">Reliability</td><td style="padding:6px">High — structured data</td><td style="padding:6px">Low — breaks with layout change</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Maintenance</td><td style="padding:6px">Low — change in dev, not GTM</td><td style="padding:6px">High — any redesign breaks it</td></tr>
+<tr><td style="padding:6px">Rich data</td><td style="padding:6px">Yes (arrays, objects)</td><td style="padding:6px">Only visible text on page</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Initial setup</td><td style="padding:6px">Requires dev</td><td style="padding:6px">No dev required</td></tr>
+</table>
+<strong>Conclusion:</strong> DataLayer is always preferable for business data (transactions, leads). DOM scraping is acceptable only for simple data that never changes (e.g. fixed heading text).`,
+            es: `<strong>DataLayer</strong> es un array JavaScript que el sitio rellena con datos estructurados para que GTM los consuma.<br><br>
+<strong>Cómo funciona:</strong>
+<pre style="background:#f5f5f5;padding:8px;border-radius:4px;font-size:0.85em">// El dev inserta en el código del sitio:
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
   event: 'purchase',
-  transaction_id: 'TXN-001',
+  transaction_id: '12345',
   value: 299.90,
-  currency: 'BRL'
-});</code><br><br>
-<strong>En GTM:</strong>
-<ol>
-  <li>Crear Variable de tipo <em>Data Layer Variable</em> con el nombre de la clave (ej: <code>value</code>)</li>
-  <li>Crear Trigger de <em>Custom Event</em> con el nombre del evento (ej: <code>purchase</code>)</li>
-  <li>Crear Tag (ej: Floodlight Sales) que dispare con ese trigger y use las variables para popular valor e ID de transacción</li>
-</ol>
-<strong>Por qué importa:</strong> sin dataLayer, GTM solo puede capturar datos estáticos de la página. Con él, se pueden trackear eventos dinámicos como e-commerce, logins e interacciones de app.`,
+  currency: 'BRL',
+  items: [{item_name: 'Producto X', price: 299.90}]
+});</pre>
+<strong>En GTM:</strong> crear una variable tipo "Data Layer Variable" con el nombre del campo deseado (ej: <code>transaction_id</code>) → usar esa variable en la tag GA4 como parámetro.<br><br>
+<strong>DataLayer vs. Scraping de DOM:</strong>
+<table style="width:100%;border-collapse:collapse;font-size:0.9em">
+<tr style="background:#f0f4ff"><th style="padding:6px">Criterio</th><th style="padding:6px">DataLayer</th><th style="padding:6px">DOM Scraping</th></tr>
+<tr><td style="padding:6px">Confiabilidad</td><td style="padding:6px">Alta — dato estructurado</td><td style="padding:6px">Baja — se rompe con cambio de layout</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Mantenimiento</td><td style="padding:6px">Bajo — cambio en dev, no en GTM</td><td style="padding:6px">Alto — cualquier rediseño rompe</td></tr>
+<tr><td style="padding:6px">Datos ricos</td><td style="padding:6px">Sí (arrays, objetos)</td><td style="padding:6px">Solo texto visible en la página</td></tr>
+<tr style="background:#f9f9f9"><td style="padding:6px">Setup inicial</td><td style="padding:6px">Requiere dev</td><td style="padding:6px">No requiere dev</td></tr>
+</table>
+<strong>Conclusión:</strong> DataLayer es siempre preferible para datos de negocio (transacciones, leads). DOM scraping es aceptable solo para datos simples que nunca cambian (ej: texto fijo de un título).`,
           },
-          tags: ['dataLayer', 'custom-event', 'ecommerce-tracking'],
+          tags: ['dataLayer', 'GTM', 'DOM', 'variável', 'ecommerce'],
         },
         {
           q: {
-            pt: 'Qual a diferença entre GA4 e Universal Analytics? O que muda para AdOps?',
-            en: 'What is the difference between GA4 and Universal Analytics? What changes for AdOps?',
-            es: '¿Cuál es la diferencia entre GA4 y Universal Analytics? ¿Qué cambia para AdOps?',
+            pt: 'Como usar o GA4 para analisar a jornada do usuário e identificar gargalos no funil?',
+            en: 'How to use GA4 to analyze the user journey and identify funnel bottlenecks?',
+            es: '¿Cómo usar GA4 para analizar el journey del usuario e identificar cuellos de botella en el embudo?',
           },
           a: {
-            pt: `<table>
-<tr><th>Aspecto</th><th>Universal Analytics</th><th>GA4</th></tr>
-<tr><td>Modelo de dados</td><td>Sessão + Pageview</td><td>Evento + Parâmetro</td></tr>
-<tr><td>Cookies</td><td>_ga (3P cookie)</td><td>_ga + modeling cookieless</td></tr>
-<tr><td>Cross-platform</td><td>Web apenas</td><td>Web + App (Firebase)</td></tr>
-<tr><td>Integração CM360</td><td>View-through limitado</td><td>Floodlight + GA4 unificados</td></tr>
-<tr><td>Relatórios</td><td>Pré-definidos fixos</td><td>Explorations flexíveis</td></tr>
-</table><br>
-<strong>Impacto em AdOps:</strong>
+            pt: `<strong>Ferramentas do GA4 para análise de jornada:</strong><br><br>
+<strong>1. Funnel Exploration:</strong>
 <ul>
-  <li>Conversões importadas do CM360 via Floodlight ficam disponíveis nos relatórios de Ads do GA4</li>
-  <li>Modelo orientado a eventos permite criar micro-conversões com mais flexibilidade</li>
-  <li>Relatórios de funil agora cruzam web e app na mesma propriedade</li>
-  <li>GA4 usa modelagem de dados para preencher lacunas de cookies — métricas podem diferir do UA</li>
-</ul>`,
-            en: `<table>
-<tr><th>Aspect</th><th>Universal Analytics</th><th>GA4</th></tr>
-<tr><td>Data model</td><td>Session + Pageview</td><td>Event + Parameter</td></tr>
-<tr><td>Cookies</td><td>_ga (3P cookie)</td><td>_ga + cookieless modeling</td></tr>
-<tr><td>Cross-platform</td><td>Web only</td><td>Web + App (Firebase)</td></tr>
-<tr><td>CM360 integration</td><td>Limited view-through</td><td>Unified Floodlight + GA4</td></tr>
-<tr><td>Reports</td><td>Fixed pre-built</td><td>Flexible Explorations</td></tr>
-</table><br>
-<strong>AdOps impact:</strong>
+  <li>Explore → Funnel Exploration</li>
+  <li>Definir as etapas do funil (ex: page_view → add_to_cart → begin_checkout → purchase)</li>
+  <li>GA4 mostra % de usuários que avançam em cada etapa e onde abandonam</li>
+  <li>Segmentar por device, geo ou source para identificar onde o problema é maior</li>
+</ul>
+<strong>2. Path Exploration:</strong>
 <ul>
-  <li>Conversions imported from CM360 via Floodlight are available in GA4's Ads reports</li>
-  <li>Event-driven model allows creating micro-conversions more flexibly</li>
-  <li>Funnel reports now cross web and app in the same property</li>
-  <li>GA4 uses data modeling to fill cookie gaps — metrics may differ from UA</li>
-</ul>`,
-            es: `<table>
-<tr><th>Aspecto</th><th>Universal Analytics</th><th>GA4</th></tr>
-<tr><td>Modelo de datos</td><td>Sesión + Pageview</td><td>Evento + Parámetro</td></tr>
-<tr><td>Cookies</td><td>_ga (3P cookie)</td><td>_ga + modelado cookieless</td></tr>
-<tr><td>Cross-platform</td><td>Web solo</td><td>Web + App (Firebase)</td></tr>
-<tr><td>Integración CM360</td><td>View-through limitado</td><td>Floodlight + GA4 unificados</td></tr>
-<tr><td>Reportes</td><td>Predefinidos fijos</td><td>Explorations flexibles</td></tr>
-</table><br>
-<strong>Impacto en AdOps:</strong>
+  <li>Mostra os caminhos reais que usuários percorrem no site</li>
+  <li>Identificar loops inesperados (usuário voltando para a mesma página) ou saídas antecipadas</li>
+</ul>
+<strong>3. Segment Overlap:</strong>
 <ul>
-  <li>Conversiones importadas desde CM360 via Floodlight disponibles en reportes de Ads de GA4</li>
-  <li>Modelo orientado a eventos permite crear micro-conversiones con más flexibilidad</li>
-  <li>Reportes de embudo ahora cruzan web y app en la misma propiedad</li>
-  <li>GA4 usa modelado de datos para llenar vacíos de cookies — las métricas pueden diferir de UA</li>
-</ul>`,
+  <li>Comparar usuários que converteram vs. não converteram — quais páginas visitaram, qual canal vieram</li>
+</ul>
+<strong>Como identificar gargalos:</strong>
+<ol>
+  <li>Criar o Funnel Exploration com as etapas críticas</li>
+  <li>Encontrar a etapa com maior drop-off (%)</li>
+  <li>Segmentar por device — se mobile tem drop-off maior, pode ser problema de UX</li>
+  <li>Segmentar por source — se tráfego pago tem drop-off maior que orgânico, pode ser expectativa incorreta gerada pelo anúncio</li>
+  <li>Cruzar com heatmaps (Hotjar, Microsoft Clarity) na página de maior abandono para diagnóstico visual</li>
+</ol>`,
+            en: `<strong>GA4 tools for journey analysis:</strong><br><br>
+<strong>1. Funnel Exploration:</strong>
+<ul>
+  <li>Explore → Funnel Exploration</li>
+  <li>Define the funnel stages (e.g. page_view → add_to_cart → begin_checkout → purchase)</li>
+  <li>GA4 shows % of users advancing at each stage and where they drop off</li>
+  <li>Segment by device, geo or source to identify where the problem is greatest</li>
+</ul>
+<strong>2. Path Exploration:</strong>
+<ul>
+  <li>Shows the actual paths users take on the site</li>
+  <li>Identify unexpected loops (user returning to the same page) or early exits</li>
+</ul>
+<strong>3. Segment Overlap:</strong>
+<ul>
+  <li>Compare users who converted vs. didn't convert — which pages they visited, which channel they came from</li>
+</ul>
+<strong>How to identify bottlenecks:</strong>
+<ol>
+  <li>Create the Funnel Exploration with the critical stages</li>
+  <li>Find the step with the highest drop-off (%)</li>
+  <li>Segment by device — if mobile has higher drop-off, it may be a UX issue</li>
+  <li>Segment by source — if paid traffic has higher drop-off than organic, it may be incorrect expectations generated by the ad</li>
+  <li>Cross with heatmaps (Hotjar, Microsoft Clarity) on the highest abandonment page for visual diagnosis</li>
+</ol>`,
+            es: `<strong>Herramientas de GA4 para análisis de journey:</strong><br><br>
+<strong>1. Funnel Exploration:</strong>
+<ul>
+  <li>Explore → Funnel Exploration</li>
+  <li>Definir las etapas del embudo (ej: page_view → add_to_cart → begin_checkout → purchase)</li>
+  <li>GA4 muestra % de usuarios que avanzan en cada etapa y dónde abandonan</li>
+  <li>Segmentar por device, geo o source para identificar dónde el problema es mayor</li>
+</ul>
+<strong>2. Path Exploration:</strong>
+<ul>
+  <li>Muestra los caminos reales que los usuarios recorren en el sitio</li>
+  <li>Identificar loops inesperados (usuario volviendo a la misma página) o salidas anticipadas</li>
+</ul>
+<strong>3. Segment Overlap:</strong>
+<ul>
+  <li>Comparar usuarios que convirtieron vs. no convirtieron — qué páginas visitaron, de qué canal llegaron</li>
+</ul>
+<strong>Cómo identificar cuellos de botella:</strong>
+<ol>
+  <li>Crear el Funnel Exploration con las etapas críticas</li>
+  <li>Encontrar la etapa con mayor drop-off (%)</li>
+  <li>Segmentar por device — si mobile tiene mayor drop-off, puede ser un problema de UX</li>
+  <li>Segmentar por source — si el tráfico pago tiene mayor drop-off que el orgánico, puede ser expectativa incorrecta generada por el anuncio</li>
+  <li>Cruzar con heatmaps (Hotjar, Microsoft Clarity) en la página de mayor abandono para diagnóstico visual</li>
+</ol>`,
           },
-          tags: ['GA4', 'UA', 'event-model', 'cookieless', 'cross-platform'],
+          tags: ['GA4', 'funil', 'jornada', 'funnel-exploration', 'drop-off'],
         },
       ],
     },
@@ -189,64 +374,85 @@ dataLayer.push({
       questions: [
         {
           q: {
-            pt: 'Como implementar server-side tagging no GTM e por que é relevante?',
-            en: 'How to implement server-side tagging in GTM and why is it relevant?',
-            es: '¿Cómo implementar server-side tagging en GTM y por qué es relevante?',
+            pt: 'Como fazer auditoria completa de uma implementação de GTM + GA4 em uma conta que você acabou de assumir?',
+            en: 'How to perform a complete audit of a GTM + GA4 implementation in an account you just took over?',
+            es: '¿Cómo realizar una auditoría completa de una implementación de GTM + GA4 en una cuenta que acabas de asumir?',
           },
           a: {
-            pt: `O <strong>Server-side GTM</strong> adiciona um contêiner intermediário rodando em um servidor (GCP, normalmente) entre o browser do usuário e os vendors de terceiros.<br><br>
-<strong>Arquitetura:</strong>
-<code>Browser → GTM Web Container → Servidor GTM (1st party) → Vendors (Meta, CM360, etc.)</code><br><br>
-<strong>Benefícios:</strong>
+            pt: `<strong>Framework de auditoria GTM + GA4:</strong><br><br>
+<strong>1. GTM — verificações estruturais:</strong>
 <ul>
-  <li><strong>Contorna ITP/ad blockers:</strong> o cookie é setado pelo servidor (1P), não pelo JS de terceiro</li>
-  <li><strong>Duração de cookie:</strong> cookies 1P têm validade maior (até 400 dias no Chrome vs. 7 dias via JS no Safari)</li>
-  <li><strong>Segurança de dados:</strong> dados sensíveis não trafegam pelo browser do usuário</li>
-  <li><strong>Desempenho:</strong> reduz scripts de terceiros carregando no browser — melhora Core Web Vitals</li>
+  <li>Quantas tags existem? Tags órfãs (sem trigger) ou tags duplicadas?</li>
+  <li>Há tags disparando em "All Pages" sem necessidade?</li>
+  <li>Versões publicadas têm descrições? Consegue rastrear mudanças?</li>
+  <li>Existe tag de GA4 Configuration publicada corretamente? Está com o Measurement ID certo?</li>
+  <li>Tags de terceiros (Meta, LinkedIn, TikTok) estão com triggers corretos?</li>
 </ul>
-<strong>Setup básico:</strong>
-<ol>
-  <li>Criar contêiner Server no GTM</li>
-  <li>Provisionar servidor no GCP (App Engine ou Cloud Run)</li>
-  <li>Apontar subdomínio próprio (ex: <code>gtm.seusite.com.br</code>) para o servidor</li>
-  <li>Configurar Client (GA4, Meta CAPI) e Tags no contêiner server</li>
-</ol>`,
-            en: `<strong>Server-side GTM</strong> adds an intermediate container running on a server (usually GCP) between the user's browser and third-party vendors.<br><br>
-<strong>Architecture:</strong>
-<code>Browser → GTM Web Container → GTM Server (1st party) → Vendors (Meta, CM360, etc.)</code><br><br>
-<strong>Benefits:</strong>
+<strong>2. GA4 — verificações de dados:</strong>
 <ul>
-  <li><strong>Bypasses ITP/ad blockers:</strong> cookie is set by the server (1P), not third-party JS</li>
-  <li><strong>Cookie duration:</strong> 1P cookies last longer (up to 400 days in Chrome vs. 7 days via JS in Safari)</li>
-  <li><strong>Data security:</strong> sensitive data doesn't travel through the user's browser</li>
-  <li><strong>Performance:</strong> reduces third-party scripts loading in browser — improves Core Web Vitals</li>
+  <li>DebugView: disparar eventos no Preview Mode e verificar se chegam corretamente</li>
+  <li>Relatório de Eventos: há eventos com nomes inconsistentes? (ex: "click_button" e "button_click" para a mesma ação)</li>
+  <li>Conversões configuradas: fazem sentido com os objetivos de negócio?</li>
+  <li>Dados históricos: o GA4 tem pelo menos 30 dias de dados para comparação?</li>
+  <li>Filtros/exclusões de IP interno configurados? (Dev e escritório não devem contaminar dados)</li>
+  <li>Google Signals ativado? Consent Mode configurado corretamente para LGPD/GDPR?</li>
 </ul>
-<strong>Basic setup:</strong>
-<ol>
-  <li>Create a Server container in GTM</li>
-  <li>Provision server on GCP (App Engine or Cloud Run)</li>
-  <li>Point own subdomain (e.g., <code>gtm.yoursite.com</code>) to the server</li>
-  <li>Configure Client (GA4, Meta CAPI) and Tags in the server container</li>
-</ol>`,
-            es: `El <strong>Server-side GTM</strong> agrega un contenedor intermedio corriendo en un servidor (GCP, normalmente) entre el browser del usuario y los vendors de terceros.<br><br>
-<strong>Arquitectura:</strong>
-<code>Browser → GTM Web Container → Servidor GTM (1P) → Vendors (Meta, CM360, etc.)</code><br><br>
-<strong>Beneficios:</strong>
+<strong>3. Tracking de conversões cross-plataforma:</strong>
 <ul>
-  <li><strong>Evita ITP/ad blockers:</strong> la cookie es seteada por el servidor (1P), no por JS de terceros</li>
-  <li><strong>Duración de cookie:</strong> las cookies 1P duran más (hasta 400 días en Chrome vs. 7 días via JS en Safari)</li>
-  <li><strong>Seguridad de datos:</strong> datos sensibles no viajan por el browser del usuario</li>
-  <li><strong>Rendimiento:</strong> reduce scripts de terceros cargando en el browser — mejora Core Web Vitals</li>
+  <li>Floodlight (CM360), Meta Pixel e GA4 estão medindo as mesmas conversões? Discrepâncias esperadas?</li>
+  <li>Deduplicação entre Pixel browser e CAPI configurada?</li>
 </ul>
-<strong>Setup básico:</strong>
-<ol>
-  <li>Crear contenedor Server en GTM</li>
-  <li>Provisionar servidor en GCP (App Engine o Cloud Run)</li>
-  <li>Apuntar subdominio propio (ej: <code>gtm.tusitio.com</code>) al servidor</li>
-  <li>Configurar Client (GA4, Meta CAPI) y Tags en el contenedor server</li>
-</ol>`,
+<strong>Output da auditoria:</strong> documento com o que foi encontrado, classificado por severidade (crítico / importante / melhoria), com recomendação de ação e prazo.`,
+            en: `<strong>GTM + GA4 audit framework:</strong><br><br>
+<strong>1. GTM — structural checks:</strong>
+<ul>
+  <li>How many tags exist? Orphan tags (no trigger) or duplicate tags?</li>
+  <li>Are there tags firing on "All Pages" unnecessarily?</li>
+  <li>Do published versions have descriptions? Can you track changes?</li>
+  <li>Is there a GA4 Configuration tag published correctly? Does it have the right Measurement ID?</li>
+  <li>Third-party tags (Meta, LinkedIn, TikTok) have correct triggers?</li>
+</ul>
+<strong>2. GA4 — data checks:</strong>
+<ul>
+  <li>DebugView: fire events in Preview Mode and verify they arrive correctly</li>
+  <li>Events report: are there events with inconsistent names? (e.g. "click_button" and "button_click" for the same action)</li>
+  <li>Configured conversions: do they make sense with business objectives?</li>
+  <li>Historical data: does GA4 have at least 30 days of data for comparison?</li>
+  <li>Internal IP filters/exclusions configured? (Dev and office shouldn't contaminate data)</li>
+  <li>Google Signals enabled? Consent Mode correctly configured for LGPD/GDPR?</li>
+</ul>
+<strong>3. Cross-platform conversion tracking:</strong>
+<ul>
+  <li>Floodlight (CM360), Meta Pixel and GA4 measuring the same conversions? Expected discrepancies?</li>
+  <li>Deduplication between browser Pixel and CAPI configured?</li>
+</ul>
+<strong>Audit output:</strong> document with findings, classified by severity (critical / important / improvement), with recommended action and timeline.`,
+            es: `<strong>Framework de auditoría GTM + GA4:</strong><br><br>
+<strong>1. GTM — verificaciones estructurales:</strong>
+<ul>
+  <li>¿Cuántas tags existen? ¿Tags huérfanas (sin trigger) o tags duplicadas?</li>
+  <li>¿Hay tags disparando en "All Pages" sin necesidad?</li>
+  <li>¿Las versiones publicadas tienen descripciones? ¿Se pueden rastrear cambios?</li>
+  <li>¿Existe una tag de GA4 Configuration publicada correctamente? ¿Tiene el Measurement ID correcto?</li>
+  <li>¿Las tags de terceros (Meta, LinkedIn, TikTok) tienen los triggers correctos?</li>
+</ul>
+<strong>2. GA4 — verificaciones de datos:</strong>
+<ul>
+  <li>DebugView: disparar eventos en Preview Mode y verificar si llegan correctamente</li>
+  <li>Reporte de Eventos: ¿hay eventos con nombres inconsistentes? (ej: "click_button" y "button_click" para la misma acción)</li>
+  <li>¿Las conversiones configuradas tienen sentido con los objetivos de negocio?</li>
+  <li>¿GA4 tiene al menos 30 días de datos para comparación?</li>
+  <li>¿Filtros/exclusiones de IP interno configurados? (Dev y oficina no deben contaminar datos)</li>
+  <li>¿Google Signals activado? ¿Consent Mode correctamente configurado para LGPD/GDPR?</li>
+</ul>
+<strong>3. Tracking de conversiones cross-plataforma:</strong>
+<ul>
+  <li>¿Floodlight (CM360), Meta Pixel y GA4 miden las mismas conversiones? ¿Discrepancias esperadas?</li>
+  <li>¿Deduplicación entre Pixel browser y CAPI configurada?</li>
+</ul>
+<strong>Output de la auditoría:</strong> documento con los hallazgos, clasificados por severidad (crítico / importante / mejora), con recomendación de acción y plazo.`,
           },
-          tags: ['server-side', 'GTM-server', 'ITP', 'first-party', 'GCP'],
+          tags: ['auditoria', 'GTM', 'GA4', 'implementação', 'QA'],
         },
       ],
     },
