@@ -15,7 +15,9 @@ const PLATFORMS = [
   { id: 'privacidade', label: 'Privacidade',   icon: '🔒', file: 'data/privacidade.js' },
   { id: 'ctv',         label: 'CTV & TV',      icon: '📺', file: 'data/ctv.js'         },
   { id: 'fundamentos', label: 'Fundamentos',   icon: '🎓', file: 'data/fundamentos.js' },
-  { id: 'ops',         label: 'Operacional',   icon: '⚙️', file: 'data/ops.js'         },
+  { id: 'setup_meta',   label: 'Setup Meta',    icon: '⚙️', file: 'data/setup_meta.js'   },
+  { id: 'setup_google', label: 'Setup Google',  icon: '🔧', file: 'data/setup_google.js' },
+  { id: 'ops',          label: 'Operacional',   icon: '🛠️', file: 'data/ops.js'           },
 ];
 
 const I18N = {
