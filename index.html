@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AdOps Interview Kit v2</title>
+<title>AdOps Interview Kit</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="kit-header">
   <div class="kit-brand">
-    <span class="kit-version">v2.0 · 2025</span>
     <h1 class="kit-title">AdOps Interview Kit</h1>
     <p class="kit-subtitle">
       <span data-lang="pt">Guia de preparação para entrevistas em Ad Operations</span>
@@ -20,27 +19,39 @@
   </div>
   <div class="kit-divider"></div>
   <div class="kit-stats">
-    <div class="stat"><span class="stat-num" id="stat-platforms">9</span><span class="stat-label" data-i18n="platforms">Plataformas</span></div>
-    <div class="stat"><span class="stat-num" id="stat-questions">70+</span><span class="stat-label" data-i18n="questions">Perguntas</span></div>
-    <div class="stat"><span class="stat-num">3</span><span class="stat-label" data-i18n="languages">Idiomas</span></div>
-    <div class="stat"><span class="stat-num">3</span><span class="stat-label" data-i18n="levels">Níveis</span></div>
+    <div class="stat"><span class="stat-num" id="stat-platforms">9</span><span class="stat-label">Plataformas</span></div>
+    <div class="stat"><span class="stat-num" id="stat-questions">70+</span><span class="stat-label">Perguntas</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Idiomas</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Níveis</span></div>
   </div>
 </header>
 
-<div class="lang-bar">
-  <span class="lang-label">Idioma / Language</span>
+<!-- Barra unificada: idioma + busca + botões -->
+<div class="control-bar" id="control-bar">
+  <span class="lang-label">Idioma</span>
   <div class="lang-btns">
     <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
     <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
     <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
   </div>
+  <div class="bar-divider"></div>
+  <div class="bar-search">
+    <span class="bar-search-icon">🔍</span>
+    <input type="text" id="search-input" class="bar-search-input"
+      placeholder="Buscar em todas as plataformas..."
+      oninput="onSearchInput(this.value)"
+      onkeydown="if(event.key==='Escape')clearSearch()" />
+    <button class="bar-search-clear" id="search-clear" onclick="clearSearch()" style="display:none">✕</button>
+  </div>
+  <div class="bar-divider"></div>
   <div class="global-btns">
     <button class="global-btn" id="btn-expand"   onclick="expandAll()">▼ Expandir tudo</button>
     <button class="global-btn" id="btn-collapse" onclick="collapseAll()">▲ Fechar tudo</button>
   </div>
 </div>
 
-<div class="search-bar" id="search-bar"></div>
+<div class="search-status-bar" id="search-status"></div>
+
 <nav class="platform-nav" id="platform-nav"></nav>
 
 <main class="main">

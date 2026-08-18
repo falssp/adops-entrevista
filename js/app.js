@@ -8,13 +8,14 @@ const PLATFORMS = [
   { id: 'snap',     label: 'Snap',        icon: '👻', file: 'data/snap.js'    },
   { id: 'ttd',      label: 'TTD',         icon: '🔵', file: 'data/ttd.js'     },
   { id: 'linkedin', label: 'LinkedIn',    icon: '💼', file: 'data/linkedin.js' },
+  { id: 'googleads',label: 'Google Ads',  icon: '🔍', file: 'data/googleads.js'},
   { id: 'ops',      label: 'Operacional', icon: '⚙️', file: 'data/ops.js'    },
 ];
 
 const I18N = {
-  pt: { answerLabel:'Resposta modelo', expand:'▼ Expandir tudo', collapse:'▲ Fechar tudo', loading:'Carregando...', easy:'🟢 Básico', mid:'🟡 Intermediário', hard:'🔴 Avançado', ops:'🔵 Processos', searchPlaceholder:'Buscar em todas as plataformas...', searchResults:'resultados em', noResults:'Nenhum resultado para', allPlatforms:'todas as plataformas', platforms:'Plataformas', questions:'Perguntas', languages:'Idiomas', levels:'Níveis' },
-  en: { answerLabel:'Model answer',    expand:'▼ Expand all',    collapse:'▲ Collapse all',  loading:'Loading...',    easy:'🟢 Basic',    mid:'🟡 Intermediate', hard:'🔴 Advanced',  ops:'🔵 Processes',  searchPlaceholder:'Search across all platforms...', searchResults:'results in', noResults:'No results for', allPlatforms:'all platforms', platforms:'Platforms', questions:'Questions', languages:'Languages', levels:'Levels' },
-  es: { answerLabel:'Respuesta modelo',expand:'▼ Expandir todo', collapse:'▲ Colapsar todo', loading:'Cargando...',   easy:'🟢 Básico',   mid:'🟡 Intermedio',   hard:'🔴 Avanzado',  ops:'🔵 Procesos',   searchPlaceholder:'Buscar en todas las plataformas...', searchResults:'resultados en', noResults:'Sin resultados para', allPlatforms:'todas las plataformas', platforms:'Plataformas', questions:'Preguntas', languages:'Idiomas', levels:'Niveles' },
+  pt: { answerLabel:'Resposta modelo', expand:'▼ Expandir tudo', collapse:'▲ Fechar tudo', loading:'Carregando...', easy:'🟢 Básico', mid:'🟡 Intermediário', hard:'🔴 Avançado', ops:'🔵 Processos', searchPlaceholder:'Buscar em todas as plataformas...', searchResults:'resultados em', noResults:'Nenhum resultado para', allPlatforms:'todas as plataformas' },
+  en: { answerLabel:'Model answer',    expand:'▼ Expand all',    collapse:'▲ Collapse all',  loading:'Loading...',    easy:'🟢 Basic',    mid:'🟡 Intermediate', hard:'🔴 Advanced',  ops:'🔵 Processes',  searchPlaceholder:'Search across all platforms...', searchResults:'results in', noResults:'No results for', allPlatforms:'all platforms' },
+  es: { answerLabel:'Respuesta modelo',expand:'▼ Expandir todo', collapse:'▲ Colapsar todo', loading:'Cargando...',   easy:'🟢 Básico',   mid:'🟡 Intermedio',   hard:'🔴 Avanzado',  ops:'🔵 Procesos',   searchPlaceholder:'Buscar en todas las plataformas...', searchResults:'resultados en', noResults:'Sin resultados para', allPlatforms:'todas las plataformas' },
 };
 
 // ── STATE ────────────────────────────────────────────────
@@ -27,7 +28,6 @@ let isSearchActive = false;
 // ── BOOT ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   buildNav();
-  buildSearch();
   loadPlatform(PLATFORMS[0].id);
   PLATFORMS.forEach(p => loadModuleData(p.id));
   updateStats();
@@ -38,7 +38,6 @@ function updateStats() {
   const pEl = document.getElementById('stat-platforms');
   const qEl = document.getElementById('stat-questions');
   if (pEl) pEl.textContent = PLATFORMS.length;
-  // count questions after all modules load (delay)
   setTimeout(() => {
     let total = 0;
     PLATFORMS.forEach(p => {
@@ -46,7 +45,7 @@ function updateStats() {
       if (d) d.tiers.forEach(t => { total += t.questions.length; });
     });
     if (qEl && total > 0) qEl.textContent = total + '+';
-  }, 3000);
+  }, 3500);
 }
 
 // ── NAV ─────────────────────────────────────────────────
@@ -70,21 +69,7 @@ function switchPlatform(id, btn) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ── SEARCH UI ───────────────────────────────────────────
-function buildSearch() {
-  const bar = document.getElementById('search-bar');
-  bar.innerHTML = `
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="search-input" class="search-input"
-        placeholder="${I18N[lang].searchPlaceholder}"
-        oninput="onSearchInput(this.value)"
-        onkeydown="if(event.key==='Escape')clearSearch()" />
-      <button class="search-clear" id="search-clear" onclick="clearSearch()" style="display:none">✕</button>
-    </div>
-    <div id="search-status" class="search-status" style="display:none"></div>`;
-}
-
+// ── SEARCH ────────────────────────────────────────────────
 function onSearchInput(val) {
   clearTimeout(searchTimeout);
   document.getElementById('search-clear').style.display = val ? 'block' : 'none';
@@ -98,13 +83,12 @@ function clearSearch() {
   const status = document.getElementById('search-status');
   if (input)  input.value = '';
   if (clear)  clear.style.display = 'none';
-  if (status) status.style.display = 'none';
+  if (status) { status.innerHTML = ''; status.classList.remove('visible'); }
   isSearchActive = false;
   const main = document.getElementById('main-content');
   if (loadedModules[currentPlatform]) renderPlatform(main, loadedModules[currentPlatform]);
 }
 
-// ── SEARCH ENGINE ────────────────────────────────────────
 function runSearch(query) {
   isSearchActive = true;
   const q = query.toLowerCase();
@@ -136,7 +120,7 @@ function renderSearchResults(results, query) {
     byPlatform[r.platform.id].items.push(r);
   });
   const platformCount = Object.keys(byPlatform).length;
-  status.style.display = 'flex';
+  status.classList.add('visible');
   if (results.length === 0) {
     status.innerHTML = `<span class="status-none">${t.noResults} "<strong>${query}</strong>"</span>`;
     main.innerHTML = `<div class="no-results"><div class="no-results-icon">🔍</div><p>${t.noResults} "<strong>${query}</strong>"</p></div>`;
@@ -192,7 +176,7 @@ function loadPlatform(id) {
 function loadModuleData(id, callback) {
   if (loadedModules[id]) { if (callback) callback(); return; }
   const script = document.createElement('script');
-  script.src = PLATFORMS.find(p => p.id === id).file + '?v=3';
+  script.src = PLATFORMS.find(p => p.id === id).file + '?v=4';
   script.onload = () => {
     if (window.__adopsData && window.__adopsData[id]) loadedModules[id] = window.__adopsData[id];
     if (callback) callback();
@@ -260,5 +244,5 @@ function setLang(newLang) {
 
 // ── ACCORDION ────────────────────────────────────────────
 function toggleQ(card) { card.classList.toggle('open'); }
-function expandAll()  { document.querySelectorAll('#main-content .q-card').forEach(c => c.classList.add('open')); }
-function collapseAll(){ document.querySelectorAll('#main-content .q-card').forEach(c => c.classList.remove('open')); }
+function expandAll()   { document.querySelectorAll('#main-content .q-card').forEach(c => c.classList.add('open')); }
+function collapseAll() { document.querySelectorAll('#main-content .q-card').forEach(c => c.classList.remove('open')); }
