@@ -551,3 +551,74 @@ If gross margin is 40% and you want 10% profit → max ACoS = 30%.`,
     },
   ],
 };
+
+// ── APPEND: Retail Media, Amazon DSP on-site/off-site ──
+window.__adopsData['amazon'].tiers[1].questions.push(
+  {
+    q: { pt: 'O que é Retail Media e como a Amazon se diferencia no ecossistema de retail media?', en: 'What is Retail Media and how does Amazon differentiate itself in the retail media ecosystem?', es: '¿Qué es Retail Media y cómo se diferencia Amazon en el ecosistema de retail media?' },
+    a: {
+      pt: `<strong>Retail Media</strong> é a publicidade veiculada por varejistas usando seus próprios dados de shopper (compras, navegação, buscas) para segmentar anúncios — tanto dentro de suas plataformas quanto em mídia externa.<br><br>
+<strong>Por que Retail Media é o canal de maior crescimento em AdTech:</strong>
+<ul>
+  <li>Dados de 1st party de altíssima qualidade: o varejista sabe exatamente o que o usuário comprou, quanto gastou, com que frequência — dados muito mais valiosos que comportamento de navegação</li>
+  <li>Proximidade com a decisão de compra: anúncio aparece no momento de maior intenção</li>
+  <li>Independe de 3rd party cookies — dados próprios do varejista</li>
+  <li>Estimativa: Retail Media superará US$150 bilhões globalmente até 2026</li>
+</ul>
+<strong>Amazon no centro do Retail Media:</strong>
+<ul>
+  <li><strong>On-site (Amazon.com.br):</strong> anúncios dentro da plataforma da Amazon — busca, páginas de produto, homepage. Formatos: Sponsored Products, Sponsored Brands, Sponsored Display.</li>
+  <li><strong>Off-site (Amazon DSP):</strong> anúncios fora da Amazon usando dados de shopper da Amazon — sites terceiros, apps, CTV, audio. Formatos programáticos clássicos com targeting de shoppers da Amazon.</li>
+</ul>
+<strong>Outros grandes players de Retail Media:</strong>
+<ul>
+  <li><strong>Brasil:</strong> Mercado Livre Ads (líder BR), Magazine Luiza Ads (Magalu), Americanas Ads, Shopee Ads, iFood Ads</li>
+  <li><strong>Global:</strong> Walmart Connect, Target Roundel, Kroger Precision Marketing, Instacart Ads, Carrefour Links</li>
+</ul>
+<strong>Métricas de Retail Media:</strong>
+<ul>
+  <li><strong>ROAS:</strong> retorno sobre investimento em anúncios (receita atribuída / gasto em mídia)</li>
+  <li><strong>NTB (New-to-Brand):</strong> % de conversões de clientes novos para a marca — fundamental para justificar investimento além de retargeting de clientes existentes</li>
+  <li><strong>Share of Voice:</strong> % de impressões obtidas vs. impressões totais disponíveis em determinada categoria/keyword</li>
+  <li><strong>ACOS (Advertising Cost of Sales):</strong> inverso do ROAS — % do custo de anúncio sobre a receita gerada</li>
+</ul>`,
+      en: `<strong>Retail Media</strong> is advertising placed by retailers using their own shopper data (purchases, browsing, searches) to segment ads — both within their platforms and in external media.<br><br>
+<strong>Why Retail Media is the fastest-growing channel in AdTech:</strong>
+<ul>
+  <li>Highest quality 1st party data: the retailer knows exactly what the user bought, how much they spent, how frequently — much more valuable than browsing behavior</li>
+  <li>Proximity to purchase decision: ad appears at the moment of highest intent</li>
+  <li>Independent of 3rd party cookies</li>
+  <li>Estimate: Retail Media will surpass US$150 billion globally by 2026</li>
+</ul>
+<strong>Amazon at the center of Retail Media:</strong>
+<ul>
+  <li><strong>On-site (Amazon.com):</strong> ads within Amazon's platform — search, product pages, homepage. Formats: Sponsored Products, Sponsored Brands, Sponsored Display.</li>
+  <li><strong>Off-site (Amazon DSP):</strong> ads outside Amazon using Amazon shopper data — third-party sites, apps, CTV, audio. Classic programmatic formats with Amazon shopper targeting.</li>
+</ul>
+<strong>Key Retail Media metrics:</strong>
+<ul>
+  <li><strong>ROAS:</strong> return on ad spend (attributed revenue / media spend)</li>
+  <li><strong>NTB (New-to-Brand):</strong> % of conversions from new brand customers</li>
+  <li><strong>Share of Voice:</strong> % of impressions obtained vs. total available impressions in a category/keyword</li>
+  <li><strong>ACOS (Advertising Cost of Sales):</strong> inverse of ROAS — % of ad cost over generated revenue</li>
+</ul>`,
+      es: `El <strong>Retail Media</strong> es la publicidad colocada por retailers usando sus propios datos de shopper para segmentar anuncios — tanto dentro de sus plataformas como en medios externos.<br><br>
+<strong>Por qué Retail Media es el canal de mayor crecimiento en AdTech:</strong>
+<ul>
+  <li>Datos de 1st party de altísima calidad: el retailer sabe exactamente qué compró el usuario</li>
+  <li>Proximidad con la decisión de compra: el anuncio aparece en el momento de mayor intención</li>
+  <li>Independiente de cookies de terceros</li>
+</ul>
+<strong>Amazon en el centro del Retail Media:</strong>
+<ul>
+  <li><strong>On-site:</strong> anuncios dentro de la plataforma de Amazon — búsqueda, páginas de producto, homepage.</li>
+  <li><strong>Off-site (Amazon DSP):</strong> anuncios fuera de Amazon usando datos de shopper de Amazon.</li>
+</ul>
+<strong>Métricas de Retail Media:</strong>
+<ul>
+  <li><strong>ROAS, NTB (New-to-Brand), Share of Voice, ACOS</strong></li>
+</ul>`,
+    },
+    tags: ['Retail-Media', 'Amazon', 'on-site', 'off-site', 'shopper-data', 'ROAS', 'NTB', 'ACOS'],
+  }
+);

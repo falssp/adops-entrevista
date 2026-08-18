@@ -1070,3 +1070,77 @@ Nunca pagas la puja máxima — pagas el mínimo necesario para mantener la posi
     },
   ],
 };
+
+// ── APPEND: YouTube Ads ──
+window.__adopsData['googleads'].tiers[1].questions.push(
+  {
+    q: { pt: 'Quais são os formatos de anúncio do YouTube e como cada um funciona?', en: 'What are YouTube ad formats and how does each work?', es: '¿Cuáles son los formatos de anuncio de YouTube y cómo funciona cada uno?' },
+    a: {
+      pt: `O YouTube oferece o maior inventário de vídeo online — comprado via Google Ads ou DV360.<br><br>
+<strong>Formatos In-Stream (dentro do vídeo):</strong>
+<ul>
+  <li><strong>TrueView In-Stream Pulável:</strong> vídeo de qualquer duração que pode ser pulado após 5 segundos. Cobrado apenas quando o usuário assiste &gt;30s (ou o vídeo completo se &lt;30s) ou clica. CPV (Cost Per View). Objetivo: awareness e consideração.</li>
+  <li><strong>In-Stream Não Pulável:</strong> vídeos de até 15 segundos obrigatórios (o usuário não pode pular). CPM. Objetivo: máximo alcance de mensagem completa.</li>
+  <li><strong>Bumper Ads:</strong> vídeos de até 6 segundos não puláveis. CPM. Ultra-rápido, ideal para reforço de mensagem de branding em complemento a campanhas maiores.</li>
+</ul>
+<strong>Formatos Discovery / Feed:</strong>
+<ul>
+  <li><strong>TrueView Video Discovery (In-Feed):</strong> aparece nos resultados de busca do YouTube e na homepage como miniatura. Usuário clica para assistir voluntariamente. Cobrado no clique (CPC). Indica intenção alta.</li>
+</ul>
+<strong>Formatos Premium:</strong>
+<ul>
+  <li><strong>Masthead:</strong> banner de vídeo na homepage do YouTube por 24h. Compra por reserva (CPD — Cost Per Day). Alcance massivo garantido — usado em lançamentos e eventos.</li>
+  <li><strong>YouTube Select:</strong> pacotes de inventário premium em canais top de categorias específicas (esportes, beleza, games). CPM mais alto, audiência mais qualificada.</li>
+</ul>
+<strong>YouTube Shorts Ads:</strong>
+<ul>
+  <li>Anúncios verticais (9:16) veiculados entre Shorts. Puláveis. Crescimento acelerado com a ascensão do formato Shorts.</li>
+</ul>
+<strong>Métricas-chave de YouTube:</strong>
+<ul>
+  <li><strong>VCR (Video Completion Rate):</strong> % que assistiu o vídeo completo</li>
+  <li><strong>CPV (Cost Per View):</strong> custo por visualização qualificada (&gt;30s ou completo)</li>
+  <li><strong>View-Through Rate (VTR):</strong> similar ao VCR no contexto do YouTube</li>
+  <li><strong>Brand Lift Study:</strong> mensuração de uplift em awareness, recall e intenção de compra via pesquisa com grupo controle vs. grupo exposto</li>
+</ul>`,
+      en: `YouTube offers the largest online video inventory — bought via Google Ads or DV360.<br><br>
+<strong>In-Stream formats (within video):</strong>
+<ul>
+  <li><strong>TrueView In-Stream Skippable:</strong> any length video, skippable after 5 seconds. Charged only when user watches &gt;30s or clicks. CPV. Objective: awareness and consideration.</li>
+  <li><strong>Non-Skippable In-Stream:</strong> up to 15 second videos, mandatory. CPM. Objective: maximum complete message reach.</li>
+  <li><strong>Bumper Ads:</strong> up to 6 second non-skippable videos. CPM. Ultra-fast, ideal for branding message reinforcement.</li>
+</ul>
+<strong>Discovery / Feed formats:</strong>
+<ul>
+  <li><strong>TrueView Video Discovery (In-Feed):</strong> appears in YouTube search results and homepage as thumbnail. User clicks to watch voluntarily. Charged per click. High intent signal.</li>
+</ul>
+<strong>Premium formats:</strong>
+<ul>
+  <li><strong>Masthead:</strong> video banner on YouTube homepage for 24h. Reservation buy (CPD). Massive guaranteed reach.</li>
+  <li><strong>YouTube Select:</strong> premium inventory packages on top channels in specific categories. Higher CPM, more qualified audience.</li>
+</ul>
+<strong>Key YouTube metrics:</strong>
+<ul>
+  <li><strong>VCR (Video Completion Rate), CPV, Brand Lift Study</strong></li>
+</ul>`,
+      es: `YouTube ofrece el mayor inventario de video online — comprado via Google Ads o DV360.<br><br>
+<strong>Formatos In-Stream (dentro del video):</strong>
+<ul>
+  <li><strong>TrueView In-Stream Omitible:</strong> video de cualquier duración, omitible tras 5 segundos. Cobrado solo cuando el usuario ve &gt;30s o hace clic. CPV.</li>
+  <li><strong>In-Stream No Omitible:</strong> videos de hasta 15 segundos obligatorios. CPM.</li>
+  <li><strong>Bumper Ads:</strong> videos de hasta 6 segundos no omitibles. CPM.</li>
+</ul>
+<strong>Formatos Discovery / Feed:</strong>
+<ul>
+  <li><strong>TrueView Video Discovery (In-Feed):</strong> aparece en los resultados de búsqueda de YouTube y en la homepage como miniatura. Se cobra al hacer clic.</li>
+</ul>
+<strong>Formatos Premium:</strong>
+<ul>
+  <li><strong>Masthead:</strong> banner de video en la homepage de YouTube durante 24h. Compra por reserva (CPD).</li>
+  <li><strong>YouTube Select:</strong> paquetes de inventario premium en canales top.</li>
+</ul>
+<strong>Métricas clave:</strong> VCR, CPV, Brand Lift Study.`,
+    },
+    tags: ['YouTube', 'TrueView', 'Bumper', 'Masthead', 'In-Stream', 'VCR', 'CPV', 'Brand-Lift'],
+  }
+);

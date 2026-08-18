@@ -689,3 +689,144 @@ Ejemplo: <code>COCA_COCA-ZERO_AWARENESS_DV360_BANNER-300x250_2024Q1</code><br><b
     },
   ],
 };
+
+// ── APPEND: Looker Studio, BigQuery, Influencer tracking ──
+window.__adopsData['ops'].tiers[1].questions.push(
+  {
+    q: { pt: 'Como construir um dashboard de campanhas no Looker Studio conectado ao CM360, GA4 e planilhas?', en: 'How to build a campaign dashboard in Looker Studio connected to CM360, GA4 and spreadsheets?', es: '¿Cómo construir un dashboard de campañas en Looker Studio conectado a CM360, GA4 y hojas de cálculo?' },
+    a: {
+      pt: `O <strong>Looker Studio</strong> (antigo Google Data Studio) é a ferramenta gratuita do Google para criar dashboards interativos conectados a múltiplas fontes de dados.<br><br>
+<strong>Conectores nativos úteis para AdOps:</strong>
+<ul>
+  <li><strong>Campaign Manager 360:</strong> conector nativo — conecta impressões, cliques, conversões Floodlight diretamente</li>
+  <li><strong>Google Analytics 4:</strong> conector nativo — sessões, conversões, receita por fonte</li>
+  <li><strong>Google Ads:</strong> conector nativo — custo, cliques, conversões, Quality Score</li>
+  <li><strong>DV360:</strong> conector nativo — impressões, viewability, budget</li>
+  <li><strong>Google Sheets:</strong> conector nativo — alimentar com dados manuais de plataformas sem conector (Meta, TikTok)</li>
+  <li><strong>BigQuery:</strong> conector nativo — para dashboards com grande volume de dados ou transformações complexas</li>
+</ul>
+<strong>Como criar o dashboard:</strong>
+<ol>
+  <li>Acesse <code>lookerstudio.google.com</code> → Criar → Relatório</li>
+  <li>Adicionar fonte de dados: selecione o conector (CM360, GA4, etc.) e autorize</li>
+  <li>Criar páginas por tema: Visão Geral, Entrega por Canal, Performance por Criativo, Conversões</li>
+  <li>Adicionar componentes: tabelas, gráficos de linha/barra/pizza, scorecards (número único), filtros de data</li>
+  <li>Configurar filtros interativos: por campanha, período, canal, formato</li>
+  <li>Misturar fontes: um dashboard pode ter uma tabela do CM360 e um gráfico do GA4 na mesma página</li>
+</ol>
+<strong>Boas práticas para dashboards de AdOps:</strong>
+<ul>
+  <li>Página 1 — Scorecard executivo: impressões, cliques, conversões, CTR, CPA, budget gasto vs. planejado</li>
+  <li>Página 2 — Entrega: pace diário, entrega por veículo, discrepância CM360 vs. veículo</li>
+  <li>Página 3 — Performance: métricas por campanha/linha, breakdown por device/formato/geo</li>
+  <li>Usar blended data para combinar custo do Google Ads com receita do GA4 no mesmo gráfico</li>
+  <li>Agendar envio automático de email do dashboard para clientes (Compartilhar → Programar entrega)</li>
+</ul>
+<strong>Para plataformas sem conector nativo (Meta, TikTok, LinkedIn):</strong>
+<ul>
+  <li>Exportar dados manualmente para Google Sheets → conectar Sheets ao Looker Studio</li>
+  <li>Ou usar conectores de terceiros: Supermetrics, Power My Analytics, windsor.ai (pagos)</li>
+</ul>`,
+      en: `<strong>Looker Studio</strong> (formerly Google Data Studio) is Google's free tool for creating interactive dashboards connected to multiple data sources.<br><br>
+<strong>Useful native connectors for AdOps:</strong>
+<ul>
+  <li><strong>Campaign Manager 360, Google Analytics 4, Google Ads, DV360, Google Sheets, BigQuery</strong> — all native</li>
+</ul>
+<strong>How to create the dashboard:</strong>
+<ol>
+  <li>Access <code>lookerstudio.google.com</code> → Create → Report</li>
+  <li>Add data source: select connector (CM360, GA4, etc.) and authorize</li>
+  <li>Create pages by theme: Overview, Delivery by Channel, Creative Performance, Conversions</li>
+  <li>Add components: tables, line/bar/pie charts, scorecards, date filters</li>
+  <li>Configure interactive filters: by campaign, period, channel, format</li>
+</ol>
+<strong>AdOps dashboard best practices:</strong>
+<ul>
+  <li>Page 1 — Executive scorecard: impressions, clicks, conversions, CTR, CPA, budget spent vs. planned</li>
+  <li>Page 2 — Delivery: daily pace, delivery by publisher, CM360 vs. publisher discrepancy</li>
+  <li>Page 3 — Performance: metrics by campaign/line, breakdown by device/format/geo</li>
+  <li>Schedule automatic email delivery of dashboard to clients</li>
+</ul>
+<strong>For platforms without native connector (Meta, TikTok, LinkedIn):</strong>
+<ul>
+  <li>Export data manually to Google Sheets → connect Sheets to Looker Studio</li>
+  <li>Or use third-party connectors: Supermetrics, Power My Analytics, windsor.ai (paid)</li>
+</ul>`,
+      es: `<strong>Looker Studio</strong> (antes Google Data Studio) es la herramienta gratuita de Google para crear dashboards interactivos conectados a múltiples fuentes de datos.<br><br>
+<strong>Conectores nativos útiles para AdOps:</strong> Campaign Manager 360, Google Analytics 4, Google Ads, DV360, Google Sheets, BigQuery — todos nativos.<br><br>
+<strong>Cómo crear el dashboard:</strong>
+<ol>
+  <li>Accede a <code>lookerstudio.google.com</code> → Crear → Informe</li>
+  <li>Agregar fuente de datos: selecciona el conector y autoriza</li>
+  <li>Crear páginas por tema: Visión General, Entrega por Canal, Performance por Creativo, Conversiones</li>
+  <li>Agregar componentes: tablas, gráficos, scorecards, filtros de fecha</li>
+</ol>
+<strong>Buenas prácticas para dashboards de AdOps:</strong>
+<ul>
+  <li>Página 1 — Scorecard ejecutivo: impresiones, clics, conversiones, CTR, CPA, presupuesto gastado vs. planificado</li>
+  <li>Página 2 — Entrega: ritmo diario, entrega por medio, discrepancia CM360 vs. medio</li>
+  <li>Página 3 — Performance: métricas por campaña, breakdown por dispositivo/formato/geo</li>
+  <li>Programar envío automático de email del dashboard a clientes</li>
+</ul>`,
+    },
+    tags: ['Looker-Studio', 'dashboard', 'CM360', 'GA4', 'BigQuery', 'Supermetrics', 'reporting'],
+  },
+  {
+    q: { pt: 'Como rastrear e mensurar campanhas de Influencer Marketing?', en: 'How to track and measure Influencer Marketing campaigns?', es: '¿Cómo rastrear y medir campañas de Influencer Marketing?' },
+    a: {
+      pt: `Influencer Marketing apresenta desafios únicos de mensuração — o conteúdo acontece em plataformas que não pertencem ao anunciante, com audiências que o criador não compartilha diretamente.<br><br>
+<strong>Métodos de rastreamento de influencer:</strong>
+<ul>
+  <li><strong>UTM Links únicos por criador:</strong> cada influencer recebe um link com UTMs específicos (utm_source=influencer_nome, utm_medium=instagram, utm_campaign=lancamento). Permite rastrear tráfego e conversões por criador no GA4.</li>
+  <li><strong>Códigos de desconto únicos:</strong> cada criador divulga um código próprio (NOME10). Rastreado diretamente no e-commerce. Desvantagem: só captura quem usa o código na hora — subestima o impacto.</li>
+  <li><strong>Link na bio / Link tree:</strong> links rastreáveis na bio do Instagram. Ferramentas: Linktree, Milkshake, ou link direto com UTM.</li>
+  <li><strong>Pixel de Branded Content:</strong> Meta permite que anunciantes adicionem seu Pixel ao conteúdo patrocinado do influencer — o influencer marca a publicação como "parceria paga" e o anunciante acessa os dados de conversão via Meta Ads Manager.</li>
+  <li><strong>Collab Posts (Meta):</strong> post criado em co-autoria com o influencer — aparece no perfil dele E no da marca. O anunciante tem acesso a todas as métricas.</li>
+</ul>
+<strong>Métricas de Influencer Marketing:</strong>
+<ul>
+  <li><strong>Reach:</strong> quantas pessoas únicas viram o conteúdo</li>
+  <li><strong>Impressões:</strong> total de vezes que o conteúdo foi exibido (inclui múltiplas visualizações)</li>
+  <li><strong>Engagement Rate:</strong> (curtidas + comentários + salvamentos + shares) ÷ alcance × 100. Benchmark: &gt;3% é bom, &gt;6% é excelente</li>
+  <li><strong>CPV (Custo Por View):</strong> cachê do influencer ÷ views do vídeo</li>
+  <li><strong>CPE (Custo Por Engajamento):</strong> cachê ÷ interações totais</li>
+  <li><strong>Conversões rastreadas:</strong> sessões, leads e vendas vindas dos links UTM ou códigos do influencer</li>
+  <li><strong>EMV (Earned Media Value):</strong> estimativa do valor equivalente em mídia paga para o alcance obtido organicamente</li>
+</ul>
+<strong>Plataformas de gestão de influencer:</strong>
+<ul>
+  <li>Brasil: Squid, HypeAuditor, Influency.me, Cadastra Influence</li>
+  <li>Global: Creator.co, Grin, AspireIQ, Sprout Social</li>
+</ul>`,
+      en: `Influencer Marketing presents unique measurement challenges — content happens on platforms not owned by the advertiser, with audiences the creator doesn't share directly.<br><br>
+<strong>Influencer tracking methods:</strong>
+<ul>
+  <li><strong>Unique UTM links per creator:</strong> each influencer gets a link with specific UTMs. Tracks traffic and conversions per creator in GA4.</li>
+  <li><strong>Unique discount codes:</strong> each creator promotes their own code. Tracked directly in e-commerce. Downside: only captures those who use code immediately.</li>
+  <li><strong>Pixel in Branded Content:</strong> Meta allows advertisers to add their Pixel to sponsored influencer content — influencer marks post as "paid partnership" and advertiser accesses conversion data via Meta Ads Manager.</li>
+  <li><strong>Collab Posts (Meta):</strong> post co-authored with influencer — appears on their profile AND the brand's. Advertiser has access to all metrics.</li>
+</ul>
+<strong>Influencer Marketing metrics:</strong>
+<ul>
+  <li><strong>Reach, Impressions, Engagement Rate</strong> (benchmark: &gt;3% good, &gt;6% excellent)</li>
+  <li><strong>CPV (Cost Per View), CPE (Cost Per Engagement)</strong></li>
+  <li><strong>Tracked conversions:</strong> sessions, leads and sales from UTM links or influencer codes</li>
+  <li><strong>EMV (Earned Media Value):</strong> estimated equivalent value in paid media for organically obtained reach</li>
+</ul>`,
+      es: `El Influencer Marketing presenta desafíos únicos de medición — el contenido ocurre en plataformas que no pertenecen al anunciante.<br><br>
+<strong>Métodos de rastreo de influencer:</strong>
+<ul>
+  <li><strong>Links UTM únicos por creador:</strong> cada influencer recibe un link con UTMs específicos. Permite rastrear tráfico y conversiones por creador en GA4.</li>
+  <li><strong>Códigos de descuento únicos:</strong> cada creador divulga su propio código. Rastreado directamente en el e-commerce.</li>
+  <li><strong>Pixel en Branded Content:</strong> Meta permite que los anunciantes añadan su Píxel al contenido patrocinado del influencer.</li>
+  <li><strong>Collab Posts (Meta):</strong> post en co-autoría con el influencer — el anunciante tiene acceso a todas las métricas.</li>
+</ul>
+<strong>Métricas de Influencer Marketing:</strong>
+<ul>
+  <li><strong>Reach, Impressiones, Engagement Rate</strong> (benchmark: &gt;3% bueno, &gt;6% excelente)</li>
+  <li><strong>CPV, CPE, Conversiones rastreadas, EMV (Earned Media Value)</strong></li>
+</ul>`,
+    },
+    tags: ['influencer', 'UTM', 'Pixel', 'Branded-Content', 'EMV', 'engagement-rate', 'Squid', 'rastreamento'],
+  }
+);

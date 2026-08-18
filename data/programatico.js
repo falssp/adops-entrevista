@@ -831,3 +831,235 @@ Resultado: los Ad Exchanges al final de la cola nunca tenían oportunidad de com
     },
   ],
 };
+
+// ── APPEND: Ad Fraud, IVT, Viewability, Brand Safety, Programmatic Audio ──
+window.__adopsData['programatico'].tiers[2].questions.push(
+  {
+    q: { pt: 'O que é IVT (Invalid Traffic) e como o ad fraud funciona no programático?', en: 'What is IVT (Invalid Traffic) and how does ad fraud work in programmatic?', es: '¿Qué es el IVT (Invalid Traffic) y cómo funciona el ad fraud en programático?' },
+    a: {
+      pt: `<strong>IVT (Invalid Traffic)</strong> é qualquer tráfego que não representa um interesse ou intenção genuína de um usuário humano real — inclui bots, scrapers, click farms e outras formas de fraude publicitária.<br><br>
+<strong>Tipos de IVT:</strong>
+<ul>
+  <li><strong>GIVT (General Invalid Traffic):</strong> tráfego inválido identificável por métodos padrão. Data centers, user agents conhecidos de bots, crawlers de busca, ferramentas de monitoramento. Filtrado automaticamente pelos principais ad servers e SSPs.</li>
+  <li><strong>SIVT (Sophisticated Invalid Traffic):</strong> fraude avançada, difícil de detectar. Requer análise forense especializada:
+    <ul>
+      <li><strong>Botnets:</strong> redes de dispositivos infectados por malware que simulam usuários reais — mesmo IP residencial, user agent legítimo, comportamento humano simulado</li>
+      <li><strong>Domain spoofing:</strong> publisher fraudulento declara ser um domínio premium (ex: nytimes.com) no bid request — anunciante paga CPM premium por inventário de site desconhecido</li>
+      <li><strong>Ad stacking:</strong> múltiplos anúncios empilhados um sobre o outro — apenas o do topo é visível, mas todos registram impressão</li>
+      <li><strong>Pixel stuffing:</strong> anúncio comprimido em pixel de 1×1 — invisível, mas conta como impressão</li>
+      <li><strong>Click injection (mobile):</strong> app malicioso detecta instalação pendente e injeta clique falso para "roubar" a atribuição</li>
+    </ul>
+  </li>
+</ul>
+<strong>Impacto do ad fraud:</strong>
+<ul>
+  <li>Estimativa: US$80-100 bilhões perdidos em fraude publicitária globalmente por ano (Juniper Research)</li>
+  <li>Anunciante paga por impressões/cliques que nunca foram vistos por humanos</li>
+  <li>Métricas infladas: CTR alto anormal, VCR alto, conversões suspeitas</li>
+</ul>
+<strong>Ferramentas de verificação (Ad Verification):</strong>
+<ul>
+  <li><strong>DoubleVerify (DV):</strong> lider global — mede viewability, IVT, brand safety e contextual. Integrado com DV360, The Trade Desk, e outros DSPs</li>
+  <li><strong>IAS (Integral Ad Science):</strong> concorrente direto do DV — forte em brand safety e fraud detection</li>
+  <li><strong>Oracle Moat:</strong> foco em viewability e attention metrics</li>
+  <li><strong>HUMAN Security (ex-WhiteOps):</strong> especialista em detecção de botnets sofisticados</li>
+</ul>
+<strong>Como implementar proteção contra IVT:</strong>
+<ul>
+  <li>Ativar pré-bid filtering no DSP: não licitar em inventário sem verificação de qualidade</li>
+  <li>Usar listas de bloqueio (blocklist) de domínios suspeitos — IAB e MRC publicam listas</li>
+  <li>Monitorar métricas de qualidade: se CTR &gt;5% em display ou VCR &gt;100%, investigar</li>
+  <li>PMPs com publishers verificados reduzem drasticamente a exposição ao IVT</li>
+</ul>`,
+      en: `<strong>IVT (Invalid Traffic)</strong> is any traffic that doesn't represent genuine interest or intent from a real human user — includes bots, scrapers, click farms and other forms of ad fraud.<br><br>
+<strong>IVT types:</strong>
+<ul>
+  <li><strong>GIVT (General Invalid Traffic):</strong> invalid traffic identifiable by standard methods. Data centers, known bot user agents, search crawlers, monitoring tools. Automatically filtered by major ad servers and SSPs.</li>
+  <li><strong>SIVT (Sophisticated Invalid Traffic):</strong> advanced fraud, difficult to detect:
+    <ul>
+      <li><strong>Botnets:</strong> networks of malware-infected devices simulating real users</li>
+      <li><strong>Domain spoofing:</strong> fraudulent publisher declares being a premium domain in bid request</li>
+      <li><strong>Ad stacking:</strong> multiple ads stacked on top of each other — only the top one is visible, but all record impressions</li>
+      <li><strong>Pixel stuffing:</strong> ad compressed in 1×1 pixel — invisible, but counts as impression</li>
+      <li><strong>Click injection (mobile):</strong> malicious app detects pending install and injects fake click to "steal" attribution</li>
+    </ul>
+  </li>
+</ul>
+<strong>Ad fraud impact:</strong>
+<ul>
+  <li>Estimate: US$80-100 billion lost to ad fraud globally per year</li>
+  <li>Advertiser pays for impressions/clicks never seen by humans</li>
+</ul>
+<strong>Verification tools:</strong>
+<ul>
+  <li><strong>DoubleVerify (DV):</strong> global leader — measures viewability, IVT, brand safety and contextual</li>
+  <li><strong>IAS (Integral Ad Science):</strong> direct DV competitor — strong in brand safety and fraud detection</li>
+  <li><strong>HUMAN Security:</strong> specialist in sophisticated botnet detection</li>
+</ul>`,
+      es: `El <strong>IVT (Invalid Traffic)</strong> es cualquier tráfico que no representa un interés o intención genuina de un usuario humano real.<br><br>
+<strong>Tipos de IVT:</strong>
+<ul>
+  <li><strong>GIVT:</strong> tráfico inválido identificable por métodos estándar. Filtrado automáticamente.</li>
+  <li><strong>SIVT:</strong> fraude avanzado: Botnets, Domain spoofing, Ad stacking, Pixel stuffing, Click injection.</li>
+</ul>
+<strong>Herramientas de verificación:</strong>
+<ul>
+  <li><strong>DoubleVerify (DV):</strong> líder global — mide viewability, IVT, brand safety y contextual</li>
+  <li><strong>IAS (Integral Ad Science):</strong> fuerte en brand safety y detección de fraudes</li>
+  <li><strong>HUMAN Security:</strong> especialista en detección de botnets sofisticados</li>
+</ul>`,
+    },
+    tags: ['IVT', 'ad-fraud', 'GIVT', 'SIVT', 'botnet', 'domain-spoofing', 'DoubleVerify', 'IAS'],
+  },
+  {
+    q: { pt: 'O que é Viewability e quais são os padrões MRC?', en: 'What is Viewability and what are MRC standards?', es: '¿Qué es Viewability y cuáles son los estándares MRC?' },
+    a: {
+      pt: `<strong>Viewability (visibilidade)</strong> mede se um anúncio teve real chance de ser visto pelo usuário — uma impressão "servida" nem sempre é vista se estiver abaixo da dobra ou em aba não ativa.<br><br>
+<strong>Padrões MRC (Media Rating Council):</strong>
+<ul>
+  <li><strong>Display:</strong> mínimo <strong>50% dos pixels visíveis por ≥ 1 segundo</strong></li>
+  <li><strong>Large Format Display (≥ 242.500px):</strong> mínimo 30% dos pixels visíveis por ≥ 1 segundo</li>
+  <li><strong>Video (in-stream):</strong> mínimo <strong>50% dos pixels visíveis por ≥ 2 segundos</strong></li>
+  <li><strong>Video (out-stream):</strong> mínimo 50% dos pixels visíveis por ≥ 2 segundos e com som ou em mute iniciado pelo publisher</li>
+</ul>
+<strong>Benchmarks de viewability por formato (mercado geral):</strong>
+<ul>
+  <li>Display 300×250: ~50-55%</li>
+  <li>Display 728×90 (leaderboard): ~40-45% (frequentemente abaixo da dobra)</li>
+  <li>Display 300×600 (half page): ~65-70% (geralmente above the fold)</li>
+  <li>Video in-stream: ~65-75%</li>
+  <li>Mobile interstitial: ~85-90% (tela inteira)</li>
+</ul>
+<strong>Como melhorar viewability:</strong>
+<ul>
+  <li>Comprar inventário above the fold (definir target de viewability mínima no DSP)</li>
+  <li>Usar Active View no DV360/CM360 para filtrar por viewability</li>
+  <li>PMPs com publishers verificados tendem a ter viewability mais alta</li>
+  <li>Evitar inventário em páginas com muito scroll e conteúdo longo</li>
+  <li>Formatos maiores (300×600, 970×250) tendem a ter viewability mais alta por ocupar mais espaço</li>
+</ul>
+<strong>Viewability vs. Attention:</strong>
+<ul>
+  <li>Viewability = condição mínima (o anúncio estava na tela)</li>
+  <li>Attention = o usuário realmente prestou atenção? Métricas de atenção (eye-tracking, scroll speed, cursor hover) estão emergindo como o próximo passo além da viewability</li>
+  <li>Ferramentas de attention: Lumen Research, Adelaide, Amplified Intelligence</li>
+</ul>`,
+      en: `<strong>Viewability</strong> measures whether an ad had a real chance of being seen by the user — a "served" impression isn't always seen if below the fold or in an inactive tab.<br><br>
+<strong>MRC (Media Rating Council) Standards:</strong>
+<ul>
+  <li><strong>Display:</strong> minimum <strong>50% of pixels visible for ≥ 1 second</strong></li>
+  <li><strong>Large Format Display (≥ 242,500px):</strong> minimum 30% of pixels visible for ≥ 1 second</li>
+  <li><strong>Video (in-stream):</strong> minimum <strong>50% of pixels visible for ≥ 2 seconds</strong></li>
+</ul>
+<strong>Viewability benchmarks by format:</strong>
+<ul>
+  <li>Display 300×250: ~50-55%</li>
+  <li>Display 728×90 (leaderboard): ~40-45%</li>
+  <li>Display 300×600 (half page): ~65-70%</li>
+  <li>Video in-stream: ~65-75%</li>
+  <li>Mobile interstitial: ~85-90%</li>
+</ul>
+<strong>How to improve viewability:</strong>
+<ul>
+  <li>Buy above-the-fold inventory (set minimum viewability target in DSP)</li>
+  <li>Use Active View in DV360/CM360 to filter by viewability</li>
+  <li>Larger formats tend to have higher viewability</li>
+</ul>
+<strong>Viewability vs. Attention:</strong>
+<ul>
+  <li>Viewability = minimum condition (ad was on screen)</li>
+  <li>Attention = did the user actually pay attention? Emerging metrics: eye-tracking, scroll speed, cursor hover</li>
+</ul>`,
+      es: `La <strong>Viewability (visibilidad)</strong> mide si un anuncio tuvo una oportunidad real de ser visto por el usuario.<br><br>
+<strong>Estándares MRC:</strong>
+<ul>
+  <li><strong>Display:</strong> mínimo <strong>50% de los píxeles visibles durante ≥ 1 segundo</strong></li>
+  <li><strong>Video (in-stream):</strong> mínimo <strong>50% de los píxeles visibles durante ≥ 2 segundos</strong></li>
+</ul>
+<strong>Benchmarks de viewability por formato:</strong>
+<ul>
+  <li>Display 300×250: ~50-55%</li>
+  <li>Display 728×90: ~40-45%</li>
+  <li>Display 300×600: ~65-70%</li>
+  <li>Video in-stream: ~65-75%</li>
+</ul>
+<strong>Cómo mejorar la viewability:</strong>
+<ul>
+  <li>Comprar inventario above the fold</li>
+  <li>Usar Active View en DV360/CM360 para filtrar por viewability</li>
+  <li>Los formatos más grandes tienden a tener viewability más alta</li>
+</ul>`,
+    },
+    tags: ['viewability', 'MRC', 'Active-View', 'above-fold', 'DoubleVerify', 'IAS', 'attention'],
+  },
+  {
+    q: { pt: 'O que é Programmatic Audio e como funciona a publicidade em streaming de áudio?', en: 'What is Programmatic Audio and how does audio streaming advertising work?', es: '¿Qué es el Programmatic Audio y cómo funciona la publicidad en streaming de audio?' },
+    a: {
+      pt: `<strong>Programmatic Audio</strong> é a compra automatizada de espaços publicitários em plataformas de streaming de áudio — podcasts, música em streaming, rádio digital — usando as mesmas tecnologias RTB do display.<br><br>
+<strong>Formatos de anúncio em áudio:</strong>
+<ul>
+  <li><strong>Audio Ads (spots):</strong> anúncio de áudio de 15-30 segundos reproduzido entre músicas ou episódios. Companion Banner: imagem exibida na tela do app durante o audio ad.</li>
+  <li><strong>Pre-roll / Mid-roll / Post-roll:</strong> posicionamento no conteúdo (antes, durante ou depois)</li>
+  <li><strong>Host-read ads (podcast):</strong> o apresentador lê o anúncio — maior autenticidade, mas compra direta (não programática)</li>
+  <li><strong>Branded Playlists / Takeovers:</strong> compra direta premium — ex: playlist temática patrocinada pela marca</li>
+</ul>
+<strong>Plataformas e inventário:</strong>
+<ul>
+  <li><strong>Spotify Ads:</strong> maior inventário de áudio premium. Acesso via Spotify Ads Manager (self-serve) ou programático via DSPs parceiros (DV360, The Trade Desk, Amazon DSP). Targeting: demo, playlist, contexto, comportamento.</li>
+  <li><strong>Amazon Music / Audible:</strong> inventário crescente, acesso via Amazon DSP</li>
+  <li><strong>Podcasts programáticos:</strong> Triton Digital, AdsWizz, Spotify Audience Network (distribuição programática em podcasts parceiros)</li>
+  <li><strong>Rádio digital (Brasil):</strong> players como Radioooo, Vagalume.FM, integrados via SSPs de áudio</li>
+</ul>
+<strong>Targeting em áudio programático:</strong>
+<ul>
+  <li>Contexto do conteúdo: gênero musical, tema do podcast, idioma</li>
+  <li>Demográfico: idade, gênero, localização</li>
+  <li>Comportamental: histórico de escuta, playlists salvas</li>
+  <li>Dispositivo: mobile, desktop, smart speaker</li>
+  <li>Horário: momento do dia (commute, academia, trabalho)</li>
+</ul>
+<strong>Métricas:</strong> Completion Rate (benchmark: &gt;80% — o usuário não pode pular), Reach, Frequency, CPM (tipicamente R$20-50 no BR), Companion Banner CTR.`,
+      en: `<strong>Programmatic Audio</strong> is the automated purchase of advertising spaces on audio streaming platforms — podcasts, music streaming, digital radio — using the same RTB technologies as display.<br><br>
+<strong>Audio ad formats:</strong>
+<ul>
+  <li><strong>Audio Ads (spots):</strong> 15-30 second audio ad played between songs or episodes. Companion Banner: image displayed on app screen during audio ad.</li>
+  <li><strong>Pre-roll / Mid-roll / Post-roll:</strong> positioning in content</li>
+  <li><strong>Host-read ads (podcast):</strong> presenter reads the ad — higher authenticity, but direct buy</li>
+</ul>
+<strong>Platforms and inventory:</strong>
+<ul>
+  <li><strong>Spotify Ads:</strong> largest premium audio inventory. Access via Spotify Ads Manager (self-serve) or programmatic via partner DSPs (DV360, The Trade Desk, Amazon DSP).</li>
+  <li><strong>Amazon Music / Audible:</strong> growing inventory, access via Amazon DSP</li>
+  <li><strong>Programmatic Podcasts:</strong> Triton Digital, AdsWizz, Spotify Audience Network</li>
+</ul>
+<strong>Audio programmatic targeting:</strong>
+<ul>
+  <li>Content context: music genre, podcast theme, language</li>
+  <li>Demographic: age, gender, location</li>
+  <li>Behavioral: listening history, saved playlists</li>
+  <li>Time of day: commute, gym, work</li>
+</ul>
+<strong>Metrics:</strong> Completion Rate (benchmark: &gt;80%), Reach, Frequency, CPM, Companion Banner CTR.`,
+      es: `El <strong>Programmatic Audio</strong> es la compra automatizada de espacios publicitarios en plataformas de streaming de audio — podcasts, música en streaming, radio digital.<br><br>
+<strong>Formatos de anuncio en audio:</strong>
+<ul>
+  <li><strong>Audio Ads (spots):</strong> anuncio de audio de 15-30 segundos reproducido entre canciones o episodios. Companion Banner: imagen mostrada en la pantalla de la app durante el audio ad.</li>
+  <li><strong>Pre-roll / Mid-roll / Post-roll</strong></li>
+  <li><strong>Host-read ads (podcast):</strong> el presentador lee el anuncio — mayor autenticidad, pero compra directa</li>
+</ul>
+<strong>Plataformas e inventario:</strong>
+<ul>
+  <li><strong>Spotify Ads:</strong> mayor inventario de audio premium. Acceso via Spotify Ads Manager o programático via DSPs socios.</li>
+  <li><strong>Amazon Music / Audible:</strong> inventario creciente, acceso via Amazon DSP</li>
+  <li><strong>Podcasts programáticos:</strong> Triton Digital, AdsWizz, Spotify Audience Network</li>
+</ul>
+<strong>Targeting en audio programático:</strong>
+<ul>
+  <li>Contexto del contenido: género musical, tema del podcast, idioma</li>
+  <li>Demográfico, comportamental, dispositivo, hora del día</li>
+</ul>
+<strong>Métricas:</strong> Completion Rate (benchmark: &gt;80%), Reach, Frequency, CPM, Companion Banner CTR.`,
+    },
+    tags: ['audio', 'Spotify', 'podcast', 'programático', 'RTB', 'completion-rate', 'AdsWizz'],
+  }
+);
