@@ -12,7 +12,10 @@ const PLATFORMS = [
   { id: 'programatico', label: 'Programático', icon: '🤖', file: 'data/programatico.js' },
   { id: 'amazon',    label: 'Amazon Ads',  icon: '📦', file: 'data/amazon.js'    },
   { id: 'atribuicao',label: 'Atribuição',  icon: '📐', file: 'data/atribuicao.js' },
-  { id: 'ops',       label: 'Operacional', icon: '⚙️', file: 'data/ops.js'    },
+  { id: 'privacidade', label: 'Privacidade',   icon: '🔒', file: 'data/privacidade.js' },
+  { id: 'ctv',         label: 'CTV & TV',      icon: '📺', file: 'data/ctv.js'         },
+  { id: 'fundamentos', label: 'Fundamentos',   icon: '🎓', file: 'data/fundamentos.js' },
+  { id: 'ops',         label: 'Operacional',   icon: '⚙️', file: 'data/ops.js'         },
 ];
 
 const I18N = {
