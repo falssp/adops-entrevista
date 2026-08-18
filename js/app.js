@@ -9,7 +9,10 @@ const PLATFORMS = [
   { id: 'ttd',      label: 'TTD',         icon: '🔵', file: 'data/ttd.js'     },
   { id: 'linkedin', label: 'LinkedIn',    icon: '💼', file: 'data/linkedin.js' },
   { id: 'googleads',label: 'Google Ads',  icon: '🔍', file: 'data/googleads.js'},
-  { id: 'ops',      label: 'Operacional', icon: '⚙️', file: 'data/ops.js'    },
+  { id: 'programatico', label: 'Programático', icon: '🤖', file: 'data/programatico.js' },
+  { id: 'amazon',    label: 'Amazon Ads',  icon: '📦', file: 'data/amazon.js'    },
+  { id: 'atribuicao',label: 'Atribuição',  icon: '📐', file: 'data/atribuicao.js' },
+  { id: 'ops',       label: 'Operacional', icon: '⚙️', file: 'data/ops.js'    },
 ];
 
 const I18N = {
