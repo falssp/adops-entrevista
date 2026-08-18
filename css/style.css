@@ -84,7 +84,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font); font
 .bar-divider { width: 1px; height: 20px; background: var(--border); flex-shrink: 0; }
 
 /* Search inline na barra */
-.bar-search { flex: 1; position: relative; display: flex; align-items: center; max-width: 520px; }
+.bar-search { flex: 1; position: relative; display: flex; align-items: center; }
 .bar-search-icon { position: absolute; left: 10px; font-size: 13px; pointer-events: none; }
 .bar-search-input {
   width: 100%;
