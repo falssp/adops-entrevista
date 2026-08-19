@@ -285,3 +285,265 @@ window.__adopsData['snap'] = {
     },
   ],
 };
+
+// ── APPEND: perguntas adicionais Snapchat ──
+;(function(){
+const d = window.__adopsData['snap'];
+// adiciona ao easy
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Como criar e instalar o Snap Pixel?',en:'How to create and install the Snap Pixel?',es:'¿Cómo crear e instalar el Snap Pixel?'},
+    a:{
+      pt:`O <strong>Snap Pixel</strong> rastreia ações no site após exposição a anúncios no Snapchat — instalação, eventos, conversões.<br><br>
+<strong>Criar o Pixel:</strong>
+<ol>
+  <li>Acesse <strong>Snap Ads Manager → Assets → Snap Pixel</strong></li>
+  <li>Clique em <strong>"Create Pixel"</strong> → copie o Pixel ID</li>
+</ol>
+<strong>Instalar — 3 métodos:</strong>
+<ul>
+  <li><strong>Via GTM:</strong> Tag Custom HTML com o código base do Snap Pixel. Disparo: All Pages.</li>
+  <li><strong>Manual:</strong> colar o snippet no &lt;head&gt; de todas as páginas</li>
+  <li><strong>Shopify/WooCommerce:</strong> integração nativa — inserir o Pixel ID nas configurações da loja</li>
+</ul>
+<strong>Eventos padrão:</strong> PAGE_VIEW, VIEW_CONTENT, ADD_TO_CART, PURCHASE (com price e currency), SIGN_UP, SEARCH, START_CHECKOUT.<br><br>
+<strong>Snap Conversions API (CAPI):</strong> disponível para complementar o Pixel — envia eventos do servidor diretamente ao Snap, recuperando conversões perdidas por ad blockers e iOS 14. Configurar em: Snap Ads Manager → Assets → Snap Pixel → Conversions API.`,
+      en:`The <strong>Snap Pixel</strong> tracks site actions after exposure to Snapchat ads.<br><br>
+<strong>Create Pixel:</strong> Snap Ads Manager → Assets → Snap Pixel → Create Pixel → copy Pixel ID.<br><br>
+<strong>Install:</strong> Via GTM (Custom HTML tag, All Pages trigger), Manual (&lt;head&gt; snippet), or native Shopify/WooCommerce integration.<br><br>
+<strong>Standard events:</strong> PAGE_VIEW, VIEW_CONTENT, ADD_TO_CART, PURCHASE (with price and currency), SIGN_UP, SEARCH, START_CHECKOUT.<br><br>
+<strong>Snap Conversions API:</strong> available to complement the Pixel — sends server events directly to Snap, recovering conversions lost by ad blockers and iOS 14.`,
+      es:`El <strong>Snap Pixel</strong> rastrea acciones en el sitio tras la exposición a anuncios en Snapchat.<br><br>
+<strong>Crear:</strong> Snap Ads Manager → Assets → Snap Pixel → Create Pixel → copiar Pixel ID.<br><br>
+<strong>Instalar:</strong> Via GTM, Manual o integración nativa Shopify/WooCommerce.<br><br>
+<strong>Eventos estándar:</strong> PAGE_VIEW, VIEW_CONTENT, ADD_TO_CART, PURCHASE, SIGN_UP, SEARCH, START_CHECKOUT.<br><br>
+<strong>Snap Conversions API:</strong> disponible para complementar el Pixel — envía eventos del servidor directamente a Snap.`,
+    },
+    tags:['Snap-Pixel','GTM','CAPI','Snapchat','instalação','conversão'],
+  },
+  {
+    q:{pt:'Quais são os formatos de anúncio do Snapchat e como cada um funciona?',en:'What are Snapchat ad formats and how does each work?',es:'¿Cuáles son los formatos de anuncio de Snapchat y cómo funciona cada uno?'},
+    a:{
+      pt:`<strong>Formatos de anúncio do Snapchat:</strong><br><br>
+<strong>Snap Ads (Single Image ou Video):</strong>
+<ul>
+  <li>Anúncio vertical full-screen (9:16) exibido entre Stories de amigos</li>
+  <li>Duração: até 3 minutos (recomendado: 3-10 segundos para maior retenção)</li>
+  <li>Swipe up: usuário arrasta para cima → abre URL, app store, AR Lens ou outro destino</li>
+</ul>
+<strong>Collection Ads:</strong>
+<ul>
+  <li>Vídeo ou imagem hero + 4 miniaturas de produto clicáveis abaixo</li>
+  <li>Ideal para e-commerce — usuário vê o produto no contexto e pode explorar mais sem sair do Snap</li>
+</ul>
+<strong>Story Ads:</strong>
+<ul>
+  <li>Série de 3-20 Snaps que aparecem no feed "Discover" como um tile patrocinado</li>
+  <li>Usuário toca no tile → abre a sequência de anúncios</li>
+  <li>Formato nativo do Snapchat — alta imersão</li>
+</ul>
+<strong>AR Lenses (Sponsored Lenses):</strong>
+<ul>
+  <li>Filtros de realidade aumentada patrocinados — usuário "experimenta" o produto virtualmente</li>
+  <li>Muito usado em beleza (maquiagem), moda (óculos, chapéus) e entretenimento (filmes)</li>
+  <li>Alto engajamento e compartilhamento orgânico (usuário cria conteúdo com a marca)</li>
+</ul>
+<strong>Filters (Geofilters):</strong>
+<ul>
+  <li>Overlay de imagem que aparece como opção ao tirar Snap em área geográfica específica</li>
+  <li>Ideal para eventos, lojas físicas, lançamentos regionais</li>
+</ul>
+<strong>Commercials:</strong>
+<ul>
+  <li>Vídeo de 6 segundos não pulável exibido dentro do conteúdo Snap Originals e Shows</li>
+  <li>Garantia de viewability — audiência premium e engajada</li>
+</ul>`,
+      en:`<strong>Snapchat ad formats:</strong><br><br>
+<strong>Snap Ads (Single Image or Video):</strong> vertical full-screen (9:16) ad shown between friends' Stories. Up to 3 minutes (recommended: 3-10 seconds). Swipe up to open URL, app store, AR Lens.<br><br>
+<strong>Collection Ads:</strong> hero video/image + 4 clickable product thumbnails below. Ideal for e-commerce.<br><br>
+<strong>Story Ads:</strong> series of 3-20 Snaps appearing in Discover feed as a sponsored tile. High immersion.<br><br>
+<strong>AR Lenses (Sponsored Lenses):</strong> branded augmented reality filters. High in beauty, fashion, entertainment. High engagement and organic sharing.<br><br>
+<strong>Filters (Geofilters):</strong> image overlay appearing in specific geographic area. Ideal for events, physical stores.<br><br>
+<strong>Commercials:</strong> non-skippable 6-second video in Snap Originals. Viewability guaranteed.`,
+      es:`<strong>Formatos de anuncio de Snapchat:</strong><br><br>
+<strong>Snap Ads:</strong> anuncio vertical full-screen (9:16) mostrado entre Stories. Hasta 3 minutos. Swipe up para abrir URL, tienda de apps, AR Lens.<br><br>
+<strong>Collection Ads:</strong> video/imagen hero + 4 miniaturas de producto clicables. Ideal para e-commerce.<br><br>
+<strong>Story Ads:</strong> serie de 3-20 Snaps en el feed Discover como tile patrocinado. Alta inmersión.<br><br>
+<strong>AR Lenses:</strong> filtros de realidad aumentada patrocinados. Alto en belleza, moda, entretenimiento.<br><br>
+<strong>Filters (Geofilters):</strong> overlay de imagen en área geográfica específica.<br><br>
+<strong>Commercials:</strong> video no omitible de 6 segundos en Snap Originals.`,
+    },
+    tags:['Snapchat','formatos','AR-Lens','Story-Ads','Collection','Geofilter','Commercials'],
+  }
+);
+// adiciona ao mid
+d.tiers[1].questions.push(
+  {
+    q:{pt:'Como funciona o targeting no Snapchat Ads e quais as opções de audiência?',en:'How does targeting work in Snapchat Ads and what are the audience options?',es:'¿Cómo funciona el targeting en Snapchat Ads y cuáles son las opciones de audiencia?'},
+    a:{
+      pt:`O Snapchat tem audiência predominantemente jovem (13-34 anos) com targeting baseado em dados próprios da plataforma + parceiros.<br><br>
+<strong>Tipos de targeting:</strong>
+<ul>
+  <li><strong>Demográfico:</strong> localização, faixa etária, gênero, idioma, renda (EUA), educação</li>
+  <li><strong>Interests & Behaviors:</strong> categorias de interesse baseadas no comportamento dentro do Snap (conteúdo que consome, apps que usa, compras realizadas). Categorias: Gaming, Fashion, Beauty, Sports, Technology, Food, Travel, etc.</li>
+  <li><strong>Snap Audience Match (Custom Audiences):</strong>
+    <ul>
+      <li>Customer List: upload de emails ou números de telefone hasheados</li>
+      <li>Pixel Custom Audience: visitantes do site via Snap Pixel</li>
+      <li>App Custom Audience: usuários do app via SDK do Snap</li>
+      <li>Engagement Audience: quem interagiu com anúncios anteriores</li>
+    </ul>
+  </li>
+  <li><strong>Lookalike Audiences:</strong> expansão baseada em Custom Audience semente (1-10% da população)</li>
+  <li><strong>Lifestyle Categories:</strong> segmentos predefinidos da Snap (ex: "Beauty Enthusiasts", "Gamers", "Sports Fans")</li>
+  <li><strong>3rd Party Audiences:</strong> parceiros de dados como Nielsen, Oracle Data Cloud, Experian (disponível em alguns países)</li>
+</ul>
+<strong>Particularidade do Snap:</strong> forte em <strong>contextual targeting por horário e situação</strong> — targeting de "Snapchatters que estão assistindo TV simultaneamente" ou "Snapchatters em modo de descoberta" são opções exclusivas da plataforma.`,
+      en:`Snapchat has a predominantly young audience (13-34) with targeting based on platform's own data + partners.<br><br>
+<strong>Targeting types:</strong>
+<ul>
+  <li><strong>Demographic:</strong> location, age range, gender, language, income (US), education</li>
+  <li><strong>Interests & Behaviors:</strong> interest categories based on Snap behavior. Categories: Gaming, Fashion, Beauty, Sports, Technology, Food, Travel, etc.</li>
+  <li><strong>Snap Audience Match (Custom Audiences):</strong> Customer List, Pixel Custom Audience, App Custom Audience, Engagement Audience</li>
+  <li><strong>Lookalike Audiences:</strong> expansion based on Custom Audience seed (1-10% of population)</li>
+  <li><strong>Lifestyle Categories:</strong> predefined Snap segments</li>
+  <li><strong>3rd Party Audiences:</strong> data partners like Nielsen, Oracle Data Cloud, Experian</li>
+</ul>
+<strong>Snap particularity:</strong> strong in <strong>contextual targeting by time and situation</strong> — targeting "Snapchatters watching TV simultaneously" or "Snapchatters in discovery mode" are exclusive platform options.`,
+      es:`Snapchat tiene una audiencia predominantemente joven (13-34 años) con targeting basado en datos propios de la plataforma + socios.<br><br>
+<strong>Tipos de targeting:</strong>
+<ul>
+  <li><strong>Demográfico:</strong> ubicación, franja etaria, género, idioma</li>
+  <li><strong>Interests & Behaviors:</strong> categorías de interés basadas en el comportamiento dentro de Snap</li>
+  <li><strong>Snap Audience Match:</strong> Customer List, Pixel Custom Audience, App Custom Audience, Engagement Audience</li>
+  <li><strong>Lookalike Audiences:</strong> expansión basada en Custom Audience semilla</li>
+  <li><strong>Lifestyle Categories:</strong> segmentos predefinidos de Snap</li>
+</ul>`,
+    },
+    tags:['Snapchat','targeting','Custom-Audience','Lookalike','Lifestyle','interesse'],
+  },
+  {
+    q:{pt:'Como estruturar uma campanha de performance no Snapchat para e-commerce?',en:'How to structure a performance campaign on Snapchat for e-commerce?',es:'¿Cómo estructurar una campaña de performance en Snapchat para e-commerce?'},
+    a:{
+      pt:`Snapchat tem público jovem com alta intenção de compra em categorias de moda, beleza e lifestyle — mas requer estratégia diferente de Meta/Google.<br><br>
+<strong>Estrutura de campanha recomendada:</strong>
+<ol>
+  <li><strong>Objetivo:</strong> "Product Catalog Sales" para Dynamic Ads ou "Website Conversions" para landing page</li>
+  <li><strong>Criativo:</strong> vídeo vertical 9:16, primeiros 2 segundos DEVEM prender atenção (sem introdução). Mostrar produto em uso real, não em estúdio. Texto na tela é essencial (usuário assiste sem som).</li>
+  <li><strong>Audiência de prospecting:</strong> Lookalike de compradores (1-3%) + Interest targeting em categoria do produto</li>
+  <li><strong>Audiência de retargeting:</strong> Pixel Audience de visitantes de produto (últimos 14-30 dias) com Dynamic Product Ads</li>
+</ol>
+<strong>Dynamic Ads no Snap (equivalente ao Dynamic Catalog do Meta):</strong>
+<ul>
+  <li>Conectar catálogo de produtos (CSV feed ou Shopify integration)</li>
+  <li>Snap gera criativos automaticamente com imagem, título e preço do produto</li>
+  <li>Retargeting: mostra exatamente o produto que o usuário visualizou no site</li>
+</ul>
+<strong>Métricas de performance Snap:</strong>
+<ul>
+  <li>Swipe Up Rate (SUR): % que deslizou para cima → benchmark &gt;1% é bom</li>
+  <li>Story Opens Rate: % que abriu a Story completa</li>
+  <li>ROAS: receita atribuída / gasto. Janela de atribuição: 1 dia para swipe, 28 dias para view.</li>
+  <li>CPP (Cost Per Purchase): custo por compra atribuída</li>
+</ul>
+<strong>Boas práticas:</strong>
+<ul>
+  <li>UGC (User Generated Content) performa melhor que produção profissional no Snap</li>
+  <li>Testar múltiplos criativos — a plataforma tem alta velocidade de fadiga criativa</li>
+  <li>Hora do dia importa: pico de uso 10h-14h e 19h-23h (principalmente mobile)</li>
+</ul>`,
+      en:`Snapchat has a young audience with high purchase intent in fashion, beauty and lifestyle — but requires different strategy than Meta/Google.<br><br>
+<strong>Recommended campaign structure:</strong>
+<ol>
+  <li><strong>Objective:</strong> "Product Catalog Sales" for Dynamic Ads or "Website Conversions" for landing page</li>
+  <li><strong>Creative:</strong> vertical video 9:16, first 2 seconds MUST grab attention. Show product in real use. On-screen text essential (users watch without sound).</li>
+  <li><strong>Prospecting audience:</strong> Lookalike of buyers (1-3%) + Interest targeting in product category</li>
+  <li><strong>Retargeting audience:</strong> Pixel Audience of product visitors (last 14-30 days) with Dynamic Product Ads</li>
+</ol>
+<strong>Dynamic Ads on Snap:</strong> connect product catalog (CSV feed or Shopify integration). Snap auto-generates creatives with product image, title and price.<br><br>
+<strong>Snap performance metrics:</strong>
+<ul>
+  <li>Swipe Up Rate (SUR): % who swiped up → benchmark &gt;1% is good</li>
+  <li>ROAS: attributed revenue / spend. Attribution window: 1 day swipe, 28 days view.</li>
+  <li>CPP (Cost Per Purchase)</li>
+</ul>`,
+      es:`Snapchat tiene una audiencia joven con alta intención de compra en moda, belleza y lifestyle.<br><br>
+<strong>Estructura de campaña recomendada:</strong>
+<ol>
+  <li><strong>Objetivo:</strong> "Product Catalog Sales" para Dynamic Ads o "Website Conversions"</li>
+  <li><strong>Creativo:</strong> video vertical 9:16, los primeros 2 segundos DEBEN captar la atención. Texto en pantalla esencial.</li>
+  <li><strong>Audiencia de prospecting:</strong> Lookalike de compradores (1-3%) + Interest targeting</li>
+  <li><strong>Audiencia de retargeting:</strong> Pixel Audience de visitantes de producto con Dynamic Product Ads</li>
+</ol>
+<strong>Métricas de performance Snap:</strong>
+<ul>
+  <li>Swipe Up Rate (SUR): benchmark &gt;1% es bueno</li>
+  <li>ROAS: ingresos atribuidos / gasto. Ventana de atribución: 1 día swipe, 28 días view.</li>
+</ul>`,
+    },
+    tags:['Snapchat','performance','Dynamic-Ads','ROAS','catálogo','UGC','retargeting'],
+  }
+);
+// adiciona ao hard
+d.tiers[2].questions.push(
+  {
+    q:{pt:'Como o Snapchat AR pode ser usado como estratégia de marketing e quais os casos de uso mais eficazes?',en:'How can Snapchat AR be used as a marketing strategy and what are the most effective use cases?',es:'¿Cómo se puede usar Snapchat AR como estrategia de marketing y cuáles son los casos de uso más efectivos?'},
+    a:{
+      pt:`O <strong>AR (Augmented Reality) do Snapchat</strong> é a funcionalidade mais diferenciada da plataforma — mais de 250 milhões de usuários interagem com AR diariamente, criando oportunidades únicas para marcas.<br><br>
+<strong>Tipos de AR no Snapchat para marcas:</strong>
+<ul>
+  <li><strong>Sponsored Lenses:</strong> filtros AR patrocinados disponíveis para todos os usuários na câmera. O usuário cria conteúdo com a marca e compartilha. Alto viral potential.</li>
+  <li><strong>Try-On Lenses:</strong> provador virtual. Usuário "experimenta" produto virtualmente em tempo real:
+    <ul>
+      <li>Maquiagem: batom, sombra, base na face do usuário</li>
+      <li>Óculos: frame se encaixa no rosto</li>
+      <li>Chapéus, acessórios: posicionamento na cabeça</li>
+      <li>Tênis: via câmera apontada para os pés</li>
+    </ul>
+  </li>
+  <li><strong>World Lenses (Object AR):</strong> colocar objeto 3D no ambiente do usuário. Ex: novo carro na garagem, sofá na sala, personagem de game no quarto.</li>
+  <li><strong>Shoppable AR:</strong> Lens com botão de compra integrado — usuário experimenta o produto e pode comprar sem sair do Snap</li>
+</ul>
+<strong>Resultados de campanhas AR (dados Snap):</strong>
+<ul>
+  <li>Tempo médio de interação com Sponsored Lens: 20+ segundos (vs. 2-3s de banner)</li>
+  <li>Share rate: usuários compartilham Lenses organicamente, gerando impressões earned media</li>
+  <li>Try-On Lenses aumentam intenção de compra em 2.4x vs. anúncio estático (estudo Snap/Nielsen)</li>
+</ul>
+<strong>Como criar uma Sponsored Lens:</strong>
+<ul>
+  <li>Via <strong>Snap AR Studio</strong> (Lens Studio) — software gratuito de desenvolvimento de AR</li>
+  <li>Ou via parceiros criativos certificados da Snap</li>
+  <li>Tempo de desenvolvimento: 2-6 semanas dependendo da complexidade</li>
+  <li>Custo: compra por impressões de Lens. Budget mínimo varia — campanhas nacionais podem exigir US$300k+.</li>
+</ul>
+<strong>Métricas de AR:</strong> Lens Opens, Swipes (usuário compartilhou), Play Time, Reach, Earned Impressions (compartilhamentos orgânicos gerados).`,
+      en:`Snapchat <strong>AR (Augmented Reality)</strong> is the platform's most differentiated feature — over 250 million users interact with AR daily.<br><br>
+<strong>AR types for brands:</strong>
+<ul>
+  <li><strong>Sponsored Lenses:</strong> branded AR filters available to all users. User creates content with brand and shares. High viral potential.</li>
+  <li><strong>Try-On Lenses:</strong> virtual fitting room. User "tries on" products virtually: makeup, glasses, hats, sneakers (via camera pointed at feet).</li>
+  <li><strong>World Lenses:</strong> place 3D object in user's environment. E.g.: new car in garage, sofa in living room.</li>
+  <li><strong>Shoppable AR:</strong> Lens with integrated purchase button — user tries product and can buy without leaving Snap</li>
+</ul>
+<strong>AR campaign results (Snap data):</strong>
+<ul>
+  <li>Average interaction time with Sponsored Lens: 20+ seconds (vs. 2-3s for banner)</li>
+  <li>Try-On Lenses increase purchase intent by 2.4x vs. static ad (Snap/Nielsen study)</li>
+</ul>
+<strong>AR metrics:</strong> Lens Opens, Swipes (user shared), Play Time, Reach, Earned Impressions.`,
+      es:`El <strong>AR (Realidad Aumentada) de Snapchat</strong> es la funcionalidad más diferenciada de la plataforma — más de 250 millones de usuarios interactúan con AR diariamente.<br><br>
+<strong>Tipos de AR para marcas:</strong>
+<ul>
+  <li><strong>Sponsored Lenses:</strong> filtros AR patrocinados disponibles para todos los usuarios. Alto potencial viral.</li>
+  <li><strong>Try-On Lenses:</strong> probador virtual. Maquillaje, gafas, sombreros, zapatillas.</li>
+  <li><strong>World Lenses:</strong> colocar objeto 3D en el entorno del usuario.</li>
+  <li><strong>Shoppable AR:</strong> Lens con botón de compra integrado</li>
+</ul>
+<strong>Resultados de campañas AR:</strong> tiempo de interacción promedio con Sponsored Lens: 20+ segundos. Try-On Lenses aumentan la intención de compra en 2.4x.<br><br>
+<strong>Métricas de AR:</strong> Lens Opens, Swipes, Play Time, Reach, Earned Impressions.`,
+    },
+    tags:['Snapchat','AR','Sponsored-Lens','Try-On','Shoppable','AR-Studio','viral'],
+  }
+);
+})();

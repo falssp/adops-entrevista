@@ -458,3 +458,321 @@ window.dataLayer.push({
     },
   ],
 };
+
+// ── APPEND: GTM/GA4 expandido ──
+;(function(){
+const d = window.__adopsData['gtm'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que é o dataLayer e como ele funciona no GTM?',en:'What is the dataLayer and how does it work in GTM?',es:'¿Qué es el dataLayer y cómo funciona en GTM?'},
+    a:{
+      pt:`O <strong>dataLayer</strong> é um objeto JavaScript que serve como ponte entre o código do site e o GTM — permite passar dados dinâmicos (ID de produto, valor de transação, nome de página) para as tags sem hardcodar no código de cada tag.<br><br>
+<strong>Como funciona:</strong>
+<ol>
+  <li>O desenvolvedor do site implementa um <code>dataLayer.push()</code> nos momentos relevantes (clique em botão, conclusão de compra, visualização de produto)</li>
+  <li>O GTM "escuta" o dataLayer e captura os valores quando o evento ocorre</li>
+  <li>As Tags do GTM usam esses valores via Variáveis (ex: <code>{{dlv - transactionValue}}</code>)</li>
+</ol>
+<strong>Exemplo prático — evento de compra:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">// Disparado pelo site quando a compra é concluída
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  event: 'purchase',
+  ecommerce: {
+    transaction_id: 'T12345',
+    value: 149.90,
+    currency: 'BRL',
+    items: [{ item_id: 'SKU-001', item_name: 'Produto X', quantity: 1, price: 149.90 }]
+  }
+});</pre>
+<strong>No GTM:</strong>
+<ul>
+  <li>Criar Variável de Camada de Dados (Data Layer Variable) para cada campo: <code>ecommerce.value</code>, <code>ecommerce.transaction_id</code></li>
+  <li>Criar Acionador de Evento Personalizado com nome do evento: <code>purchase</code></li>
+  <li>Tag do GA4 ou Floodlight usa as variáveis para enviar os valores corretos</li>
+</ul>
+<strong>Por que usar dataLayer:</strong>
+<ul>
+  <li>Desacopla o marketing do desenvolvimento — mudanças nas tags não requerem alterar o código do site</li>
+  <li>Dados consistentes e tipados — evita pegar valores de DOM scraping (frágil)</li>
+  <li>Padrão de mercado — GA4, Meta, TikTok, Floodlight todos suportam dataLayer</li>
+</ul>`,
+      en:`The <strong>dataLayer</strong> is a JavaScript object that serves as a bridge between the site code and GTM — allows passing dynamic data (product ID, transaction value, page name) to tags without hardcoding in each tag's code.<br><br>
+<strong>How it works:</strong>
+<ol>
+  <li>Site developer implements <code>dataLayer.push()</code> at relevant moments (button click, purchase completion, product view)</li>
+  <li>GTM "listens" to the dataLayer and captures values when event occurs</li>
+  <li>GTM Tags use these values via Variables</li>
+</ol>
+<strong>Practical example — purchase event:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+  event: 'purchase',
+  ecommerce: {
+    transaction_id: 'T12345',
+    value: 149.90,
+    currency: 'USD',
+    items: [{ item_id: 'SKU-001', item_name: 'Product X', quantity: 1, price: 149.90 }]
+  }
+});</pre>
+<strong>Why use dataLayer:</strong>
+<ul>
+  <li>Decouples marketing from development — tag changes don't require altering site code</li>
+  <li>Consistent, typed data — avoids fragile DOM scraping</li>
+  <li>Industry standard — GA4, Meta, TikTok, Floodlight all support dataLayer</li>
+</ul>`,
+      es:`El <strong>dataLayer</strong> es un objeto JavaScript que sirve como puente entre el código del sitio y GTM — permite pasar datos dinámicos a las tags sin hardcodear en el código de cada tag.<br><br>
+<strong>Cómo funciona:</strong>
+<ol>
+  <li>El desarrollador del sitio implementa <code>dataLayer.push()</code> en los momentos relevantes</li>
+  <li>GTM "escucha" el dataLayer y captura los valores cuando ocurre el evento</li>
+  <li>Las Tags de GTM usan esos valores via Variables</li>
+</ol>
+<strong>Ejemplo práctico — evento de compra:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">dataLayer.push({
+  event: 'purchase',
+  ecommerce: {
+    transaction_id: 'T12345',
+    value: 149.90,
+    currency: 'BRL'
+  }
+});</pre>
+<strong>Por qué usar dataLayer:</strong>
+<ul>
+  <li>Desacopla marketing de desarrollo — los cambios en tags no requieren modificar el código del sitio</li>
+  <li>Datos consistentes y tipados — evita el DOM scraping (frágil)</li>
+  <li>Estándar de mercado</li>
+</ul>`,
+    },
+    tags:['dataLayer','GTM','JavaScript','GA4','evento','variável','ecommerce'],
+  },
+  {
+    q:{pt:'Como migrar do Universal Analytics (UA) para o GA4 e quais as principais diferenças?',en:'How to migrate from Universal Analytics (UA) to GA4 and what are the main differences?',es:'¿Cómo migrar de Universal Analytics (UA) a GA4 y cuáles son las principales diferencias?'},
+    a:{
+      pt:`O <strong>Google Analytics 4 (GA4)</strong> substituiu definitivamente o Universal Analytics em julho de 2023. Entender as diferenças é essencial para qualquer profissional de AdOps.<br><br>
+<strong>Principais diferenças UA vs. GA4:</strong>
+<table>
+<tr><th>Aspecto</th><th>Universal Analytics</th><th>GA4</th></tr>
+<tr><td>Modelo de dados</td><td>Sessions + Pageviews</td><td>Eventos (tudo é evento)</td></tr>
+<tr><td>Métricas principais</td><td>Sessions, Bounces, Goals</td><td>Events, Conversions, Engagement Rate</td></tr>
+<tr><td>Bounce Rate</td><td>% sessões com 1 pageview</td><td>Substituído por Engagement Rate (inverso)</td></tr>
+<tr><td>Visão cross-device</td><td>Limitada</td><td>Nativa (User ID, Google Signals)</td></tr>
+<tr><td>App tracking</td><td>Firebase separado</td><td>Unificado web + app</td></tr>
+<tr><td>Privacy</td><td>Cookie-based</td><td>Modelagem + consent mode</td></tr>
+<tr><td>BigQuery</td><td>GA 360 (pago)</td><td>Nativo e gratuito</td></tr>
+</table><br>
+<strong>Configuração essencial do GA4:</strong>
+<ul>
+  <li><strong>Measurement ID:</strong> formato G-XXXXXXXX — substituiu o UA-XXXXXX</li>
+  <li><strong>Eventos automáticos:</strong> GA4 rastreia automaticamente page_view, scroll, click, session_start, first_visit sem configuração adicional</li>
+  <li><strong>Eventos recomendados:</strong> purchase, add_to_cart, login, sign_up — seguir nomenclatura padrão do GA4 para compatibilidade</li>
+  <li><strong>Conversões:</strong> marcar eventos específicos como conversão em Admin → Events → marcar "Mark as conversion"</li>
+</ul>
+<strong>Consent Mode v2 (obrigatório para Google Ads desde março/2024):</strong>
+<ul>
+  <li>Integração com CMP para informar ao GA4 e Google Ads o status de consentimento do usuário</li>
+  <li>Com consentimento: coleta completa. Sem consentimento: modelagem estatística para estimar conversões</li>
+  <li>Sem Consent Mode v2: campanhas do Google Ads perdem acesso a conversões modeladas — impacto direto na otimização de Smart Bidding</li>
+</ul>`,
+      en:`<strong>Google Analytics 4 (GA4)</strong> definitively replaced Universal Analytics in July 2023.<br><br>
+<strong>Main differences UA vs. GA4:</strong>
+<table>
+<tr><th>Aspect</th><th>Universal Analytics</th><th>GA4</th></tr>
+<tr><td>Data model</td><td>Sessions + Pageviews</td><td>Events (everything is an event)</td></tr>
+<tr><td>Main metrics</td><td>Sessions, Bounces, Goals</td><td>Events, Conversions, Engagement Rate</td></tr>
+<tr><td>Bounce Rate</td><td>% sessions with 1 pageview</td><td>Replaced by Engagement Rate (inverse)</td></tr>
+<tr><td>Cross-device view</td><td>Limited</td><td>Native (User ID, Google Signals)</td></tr>
+<tr><td>BigQuery</td><td>GA 360 (paid)</td><td>Native and free</td></tr>
+</table><br>
+<strong>Essential GA4 configuration:</strong>
+<ul>
+  <li><strong>Measurement ID:</strong> G-XXXXXXXX format — replaced UA-XXXXXX</li>
+  <li><strong>Automatic events:</strong> GA4 automatically tracks page_view, scroll, click, session_start, first_visit</li>
+  <li><strong>Conversions:</strong> mark specific events as conversion in Admin → Events → "Mark as conversion"</li>
+</ul>
+<strong>Consent Mode v2 (required for Google Ads since March 2024):</strong>
+<ul>
+  <li>Integration with CMP to inform GA4 and Google Ads of user consent status</li>
+  <li>Without Consent Mode v2: Google Ads campaigns lose access to modeled conversions — direct impact on Smart Bidding optimization</li>
+</ul>`,
+      es:`<strong>Google Analytics 4 (GA4)</strong> sustituyó definitivamente a Universal Analytics en julio de 2023.<br><br>
+<strong>Principales diferencias UA vs. GA4:</strong>
+<table>
+<tr><th>Aspecto</th><th>Universal Analytics</th><th>GA4</th></tr>
+<tr><td>Modelo de datos</td><td>Sesiones + Pageviews</td><td>Eventos (todo es evento)</td></tr>
+<tr><td>Métricas principales</td><td>Sessions, Bounces, Goals</td><td>Events, Conversions, Engagement Rate</td></tr>
+<tr><td>Bounce Rate</td><td>% sesiones con 1 pageview</td><td>Reemplazado por Engagement Rate</td></tr>
+<tr><td>BigQuery</td><td>GA 360 (pago)</td><td>Nativo y gratuito</td></tr>
+</table><br>
+<strong>Configuración esencial del GA4:</strong>
+<ul>
+  <li><strong>Measurement ID:</strong> formato G-XXXXXXXX</li>
+  <li><strong>Eventos automáticos:</strong> GA4 rastrea automáticamente page_view, scroll, click, session_start, first_visit</li>
+  <li><strong>Conversiones:</strong> marcar eventos específicos como conversión en Admin → Events</li>
+</ul>
+<strong>Consent Mode v2 (obligatorio para Google Ads desde marzo/2024):</strong>
+<ul>
+  <li>Sin Consent Mode v2: las campañas de Google Ads pierden acceso a conversiones modeladas</li>
+</ul>`,
+    },
+    tags:['GA4','Universal-Analytics','migração','Consent-Mode','BigQuery','evento','Measurement-ID'],
+  }
+);
+d.tiers[1].questions.push(
+  {
+    q:{pt:'Como configurar o Google Consent Mode v2 e por que é obrigatório?',en:'How to configure Google Consent Mode v2 and why is it mandatory?',es:'¿Cómo configurar Google Consent Mode v2 y por qué es obligatorio?'},
+    a:{
+      pt:`O <strong>Google Consent Mode v2</strong> é um framework que conecta sua CMP (Consent Management Platform) ao ecossistema Google — informando automaticamente o status de consentimento do usuário para GA4, Google Ads e Floodlight.<br><br>
+<strong>Por que é essencial (desde março/2024):</strong>
+<ul>
+  <li>Google exige Consent Mode v2 para anunciantes que exibem anúncios para usuários no EEE (Europa) e Reino Unido</li>
+  <li>Sem implementação: perda de conversões modeladas no Google Ads → Smart Bidding fica cego para usuários que não consentiram</li>
+  <li>No Brasil: ainda não obrigatório formalmente, mas a boa prática de LGPD recomenda implementação</li>
+</ul>
+<strong>Os 4 parâmetros do Consent Mode:</strong>
+<ul>
+  <li><code>ad_storage:</code> permite armazenamento de cookies relacionados a anúncios (Google Ads, Floodlight)</li>
+  <li><code>analytics_storage:</code> permite armazenamento de cookies do GA4</li>
+  <li><code>ad_user_data:</code> (v2 novo) permite envio de dados de usuário ao Google para publicidade</li>
+  <li><code>ad_personalization:</code> (v2 novo) permite personalização de anúncios (retargeting, remarketing)</li>
+</ul>
+<strong>Implementação via GTM (método mais comum):</strong>
+<ol>
+  <li>Configurar a CMP (OneTrust, Cookiebot, Didomi) para integração com Google Consent Mode</li>
+  <li>No GTM, adicionar a tag de inicialização do Consent Mode com estado padrão "denied" (antes do banner)</li>
+  <li>Quando o usuário aceita no banner: a CMP atualiza os parâmetros para "granted" via dataLayer</li>
+  <li>GA4 e Google Ads respondem ao status em tempo real — sem necessidade de reload da página</li>
+</ol>
+<strong>Comportamento por status:</strong>
+<ul>
+  <li><strong>Granted:</strong> coleta completa de dados, cookies setados normalmente</li>
+  <li><strong>Denied:</strong> sem cookies, mas GA4 e Google Ads usam modelagem estatística (Behavioral Modeling) para estimar o comportamento dos usuários que não consentiram e incluir na otimização</li>
+</ul>`,
+      en:`<strong>Google Consent Mode v2</strong> is a framework that connects your CMP to the Google ecosystem — automatically informing user consent status to GA4, Google Ads and Floodlight.<br><br>
+<strong>Why it's essential (since March 2024):</strong>
+<ul>
+  <li>Google requires Consent Mode v2 for advertisers showing ads to EEA and UK users</li>
+  <li>Without implementation: loss of modeled conversions in Google Ads → Smart Bidding blind to non-consenting users</li>
+</ul>
+<strong>The 4 Consent Mode parameters:</strong>
+<ul>
+  <li><code>ad_storage:</code> allows ad-related cookie storage</li>
+  <li><code>analytics_storage:</code> allows GA4 cookie storage</li>
+  <li><code>ad_user_data:</code> (v2 new) allows sending user data to Google for advertising</li>
+  <li><code>ad_personalization:</code> (v2 new) allows ad personalization (retargeting, remarketing)</li>
+</ul>
+<strong>Implementation via GTM:</strong>
+<ol>
+  <li>Configure CMP for Google Consent Mode integration</li>
+  <li>In GTM, add Consent Mode initialization tag with default "denied" state</li>
+  <li>When user accepts banner: CMP updates parameters to "granted" via dataLayer</li>
+  <li>GA4 and Google Ads respond to status in real time</li>
+</ol>`,
+      es:`El <strong>Google Consent Mode v2</strong> es un framework que conecta tu CMP al ecosistema Google — informando automáticamente el estado de consentimiento del usuario a GA4, Google Ads y Floodlight.<br><br>
+<strong>Por qué es esencial (desde marzo/2024):</strong>
+<ul>
+  <li>Google exige Consent Mode v2 para anunciantes que muestran anuncios a usuarios del EEE y Reino Unido</li>
+  <li>Sin implementación: pérdida de conversiones modeladas en Google Ads</li>
+</ul>
+<strong>Los 4 parámetros del Consent Mode:</strong>
+<ul>
+  <li><code>ad_storage</code>, <code>analytics_storage</code>, <code>ad_user_data</code> (v2 nuevo), <code>ad_personalization</code> (v2 nuevo)</li>
+</ul>
+<strong>Implementación via GTM:</strong>
+<ol>
+  <li>Configurar la CMP para integración con Google Consent Mode</li>
+  <li>En GTM, agregar la tag de inicialización con estado predeterminado "denied"</li>
+  <li>Cuando el usuario acepta: la CMP actualiza los parámetros a "granted" via dataLayer</li>
+</ol>`,
+    },
+    tags:['Consent-Mode-v2','GTM','CMP','GA4','Google-Ads','GDPR','privacidade','Smart-Bidding'],
+  }
+);
+d.tiers[2].questions.push(
+  {
+    q:{pt:'Como fazer debug avançado de tags no GTM usando o Preview Mode e o Chrome DevTools?',en:'How to do advanced tag debugging in GTM using Preview Mode and Chrome DevTools?',es:'¿Cómo hacer debug avanzado de tags en GTM usando el Preview Mode y Chrome DevTools?'},
+    a:{
+      pt:`Debug eficiente de tags é uma das habilidades mais valorizadas em AdOps — resolver rapidamente por que uma tag não dispara economiza horas de investigação.<br><br>
+<strong>GTM Preview Mode (Tag Assistant):</strong>
+<ol>
+  <li>No GTM, clique em <strong>"Visualizar"</strong> — abre uma nova aba com o site em modo debug</li>
+  <li>O painel do Tag Assistant aparece no rodapé da página mostrando:
+    <ul>
+      <li><strong>Tags Fired:</strong> quais tags dispararam com sucesso nesta página/evento</li>
+      <li><strong>Tags Not Fired:</strong> quais tags existem mas não dispararam (e por quê — trigger não atendido)</li>
+      <li><strong>Variables:</strong> valores de todas as variáveis no momento do evento</li>
+      <li><strong>Data Layer:</strong> histórico completo de eventos e pushes do dataLayer</li>
+    </ul>
+  </li>
+  <li>Navegar pelo site simulando o comportamento do usuário — cada ação aparece como novo evento no painel</li>
+</ol>
+<strong>Chrome DevTools — Network Tab (para verificar requests):</strong>
+<ul>
+  <li>F12 → Network → filtrar por domínio específico:
+    <ul>
+      <li><code>fls.doubleclick.net</code> → requests do Floodlight (CM360)</li>
+      <li><code>facebook.com/tr</code> → requests do Meta Pixel</li>
+      <li><code>analytics.google.com</code> → requests do GA4</li>
+      <li><code>googletagmanager.com</code> → próprio GTM</li>
+    </ul>
+  </li>
+  <li>Clicar em um request → ver Headers e Payload com os parâmetros enviados</li>
+  <li>Status 200: request bem-sucedido. Status 400/500: erro no request — inspecionar os parâmetros</li>
+</ul>
+<strong>Console Tab — verificar erros JavaScript:</strong>
+<ul>
+  <li>Erros de JavaScript na página podem bloquear a execução das tags</li>
+  <li>Verificar por mensagens de erro (vermelho) que aparecem no console — especialmente erros relacionados ao gtag, dataLayer ou objeto de ecommerce</li>
+</ul>
+<strong>Checklist de debug de tag que não dispara:</strong>
+<ol>
+  <li>A tag está publicada? (ou só salva no container)</li>
+  <li>O trigger está configurado corretamente? (URL exata, nome do evento correto)</li>
+  <li>O dataLayer.push está sendo executado? (verificar no painel Data Layer)</li>
+  <li>Há erro de JavaScript impedindo a execução? (verificar Console)</li>
+  <li>A tag está em conflito com outra tag da mesma sequência? (Tag Sequencing)</li>
+</ol>`,
+      en:`Efficient tag debugging is one of the most valued skills in AdOps.<br><br>
+<strong>GTM Preview Mode (Tag Assistant):</strong>
+<ol>
+  <li>In GTM, click <strong>"Preview"</strong> — opens new tab with site in debug mode</li>
+  <li>Tag Assistant panel shows: Tags Fired, Tags Not Fired (and why), Variables values, dataLayer history</li>
+  <li>Navigate site simulating user behavior — each action appears as new event in panel</li>
+</ol>
+<strong>Chrome DevTools — Network Tab:</strong>
+<ul>
+  <li>F12 → Network → filter by specific domain: <code>fls.doubleclick.net</code> (Floodlight), <code>facebook.com/tr</code> (Meta Pixel), <code>analytics.google.com</code> (GA4)</li>
+  <li>Click a request → see Headers and Payload with sent parameters</li>
+  <li>Status 200: successful request. Status 400/500: error</li>
+</ul>
+<strong>Debug checklist for tag not firing:</strong>
+<ol>
+  <li>Is the tag published? (or just saved in container)</li>
+  <li>Is the trigger correctly configured? (exact URL, correct event name)</li>
+  <li>Is the dataLayer.push executing? (check Data Layer panel)</li>
+  <li>Is there a JavaScript error blocking execution? (check Console)</li>
+  <li>Is the tag conflicting with another tag in the same sequence?</li>
+</ol>`,
+      es:`El debug eficiente de tags es una de las habilidades más valoradas en AdOps.<br><br>
+<strong>GTM Preview Mode (Tag Assistant):</strong>
+<ol>
+  <li>En GTM, haz clic en <strong>"Vista previa"</strong> — abre nueva pestaña con el sitio en modo debug</li>
+  <li>El panel muestra: Tags disparadas, Tags no disparadas (y por qué), Valores de Variables, historial del dataLayer</li>
+</ol>
+<strong>Chrome DevTools — Pestaña Network:</strong>
+<ul>
+  <li>F12 → Network → filtrar por dominio: <code>fls.doubleclick.net</code>, <code>facebook.com/tr</code>, <code>analytics.google.com</code></li>
+  <li>Clic en una solicitud → ver Headers y Payload con los parámetros enviados</li>
+</ul>
+<strong>Checklist de debug de tag que no se dispara:</strong>
+<ol>
+  <li>¿Está la tag publicada?</li>
+  <li>¿El activador está configurado correctamente?</li>
+  <li>¿Se está ejecutando el dataLayer.push?</li>
+  <li>¿Hay un error de JavaScript que impide la ejecución?</li>
+</ol>`,
+    },
+    tags:['GTM','debug','Preview-Mode','DevTools','Network-Tab','dataLayer','troubleshooting'],
+  }
+);
+})();

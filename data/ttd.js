@@ -355,3 +355,250 @@ window.__adopsData['ttd'] = {
     },
   ],
 };
+
+// ── APPEND: The Trade Desk expandido ──
+;(function(){
+const d = window.__adopsData['ttd'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que diferencia o The Trade Desk dos outros DSPs?',en:'What differentiates The Trade Desk from other DSPs?',es:'¿Qué diferencia a The Trade Desk de otros DSPs?'},
+    a:{
+      pt:`O <strong>The Trade Desk (TTD)</strong> é o maior DSP independente do mundo — "independente" sendo a palavra-chave que define seu posicionamento.<br><br>
+<strong>Diferenciais do The Trade Desk:</strong>
+<ul>
+  <li><strong>Independência:</strong> não possui publisher, não tem inventory próprio, não tem conflito de interesse. DV360 (Google) favorece o inventory do Google. O TTD é neutro — compra inventory de qualquer SSP/exchange sem viés.</li>
+  <li><strong>Transparência:</strong> o TTD foi pioneiro em fee transparente — o anunciante sabe exatamente quanto está pagando de tecnologia vs. quanto vai para o publisher. DV360 historicamente menos transparente nessa divisão.</li>
+  <li><strong>Unified ID 2.0 (UID2):</strong> o TTD liderou o desenvolvimento do UID2 como alternativa open-source aos third-party cookies — ecossistema neutro, adotado por publishers, SSPs e outros DSPs.</li>
+  <li><strong>Solimar (plataforma de otimização):</strong> algoritmo de lances mais sofisticado do mercado — Koa AI para otimização preditiva, cross-channel frequency management</li>
+  <li><strong>CTV e Audio líderes:</strong> o TTD é o DSP com maior cobertura de CTV e streaming audio programático</li>
+  <li><strong>Retail Data:</strong> parcerias com Walmart, Target, Kroger — dados de shopper para targeting sem depender de Google/Meta</li>
+</ul>
+<strong>Quando escolher TTD vs. DV360:</strong>
+<ul>
+  <li>Escolher TTD: cliente quer independência de Google, CTV/audio em foco, máxima transparência, retail data</li>
+  <li>Escolher DV360: cliente já usa todo o Google Stack (CM360, SA360, GA4), YouTube é canal principal, integração nativa com GMP é prioridade</li>
+</ul>`,
+      en:`<strong>The Trade Desk (TTD)</strong> is the world's largest independent DSP — "independent" being the keyword that defines its positioning.<br><br>
+<strong>The Trade Desk differentials:</strong>
+<ul>
+  <li><strong>Independence:</strong> doesn't own a publisher, has no inventory of its own, no conflict of interest. DV360 (Google) favors Google inventory. TTD is neutral — buys inventory from any SSP/exchange without bias.</li>
+  <li><strong>Transparency:</strong> TTD pioneered transparent fees — advertiser knows exactly how much they're paying in technology vs. how much goes to publisher.</li>
+  <li><strong>Unified ID 2.0 (UID2):</strong> TTD led UID2 development as open-source alternative to third-party cookies.</li>
+  <li><strong>CTV and Audio leaders:</strong> TTD is the DSP with greatest CTV and programmatic streaming audio coverage</li>
+  <li><strong>Retail Data:</strong> partnerships with Walmart, Target, Kroger — shopper data for targeting without depending on Google/Meta</li>
+</ul>
+<strong>When to choose TTD vs. DV360:</strong>
+<ul>
+  <li>Choose TTD: client wants Google independence, CTV/audio focus, maximum transparency, retail data</li>
+  <li>Choose DV360: client already uses full Google Stack, YouTube is main channel, GMP native integration is priority</li>
+</ul>`,
+      es:`<strong>The Trade Desk (TTD)</strong> es el mayor DSP independiente del mundo — "independiente" siendo la palabra clave que define su posicionamiento.<br><br>
+<strong>Diferenciales del The Trade Desk:</strong>
+<ul>
+  <li><strong>Independencia:</strong> no posee publisher, no tiene inventory propio, sin conflicto de intereses. DV360 favorece el inventory de Google. TTD es neutral.</li>
+  <li><strong>Transparencia:</strong> TTD fue pionero en tarifas transparentes — el anunciante sabe exactamente cuánto paga en tecnología vs. cuánto va al publisher.</li>
+  <li><strong>Unified ID 2.0 (UID2):</strong> TTD lideró el desarrollo del UID2 como alternativa open-source a las cookies de terceros.</li>
+  <li><strong>Líderes en CTV y Audio:</strong> TTD es el DSP con mayor cobertura de CTV y audio programático</li>
+  <li><strong>Retail Data:</strong> alianzas con Walmart, Target, Kroger — datos de shopper sin depender de Google/Meta</li>
+</ul>`,
+    },
+    tags:['TTD','Trade-Desk','DSP','independência','UID2','CTV','retail-data','transparência'],
+  },
+  {
+    q:{pt:'O que é o Kokai e como o algoritmo de lances do TTD funciona?',en:'What is Kokai and how does TTD\'s bidding algorithm work?',es:'¿Qué es Kokai y cómo funciona el algoritmo de pujas de TTD?'},
+    a:{
+      pt:`<strong>Kokai</strong> é a plataforma de inteligência artificial do The Trade Desk — lançada em 2023, representa uma reformulação completa de como o TTD usa IA para otimização de campanhas programáticas.<br><br>
+<strong>Pilares do Kokai:</strong>
+<ul>
+  <li><strong>Koa AI (Bid Optimizer):</strong> sistema de lances preditivos que analisa bilhões de sinais por segundo para determinar o valor ideal de lance para cada impressão. Considera: probabilidade de conversão, LTV estimado do usuário, posição no funil, qualidade do contexto, histórico de performance do placement.</li>
+  <li><strong>Quality Reach:</strong> o algoritmo prioriza automaticamente impressões de alta qualidade — alta viewability, baixo IVT, brand-safe — mesmo sem configuração manual. Paga mais por impressões melhores, economiza em impressões de baixa qualidade.</li>
+  <li><strong>Frequency Management cross-channel:</strong> Kokai gerencia a frequência de exposição do usuário across todos os canais ativos no TTD (display, video, CTV, audio) — evita overexposure mesmo cross-publisher.</li>
+  <li><strong>Retail Signal Optimization:</strong> integra dados de compra de parceiros de retail (Walmart, Kroger) diretamente no algoritmo de lance — otimiza por conversões de loja física e online integradas.</li>
+</ul>
+<strong>Como o leilão RTB funciona no TTD na prática:</strong>
+<ol>
+  <li>SSP envia bid request com informações do usuário (IP, device, contexto, publisher)</li>
+  <li>TTD recebe o request em &lt;50ms</li>
+  <li>Koa AI avalia: este usuário tem perfil de conversão? Qual a probabilidade? Qual o CPM máximo que faz sentido?</li>
+  <li>TTD envia bid response com o lance calculado (ou passa o leilão)</li>
+  <li>Se ganhar: o ad é servido e os dados de resultado retroalimentam o modelo</li>
+</ol>
+<strong>Configurações de lance disponíveis:</strong>
+<ul>
+  <li><strong>Dynamic CPM:</strong> TTD otimiza o lance automaticamente dentro de um teto definido</li>
+  <li><strong>Fixed CPM:</strong> lance fixo — mais previsível, menos otimizado</li>
+  <li><strong>CPA Goal:</strong> define o CPA alvo, TTD ajusta lances para atingi-lo</li>
+  <li><strong>ROAS Goal:</strong> define o ROAS alvo — TTD otimiza por receita</li>
+</ul>`,
+      en:`<strong>Kokai</strong> is The Trade Desk's artificial intelligence platform — launched in 2023, representing a complete overhaul of how TTD uses AI for programmatic campaign optimization.<br><br>
+<strong>Kokai pillars:</strong>
+<ul>
+  <li><strong>Koa AI (Bid Optimizer):</strong> predictive bidding system analyzing billions of signals per second to determine optimal bid for each impression.</li>
+  <li><strong>Quality Reach:</strong> algorithm automatically prioritizes high-quality impressions — high viewability, low IVT, brand-safe.</li>
+  <li><strong>Cross-channel Frequency Management:</strong> Kokai manages user exposure frequency across all active TTD channels.</li>
+  <li><strong>Retail Signal Optimization:</strong> integrates retail partner purchase data directly into bidding algorithm.</li>
+</ul>
+<strong>Available bid settings:</strong>
+<ul>
+  <li><strong>Dynamic CPM:</strong> TTD optimizes bid automatically within defined ceiling</li>
+  <li><strong>Fixed CPM:</strong> fixed bid — more predictable, less optimized</li>
+  <li><strong>CPA Goal:</strong> define target CPA, TTD adjusts bids to achieve it</li>
+  <li><strong>ROAS Goal:</strong> define target ROAS — TTD optimizes for revenue</li>
+</ul>`,
+      es:`<strong>Kokai</strong> es la plataforma de inteligencia artificial de The Trade Desk — lanzada en 2023, representa una reformulación completa de cómo TTD usa IA para la optimización de campañas programáticas.<br><br>
+<strong>Pilares de Kokai:</strong>
+<ul>
+  <li><strong>Koa AI (Bid Optimizer):</strong> sistema de pujas predictivas que analiza miles de millones de señales por segundo.</li>
+  <li><strong>Quality Reach:</strong> el algoritmo prioriza automáticamente impresiones de alta calidad.</li>
+  <li><strong>Gestión de Frecuencia cross-channel:</strong> Kokai gestiona la frecuencia de exposición del usuario en todos los canales activos en TTD.</li>
+  <li><strong>Retail Signal Optimization:</strong> integra datos de compra de socios de retail directamente en el algoritmo de puja.</li>
+</ul>
+<strong>Configuraciones de puja disponibles:</strong>
+<ul>
+  <li><strong>Dynamic CPM, Fixed CPM, CPA Goal, ROAS Goal</strong></li>
+</ul>`,
+    },
+    tags:['TTD','Kokai','Koa-AI','RTB','lance','CPA','ROAS','algoritmo','programático'],
+  },
+  {
+    q:{pt:'Como estruturar campanhas de CTV no The Trade Desk?',en:'How to structure CTV campaigns in The Trade Desk?',es:'¿Cómo estructurar campañas de CTV en The Trade Desk?'},
+    a:{
+      pt:`O TTD é o DSP dominante em CTV programático — com acesso ao maior volume de inventory de streaming nos EUA e internacionalmente.<br><br>
+<strong>Estrutura de campanha CTV no TTD:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign
+  └── Ad Group (Insertion Order)
+        └── Ad (Line Item) → Creative (VAST/VPAID 15s ou 30s)</pre>
+<strong>Configuração do Ad Group para CTV:</strong>
+<ul>
+  <li><strong>Supply:</strong> selecionar "Connected TV" como tipo de dispositivo. Filtrar por publishers específicos (Hulu, Peacock, Tubi, Pluto TV) ou deixar aberto.</li>
+  <li><strong>Deal IDs:</strong> para inventory premium (NBC, Fox, Disney), negociar PMP deals diretamente com os publishers e inserir os Deal IDs no TTD</li>
+  <li><strong>Geo targeting:</strong> país, estado, DMA (Designated Market Area) — granularidade de mercado local para TV</li>
+</ul>
+<strong>Targeting de audiência em CTV no TTD:</strong>
+<ul>
+  <li><strong>IP targeting por household:</strong> atingir domicílios específicos — maior precisão que targeting de canal</li>
+  <li><strong>ACR Data (Automatic Content Recognition):</strong> dados de Smart TVs sobre o que o domicílio assistiu — incluindo TV linear. Ex: "domicílios que assistiram publicidade de concorrente nos últimos 30 dias"</li>
+  <li><strong>Retail audiences:</strong> dados de Walmart, Kroger — "compradores de categoria X"</li>
+  <li><strong>First-party audiences:</strong> upload de lista de clientes do CRM para targeting de household</li>
+</ul>
+<strong>Métricas de CTV no TTD:</strong>
+<ul>
+  <li>VCR (Video Completion Rate): benchmark &gt;95% (não pulável)</li>
+  <li>Reach e Unique Reach por household</li>
+  <li>Frequency por household (evitar overexposure)</li>
+  <li>Attribution: correlacionar exposição à CTV com visita ao site, busca da marca ou compra offline (via clean room ou IP matching)</li>
+</ul>`,
+      en:`TTD is the dominant DSP in programmatic CTV — with access to the largest volume of streaming inventory in the US and internationally.<br><br>
+<strong>CTV campaign structure in TTD:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign
+  └── Ad Group (Insertion Order)
+        └── Ad (Line Item) → Creative (VAST/VPAID 15s or 30s)</pre>
+<strong>CTV Ad Group configuration:</strong>
+<ul>
+  <li><strong>Supply:</strong> select "Connected TV" as device type. Filter by specific publishers or leave open.</li>
+  <li><strong>Deal IDs:</strong> for premium inventory (NBC, Fox, Disney), negotiate PMP deals directly with publishers and insert Deal IDs in TTD</li>
+</ul>
+<strong>Audience targeting in CTV with TTD:</strong>
+<ul>
+  <li><strong>IP household targeting:</strong> reach specific households</li>
+  <li><strong>ACR Data:</strong> Smart TV data about what the household watched — including linear TV</li>
+  <li><strong>Retail audiences:</strong> Walmart, Kroger data — "category X buyers"</li>
+  <li><strong>First-party audiences:</strong> CRM customer list upload for household targeting</li>
+</ul>
+<strong>CTV metrics in TTD:</strong>
+<ul>
+  <li>VCR: benchmark &gt;95%, Unique Reach per household, Frequency per household, Attribution via clean room or IP matching</li>
+</ul>`,
+      es:`TTD es el DSP dominante en CTV programático.<br><br>
+<strong>Estructura de campaña de CTV en TTD:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign
+  └── Ad Group (Insertion Order)
+        └── Ad (Line Item) → Creative (VAST/VPAID 15s o 30s)</pre>
+<strong>Configuración del Ad Group para CTV:</strong>
+<ul>
+  <li><strong>Supply:</strong> seleccionar "Connected TV" como tipo de dispositivo</li>
+  <li><strong>Deal IDs:</strong> para inventory premium, negociar PMP deals directamente con los publishers</li>
+</ul>
+<strong>Targeting de audiencia en CTV con TTD:</strong>
+<ul>
+  <li><strong>IP targeting por hogar</strong></li>
+  <li><strong>ACR Data:</strong> datos de Smart TVs sobre lo que el hogar vio — incluyendo TV lineal</li>
+  <li><strong>Retail audiences:</strong> datos de Walmart, Kroger</li>
+  <li><strong>First-party audiences:</strong> carga de lista de clientes del CRM</li>
+</ul>`,
+    },
+    tags:['TTD','CTV','streaming','Deal-ID','PMP','ACR','household','Retail-Media'],
+  }
+);
+d.tiers[2].questions.push(
+  {
+    q:{pt:'Como usar o Unified ID 2.0 (UID2) em campanhas programáticas no TTD?',en:'How to use Unified ID 2.0 (UID2) in programmatic campaigns in TTD?',es:'¿Cómo usar el Unified ID 2.0 (UID2) en campañas programáticas en TTD?'},
+    a:{
+      pt:`O <strong>UID2 (Unified ID 2.0)</strong> é um identificador de publicidade open-source baseado em email hasheado, criado pelo The Trade Desk como alternativa determinística aos third-party cookies.<br><br>
+<strong>Como o UID2 funciona na prática:</strong>
+<ol>
+  <li>Usuário faz login ou fornece email em um site publisher (ex: jornal digital) com consentimento</li>
+  <li>O email é normalizado (minúsculas, sem espaços) e hasheado com SHA256</li>
+  <li>O Operator do UID2 (The Trade Desk ou parceiro certificado) encripta o hash e gera um UID2 token</li>
+  <li>O token é transmitido na bid request — DSPs que participam do ecossistema UID2 reconhecem o usuário</li>
+  <li>O anunciante pode fazer targeting ou exclusão de usuários identificados via UID2 mesmo sem cookie</li>
+</ol>
+<strong>Como usar UID2 em campanhas no TTD:</strong>
+<ul>
+  <li><strong>First-party data (Customer Match):</strong> fazer upload da lista de emails do CRM → TTD hasheia e converte para UID2 tokens → targeting de clientes existentes sem cookie</li>
+  <li><strong>Publisher targeting:</strong> publishers que integram UID2 passam o token na bid request → TTD identifica o usuário e aplica o targeting da campanha</li>
+  <li><strong>Exclusão de clientes:</strong> excluir quem já comprou da audiência de prospecting usando a lista de emails hasheados</li>
+</ul>
+<strong>Ecossistema atual do UID2:</strong>
+<ul>
+  <li>Publishers integrados: The Washington Post, Financial Times, publishers de notícias premium</li>
+  <li>SSPs integradas: Magnite, PubMatic, Index Exchange, OpenX</li>
+  <li>DSPs integrados: além do TTD, também DV360, Amazon DSP, Adobe Advertising Cloud</li>
+  <li>Taxa de match: depende do publisher — publishers com forte login (notícias, finanças) têm match rate mais alto</li>
+</ul>
+<strong>UID2 vs. cookies de terceiros:</strong>
+<ul>
+  <li>UID2 requer email do usuário (consentido) — menor cobertura, maior precisão</li>
+  <li>Funciona em Safari e Firefox onde cookies de terceiros já são bloqueados</li>
+  <li>Privacy-safe por design: o email original nunca é transmitido, apenas o token encriptado</li>
+</ul>`,
+      en:`<strong>UID2 (Unified ID 2.0)</strong> is an open-source advertising identifier based on hashed email, created by The Trade Desk as a deterministic alternative to third-party cookies.<br><br>
+<strong>How UID2 works in practice:</strong>
+<ol>
+  <li>User logs in or provides email on a publisher site with consent</li>
+  <li>Email is normalized and hashed with SHA256</li>
+  <li>UID2 Operator encrypts the hash and generates a UID2 token</li>
+  <li>Token is transmitted in bid request — DSPs participating in UID2 ecosystem recognize the user</li>
+  <li>Advertiser can target or exclude identified users via UID2 even without cookie</li>
+</ol>
+<strong>How to use UID2 in TTD campaigns:</strong>
+<ul>
+  <li><strong>First-party data (Customer Match):</strong> upload CRM email list → TTD hashes and converts to UID2 tokens → target existing customers without cookie</li>
+  <li><strong>Publisher targeting:</strong> publishers with UID2 integration pass token in bid request → TTD identifies user and applies campaign targeting</li>
+  <li><strong>Customer exclusion:</strong> exclude buyers from prospecting audience using hashed email list</li>
+</ul>
+<strong>UID2 ecosystem:</strong>
+<ul>
+  <li>Integrated publishers: The Washington Post, Financial Times, premium news publishers</li>
+  <li>Integrated SSPs: Magnite, PubMatic, Index Exchange, OpenX</li>
+  <li>Integrated DSPs: TTD, DV360, Amazon DSP, Adobe Advertising Cloud</li>
+</ul>`,
+      es:`El <strong>UID2 (Unified ID 2.0)</strong> es un identificador publicitario open-source basado en email hasheado, creado por The Trade Desk como alternativa determinística a las cookies de terceros.<br><br>
+<strong>Cómo funciona el UID2 en la práctica:</strong>
+<ol>
+  <li>El usuario inicia sesión o proporciona email en un sitio publisher con consentimiento</li>
+  <li>El email se normaliza y se hashea con SHA256</li>
+  <li>El Operator del UID2 encripta el hash y genera un token UID2</li>
+  <li>El token se transmite en el bid request — los DSPs participantes reconocen al usuario</li>
+</ol>
+<strong>Cómo usar UID2 en campañas de TTD:</strong>
+<ul>
+  <li><strong>First-party data (Customer Match):</strong> cargar lista de emails del CRM → TTD los hashea y convierte en tokens UID2</li>
+  <li><strong>Publisher targeting:</strong> publishers con integración UID2 pasan el token en el bid request</li>
+  <li><strong>Exclusión de clientes:</strong> excluir compradores de la audiencia de prospecting</li>
+</ul>`,
+    },
+    tags:['UID2','TTD','cookieless','email-hash','first-party','SHA256','publisher','targeting'],
+  }
+);
+})();

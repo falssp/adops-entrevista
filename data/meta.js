@@ -396,3 +396,203 @@ A partir de iOS 14.5 (abril 2021), Apple exige que las apps soliciten permiso ex
     },
   ],
 };
+
+// ── APPEND: Meta expandido ──
+;(function(){
+const d = window.__adopsData['meta'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que são as Advantage+ Campaigns do Meta e como diferem das campanhas manuais?',en:'What are Meta Advantage+ Campaigns and how do they differ from manual campaigns?',es:'¿Qué son las Advantage+ Campaigns de Meta y cómo difieren de las campañas manuales?'},
+    a:{
+      pt:`As <strong>Advantage+ Campaigns</strong> (ASC — Advantage+ Shopping Campaigns e ACT — Advantage+ App Campaigns) são campanhas altamente automatizadas onde o Meta controla targeting, criativos e orçamento com mínima intervenção humana.<br><br>
+<strong>Advantage+ Shopping Campaigns (ASC):</strong>
+<ul>
+  <li>Combina prospecção e retargeting automaticamente — o Meta decide a proporção ideal em tempo real</li>
+  <li>Targeting: o Meta pode atingir qualquer pessoa no país selecionado (sem restrições de interesse ou demo além do obrigatório)</li>
+  <li>Criativos: até 150 criativos por campanha — o Meta testa e distribui automaticamente</li>
+  <li>Budget: único por campanha — o Meta distribui entre prospecting e retargeting</li>
+  <li>Ideal para: e-commerce com histórico de conversões, catálogo de produtos, pelo menos 100 eventos de compra/semana</li>
+</ul>
+<strong>Advantage+ vs. Campanha Manual:</strong>
+<table>
+<tr><th>Aspecto</th><th>Advantage+</th><th>Manual</th></tr>
+<tr><td>Targeting</td><td>Meta decide (mínimo controle)</td><td>Você define (geo, demo, interesse)</td></tr>
+<tr><td>Orçamento</td><td>Otimizado automaticamente</td><td>Você define por Ad Set</td></tr>
+<tr><td>Criativos</td><td>Até 150, Meta testa</td><td>Você gerencia rotação</td></tr>
+<tr><td>Prospecção/Retargeting</td><td>Automático e dinâmico</td><td>Separado em Ad Sets</td></tr>
+<tr><td>Melhor para</td><td>E-commerce com volume</td><td>Controle granular, testes A/B</td></tr>
+</table><br>
+<strong>Quando usar Advantage+ vs. Manual:</strong>
+<ul>
+  <li>Use ASC quando: você tem volume (&gt;50 compras/semana), quer maximizar ROAS, tem criativo abundante</li>
+  <li>Use manual quando: está testando novos públicos, precisa controlar frequência por segmento, tem budget pequeno (&lt;R$3k/mês)</li>
+</ul>`,
+      en:`<strong>Advantage+ Campaigns</strong> are highly automated campaigns where Meta controls targeting, creatives and budget with minimal human intervention.<br><br>
+<strong>Advantage+ Shopping Campaigns (ASC):</strong>
+<ul>
+  <li>Combines prospecting and retargeting automatically — Meta decides optimal ratio in real time</li>
+  <li>Targeting: Meta can reach anyone in selected country (no interest or demo restrictions beyond mandatory)</li>
+  <li>Creatives: up to 150 per campaign — Meta tests and distributes automatically</li>
+  <li>Budget: single per campaign — Meta distributes between prospecting and retargeting</li>
+  <li>Ideal for: e-commerce with conversion history, product catalog, at least 100 purchase events/week</li>
+</ul>
+<strong>When to use Advantage+ vs. Manual:</strong>
+<ul>
+  <li>Use ASC when: you have volume (&gt;50 purchases/week), want to maximize ROAS, have abundant creative</li>
+  <li>Use manual when: testing new audiences, need granular frequency control, have small budget</li>
+</ul>`,
+      es:`Las <strong>Advantage+ Campaigns</strong> son campañas altamente automatizadas donde Meta controla targeting, creativos y presupuesto con mínima intervención humana.<br><br>
+<strong>Advantage+ Shopping Campaigns (ASC):</strong>
+<ul>
+  <li>Combina prospecting y retargeting automáticamente — Meta decide la proporción óptima en tiempo real</li>
+  <li>Targeting: Meta puede alcanzar a cualquier persona en el país seleccionado</li>
+  <li>Creativos: hasta 150 por campaña — Meta prueba y distribuye automáticamente</li>
+  <li>Ideal para: e-commerce con historial de conversiones, catálogo de productos, al menos 100 eventos de compra/semana</li>
+</ul>
+<strong>Cuándo usar Advantage+ vs. Manual:</strong>
+<ul>
+  <li>Usar ASC cuando: tienes volumen (&gt;50 compras/semana), quieres maximizar ROAS, tienes creativos abundantes</li>
+  <li>Usar manual cuando: estás probando nuevas audiencias, necesitas control granular de frecuencia</li>
+</ul>`,
+    },
+    tags:['Advantage+','ASC','Meta','automação','ROAS','targeting','e-commerce'],
+  },
+  {
+    q:{pt:'Como funciona a atribuição no Meta Ads e quais as diferenças entre janelas de atribuição?',en:'How does attribution work in Meta Ads and what are the differences between attribution windows?',es:'¿Cómo funciona la atribución en Meta Ads y cuáles son las diferencias entre ventanas de atribución?'},
+    a:{
+      pt:`A atribuição no Meta Ads determina quais conversões são creditadas às campanhas e por quanto tempo após a exposição ao anúncio.<br><br>
+<strong>Modelos de atribuição disponíveis no Meta:</strong>
+<ul>
+  <li><strong>Last Click:</strong> 100% do crédito ao último clique antes da conversão</li>
+  <li><strong>Last Touch (padrão Meta):</strong> crédito ao último ponto de contato — clique tem prioridade sobre impressão</li>
+  <li><strong>Data-Driven Attribution (DDA):</strong> ML distribui o crédito entre todos os touchpoints de acordo com a contribuição estimada de cada um</li>
+</ul>
+<strong>Janelas de atribuição:</strong>
+<ul>
+  <li><strong>Click:</strong> 1 dia, 7 dias (padrão) ou desativado. Conversão dentro deste prazo após clique = atribuída ao anúncio.</li>
+  <li><strong>View:</strong> 1 dia (padrão) ou desativado. Conversão dentro de 1 dia após visualizar o anúncio (sem clicar) = atribuída ao anúncio.</li>
+</ul>
+<strong>Configuração padrão do Meta (atual): 7-day click + 1-day view.</strong><br><br>
+<strong>Como escolher a janela correta:</strong>
+<ul>
+  <li>Ciclo de compra curto (impulso, &lt;R$100): 1-day click é suficiente</li>
+  <li>Ciclo médio (produto considerado, R$100-500): 7-day click padrão</li>
+  <li>Ciclo longo (B2B, produto caro): 28-day click (disponível apenas em alguns objetivos)</li>
+</ul>
+<strong>Impacto pós-iOS 14:</strong>
+<ul>
+  <li>Usuários iOS sem ATT opt-in: conversões rastreadas com delay de 24-72h via SKAdNetwork</li>
+  <li>Conversões "modeladas": o Meta estima conversões não rastreáveis de usuários iOS e adiciona à contagem — aparecem em relatórios como "modeled conversions"</li>
+  <li>Discrepância frequente entre Meta e GA4 por conta de janelas diferentes e conversões modeladas</li>
+</ul>`,
+      en:`Attribution in Meta Ads determines which conversions are credited to campaigns and for how long after ad exposure.<br><br>
+<strong>Available attribution models:</strong>
+<ul>
+  <li><strong>Last Click:</strong> 100% credit to last click before conversion</li>
+  <li><strong>Last Touch (Meta default):</strong> credit to last touchpoint — click has priority over impression</li>
+  <li><strong>Data-Driven Attribution (DDA):</strong> ML distributes credit among all touchpoints according to estimated contribution</li>
+</ul>
+<strong>Attribution windows:</strong>
+<ul>
+  <li><strong>Click:</strong> 1 day, 7 days (default) or disabled</li>
+  <li><strong>View:</strong> 1 day (default) or disabled</li>
+</ul>
+<strong>Current Meta default: 7-day click + 1-day view.</strong><br><br>
+<strong>Post-iOS 14 impact:</strong>
+<ul>
+  <li>iOS users without ATT opt-in: conversions tracked with 24-72h delay via SKAdNetwork</li>
+  <li>"Modeled conversions": Meta estimates untrackable iOS user conversions and adds to count</li>
+  <li>Frequent discrepancy between Meta and GA4 due to different windows and modeled conversions</li>
+</ul>`,
+      es:`La atribución en Meta Ads determina qué conversiones se acreditan a las campañas y durante cuánto tiempo tras la exposición al anuncio.<br><br>
+<strong>Modelos de atribución disponibles:</strong>
+<ul>
+  <li><strong>Last Click:</strong> 100% del crédito al último clic antes de la conversión</li>
+  <li><strong>Last Touch (predeterminado Meta):</strong> crédito al último punto de contacto</li>
+  <li><strong>Data-Driven Attribution (DDA):</strong> ML distribuye el crédito entre todos los touchpoints</li>
+</ul>
+<strong>Ventanas de atribución:</strong>
+<ul>
+  <li><strong>Clic:</strong> 1 día, 7 días (predeterminado) o desactivado</li>
+  <li><strong>Visualización:</strong> 1 día (predeterminado) o desactivado</li>
+</ul>
+<strong>Configuración predeterminada actual de Meta: 7-day click + 1-day view.</strong><br><br>
+<strong>Impacto post-iOS 14:</strong>
+<ul>
+  <li>Conversiones rastreadas con retraso de 24-72h via SKAdNetwork para usuarios iOS sin opt-in</li>
+  <li>"Modeled conversions": Meta estima conversiones no rastreables y las agrega al conteo</li>
+</ul>`,
+    },
+    tags:['Meta','atribuição','janela','Last-Click','DDA','iOS14','SKAdNetwork','modelagem'],
+  }
+);
+d.tiers[2].questions.push(
+  {
+    q:{pt:'Como escalar uma conta de Meta Ads mantendo ROAS estável?',en:'How to scale a Meta Ads account while maintaining stable ROAS?',es:'¿Cómo escalar una cuenta de Meta Ads manteniendo un ROAS estable?'},
+    a:{
+      pt:`Escalar no Meta sem destruir o ROAS é o desafio central de qualquer gestor de performance — o algoritmo precisa de dados suficientes para otimizar enquanto a audiência não satura.<br><br>
+<strong>Tipos de escala:</strong>
+<ul>
+  <li><strong>Escala vertical (budget):</strong> aumentar o budget do Ad Set ou campanha. Regra: aumentos de no máximo 20-30% por vez, a cada 3-5 dias. Aumentos maiores reiniciam a fase de aprendizado.</li>
+  <li><strong>Escala horizontal (audiências):</strong> duplicar Ad Sets com novos públicos (Lookalike 3-6%, novos interesses, países adicionais). Manter o mesmo criativo para isolar a variável de audiência.</li>
+  <li><strong>Escala criativa:</strong> adicionar novos criativos ao Ad Set ou campanha. Mais criativos = mais dados para o algoritmo testar e mais superfície de alcance.</li>
+</ul>
+<strong>Framework de escala sustentável:</strong>
+<ol>
+  <li>Identificar Ad Set com ROAS consistente por 7+ dias</li>
+  <li>Aumentar budget em 20% — aguardar 3 dias para avaliação</li>
+  <li>Se ROAS mantido: novo aumento de 20%</li>
+  <li>Se ROAS caiu: pausar aumento, adicionar novo criativo ou nova audiência</li>
+  <li>Criar campanha ASC paralela com budget crescente — ASC escala mais facilmente que campanhas manuais</li>
+</ol>
+<strong>Sinais de saturação de audiência:</strong>
+<ul>
+  <li>Frequência &gt;3 em 7 dias para awareness, &gt;5 para retargeting</li>
+  <li>CPM crescendo sem mudança de sazonalidade</li>
+  <li>CTR caindo progressivamente</li>
+</ul>
+<strong>Combater saturação:</strong>
+<ul>
+  <li>Expandir audiência: aumentar % do Lookalike, adicionar novos países</li>
+  <li>Exclusões: excluir quem já converteu nos últimos X dias para reciclar budget para novos usuários</li>
+  <li>Novos criativos: rotação criativa é a principal alavanca de escala no Meta</li>
+  <li>CBO (Campaign Budget Optimization): deixar o Meta distribuir budget entre Ad Sets automaticamente</li>
+</ul>`,
+      en:`Scaling on Meta without destroying ROAS is the central challenge of any performance manager.<br><br>
+<strong>Types of scaling:</strong>
+<ul>
+  <li><strong>Vertical scaling (budget):</strong> increase Ad Set or campaign budget. Rule: max 20-30% increases, every 3-5 days. Larger increases restart learning phase.</li>
+  <li><strong>Horizontal scaling (audiences):</strong> duplicate Ad Sets with new audiences (Lookalike 3-6%, new interests, additional countries). Keep same creative to isolate audience variable.</li>
+  <li><strong>Creative scaling:</strong> add new creatives to Ad Set or campaign. More creatives = more algorithm testing data and more reach surface.</li>
+</ul>
+<strong>Sustainable scaling framework:</strong>
+<ol>
+  <li>Identify Ad Set with consistent ROAS for 7+ days</li>
+  <li>Increase budget by 20% — wait 3 days for evaluation</li>
+  <li>If ROAS maintained: new 20% increase</li>
+  <li>If ROAS dropped: pause increase, add new creative or new audience</li>
+  <li>Create parallel ASC campaign with growing budget — ASC scales more easily than manual campaigns</li>
+</ol>
+<strong>Audience saturation signals:</strong> Frequency &gt;3 in 7 days, CPM rising without seasonality change, CTR progressively falling.<br><br>
+<strong>Combat saturation:</strong> expand audience, add exclusions of recent converters, new creatives (main scaling lever on Meta), CBO.`,
+      es:`Escalar en Meta sin destruir el ROAS es el desafío central de cualquier gestor de performance.<br><br>
+<strong>Tipos de escala:</strong>
+<ul>
+  <li><strong>Escala vertical (presupuesto):</strong> aumentar el presupuesto máximo un 20-30% a la vez, cada 3-5 días. Aumentos mayores reinician la fase de aprendizaje.</li>
+  <li><strong>Escala horizontal (audiencias):</strong> duplicar Ad Sets con nuevas audiencias. Mantener el mismo creativo para aislar la variable de audiencia.</li>
+  <li><strong>Escala creativa:</strong> agregar nuevos creativos. Más creativos = más datos de prueba para el algoritmo.</li>
+</ul>
+<strong>Framework de escala sostenible:</strong>
+<ol>
+  <li>Identificar Ad Set con ROAS consistente por 7+ días</li>
+  <li>Aumentar presupuesto un 20% — esperar 3 días para evaluación</li>
+  <li>Si el ROAS se mantiene: nuevo aumento del 20%</li>
+  <li>Si el ROAS cae: pausar el aumento, agregar nuevo creativo o nueva audiencia</li>
+</ol>
+<strong>Señales de saturación:</strong> Frecuencia &gt;3 en 7 días, CPM creciente, CTR cayendo progresivamente.<br><br>
+<strong>Combatir la saturación:</strong> expandir audiencia, exclusiones de conversores recientes, nuevos creativos, CBO.`,
+    },
+    tags:['Meta','escala','ROAS','CBO','ASC','saturação','Lookalike','budget'],
+  }
+);
+})();

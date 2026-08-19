@@ -328,3 +328,295 @@ window.__adopsData['tiktok'] = {
     },
   ],
 };
+
+// ── APPEND: TikTok expandido ──
+;(function(){
+const d = window.__adopsData['tiktok'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Como instalar o TikTok Pixel e configurar eventos?',en:'How to install the TikTok Pixel and configure events?',es:'¿Cómo instalar el TikTok Pixel y configurar eventos?'},
+    a:{
+      pt:`O <strong>TikTok Pixel</strong> rastreia ações no site para mensuração de conversões, retargeting e otimização de campanhas.<br><br>
+<strong>Criar o Pixel:</strong>
+<ol>
+  <li>Acesse <strong>TikTok Ads Manager → Assets → Events → Web Events → Create Pixel</strong></li>
+  <li>Escolha o método de instalação</li>
+  <li>Anote o <strong>Pixel ID</strong></li>
+</ol>
+<strong>Instalar — 3 métodos:</strong>
+<ul>
+  <li><strong>Via GTM (recomendado):</strong> Tag Custom HTML ou template nativo do TikTok no GTM. Disparo: All Pages para o base code.</li>
+  <li><strong>Manual:</strong> colar o código base no &lt;head&gt; de todas as páginas. Adicionar eventos específicos nas páginas relevantes.</li>
+  <li><strong>Shopify/WooCommerce:</strong> app "TikTok" ou plugin nativo — inserir o Pixel ID.</li>
+</ul>
+<strong>Eventos padrão do TikTok Pixel:</strong>
+<ul>
+  <li><code>ViewContent</code> — visualizou produto/página</li>
+  <li><code>AddToWishlist</code> — adicionou à lista de desejos</li>
+  <li><code>AddToCart</code> — adicionou ao carrinho</li>
+  <li><code>InitiateCheckout</code> — iniciou checkout</li>
+  <li><code>PlaceAnOrder</code> — realizou pedido</li>
+  <li><code>CompletePayment</code> — pagamento concluído (com value, currency)</li>
+  <li><code>Subscribe</code>, <code>Download</code>, <code>Register</code></li>
+</ul>
+<strong>TikTok Events API (CAPI):</strong>
+<ul>
+  <li>Envia eventos do servidor diretamente ao TikTok — complementa o Pixel</li>
+  <li>Configurar em: Assets → Events → Web Events → Set Up Events API</li>
+  <li>Implementar deduplicação com o mesmo <code>event_id</code> no Pixel e na API</li>
+</ul>
+<strong>Verificar:</strong> usar a extensão <strong>TikTok Pixel Helper</strong> no Chrome para confirmar eventos disparando em tempo real.`,
+      en:`The <strong>TikTok Pixel</strong> tracks site actions for conversion measurement, retargeting and campaign optimization.<br><br>
+<strong>Create Pixel:</strong> TikTok Ads Manager → Assets → Events → Web Events → Create Pixel → note Pixel ID.<br><br>
+<strong>Install:</strong> Via GTM (Custom HTML tag or native template), Manual (&lt;head&gt; snippet), or native Shopify/WooCommerce integration.<br><br>
+<strong>Standard TikTok Pixel events:</strong> ViewContent, AddToWishlist, AddToCart, InitiateCheckout, PlaceAnOrder, CompletePayment (with value, currency), Subscribe, Download, Register.<br><br>
+<strong>TikTok Events API:</strong> sends server events directly to TikTok — complements Pixel. Implement deduplication with same event_id in both Pixel and API.`,
+      es:`El <strong>TikTok Pixel</strong> rastrea acciones en el sitio para medición de conversiones, retargeting y optimización de campañas.<br><br>
+<strong>Crear:</strong> TikTok Ads Manager → Assets → Events → Web Events → Create Pixel → anotar Pixel ID.<br><br>
+<strong>Instalar:</strong> Via GTM, Manual o integración nativa Shopify/WooCommerce.<br><br>
+<strong>Eventos estándar:</strong> ViewContent, AddToWishlist, AddToCart, InitiateCheckout, PlaceAnOrder, CompletePayment, Subscribe, Download, Register.<br><br>
+<strong>TikTok Events API:</strong> envía eventos del servidor directamente a TikTok. Implementar deduplicación con el mismo event_id.`,
+    },
+    tags:['TikTok-Pixel','GTM','Events-API','CAPI','instalação','conversão','Shopify'],
+  },
+  {
+    q:{pt:'Quais são os formatos de anúncio do TikTok e como cada um funciona?',en:'What are TikTok ad formats and how does each work?',es:'¿Cuáles son los formatos de anuncio de TikTok y cómo funciona cada uno?'},
+    a:{
+      pt:`<strong>Formatos de anúncio do TikTok:</strong><br><br>
+<strong>In-Feed Ads:</strong>
+<ul>
+  <li>Vídeo vertical (9:16) de 5-60 segundos que aparece no feed "Para Você" entre vídeos orgânicos</li>
+  <li>Pulável pelo usuário — os primeiros 3 segundos são críticos</li>
+  <li>CTA clicável: visitar site, baixar app, ver produto</li>
+  <li>Formato mais acessível e amplamente usado — disponível via self-serve</li>
+</ul>
+<strong>TopView:</strong>
+<ul>
+  <li>Primeiro anúncio que o usuário vê ao abrir o TikTok — ocupa toda a tela por até 60 segundos</li>
+  <li>Compra por reserva (não RTB) — garantia de visibilidade máxima</li>
+  <li>Alto impacto, alto custo — usado em lançamentos e grandes campanhas de brand</li>
+</ul>
+<strong>Brand Takeover:</strong>
+<ul>
+  <li>Anúncio estático ou vídeo de 3-5 segundos que aparece ao abrir o app antes do feed</li>
+  <li>Exclusivo: apenas uma marca por categoria por dia</li>
+  <li>Inclui link para hashtag challenge, landing page ou TopView</li>
+</ul>
+<strong>Branded Hashtag Challenge:</strong>
+<ul>
+  <li>Marca cria um desafio com hashtag própria — usuários criam conteúdo participando</li>
+  <li>Alta geração de UGC e awareness orgânico</li>
+  <li>Aparece na página de Discovery por 6 dias</li>
+  <li>Case clássico: marcas de beleza, moda e bebidas</li>
+</ul>
+<strong>Branded Effects (Filtros e Stickers):</strong>
+<ul>
+  <li>Efeitos de AR, filtros e stickers interativos com a marca</li>
+  <li>Usuários usam nos próprios vídeos — geração de conteúdo orgânico com a marca</li>
+</ul>
+<strong>TikTok Shopping Ads:</strong>
+<ul>
+  <li>Video Shopping Ads: In-Feed com produto tagueado diretamente no vídeo</li>
+  <li>Catalog Listing Ads: exibe produtos do catálogo no feed de compras</li>
+  <li>LIVE Shopping Ads: anúncio que leva para live commerce</li>
+</ul>`,
+      en:`<strong>TikTok ad formats:</strong><br><br>
+<strong>In-Feed Ads:</strong> vertical video (9:16) 5-60 seconds appearing in "For You" feed. Skippable — first 3 seconds critical. Clickable CTA.<br><br>
+<strong>TopView:</strong> first ad user sees when opening TikTok — full screen for up to 60 seconds. Reservation buy. Maximum visibility.<br><br>
+<strong>Brand Takeover:</strong> static/video 3-5 seconds appearing when app opens. Exclusive: one brand per category per day.<br><br>
+<strong>Branded Hashtag Challenge:</strong> brand creates challenge with own hashtag — users create participating content. High UGC and organic awareness. Discovery page for 6 days.<br><br>
+<strong>Branded Effects:</strong> AR effects, filters and interactive stickers with brand. Users use in own videos.<br><br>
+<strong>TikTok Shopping Ads:</strong> Video Shopping Ads (tagged product in video), Catalog Listing Ads, LIVE Shopping Ads.`,
+      es:`<strong>Formatos de anuncio de TikTok:</strong><br><br>
+<strong>In-Feed Ads:</strong> video vertical (9:16) de 5-60 segundos en el feed "Para Ti". Omitible — los primeros 3 segundos son críticos.<br><br>
+<strong>TopView:</strong> primer anuncio que el usuario ve al abrir TikTok — pantalla completa hasta 60 segundos. Compra por reserva.<br><br>
+<strong>Brand Takeover:</strong> estático/video de 3-5 segundos al abrir la app. Exclusivo: una marca por categoría por día.<br><br>
+<strong>Branded Hashtag Challenge:</strong> la marca crea un desafío con hashtag propio — los usuarios crean contenido participando. Alta generación de UGC.<br><br>
+<strong>Branded Effects:</strong> efectos AR, filtros y stickers interactivos con la marca.<br><br>
+<strong>TikTok Shopping Ads:</strong> Video Shopping Ads, Catalog Listing Ads, LIVE Shopping Ads.`,
+    },
+    tags:['TikTok','formatos','TopView','Brand-Takeover','Hashtag-Challenge','Shopping','In-Feed'],
+  }
+);
+d.tiers[1].questions.push(
+  {
+    q:{pt:'O que é o TikTok Creative Center e como usar dados de tendências para criar anúncios melhores?',en:'What is TikTok Creative Center and how to use trend data to create better ads?',es:'¿Qué es el TikTok Creative Center y cómo usar datos de tendencias para crear mejores anuncios?'},
+    a:{
+      pt:`O <strong>TikTok Creative Center</strong> (ads.tiktok.com/business/creativecenter) é uma ferramenta gratuita do TikTok que oferece insights sobre trends, criativos de alta performance e dados de audiência para ajudar anunciantes a criar conteúdo mais eficaz.<br><br>
+<strong>Funcionalidades principais:</strong>
+<ul>
+  <li><strong>Top Ads:</strong> biblioteca de anúncios de alta performance — filtráveis por país, setor, objetivo, período e formato. Ver quais criativos têm mais cliques, impressões e engajamento em cada categoria. Inspiração direta de what's working.</li>
+  <li><strong>Trending:</strong> hashtags em alta, músicas virais, palavras-chave em crescimento por país e categoria. Usar músicas em tendência aumenta significativamente o reach orgânico de anúncios.</li>
+  <li><strong>Creator Insights:</strong> dados sobre criadores por nicho, tamanho de audiência e taxa de engajamento — útil para selecionar influencers para campanhas</li>
+  <li><strong>Keyword Insights:</strong> palavras-chave mais buscadas na categoria do anunciante — alimentar criativos e copy com termos que a audiência usa</li>
+  <li><strong>Creative Insights:</strong> análise de quais elementos criativos (duração, gancho, estilo de filmagem, textos, CTAs) performam melhor em cada indústria</li>
+</ul>
+<strong>Boas práticas de criativo no TikTok (baseado em dados do Creative Center):</strong>
+<ul>
+  <li><strong>Hook nos primeiros 3 segundos:</strong> mostrar o produto em ação, fazer pergunta ou afirmação surpreendente, ou usar tendência de áudio reconhecível</li>
+  <li><strong>Formato nativo:</strong> parecer com conteúdo orgânico do TikTok, não com anúncio polido de TV</li>
+  <li><strong>UGC e depoimentos:</strong> pessoa falando diretamente para a câmera sobre o produto performa melhor que produção high-end</li>
+  <li><strong>Subtítulos sempre:</strong> 60-80% dos usuários assistem sem som</li>
+  <li><strong>Música em tendência:</strong> usar sons virais (quando licenciados comercialmente) aumenta engajamento</li>
+</ul>`,
+      en:`The <strong>TikTok Creative Center</strong> (ads.tiktok.com/business/creativecenter) is a free TikTok tool offering insights about trends, high-performance creatives and audience data.<br><br>
+<strong>Main features:</strong>
+<ul>
+  <li><strong>Top Ads:</strong> high-performance ad library — filterable by country, industry, objective, period and format. See what's working.</li>
+  <li><strong>Trending:</strong> trending hashtags, viral music, growing keywords by country and category</li>
+  <li><strong>Creator Insights:</strong> creator data by niche, audience size and engagement rate</li>
+  <li><strong>Keyword Insights:</strong> most searched keywords in advertiser's category</li>
+  <li><strong>Creative Insights:</strong> which creative elements (duration, hook, filming style, texts, CTAs) perform best per industry</li>
+</ul>
+<strong>TikTok creative best practices:</strong>
+<ul>
+  <li><strong>Hook in first 3 seconds</strong></li>
+  <li><strong>Native format:</strong> look like organic TikTok content, not polished TV ad</li>
+  <li><strong>UGC and testimonials:</strong> person speaking directly to camera outperforms high-end production</li>
+  <li><strong>Always subtitles:</strong> 60-80% of users watch without sound</li>
+  <li><strong>Trending music:</strong> using viral sounds increases engagement</li>
+</ul>`,
+      es:`El <strong>TikTok Creative Center</strong> es una herramienta gratuita de TikTok que ofrece insights sobre tendencias, creativos de alto rendimiento y datos de audiencia.<br><br>
+<strong>Funcionalidades principales:</strong>
+<ul>
+  <li><strong>Top Ads:</strong> biblioteca de anuncios de alto rendimiento — filtrable por país, sector, objetivo y período</li>
+  <li><strong>Trending:</strong> hashtags en tendencia, música viral, palabras clave en crecimiento</li>
+  <li><strong>Creator Insights:</strong> datos sobre creadores por nicho y tasa de engagement</li>
+  <li><strong>Keyword Insights:</strong> palabras clave más buscadas en la categoría del anunciante</li>
+</ul>
+<strong>Buenas prácticas de creativo en TikTok:</strong>
+<ul>
+  <li>Hook en los primeros 3 segundos</li>
+  <li>Formato nativo — parecer contenido orgánico</li>
+  <li>UGC y testimonios: persona hablando directamente a la cámara</li>
+  <li>Subtítulos siempre: 60-80% de los usuarios ven sin sonido</li>
+</ul>`,
+    },
+    tags:['TikTok','Creative-Center','trends','UGC','hook','criativo','música-viral'],
+  },
+  {
+    q:{pt:'Como funciona o TikTok Shop e o Live Commerce no contexto de publicidade?',en:'How does TikTok Shop and Live Commerce work in the advertising context?',es:'¿Cómo funciona TikTok Shop y el Live Commerce en el contexto publicitario?'},
+    a:{
+      pt:`O <strong>TikTok Shop</strong> transformou o TikTok de plataforma de entretenimento em canal de e-commerce — integrando descoberta, conteúdo e compra em uma única experiência.<br><br>
+<strong>Componentes do TikTok Shop:</strong>
+<ul>
+  <li><strong>Product Links in Videos:</strong> criador ou marca tageia produtos diretamente no vídeo orgânico ou anúncio — botãozinho de produto aparece sobre o vídeo. Usuário toca e pode comprar sem sair do TikTok.</li>
+  <li><strong>TikTok Shop Tab:</strong> aba de compras dentro do app com produtos recomendados algoritmicamente</li>
+  <li><strong>LIVE Shopping:</strong> transmissão ao vivo com produtos exibidos em tempo real. Criador (ou marca) apresenta produtos, usuários compram durante a live. Formato dominante no mercado asiático (China, Indonésia), crescendo no BR/US.</li>
+  <li><strong>Affiliate Program:</strong> criadores promovem produtos de marcas parceiras com link de afiliado — ganham comissão por cada venda gerada</li>
+</ul>
+<strong>Para anunciantes — TikTok Shopping Ads:</strong>
+<ul>
+  <li><strong>Video Shopping Ads:</strong> In-Feed com produto tagueado + CTA de compra direto no vídeo</li>
+  <li><strong>LIVE Shopping Ads:</strong> amplifica uma live commerce com budget de mídia — direciona tráfego pago para a transmissão</li>
+  <li><strong>Catalog Listing Ads:</strong> produtos do catálogo exibidos no feed de shopping — semelhante ao Google Shopping</li>
+</ul>
+<strong>Por que Live Commerce importa para AdOps:</strong>
+<ul>
+  <li>Mensuração em tempo real: vendas, GMV (Gross Merchandise Value), espectadores simultâneos</li>
+  <li>Atribuição: TikTok Shop tem atribuição nativa — sem dependência de Pixel externo para vendas dentro do app</li>
+  <li>Integração com catálogo: mesmo feed de produtos usado nos Shopping Ads alimenta a loja no TikTok Shop</li>
+</ul>`,
+      en:`<strong>TikTok Shop</strong> transformed TikTok from entertainment platform to e-commerce channel — integrating discovery, content and purchase in a single experience.<br><br>
+<strong>TikTok Shop components:</strong>
+<ul>
+  <li><strong>Product Links in Videos:</strong> creator or brand tags products directly in organic video or ad — product button appears over video. User taps and can buy without leaving TikTok.</li>
+  <li><strong>TikTok Shop Tab:</strong> shopping tab inside app with algorithmically recommended products</li>
+  <li><strong>LIVE Shopping:</strong> live stream with products displayed in real time. Dominant format in Asian markets, growing in BR/US.</li>
+  <li><strong>Affiliate Program:</strong> creators promote brand partner products with affiliate link — earn commission per sale generated</li>
+</ul>
+<strong>For advertisers — TikTok Shopping Ads:</strong>
+<ul>
+  <li><strong>Video Shopping Ads:</strong> In-Feed with tagged product + direct purchase CTA</li>
+  <li><strong>LIVE Shopping Ads:</strong> amplifies live commerce with media budget</li>
+  <li><strong>Catalog Listing Ads:</strong> catalog products shown in shopping feed</li>
+</ul>`,
+      es:`<strong>TikTok Shop</strong> transformó TikTok de plataforma de entretenimiento a canal de e-commerce.<br><br>
+<strong>Componentes de TikTok Shop:</strong>
+<ul>
+  <li><strong>Product Links in Videos:</strong> el creador o la marca etiqueta productos directamente en el video — botón de producto aparece sobre el video</li>
+  <li><strong>TikTok Shop Tab:</strong> pestaña de compras dentro de la app</li>
+  <li><strong>LIVE Shopping:</strong> transmisión en vivo con productos mostrados en tiempo real. Formato dominante en mercados asiáticos.</li>
+  <li><strong>Affiliate Program:</strong> creadores promocionan productos con enlace de afiliado</li>
+</ul>
+<strong>Para anunciantes — TikTok Shopping Ads:</strong>
+<ul>
+  <li><strong>Video Shopping Ads:</strong> In-Feed con producto etiquetado + CTA de compra directa</li>
+  <li><strong>LIVE Shopping Ads:</strong> amplifica un live commerce con presupuesto de medios</li>
+  <li><strong>Catalog Listing Ads:</strong> productos del catálogo en el feed de shopping</li>
+</ul>`,
+    },
+    tags:['TikTok-Shop','Live-Commerce','Shopping-Ads','GMV','afiliado','catálogo','e-commerce'],
+  }
+);
+d.tiers[2].questions.push(
+  {
+    q:{pt:'Como estruturar uma estratégia de conteúdo criativo escalável para TikTok Ads?',en:'How to structure a scalable creative content strategy for TikTok Ads?',es:'¿Cómo estructurar una estrategia de contenido creativo escalable para TikTok Ads?'},
+    a:{
+      pt:`No TikTok, <strong>o criativo É a segmentação</strong> — o algoritmo distribui o conteúdo para quem tem maior probabilidade de engajar, independente do targeting definido pelo anunciante. Isso torna a estratégia criativa o fator mais crítico de performance.<br><br>
+<strong>Framework de teste criativo escalável:</strong>
+<ol>
+  <li><strong>Identificar hooks:</strong> criar 5-10 variações de abertura diferentes para o mesmo produto. Testar em paralelo com o mesmo corpo e CTA. Identificar qual hook tem maior 3-second view rate e menor skip rate.</li>
+  <li><strong>Testar formatos:</strong> UGC (pessoa falando), demo de produto, unboxing, problema-solução, depoimento, trend native (usar som ou meme atual)</li>
+  <li><strong>Testar CTAs:</strong> "Compre agora", "Saiba mais", "Experimente grátis" — qual converte mais no objetivo</li>
+  <li><strong>Escalar winners:</strong> pegar o criativo com melhor CPR (Cost Per Result) e criar variações (hook diferente, duração diferente, locutor diferente)</li>
+</ol>
+<strong>Sinais de fadiga criativa:</strong>
+<ul>
+  <li>CTR caindo progressivamente sem mudança de audiência</li>
+  <li>CPM crescendo (o algoritmo está pagando mais para atingir a mesma audiência)</li>
+  <li>Frequency aumentando — mesmos usuários vendo o mesmo anúncio repetidamente</li>
+</ul>
+<strong>Velocidade de produção — TikTok exige volume:</strong>
+<ul>
+  <li>Meta/Google: 1-2 criativos novos por mês é suficiente</li>
+  <li>TikTok: 5-10 criativos novos por semana para contas em escala — a plataforma consome criativos muito mais rápido</li>
+</ul>
+<strong>Spark Ads — amplificar conteúdo orgânico:</strong>
+<ul>
+  <li>Transformar vídeos orgânicos (da marca ou de criadores) em anúncios pagos</li>
+  <li>Mantém os likes, comentários e compartilhamentos do post original — prova social</li>
+  <li>Performa melhor que anúncios "from scratch" em muitos casos — parece mais autêntico</li>
+  <li>Para usar vídeo de criador: obter código de autorização do criador no app</li>
+</ul>`,
+      en:`On TikTok, <strong>the creative IS the targeting</strong> — the algorithm distributes content to those most likely to engage, regardless of advertiser-defined targeting. This makes creative strategy the most critical performance factor.<br><br>
+<strong>Scalable creative testing framework:</strong>
+<ol>
+  <li><strong>Identify hooks:</strong> create 5-10 different opening variations for the same product. Test in parallel with same body and CTA. Identify which hook has highest 3-second view rate and lowest skip rate.</li>
+  <li><strong>Test formats:</strong> UGC, product demo, unboxing, problem-solution, testimonial, trend native</li>
+  <li><strong>Test CTAs:</strong> which converts best for the objective</li>
+  <li><strong>Scale winners:</strong> take best CPR creative and create variations</li>
+</ol>
+<strong>Creative fatigue signals:</strong>
+<ul>
+  <li>Progressively falling CTR without audience change</li>
+  <li>Rising CPM — algorithm paying more to reach same audience</li>
+  <li>Increasing frequency</li>
+</ul>
+<strong>Production speed — TikTok requires volume:</strong>
+<ul>
+  <li>Meta/Google: 1-2 new creatives per month is sufficient</li>
+  <li>TikTok: 5-10 new creatives per week for scaled accounts</li>
+</ul>
+<strong>Spark Ads — amplify organic content:</strong>
+<ul>
+  <li>Turn organic videos (from brand or creators) into paid ads</li>
+  <li>Keeps original post's likes, comments and shares — social proof</li>
+  <li>Often outperforms "from scratch" ads — appears more authentic</li>
+</ul>`,
+      es:`En TikTok, <strong>el creativo ES la segmentación</strong> — el algoritmo distribuye el contenido a quienes tienen mayor probabilidad de interactuar.<br><br>
+<strong>Framework de prueba creativa escalable:</strong>
+<ol>
+  <li><strong>Identificar hooks:</strong> crear 5-10 variaciones de apertura diferentes. Probar en paralelo. Identificar cuál tiene mayor 3-second view rate y menor skip rate.</li>
+  <li><strong>Probar formatos:</strong> UGC, demo de producto, unboxing, problema-solución, testimonio, trend native</li>
+  <li><strong>Probar CTAs</strong></li>
+  <li><strong>Escalar ganadores:</strong> tomar el creativo con mejor CPR y crear variaciones</li>
+</ol>
+<strong>Señales de fatiga creativa:</strong> CTR cayendo, CPM creciendo, frecuencia aumentando.<br><br>
+<strong>Velocidad de producción:</strong> TikTok: 5-10 creativos nuevos por semana para cuentas a escala.<br><br>
+<strong>Spark Ads:</strong> transformar vídeos orgánicos en anuncios pagos. Mantiene likes, comentarios y compartidos — prueba social.`,
+    },
+    tags:['TikTok','criativo','hook','Spark-Ads','UGC','fadiga','escala','CPR'],
+  }
+);
+})();

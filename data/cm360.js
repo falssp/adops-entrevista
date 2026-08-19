@@ -355,3 +355,288 @@ Alternativa sin código: Looker Studio con conector nativo de CM360.`,
     },
   ],
 };
+
+// ── APPEND: CM360 expandido ──
+;(function(){
+const d = window.__adopsData['cm360'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que são as tags INS, IFRAME e JavaScript do CM360 e quando usar cada uma?',en:'What are CM360 INS, IFRAME and JavaScript tags and when to use each?',es:'¿Qué son las tags INS, IFRAME y JavaScript de CM360 y cuándo usar cada una?'},
+    a:{
+      pt:`O CM360 gera diferentes formatos de tag de impressão para diferentes contextos de uso.<br><br>
+<strong>Tag INS (padrão moderno — recomendada):</strong>
+<ul>
+  <li>Elemento HTML <code>&lt;ins&gt;</code> — sintaxe mais limpa</li>
+  <li>Carrega de forma assíncrona — não bloqueia o carregamento da página</li>
+  <li>Suporta rich media, video e display</li>
+  <li>Compatível com HTTPS</li>
+  <li><strong>Use quando:</strong> implementação moderna em sites/apps com suporte a HTML5. É o padrão atual do mercado.</li>
+</ul>
+<strong>Tag IFRAME:</strong>
+<ul>
+  <li>Usa elemento <code>&lt;iframe&gt;</code> para carregar o anúncio em sandbox isolado</li>
+  <li>Compatibilidade máxima com sistemas legados de ad serving de publishers antigos</li>
+  <li>Mais seguro do ponto de vista de isolamento (o criativo não acessa o DOM da página)</li>
+  <li><strong>Use quando:</strong> publisher exige IFRAME ou o sistema deles não suporta INS</li>
+</ul>
+<strong>Tag JavaScript:</strong>
+<ul>
+  <li>Script que escreve o anúncio dinamicamente na página</li>
+  <li>Pode ser síncrono (bloqueia carregamento — evitar) ou assíncrono</li>
+  <li><strong>Use quando:</strong> publisher aceita apenas JavaScript ou é necessário para funcionalidades específicas de rich media</li>
+</ul>
+<strong>Tag de clique apenas (Click Tracker):</strong>
+<ul>
+  <li>Não serve criativo — só registra o clique e redireciona para a URL de destino</li>
+  <li><strong>Use quando:</strong> o publisher serve o criativo, mas o anunciante quer rastrear os cliques de forma independente</li>
+</ul>
+<strong>Escolha prática:</strong> quase sempre usar INS. Mudar para IFRAME apenas quando solicitado pelo publisher. Evitar JavaScript síncrono.`,
+      en:`CM360 generates different impression tag formats for different usage contexts.<br><br>
+<strong>INS tag (modern standard — recommended):</strong>
+<ul>
+  <li>HTML <code>&lt;ins&gt;</code> element — cleaner syntax</li>
+  <li>Loads asynchronously — doesn't block page loading</li>
+  <li>Supports rich media, video and display</li>
+  <li><strong>Use when:</strong> modern implementation on sites/apps with HTML5 support. Current market standard.</li>
+</ul>
+<strong>IFRAME tag:</strong>
+<ul>
+  <li>Uses <code>&lt;iframe&gt;</code> element to load ad in isolated sandbox</li>
+  <li>Maximum compatibility with legacy ad serving systems</li>
+  <li><strong>Use when:</strong> publisher requires IFRAME or their system doesn't support INS</li>
+</ul>
+<strong>JavaScript tag:</strong>
+<ul>
+  <li>Script that dynamically writes the ad on the page</li>
+  <li><strong>Use when:</strong> publisher accepts only JavaScript or specific rich media functionality is needed</li>
+</ul>
+<strong>Click-only tag (Click Tracker):</strong>
+<ul>
+  <li>Doesn't serve creative — only records click and redirects to destination URL</li>
+  <li><strong>Use when:</strong> publisher serves the creative, but advertiser wants to track clicks independently</li>
+</ul>`,
+      es:`CM360 genera diferentes formatos de tag de impresión para diferentes contextos de uso.<br><br>
+<strong>Tag INS (estándar moderno — recomendada):</strong>
+<ul>
+  <li>Elemento HTML <code>&lt;ins&gt;</code> — sintaxis más limpia</li>
+  <li>Carga de forma asíncrona — no bloquea la carga de la página</li>
+  <li><strong>Usar cuando:</strong> implementación moderna en sitios/apps con soporte HTML5. Estándar actual del mercado.</li>
+</ul>
+<strong>Tag IFRAME:</strong>
+<ul>
+  <li>Compatibilidad máxima con sistemas legacy de ad serving</li>
+  <li><strong>Usar cuando:</strong> el publisher exige IFRAME o su sistema no soporta INS</li>
+</ul>
+<strong>Tag JavaScript:</strong>
+<ul>
+  <li><strong>Usar cuando:</strong> el publisher acepta solo JavaScript o se necesitan funcionalidades específicas</li>
+</ul>
+<strong>Tag de solo clic (Click Tracker):</strong>
+<ul>
+  <li>No sirve creativo — solo registra el clic y redirige a la URL de destino</li>
+  <li><strong>Usar cuando:</strong> el publisher sirve el creativo, pero el anunciante quiere rastrear los clics de forma independiente</li>
+</ul>`,
+    },
+    tags:['CM360','tag','INS','IFRAME','JavaScript','Click-Tracker','ad-serving'],
+  },
+  {
+    q:{pt:'Como usar o Report Builder do CM360 para criar relatórios customizados?',en:'How to use CM360 Report Builder to create custom reports?',es:'¿Cómo usar el Report Builder de CM360 para crear informes personalizados?'},
+    a:{
+      pt:`O <strong>Report Builder</strong> do CM360 é a ferramenta de relatórios avançada que permite criar extrações customizadas com qualquer combinação de dimensões e métricas disponíveis na conta.<br><br>
+<strong>Tipos de relatório no CM360:</strong>
+<ul>
+  <li><strong>Standard:</strong> relatório pré-configurado com dimensões e métricas padrão (campanha, placement, criativo). Acesso rápido mas limitado em customização.</li>
+  <li><strong>Cross-Dimension Reach:</strong> análise de alcance único entre dimensões — quantas pessoas únicas foram atingidas por diferentes campanhas ou canais</li>
+  <li><strong>Floodlight:</strong> relatório de conversões específico — ver quais Floodlight Activities dispararam, por campanha, por data</li>
+  <li><strong>Path to Conversion:</strong> jornada completa do usuário — todos os touchpoints antes da conversão (impressões e cliques)</li>
+</ul>
+<strong>Como criar um relatório customizado:</strong>
+<ol>
+  <li>No CM360, vá em <strong>Reports → New Report → Report Builder</strong></li>
+  <li>Defina o <strong>Report Type</strong> (Standard é o mais comum)</li>
+  <li>Selecione <strong>Dimensions</strong> (o que você quer nas linhas): Date, Campaign, Placement, Ad, Creative, Site, Country, Device, etc.</li>
+  <li>Selecione <strong>Metrics</strong> (colunas numéricas): Impressions, Clicks, CTR, Conversions (Floodlights específicos), Cost (se integrado com DV360/Google Ads)</li>
+  <li>Defina o <strong>período</strong> e o <strong>filtro</strong> (por advertiser, campaign, placement específico)</li>
+  <li>Salve e <strong>Schedule</strong>: envio automático por email (diário, semanal, mensal) em formato CSV ou Excel</li>
+</ol>
+<strong>Dimensões mais usadas em AdOps:</strong>
+<ul>
+  <li>Date + Campaign + Placement: visão de entrega por veículo por dia</li>
+  <li>Date + Creative + Ad: análise de performance criativa</li>
+  <li>Country + Device + OS: análise de audiência técnica</li>
+  <li>Placement + Site: identificar quais sites dentro de uma campanha programática performam melhor</li>
+</ul>
+<strong>Integração com Looker Studio:</strong> conectar o CM360 como fonte de dados no Looker Studio para dashboards atualizados automaticamente.`,
+      en:`The CM360 <strong>Report Builder</strong> is the advanced reporting tool that allows creating custom extractions with any combination of available dimensions and metrics.<br><br>
+<strong>CM360 report types:</strong>
+<ul>
+  <li><strong>Standard:</strong> pre-configured report with default dimensions and metrics</li>
+  <li><strong>Cross-Dimension Reach:</strong> unique reach analysis between dimensions</li>
+  <li><strong>Floodlight:</strong> conversion-specific report</li>
+  <li><strong>Path to Conversion:</strong> complete user journey — all touchpoints before conversion</li>
+</ul>
+<strong>How to create a custom report:</strong>
+<ol>
+  <li>In CM360, go to <strong>Reports → New Report → Report Builder</strong></li>
+  <li>Define Report Type (Standard most common)</li>
+  <li>Select Dimensions: Date, Campaign, Placement, Ad, Creative, Site, Country, Device, etc.</li>
+  <li>Select Metrics: Impressions, Clicks, CTR, Conversions (specific Floodlights), Cost</li>
+  <li>Define period and filter</li>
+  <li>Save and Schedule: automatic email delivery (daily, weekly, monthly) in CSV or Excel format</li>
+</ol>`,
+      es:`El <strong>Report Builder</strong> de CM360 es la herramienta de informes avanzada que permite crear extracciones personalizadas con cualquier combinación de dimensiones y métricas disponibles.<br><br>
+<strong>Tipos de informe en CM360:</strong>
+<ul>
+  <li><strong>Standard, Cross-Dimension Reach, Floodlight, Path to Conversion</strong></li>
+</ul>
+<strong>Cómo crear un informe personalizado:</strong>
+<ol>
+  <li>En CM360, ve a <strong>Reports → New Report → Report Builder</strong></li>
+  <li>Define el Report Type</li>
+  <li>Selecciona Dimensiones: Date, Campaign, Placement, Ad, Creative, Site, Country, Device</li>
+  <li>Selecciona Métricas: Impressions, Clicks, CTR, Conversions, Cost</li>
+  <li>Define período y filtro</li>
+  <li>Guarda y programa (Schedule): envío automático por email en CSV o Excel</li>
+</ol>`,
+    },
+    tags:['CM360','Report-Builder','relatório','Floodlight','Path-to-Conversion','Looker-Studio','schedule'],
+  },
+  {
+    q:{pt:'O que é o Verification no CM360 e como monitorar viewability e brand safety?',en:'What is Verification in CM360 and how to monitor viewability and brand safety?',es:'¿Qué es Verification en CM360 y cómo monitorear viewability y brand safety?'},
+    a:{
+      pt:`O <strong>Verification</strong> (Active View + verificação de brand safety) é uma funcionalidade nativa do CM360 que mede viewability e monitora o contexto de publicação dos anúncios.<br><br>
+<strong>Active View (Viewability):</strong>
+<ul>
+  <li>Padrão MRC integrado nativo: mede se o anúncio cumpriu o critério de 50% pixels visíveis por ≥1 segundo (display) ou ≥2 segundos (video)</li>
+  <li>Métricas disponíveis nos relatórios: Active View Viewable Impressions, Active View % Viewable, Average Viewable Time</li>
+  <li>Filtrar campanhas por viewability mínima: no DV360, configurar target de viewability no Line Item — o algoritmo prioriza impressões com maior probabilidade de atingir o threshold</li>
+</ul>
+<strong>Brand Safety no CM360:</strong>
+<ul>
+  <li>Site categorization: relatório de Site por categoria de conteúdo — identificar se anúncios apareceram em conteúdo inadequado</li>
+  <li>Blocklists: adicionar domínios específicos para exclusão no CM360 Advertiser → Blocked Sites</li>
+  <li>Integração com DoubleVerify / IAS: adicionar as tags de verificação de terceiros para monitoramento mais granular de IVT e brand safety além do nativo</li>
+</ul>
+<strong>Pre-bid vs. Post-bid verification:</strong>
+<ul>
+  <li><strong>Post-bid (CM360 nativo):</strong> mede após a impressão ser servida — você sabe quantas foram viewable, mas já gastou no inventário problemático</li>
+  <li><strong>Pre-bid (DoubleVerify/IAS no DV360):</strong> filtra antes de licitar — o DSP só dá lance em impressões que o verificador prevê como viewable e brand-safe. Custo mais alto por impressão, mas qualidade garantida.</li>
+</ul>
+<strong>Relatório de Verification no CM360:</strong>
+<ul>
+  <li>Reports → Standard → adicionar dimensões de Verification e métricas de Active View</li>
+  <li>Filtrar por campanha para ver: % viewable, % com IVT suspeito, distribuição por publisher</li>
+</ul>`,
+      en:`<strong>Verification</strong> (Active View + brand safety verification) is a native CM360 feature measuring viewability and monitoring ad publication context.<br><br>
+<strong>Active View (Viewability):</strong>
+<ul>
+  <li>Integrated native MRC standard: measures if ad met 50% pixels visible for ≥1 second (display) or ≥2 seconds (video) criterion</li>
+  <li>Available metrics: Active View Viewable Impressions, Active View % Viewable, Average Viewable Time</li>
+</ul>
+<strong>Brand Safety in CM360:</strong>
+<ul>
+  <li>Site categorization: site report by content category — identify if ads appeared in inappropriate content</li>
+  <li>Blocklists: add specific domains for exclusion in CM360 Advertiser → Blocked Sites</li>
+  <li>DoubleVerify / IAS integration: add third-party verification tags for more granular IVT and brand safety monitoring</li>
+</ul>
+<strong>Pre-bid vs. Post-bid verification:</strong>
+<ul>
+  <li><strong>Post-bid (native CM360):</strong> measures after impression is served — you know how many were viewable, but already spent on problematic inventory</li>
+  <li><strong>Pre-bid (DoubleVerify/IAS in DV360):</strong> filters before bidding — DSP only bids on impressions predictor classifies as viewable and brand-safe</li>
+</ul>`,
+      es:`<strong>Verification</strong> (Active View + verificación de brand safety) es una funcionalidad nativa de CM360 que mide viewability y monitorea el contexto de publicación de los anuncios.<br><br>
+<strong>Active View (Viewability):</strong>
+<ul>
+  <li>Estándar MRC integrado nativo: mide si el anuncio cumplió el criterio de 50% píxeles visibles por ≥1 segundo (display) o ≥2 segundos (video)</li>
+  <li>Métricas disponibles: Active View Viewable Impressions, Active View % Viewable, Average Viewable Time</li>
+</ul>
+<strong>Brand Safety en CM360:</strong>
+<ul>
+  <li>Categorización de sitios: informe por categoría de contenido</li>
+  <li>Blocklists: agregar dominios para exclusión en CM360 Advertiser → Blocked Sites</li>
+  <li>Integración con DoubleVerify / IAS para monitoreo más granular</li>
+</ul>
+<strong>Pre-bid vs. Post-bid:</strong>
+<ul>
+  <li><strong>Post-bid (CM360 nativo):</strong> mide tras servir la impresión</li>
+  <li><strong>Pre-bid (DoubleVerify/IAS en DV360):</strong> filtra antes de pujar — mayor calidad garantizada</li>
+</ul>`,
+    },
+    tags:['CM360','Active-View','viewability','brand-safety','DoubleVerify','IAS','pre-bid','blocklist'],
+  }
+);
+d.tiers[2].questions.push(
+  {
+    q:{pt:'Como usar o Dynamic Targeting e Audience Lists no CM360 para campanhas avançadas?',en:'How to use Dynamic Targeting and Audience Lists in CM360 for advanced campaigns?',es:'¿Cómo usar Dynamic Targeting y Audience Lists en CM360 para campañas avanzadas?'},
+    a:{
+      pt:`O CM360 permite criar <strong>Audience Lists</strong> (listas de remarketing) baseadas em ações Floodlight e usar <strong>Dynamic Targeting</strong> para segmentar criativos dinamicamente por audiência.<br><br>
+<strong>Audience Lists no CM360:</strong>
+<ol>
+  <li>Dentro do Advertiser → <strong>Audience Lists → New</strong></li>
+  <li>Definir:
+    <ul>
+      <li><strong>Nome:</strong> ex. "Visitantes - Página de Produto - 30 dias"</li>
+      <li><strong>Membership duration:</strong> quantos dias o usuário fica na lista (1-540 dias)</li>
+      <li><strong>Rules:</strong> qual Floodlight Activity dispara a entrada na lista (ex: "quem disparou o Floodlight de Product View mas NÃO disparou o de Purchase")</li>
+    </ul>
+  </li>
+  <li>A lista é populada automaticamente conforme usuários disparam o Floodlight definido</li>
+  <li>Usar a lista no DV360 como segmentação de audiência no Line Item</li>
+</ol>
+<strong>Lógica booleana em Audience Lists:</strong>
+<ul>
+  <li><code>AND:</code> usuário deve ter disparado Floodlight A E Floodlight B</li>
+  <li><code>OR:</code> usuário disparou Floodlight A OU Floodlight B</li>
+  <li><code>NOT:</code> excluir usuários que dispararam Floodlight C (ex: compradores)</li>
+  <li>Exemplo complexo: (Visitou produto A OU produto B) E NÃO (comprou nos últimos 7 dias) = remarketing perfeito de abandono</li>
+</ul>
+<strong>Dynamic Targeting (Segmentação Dinâmica):</strong>
+<ul>
+  <li>Permite servir criativos diferentes para audiências diferentes dentro do mesmo placement/ad</li>
+  <li>Configurar no Ad: adicionar múltiplos criativos com condições de exibição por audiência</li>
+  <li>Ex: visitante que viu calçados → criativo de calçado específico; visitante que viu roupas → criativo de roupa</li>
+  <li>Requer que as Audience Lists estejam ativas e com volume suficiente (&gt;100 usuários)</li>
+</ul>
+<strong>Compartilhar Audience Lists com o DV360:</strong>
+<ul>
+  <li>Automático quando CM360 e DV360 estão linkados</li>
+  <li>No DV360 Line Item → Audiences → First-party audiences → selecionar a lista do CM360</li>
+</ul>`,
+      en:`CM360 allows creating <strong>Audience Lists</strong> (remarketing lists) based on Floodlight actions and using <strong>Dynamic Targeting</strong> to dynamically segment creatives by audience.<br><br>
+<strong>Audience Lists in CM360:</strong>
+<ol>
+  <li>Inside Advertiser → <strong>Audience Lists → New</strong></li>
+  <li>Define: Name, Membership duration (1-540 days), Rules (which Floodlight Activity triggers list entry)</li>
+  <li>List is automatically populated as users trigger the defined Floodlight</li>
+  <li>Use list in DV360 as audience targeting in Line Item</li>
+</ol>
+<strong>Boolean logic in Audience Lists:</strong>
+<ul>
+  <li><code>AND, OR, NOT</code> — complex combinations: (Visited product A OR product B) AND NOT (purchased in last 7 days) = perfect abandonment remarketing</li>
+</ul>
+<strong>Dynamic Targeting:</strong>
+<ul>
+  <li>Serve different creatives to different audiences within the same placement/ad</li>
+  <li>E.g.: visitor who saw footwear → footwear-specific creative; visitor who saw clothing → clothing creative</li>
+</ul>`,
+      es:`CM360 permite crear <strong>Audience Lists</strong> (listas de remarketing) basadas en acciones Floodlight y usar <strong>Dynamic Targeting</strong> para segmentar creativos dinámicamente por audiencia.<br><br>
+<strong>Audience Lists en CM360:</strong>
+<ol>
+  <li>Dentro del Advertiser → <strong>Audience Lists → New</strong></li>
+  <li>Definir: Nombre, Membership duration (1-540 días), Rules (qué Floodlight Activity activa la entrada en la lista)</li>
+  <li>La lista se popula automáticamente cuando los usuarios activan el Floodlight definido</li>
+  <li>Usar la lista en DV360 como segmentación de audiencia en el Line Item</li>
+</ol>
+<strong>Lógica booleana en Audience Lists:</strong>
+<ul>
+  <li><code>AND, OR, NOT</code> — (Visitó producto A O producto B) Y NO (compró en los últimos 7 días) = remarketing perfecto de abandono</li>
+</ul>
+<strong>Dynamic Targeting:</strong>
+<ul>
+  <li>Sirve creativos diferentes a audiencias diferentes dentro del mismo placement/ad</li>
+</ul>`,
+    },
+    tags:['CM360','Audience-Lists','Dynamic-Targeting','Floodlight','remarketing','DV360','booleano'],
+  }
+);
+})();

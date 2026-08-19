@@ -531,3 +531,222 @@ VTC de 30 días en Display puede inflar artificialmente el valor percibido del c
     },
   ],
 };
+
+// ── APPEND: Atribuição expandida ──
+;(function(){
+const d = window.__adopsData['atribuicao'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que é MMM (Media Mix Modeling) e como ele funciona?',en:'What is MMM (Media Mix Modeling) and how does it work?',es:'¿Qué es el MMM (Media Mix Modeling) y cómo funciona?'},
+    a:{
+      pt:`O <strong>Media Mix Modeling (MMM)</strong> é um método estatístico que usa dados históricos de gasto em mídia e resultados de negócio para estimar a contribuição de cada canal na receita total — sem depender de cookies ou dados individuais de usuário.<br><br>
+<strong>Como funciona:</strong>
+<ul>
+  <li>Coleta dados históricos: gasto semanal/mensal por canal (TV, Google, Meta, OOH), variáveis externas (sazonalidade, preço, competição) e resultado de negócio (vendas, receita)</li>
+  <li>Modelo de regressão múltipla ou Bayesiano identifica correlação entre variações de gasto e variações de resultado</li>
+  <li>Gera curvas de resposta por canal: quanto cada R$1 adicional em cada canal gera de receita incremental</li>
+  <li>Permite simular cenários: "se realocarmos 20% do budget de TV para Google, o que acontece?"</li>
+</ul>
+<strong>MMM vs. Atribuição multi-touch (MTA):</strong>
+<table>
+<tr><th>Aspecto</th><th>MMM</th><th>MTA</th></tr>
+<tr><td>Dados necessários</td><td>Agregados (gasto + resultado)</td><td>Individuais (cookies, IDs)</td></tr>
+<tr><td>Canais cobertos</td><td>Todos (online + offline)</td><td>Apenas digitais rastreáveis</td></tr>
+<tr><td>Privacy-safe</td><td>✅ Sim</td><td>❌ Depende de consentimento</td></tr>
+<tr><td>Velocidade</td><td>Semanas/meses de dados</td><td>Tempo real</td></tr>
+<tr><td>Melhor uso</td><td>Alocação estratégica de budget</td><td>Otimização tática de campanha</td></tr>
+</table><br>
+<strong>Por que MMM voltou a ser relevante:</strong>
+<ul>
+  <li>Fim dos 3rd party cookies e iOS 14 limitaram a MTA baseada em usuário individual</li>
+  <li>MMM é naturalmente privacy-safe — trabalha com dados agregados</li>
+  <li>Google (Meridian), Meta (Robyn) e startups como Recast, Northbeam lançaram soluções modernas de MMM</li>
+</ul>`,
+      en:`<strong>Media Mix Modeling (MMM)</strong> is a statistical method that uses historical media spend data and business results to estimate each channel's contribution to total revenue — without depending on cookies or individual user data.<br><br>
+<strong>How it works:</strong>
+<ul>
+  <li>Collects historical data: weekly/monthly spend by channel (TV, Google, Meta, OOH), external variables (seasonality, pricing, competition) and business result (sales, revenue)</li>
+  <li>Multiple regression or Bayesian model identifies correlation between spend variations and result variations</li>
+  <li>Generates response curves per channel: how much each additional $1 in each channel generates in incremental revenue</li>
+</ul>
+<strong>MMM vs. Multi-touch Attribution (MTA):</strong>
+<table>
+<tr><th>Aspect</th><th>MMM</th><th>MTA</th></tr>
+<tr><td>Required data</td><td>Aggregated (spend + result)</td><td>Individual (cookies, IDs)</td></tr>
+<tr><td>Channels covered</td><td>All (online + offline)</td><td>Trackable digitals only</td></tr>
+<tr><td>Privacy-safe</td><td>✅ Yes</td><td>❌ Depends on consent</td></tr>
+<tr><td>Best use</td><td>Strategic budget allocation</td><td>Tactical campaign optimization</td></tr>
+</table><br>
+<strong>Why MMM became relevant again:</strong> end of 3rd party cookies and iOS 14 limited user-individual MTA. MMM is naturally privacy-safe. Google (Meridian), Meta (Robyn) and startups like Recast, Northbeam launched modern MMM solutions.`,
+      es:`El <strong>Media Mix Modeling (MMM)</strong> es un método estadístico que usa datos históricos de gasto en medios y resultados de negocio para estimar la contribución de cada canal en los ingresos totales — sin depender de cookies ni datos individuales de usuario.<br><br>
+<strong>Cómo funciona:</strong>
+<ul>
+  <li>Recopila datos históricos: gasto semanal/mensual por canal, variables externas (estacionalidad, precios, competencia) y resultado de negocio</li>
+  <li>Modelo de regresión múltiple o Bayesiano identifica correlación entre variaciones de gasto y resultado</li>
+  <li>Genera curvas de respuesta por canal: cuánto genera cada €/R$1 adicional en cada canal</li>
+</ul>
+<strong>MMM vs. Atribución multi-touch (MTA):</strong>
+<table>
+<tr><th>Aspecto</th><th>MMM</th><th>MTA</th></tr>
+<tr><td>Datos necesarios</td><td>Agregados</td><td>Individuales (cookies, IDs)</td></tr>
+<tr><td>Canales cubiertos</td><td>Todos (online + offline)</td><td>Solo digitales rastreables</td></tr>
+<tr><td>Privacy-safe</td><td>✅ Sí</td><td>❌ Depende de consentimiento</td></tr>
+<tr><td>Mejor uso</td><td>Asignación estratégica de presupuesto</td><td>Optimización táctica de campaña</td></tr>
+</table>`,
+    },
+    tags:['MMM','Media-Mix-Modeling','atribuição','privacy','Bayesian','Robyn','Meridian','budget'],
+  },
+  {
+    q:{pt:'O que é Incrementality Testing e como fazer um teste de holdout?',en:'What is Incrementality Testing and how to run a holdout test?',es:'¿Qué es el Incrementality Testing y cómo realizar un test de holdout?'},
+    a:{
+      pt:`<strong>Incrementality Testing</strong> mede o impacto <em>causal</em> de uma campanha — quanto de resultado adicional ela gerou que não teria acontecido sem ela. É a única forma de medir o efeito real (vs. atribuição, que apenas correlaciona).<br><br>
+<strong>O problema da atribuição clássica:</strong>
+<ul>
+  <li>Usuário que ia comprar de qualquer forma clica no anúncio → a atribuição credita a conversão ao anúncio</li>
+  <li>Resultado: ROAS inflado, CPA subestimado — a campanha parece mais eficiente do que é</li>
+</ul>
+<strong>Como funciona um Holdout Test (teste de grupo controle):</strong>
+<ol>
+  <li><strong>Dividir a audiência:</strong> aleatoriamente, separar um grupo de controle (10-20% da audiência alvo) que NÃO receberá o anúncio</li>
+  <li><strong>Expor o grupo de teste:</strong> o restante da audiência recebe a campanha normalmente</li>
+  <li><strong>Medir por período suficiente:</strong> mínimo 2-4 semanas para ter significância estatística</li>
+  <li><strong>Calcular o uplift incremental:</strong><br>
+  <code>Incrementalidade = (conversões do grupo exposto - conversões do grupo controle) / conversões do grupo controle</code></li>
+  <li><strong>ROAS incremental:</strong> <code>Receita incremental / Gasto em mídia</code> — mais real que o ROAS de atribuição</li>
+</ol>
+<strong>Implementação por plataforma:</strong>
+<ul>
+  <li><strong>Meta:</strong> Meta Experiments → Conversion Lift Study (holdout nativo dentro do Meta)</li>
+  <li><strong>Google:</strong> Google Ads → Experiments → Conversion Lift ou Geographic Experiment</li>
+  <li><strong>Geo-based test:</strong> pausar campanha em regiões específicas e comparar resultado com regiões ativas — funciona para qualquer canal, incluindo offline</li>
+</ul>
+<strong>Quando usar:</strong>
+<ul>
+  <li>Antes de escalar um canal significativamente</li>
+  <li>Quando o ROAS reportado parece "bom demais"</li>
+  <li>Para justificar budget de brand awareness (difícil de atribuir por métodos clássicos)</li>
+</ul>`,
+      en:`<strong>Incrementality Testing</strong> measures the <em>causal</em> impact of a campaign — how much additional result it generated that wouldn't have happened without it. It's the only way to measure real effect (vs. attribution, which only correlates).<br><br>
+<strong>The classic attribution problem:</strong>
+<ul>
+  <li>User who was going to buy anyway clicks the ad → attribution credits conversion to the ad</li>
+  <li>Result: inflated ROAS, underestimated CPA</li>
+</ul>
+<strong>How a Holdout Test (control group test) works:</strong>
+<ol>
+  <li><strong>Split audience:</strong> randomly separate a control group (10-20% of target audience) that will NOT receive the ad</li>
+  <li><strong>Expose test group:</strong> rest of audience receives campaign normally</li>
+  <li><strong>Measure for sufficient period:</strong> minimum 2-4 weeks for statistical significance</li>
+  <li><strong>Calculate incremental uplift:</strong><br>
+  <code>Incrementality = (exposed group conversions - control group conversions) / control group conversions</code></li>
+  <li><strong>Incremental ROAS:</strong> <code>Incremental revenue / Media spend</code></li>
+</ol>
+<strong>Implementation by platform:</strong>
+<ul>
+  <li><strong>Meta:</strong> Meta Experiments → Conversion Lift Study</li>
+  <li><strong>Google:</strong> Google Ads → Experiments → Conversion Lift or Geographic Experiment</li>
+  <li><strong>Geo-based test:</strong> pause campaign in specific regions and compare result with active regions</li>
+</ul>`,
+      es:`El <strong>Incrementality Testing</strong> mide el impacto <em>causal</em> de una campaña — cuánto resultado adicional generó que no habría ocurrido sin ella.<br><br>
+<strong>El problema de la atribución clásica:</strong>
+<ul>
+  <li>Un usuario que iba a comprar de todas formas hace clic en el anuncio → la atribución acredita la conversión al anuncio</li>
+  <li>Resultado: ROAS inflado, CPA subestimado</li>
+</ul>
+<strong>Cómo funciona un Holdout Test:</strong>
+<ol>
+  <li><strong>Dividir la audiencia:</strong> separar aleatoriamente un grupo de control (10-20%) que NO recibirá el anuncio</li>
+  <li><strong>Exponer el grupo de prueba:</strong> el resto recibe la campaña normalmente</li>
+  <li><strong>Calcular el uplift incremental:</strong><br>
+  <code>Incrementalidad = (conversiones del grupo expuesto - conversiones del grupo control) / conversiones del grupo control</code></li>
+  <li><strong>ROAS incremental:</strong> <code>Ingresos incrementales / Gasto en medios</code></li>
+</ol>
+<strong>Implementación por plataforma:</strong>
+<ul>
+  <li><strong>Meta:</strong> Meta Experiments → Conversion Lift Study</li>
+  <li><strong>Google:</strong> Google Ads → Experiments → Conversion Lift o Geographic Experiment</li>
+  <li><strong>Geo-based test:</strong> pausar campaña en regiones específicas y comparar</li>
+</ul>`,
+    },
+    tags:['incrementalidade','holdout','ROAS','Meta-Experiments','atribuição','causalidade','uplift'],
+  }
+);
+d.tiers[2].questions.push(
+  {
+    q:{pt:'Como reconciliar dados de atribuição entre plataformas com discrepâncias significativas?',en:'How to reconcile attribution data between platforms with significant discrepancies?',es:'¿Cómo reconciliar datos de atribución entre plataformas con discrepancias significativas?'},
+    a:{
+      pt:`Discrepâncias de atribuição entre plataformas são inevitáveis — cada uma conta conversões de forma diferente. O trabalho de AdOps avançado é criar uma visão unificada e confiável.<br><br>
+<strong>Por que as plataformas divergem tanto:</strong>
+<ul>
+  <li>Cada plataforma usa sua própria janela de atribuição (Meta: 7-day click; Google: 30-day click; TikTok: 7-day click + 1-day view)</li>
+  <li>Cada plataforma se credita pelo toque que aconteceu em seus canais — sem "ver" os outros canais</li>
+  <li>Usuário que clicou em Google Ads E viu um anúncio do Meta antes de comprar: ambas se creditam pela conversão</li>
+  <li>Resultado: soma das conversões reportadas pelas plataformas pode ser 2-5x o número real de conversões</li>
+</ul>
+<strong>Framework de reconciliação:</strong>
+<ol>
+  <li><strong>Estabelecer a fonte da verdade (source of truth):</strong> GA4 + dados do e-commerce/CRM são as conversões reais — independentes das plataformas de mídia</li>
+  <li><strong>Mapear as diferenças:</strong> criar tabela comparativa por período:
+    <ul>
+      <li>Conversões reais (GA4 / e-commerce): ex. 1.000 compras</li>
+      <li>Meta reporta: 800 compras atribuídas</li>
+      <li>Google reporta: 600 compras atribuídas</li>
+      <li>TikTok reporta: 200 compras atribuídas</li>
+      <li>Soma das plataformas: 1.600 — 60% acima do real</li>
+    </ul>
+  </li>
+  <li><strong>Fator de desconto por plataforma:</strong> calcular o ratio histórico entre conversões reportadas e conversões reais atribuídas a cada canal via UTM no GA4</li>
+  <li><strong>Unified measurement:</strong> usar GA4 como base e complementar com dados de last-click de cada plataforma via UTM para entender contribuição de cada canal</li>
+</ol>
+<strong>Ferramentas de reconciliação:</strong>
+<ul>
+  <li><strong>Northbeam / Triple Whale:</strong> plataformas de MTA que agregam dados de múltiplos canais e aplicam modelagem própria para atribuição unificada</li>
+  <li><strong>Looker Studio com blended data:</strong> combinar GA4 + planilhas de dados das plataformas para visão unificada com fator de desconto manual</li>
+  <li><strong>BigQuery:</strong> exportar dados brutos de GA4 + dados via API das plataformas → SQL para criar modelo de atribuição customizado</li>
+</ul>
+<strong>Comunicação com o cliente:</strong>
+<ul>
+  <li>Nunca reportar a soma das conversões das plataformas — é enganoso</li>
+  <li>Reportar sempre com base na fonte de verdade (GA4/e-commerce) + benchmarks de contribuição por canal</li>
+  <li>Educar o cliente sobre por que as plataformas divergem: é esperado, não é erro</li>
+</ul>`,
+      en:`Attribution discrepancies between platforms are inevitable — each counts conversions differently. Advanced AdOps work is creating a unified, trustworthy view.<br><br>
+<strong>Why platforms diverge so much:</strong>
+<ul>
+  <li>Each platform uses its own attribution window</li>
+  <li>Each platform credits itself for touches that occurred in its channels — without "seeing" other channels</li>
+  <li>User who clicked Google Ads AND saw a Meta ad before buying: both credit themselves for the conversion</li>
+  <li>Result: sum of platform-reported conversions can be 2-5x the real number</li>
+</ul>
+<strong>Reconciliation framework:</strong>
+<ol>
+  <li><strong>Establish source of truth:</strong> GA4 + e-commerce/CRM data are the real conversions — independent of media platforms</li>
+  <li><strong>Map differences:</strong> create comparative table: Real conversions (GA4): 1,000 purchases; Meta reports: 800; Google reports: 600; TikTok reports: 200; Sum: 1,600 — 60% above real</li>
+  <li><strong>Discount factor per platform:</strong> calculate historical ratio between reported and real conversions via UTM in GA4</li>
+</ol>
+<strong>Reconciliation tools:</strong>
+<ul>
+  <li><strong>Northbeam / Triple Whale:</strong> MTA platforms aggregating multi-channel data with proprietary attribution modeling</li>
+  <li><strong>Looker Studio with blended data:</strong> combine GA4 + platform data spreadsheets</li>
+  <li><strong>BigQuery:</strong> export raw GA4 data + platform API data → SQL for custom attribution model</li>
+</ul>`,
+      es:`Las discrepancias de atribución entre plataformas son inevitables — cada una cuenta las conversiones de forma diferente.<br><br>
+<strong>Por qué las plataformas divergen tanto:</strong>
+<ul>
+  <li>Cada plataforma usa su propia ventana de atribución</li>
+  <li>Cada plataforma se acredita por los toques que ocurrieron en sus canales</li>
+  <li>Resultado: la suma de conversiones reportadas puede ser 2-5x el número real</li>
+</ul>
+<strong>Framework de reconciliación:</strong>
+<ol>
+  <li><strong>Establecer la fuente de verdad:</strong> GA4 + datos de e-commerce/CRM son las conversiones reales</li>
+  <li><strong>Mapear las diferencias:</strong> tabla comparativa por período con conversiones reales vs. reportadas por plataforma</li>
+  <li><strong>Factor de descuento por plataforma:</strong> calcular el ratio histórico entre conversiones reportadas y reales via UTM en GA4</li>
+</ol>
+<strong>Herramientas:</strong> Northbeam / Triple Whale, Looker Studio con blended data, BigQuery con SQL personalizado.<br><br>
+<strong>Comunicación con el cliente:</strong> nunca reportar la suma de conversiones de las plataformas — es engañoso. Siempre basarse en la fuente de verdad.`,
+    },
+    tags:['atribuição','discrepância','reconciliação','GA4','Northbeam','Triple-Whale','BigQuery','UTM'],
+  }
+);
+})();
