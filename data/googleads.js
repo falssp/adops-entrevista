@@ -1144,3 +1144,165 @@ window.__adopsData['googleads'].tiers[1].questions.push(
     tags: ['YouTube', 'TrueView', 'Bumper', 'Masthead', 'In-Stream', 'VCR', 'CPV', 'Brand-Lift'],
   }
 );
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['googleads'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Como criar uma campanha de Search no Google Ads do zero?',en:'How to create a Search campaign in Google Ads from scratch?',es:'¿Cómo crear una campaña de Search en Google Ads desde cero?'},
+    a:{
+      pt:`<strong>Estrutura do Google Ads:</strong> Campanha → Grupo de Anúncios → Anúncio + Keywords<br><br>
+<strong>Passo 1 — Nova Campanha:</strong>
+<ol>
+  <li><code>ads.google.com</code> → <strong>+ Nova Campanha</strong></li>
+  <li><strong>Objetivo:</strong> Vendas, Leads, Tráfego do site, Consideração de marca, Alcance de marca, Promoção de app, Sem orientação de objetivo</li>
+  <li><strong>Tipo de campanha:</strong> Pesquisa (Search)</li>
+  <li><strong>Conversão:</strong> selecionar qual ação rastrear (requer conversão já configurada)</li>
+  <li><strong>Rede:</strong> desmarcar "Rede de Display" para campanhas de Search puro (evitar mistura)</li>
+  <li><strong>Localização:</strong> país, estado, cidade, raio em km. Atenção à opção "Presença ou interesse" vs. "Presença"</li>
+  <li><strong>Idiomas:</strong> português (e inglês para alcançar browsers em inglês no BR)</li>
+  <li><strong>Budget:</strong> valor diário. Google pode gastar até 2× o diário em dias bons, mas a média mensal não ultrapassa o diário × 30,4</li>
+  <li><strong>Lance:</strong> CPC Manual (controle total) ou estratégias automatizadas: Maximizar cliques, Maximizar conversões, CPA desejado, ROAS desejado</li>
+</ol>
+<strong>Passo 2 — Grupos de Anúncios e Keywords:</strong>
+<ol>
+  <li>Nome do grupo (ex: "Produto X - Marca", "Produto X - Genérico")</li>
+  <li>Adicionar keywords com match types:
+    <ul>
+      <li><strong>Correspondência ampla:</strong> <code>tênis corrida</code> → aparece para variações e sinônimos</li>
+      <li><strong>Correspondência de frase:</strong> <code>"tênis de corrida"</code> → a frase deve estar presente</li>
+      <li><strong>Correspondência exata:</strong> <code>[tênis de corrida]</code> → busca deve corresponder exatamente</li>
+    </ul>
+  </li>
+  <li>Lance por keyword (no CPC manual) ou herdar o lance do grupo</li>
+</ol>
+<strong>Passo 3 — Criar Anúncios Responsivos de Pesquisa (RSA):</strong>
+<ol>
+  <li>URL final: a landing page com UTMs</li>
+  <li>Títulos: até 15 (máx. 30 caracteres cada). Google combina automaticamente até 3 por vez.</li>
+  <li>Descrições: até 4 (máx. 90 caracteres cada). 2 aparecem por vez.</li>
+  <li>Fixar título/descrição em posição específica (opcional)</li>
+</ol>`,
+      en:`<strong>Google Ads structure:</strong> Campaign → Ad Group → Ad + Keywords<br><br>
+<strong>Step 1 — New Campaign:</strong>
+<ol>
+  <li><code>ads.google.com</code> → <strong>+ New Campaign</strong></li>
+  <li><strong>Objective:</strong> Sales, Leads, Website traffic, Brand consideration, Brand awareness, App promotion, No objective guidance</li>
+  <li><strong>Campaign type:</strong> Search</li>
+  <li>Uncheck "Display Network" for pure Search campaigns</li>
+  <li><strong>Location, Language, Budget, Bid strategy</strong> (Manual CPC or automated: Maximize clicks, Maximize conversions, Target CPA, Target ROAS)</li>
+</ol>
+<strong>Step 2 — Ad Groups and Keywords:</strong>
+<ol>
+  <li>Group name</li>
+  <li>Add keywords with match types:
+    <ul>
+      <li><strong>Broad match:</strong> <code>running shoes</code></li>
+      <li><strong>Phrase match:</strong> <code>"running shoes"</code></li>
+      <li><strong>Exact match:</strong> <code>[running shoes]</code></li>
+    </ul>
+  </li>
+</ol>
+<strong>Step 3 — Responsive Search Ads (RSA):</strong>
+<ol>
+  <li>Final URL with UTMs</li>
+  <li>Headlines: up to 15 (max 30 characters each) — Google automatically combines up to 3 at a time</li>
+  <li>Descriptions: up to 4 (max 90 characters each) — 2 shown at a time</li>
+</ol>`,
+      es:`<strong>Estructura de Google Ads:</strong> Campaña → Grupo de Anuncios → Anuncio + Keywords<br><br>
+<strong>Paso 1 — Nueva Campaña:</strong>
+<ol>
+  <li><code>ads.google.com</code> → <strong>+ Nueva Campaña</strong></li>
+  <li><strong>Objetivo, Tipo de campaña (Búsqueda), Desmarcar Red de Display</strong></li>
+  <li><strong>Ubicación, Idiomas, Presupuesto, Estrategia de puja</strong> (CPC Manual o automatizada)</li>
+</ol>
+<strong>Paso 2 — Grupos de Anuncios y Keywords:</strong>
+<ul>
+  <li>Match types: Amplia (<code>zapatos corrida</code>), Frase (<code>"zapatos de corrida"</code>), Exacta (<code>[zapatos de corrida]</code>)</li>
+</ul>
+<strong>Paso 3 — Anuncios Responsivos de Búsqueda (RSA):</strong>
+<ul>
+  <li>URL final con UTMs, hasta 15 títulos (máx. 30 caracteres), hasta 4 descripciones (máx. 90 caracteres)</li>
+</ul>`,
+    },
+    tags:['Google-Ads','Search','campanha','RSA','keyword','match-type','CPC','criação'],
+  },
+  {
+    q:{pt:'Como criar uma campanha de Display no Google Ads?',en:'How to create a Display campaign in Google Ads?',es:'¿Cómo crear una campaña de Display en Google Ads?'},
+    a:{
+      pt:`As campanhas de Display do Google Ads (GDN — Google Display Network) veiculam banners em milhões de sites parceiros do Google.<br><br>
+<strong>Criar campanha de Display:</strong>
+<ol>
+  <li>Google Ads → <strong>+ Nova Campanha → Display</strong></li>
+  <li>Objetivo: Vendas, Leads, Tráfego ou Sem objetivo</li>
+  <li>Subtipo: <strong>Campanha de display padrão</strong> (controle manual) ou <strong>Campanha de display inteligente</strong> (automação total)</li>
+  <li>Localização, idioma, budget e lance (CPM manual ou Maximizar conversões)</li>
+</ol>
+<strong>Targeting disponível em Display padrão:</strong>
+<ul>
+  <li><strong>Públicos-alvo:</strong> Afinidade (interests amplos), In-Market (intenção de compra), Público personalizado (keywords ou URLs), Remarketing (visitantes do site via GA4 tag)</li>
+  <li><strong>Contexto:</strong> keywords na página, tópicos de conteúdo, categorias de conteúdo</li>
+  <li><strong>Posicionamentos:</strong> sites específicos da GDN onde o anúncio deve aparecer</li>
+  <li><strong>Demográfico:</strong> idade, gênero, renda familiar, presença de filhos</li>
+</ul>
+<strong>Criar anúncios Display — Anúncio Display Responsivo:</strong>
+<ol>
+  <li>Imagens: até 15 imagens em diferentes proporções (1,91:1 horizontal, 1:1 quadrado)</li>
+  <li>Logos: até 5 versões do logotipo</li>
+  <li>Títulos curtos: até 5 (30 caracteres)</li>
+  <li>Título longo: 1 (90 caracteres)</li>
+  <li>Descrições: até 5 (90 caracteres)</li>
+  <li>Nome da empresa e URL final</li>
+  <li>O Google combina os elementos automaticamente para criar o anúncio ideal para cada espaço</li>
+</ol>
+<strong>Excluções importantes:</strong>
+<ul>
+  <li>Excluir categorias de conteúdo inadequado (conteúdo adulto, violência)</li>
+  <li>Excluir apps para evitar cliques acidentais em jogos mobile</li>
+  <li>Adicionar lista de sites negativos (placement exclusions)</li>
+</ul>`,
+      en:`Google Ads Display campaigns (GDN) serve banners on millions of Google partner sites.<br><br>
+<strong>Create Display campaign:</strong>
+<ol>
+  <li>Google Ads → <strong>+ New Campaign → Display</strong></li>
+  <li>Objective, Subtype: Standard display (manual control) or Smart display (full automation)</li>
+  <li>Location, language, budget, bid (manual CPM or Maximize conversions)</li>
+</ol>
+<strong>Targeting in Standard Display:</strong>
+<ul>
+  <li>Audiences: Affinity, In-Market, Custom audience, Remarketing</li>
+  <li>Contextual: page keywords, content topics, content categories</li>
+  <li>Placements: specific GDN sites</li>
+  <li>Demographic: age, gender, household income, parental status</li>
+</ul>
+<strong>Create Responsive Display Ads:</strong>
+<ul>
+  <li>Up to 15 images, 5 logos, 5 short headlines (30 char), 1 long headline (90 char), 5 descriptions (90 char)</li>
+  <li>Google automatically combines elements to create optimal ad for each space</li>
+</ul>`,
+      es:`Las campañas de Display de Google Ads (GDN) sirven banners en millones de sitios asociados de Google.<br><br>
+<strong>Crear campaña de Display:</strong>
+<ol>
+  <li>Google Ads → <strong>+ Nueva Campaña → Display</strong></li>
+  <li>Objetivo, Subtipo: Display estándar (control manual) o Display inteligente (automatización total)</li>
+  <li>Ubicación, idioma, presupuesto, puja</li>
+</ol>
+<strong>Targeting en Display estándar:</strong>
+<ul>
+  <li>Audiencias: Afinidad, In-Market, Audiencia personalizada, Remarketing</li>
+  <li>Contextual: keywords en la página, temas, categorías</li>
+  <li>Emplazamientos: sitios específicos de la GDN</li>
+</ul>
+<strong>Crear Anuncios Display Responsivos:</strong>
+<ul>
+  <li>Hasta 15 imágenes, 5 logos, 5 títulos cortos (30 car.), 1 título largo (90 car.), 5 descripciones (90 car.)</li>
+  <li>Google combina los elementos automáticamente</li>
+</ul>`,
+    },
+    tags:['Google-Ads','Display','GDN','RSA','targeting','remarketing','responsivo','criação'],
+  }
+);
+
+// ──────────────────────────────────────────────────────────────
+})();

@@ -657,3 +657,154 @@ window.__adopsData['dv360'] = {
     },
   ],
 };
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['dv360'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Como criar um Line Item de Display no DV360 passo a passo?',en:'How to create a Display Line Item in DV360 step by step?',es:'¿Cómo crear un Line Item de Display en DV360 paso a paso?'},
+    a:{
+      pt:`<strong>Pré-requisito:</strong> ter o Advertiser, Campaign e Insertion Order já criados.<br><br>
+<strong>Criar o Line Item:</strong>
+<ol>
+  <li>Dentro do IO, clique em <strong>New Line Item</strong></li>
+  <li><strong>Tipo:</strong> Display &amp; Video 360 (RTB), Deal (PMP), ou TrueView (YouTube)</li>
+  <li><strong>Nome:</strong> seguir naming convention — ex: <code>DOVE_AWARENESS_IN-MARKET_DISPLAY_300x250_202501</code></li>
+  <li><strong>Datas:</strong> início e fim (ou herdar do IO)</li>
+  <li><strong>Budget:</strong> definir valor total do LI ou deixar gerenciado pelo IO</li>
+  <li><strong>Frequência:</strong> cap de impressões por usuário (ex: 5 impressões / 7 dias)</li>
+</ol>
+<strong>Configurar Targeting:</strong>
+<ul>
+  <li><strong>Geography:</strong> país, estado, cidade ou raio geográfico</li>
+  <li><strong>Language:</strong> idioma do browser do usuário</li>
+  <li><strong>Device:</strong> desktop, mobile, tablet, CTV — selecionar os relevantes</li>
+  <li><strong>Audience:</strong> Google Audiences (In-Market, Affinity), First-party (Floodlight lists), Custom Intent (keywords)</li>
+  <li><strong>Contextual:</strong> categorias de conteúdo, keywords na página, topics</li>
+  <li><strong>Brand Safety:</strong> ativar Digital Content Labels (DL-G, DL-PG, etc.) e categorias de exclusão</li>
+  <li><strong>Inventory Source:</strong> Open Auction, Publisher Groups ou Deal IDs específicos</li>
+  <li><strong>Viewability:</strong> ativar Active View target (ex: mínimo 50% viewability)</li>
+</ul>
+<strong>Configurar Bid:</strong>
+<ul>
+  <li>Tipo de lance: Fixed CPM, Maximize Viewable Impressions, Target CPA, Target ROAS</li>
+  <li>Floor CPM: valor mínimo de lance (não licitar abaixo deste valor)</li>
+</ul>
+<strong>Adicionar Criativos:</strong>
+<ul>
+  <li>Na aba Creatives do LI → Add Creative → selecionar criativos já uploadados no Advertiser</li>
+  <li>Ou vincular criativos do CM360 (se integrado)</li>
+</ul>
+<strong>Ativar:</strong> salvar → mudar status para Ativo → verificar delivery nas primeiras horas.`,
+      en:`<strong>Prerequisite:</strong> have Advertiser, Campaign and Insertion Order already created.<br><br>
+<strong>Create Line Item:</strong>
+<ol>
+  <li>Inside IO, click <strong>New Line Item</strong></li>
+  <li><strong>Type:</strong> Display &amp; Video 360 (RTB), Deal (PMP), or TrueView (YouTube)</li>
+  <li><strong>Name:</strong> follow naming convention</li>
+  <li><strong>Dates:</strong> start and end (or inherit from IO)</li>
+  <li><strong>Budget:</strong> define LI total value or let IO manage</li>
+  <li><strong>Frequency:</strong> impression cap per user</li>
+</ol>
+<strong>Configure Targeting:</strong>
+<ul>
+  <li>Geography, Language, Device, Audience (Google Audiences, First-party, Custom Intent), Contextual, Brand Safety, Inventory Source, Viewability</li>
+</ul>
+<strong>Configure Bid:</strong>
+<ul>
+  <li>Bid type: Fixed CPM, Maximize Viewable Impressions, Target CPA, Target ROAS</li>
+</ul>
+<strong>Add Creatives → Activate → monitor delivery in first hours.</strong>`,
+      es:`<strong>Prerrequisito:</strong> tener Advertiser, Campaign e Insertion Order ya creados.<br><br>
+<strong>Crear Line Item:</strong>
+<ol>
+  <li>Dentro del IO, haz clic en <strong>New Line Item</strong></li>
+  <li><strong>Tipo:</strong> Display &amp; Video 360 (RTB), Deal (PMP) o TrueView (YouTube)</li>
+  <li><strong>Nombre:</strong> seguir naming convention</li>
+  <li><strong>Fechas, Presupuesto, Frecuencia</strong></li>
+</ol>
+<strong>Configurar Targeting:</strong>
+<ul>
+  <li>Geografía, Idioma, Dispositivo, Audiencia, Contextual, Brand Safety, Fuente de Inventory, Viewability</li>
+</ul>
+<strong>Configurar Puja → Agregar Creativos → Activar → monitorar entrega en las primeras horas.</strong>`,
+    },
+    tags:['DV360','Line-Item','targeting','bid','display','criação','passo-a-passo'],
+  },
+  {
+    q:{pt:'Como fazer upload e gerenciar criativos no DV360?',en:'How to upload and manage creatives in DV360?',es:'¿Cómo subir y gestionar creativos en DV360?'},
+    a:{
+      pt:`Criativos no DV360 ficam armazenados no nível do <strong>Advertiser</strong> e são reutilizáveis entre campanhas.<br><br>
+<strong>Tipos de criativo no DV360:</strong>
+<ul>
+  <li><strong>Display (HTML5 / Imagem estática):</strong> upload de arquivo ZIP (HTML5) ou JPG/PNG/GIF</li>
+  <li><strong>Display (Hosted):</strong> o DV360 hospeda o criativo — recomendado para escala</li>
+  <li><strong>Vídeo in-stream:</strong> VAST tag ou arquivo MP4 direto</li>
+  <li><strong>Nativo:</strong> titulo, descrição, imagem e logo — o publisher formata no seu layout</li>
+  <li><strong>CM360 Creative:</strong> usar criativos já traficados no CM360 (requer integração)</li>
+</ul>
+<strong>Fazer upload de criativo display:</strong>
+<ol>
+  <li>Dentro do Advertiser → <strong>Creative → New Creative → Display</strong></li>
+  <li>Escolha o tipo: <strong>Custom</strong> (HTML5 ZIP) ou <strong>Standard</strong> (imagem)</li>
+  <li>Defina o tamanho: 300×250, 728×90, 300×600, etc.</li>
+  <li>Upload do arquivo ZIP (HTML5) com index.html + assets — tamanho máximo: 150KB inicial, 2.2MB com polite load</li>
+  <li>URL de clique: inserir a landing page com UTMs</li>
+  <li>URL de impressão (opcional): pixel de tracking de terceiro</li>
+  <li>Salvar e aguardar revisão do DV360 (automática, geralmente instantânea)</li>
+</ol>
+<strong>Associar criativo ao Line Item:</strong>
+<ul>
+  <li>Na aba Creatives do LI → Add Creative → selecionar o criativo do Advertiser</li>
+  <li>É possível associar múltiplos criativos ao mesmo LI — o DV360 faz rotação automática</li>
+  <li>Configurar peso de rotação: Even (igual para todos) ou Optimized (favorece o de melhor performance)</li>
+</ul>
+<strong>Especificações técnicas IAB para HTML5:</strong>
+<ul>
+  <li>Index.html deve estar na raiz do ZIP</li>
+  <li>Animação máxima: 30 segundos (loopável apenas se não auto-play)</li>
+  <li>Initial load: ≤150KB; polite load: ≤2.2MB total</li>
+  <li>Sem Flash — apenas HTML5/CSS3/JavaScript</li>
+</ul>`,
+      en:`Creatives in DV360 are stored at <strong>Advertiser</strong> level and reusable across campaigns.<br><br>
+<strong>Creative types in DV360:</strong>
+<ul>
+  <li>Display (HTML5 / Static image), Display (Hosted), In-stream video (VAST tag or MP4), Native, CM360 Creative</li>
+</ul>
+<strong>Upload display creative:</strong>
+<ol>
+  <li>Inside Advertiser → <strong>Creative → New Creative → Display</strong></li>
+  <li>Choose type: Custom (HTML5 ZIP) or Standard (image)</li>
+  <li>Define size: 300×250, 728×90, 300×600, etc.</li>
+  <li>Upload ZIP file (HTML5) — max size: 150KB initial, 2.2MB with polite load</li>
+  <li>Click URL with UTMs, optional impression tracking URL</li>
+</ol>
+<strong>Associate creative to Line Item:</strong>
+<ul>
+  <li>In LI Creatives tab → Add Creative → select from Advertiser</li>
+  <li>Multiple creatives on same LI — automatic rotation (Even or Optimized by performance)</li>
+</ul>`,
+      es:`Los creativos en DV360 se almacenan a nivel de <strong>Advertiser</strong> y son reutilizables entre campañas.<br><br>
+<strong>Tipos de creativo en DV360:</strong>
+<ul>
+  <li>Display (HTML5 / Imagen estática), Display (Hosted), Video in-stream (VAST tag o MP4), Nativo, Creativo CM360</li>
+</ul>
+<strong>Subir creativo display:</strong>
+<ol>
+  <li>Dentro del Advertiser → <strong>Creative → New Creative → Display</strong></li>
+  <li>Elige el tipo: Custom (ZIP HTML5) o Standard (imagen)</li>
+  <li>Define el tamaño, sube el archivo, URL de clic con UTMs</li>
+</ol>
+<strong>Asociar creativo al Line Item:</strong>
+<ul>
+  <li>Pestaña Creatives del LI → Add Creative → seleccionar del Advertiser</li>
+  <li>Múltiples creativos en el mismo LI — rotación Even o Optimized por performance</li>
+</ul>`,
+    },
+    tags:['DV360','criativo','HTML5','upload','ZIP','VAST','rotação','IAB'],
+  }
+);
+
+// ──────────────────────────────────────────────────────────────
+})();

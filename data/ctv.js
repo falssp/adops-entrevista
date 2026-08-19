@@ -471,3 +471,87 @@ window.__adopsData['ctv'] = {
     },
   ],
 };
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['ctv'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Quais são as especificações técnicas de um anúncio de vídeo para CTV?',en:'What are the technical specifications of a video ad for CTV?',es:'¿Cuáles son las especificaciones técnicas de un anuncio de video para CTV?'},
+    a:{
+      pt:`Anúncios de CTV têm especificações técnicas específicas — diferentes dos vídeos de social media — para garantir qualidade na tela grande.<br><br>
+<strong>Especificações padrão de vídeo CTV:</strong>
+<ul>
+  <li><strong>Resolução:</strong> mínimo 1920×1080 (Full HD). 4K aceito por alguns publishers premium.</li>
+  <li><strong>Proporção:</strong> 16:9 (landscape — tela de TV)</li>
+  <li><strong>Duração:</strong> 15 ou 30 segundos (padrão de mercado). Alguns publishers aceitam 60s.</li>
+  <li><strong>Bitrate de vídeo:</strong> mínimo 5 Mbps para 1080p. Recomendado: 10+ Mbps.</li>
+  <li><strong>Codec de vídeo:</strong> H.264 (MP4) ou H.265 (HEVC para 4K)</li>
+  <li><strong>Codec de áudio:</strong> AAC-LC, stereo, 48kHz, 192kbps mínimo</li>
+  <li><strong>Peso do arquivo:</strong> 200MB-500MB para arquivo master</li>
+  <li><strong>Safe zone:</strong> manter elementos importantes (logo, CTA, texto) dentro de 80% central da tela — bordas podem ser cortadas em algumas TVs</li>
+</ul>
+<strong>Padrão de serving — VAST:</strong>
+<ul>
+  <li>O anúncio não é enviado como arquivo — é servido via <strong>VAST tag</strong> (Video Ad Serving Template)</li>
+  <li>O publisher/SSP chama a VAST tag → ela retorna as instruções de como buscar e exibir o vídeo</li>
+  <li>Versões: VAST 3.0 (padrão atual) e VAST 4.x (suporte crescente)</li>
+  <li>VPAID: padrão mais antigo para interatividade — menos usado em CTV (problemas de compatibilidade)</li>
+</ul>
+<strong>Companion Ads (banner ao lado do vídeo):</strong>
+<ul>
+  <li>Exibidos durante ou após o vídeo em algumas plataformas</li>
+  <li>Tamanho mais comum: 728×90 (leaderboard) ou 300×250</li>
+  <li>Incluídos dentro da mesma VAST tag</li>
+</ul>
+<strong>Checklist antes de enviar o arquivo ao publisher/DSP:</strong>
+<ul>
+  <li>✅ Resolução 1920×1080 ou superior</li>
+  <li>✅ Duração exata de 15s ou 30s (sem frames extras no final)</li>
+  <li>✅ Áudio no nível correto (-23 LUFS para broadcast)</li>
+  <li>✅ Logo e textos dentro da safe zone</li>
+  <li>✅ Sem barras pretas (letterbox) — vídeo deve preencher toda a tela</li>
+</ul>`,
+      en:`CTV video ads have specific technical specifications — different from social media videos — to ensure quality on the big screen.<br><br>
+<strong>Standard CTV video specifications:</strong>
+<ul>
+  <li><strong>Resolution:</strong> minimum 1920×1080 (Full HD). 4K accepted by some premium publishers.</li>
+  <li><strong>Aspect ratio:</strong> 16:9 (landscape — TV screen)</li>
+  <li><strong>Duration:</strong> 15 or 30 seconds (market standard)</li>
+  <li><strong>Video bitrate:</strong> minimum 5 Mbps for 1080p</li>
+  <li><strong>Video codec:</strong> H.264 (MP4) or H.265 (HEVC for 4K)</li>
+  <li><strong>Audio codec:</strong> AAC-LC, stereo, 48kHz, 192kbps minimum</li>
+  <li><strong>Safe zone:</strong> keep important elements within 80% center — edges may be cropped on some TVs</li>
+</ul>
+<strong>Serving standard — VAST:</strong>
+<ul>
+  <li>Ad is not sent as a file — served via <strong>VAST tag</strong> (Video Ad Serving Template)</li>
+  <li>Publisher/SSP calls VAST tag → it returns instructions on how to fetch and display video</li>
+  <li>Versions: VAST 3.0 (current standard) and VAST 4.x (growing support)</li>
+</ul>
+<strong>Pre-delivery checklist:</strong>
+<ul>
+  <li>✅ Resolution 1920×1080+, exact 15s or 30s duration, audio at -23 LUFS, logo within safe zone, no black bars</li>
+</ul>`,
+      es:`Los anuncios de video CTV tienen especificaciones técnicas específicas para garantizar calidad en la pantalla grande.<br><br>
+<strong>Especificaciones estándar de video CTV:</strong>
+<ul>
+  <li><strong>Resolución:</strong> mínimo 1920×1080 (Full HD)</li>
+  <li><strong>Proporción:</strong> 16:9 (landscape — pantalla de TV)</li>
+  <li><strong>Duración:</strong> 15 o 30 segundos (estándar de mercado)</li>
+  <li><strong>Codec de video:</strong> H.264 (MP4) o H.265 (HEVC para 4K)</li>
+  <li><strong>Codec de audio:</strong> AAC-LC, stereo, 48kHz, 192kbps mínimo</li>
+  <li><strong>Safe zone:</strong> mantener elementos importantes dentro del 80% central de la pantalla</li>
+</ul>
+<strong>Estándar de serving — VAST:</strong>
+<ul>
+  <li>El anuncio se sirve via <strong>VAST tag</strong> (Video Ad Serving Template)</li>
+  <li>Versiones: VAST 3.0 (estándar actual) y VAST 4.x (soporte creciente)</li>
+</ul>`,
+    },
+    tags:['CTV','VAST','especificações','1080p','H264','safe-zone','vídeo','técnico'],
+  }
+);
+
+// ──────────────────────────────────────────────────────────────
+})();

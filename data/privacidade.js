@@ -793,3 +793,81 @@ window.__adopsData['privacidade'] = {
     },
   ],
 };
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['privacidade'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que é opt-in e opt-out e como funcionam na prática em publicidade digital?',en:'What is opt-in and opt-out and how do they work in practice in digital advertising?',es:'¿Qué es opt-in y opt-out y cómo funcionan en la práctica en publicidad digital?'},
+    a:{
+      pt:`<strong>Opt-in</strong> e <strong>opt-out</strong> são os dois mecanismos de consentimento para uso de dados pessoais em publicidade — com implicações legais e operacionais completamente diferentes.<br><br>
+<strong>Opt-in (aceitar ativamente):</strong>
+<ul>
+  <li>O usuário precisa <em>tomar uma ação positiva</em> para dar consentimento — clicar em "Aceitar", marcar uma caixa, etc.</li>
+  <li>O padrão exigido pelo <strong>GDPR (Europa)</strong> e recomendado pela <strong>LGPD (Brasil)</strong></li>
+  <li>O consentimento não pode ser presumido — caixas pré-marcadas são ilegais no GDPR</li>
+  <li>Para publicidade: o usuário deve aceitar explicitamente o uso de cookies de publicidade</li>
+  <li>Resultado prático: taxas de aceitação de 40-70% na Europa; usuários que não aceitam recebem apenas publicidade contextual</li>
+</ul>
+<strong>Opt-out (recusar ativamente):</strong>
+<ul>
+  <li>O consentimento é presumido — o usuário <em>já está "dentro"</em> por padrão e precisa tomar ação para sair</li>
+  <li>Historicamente usado em email marketing: usuário recebe emails até clicar em "Descadastrar"</li>
+  <li>Em publicidade programática: opt-out via NAI (Network Advertising Initiative) ou DAA (Digital Advertising Alliance) — usuário visita optout.aboutads.info e opta por não receber publicidade comportamental</li>
+  <li>Não é mais considerado válido para cookies de publicidade no contexto GDPR/LGPD</li>
+</ul>
+<strong>Na prática em AdOps:</strong>
+<ul>
+  <li>Cookie banner com opt-in: usuários que aceitam → 3rd party cookies setados → targeting comportamental disponível</li>
+  <li>Usuários que recusam ou não interagem → apenas contextual targeting</li>
+  <li>O CMP registra o status de cada usuário → TCF string passa o status nas bid requests</li>
+  <li>DSPs e SSPs respeitam o status: sem consentimento = sem behavioral targeting = menor CPM</li>
+</ul>`,
+      en:`<strong>Opt-in</strong> and <strong>opt-out</strong> are the two consent mechanisms for personal data use in advertising — with completely different legal and operational implications.<br><br>
+<strong>Opt-in (actively accept):</strong>
+<ul>
+  <li>User needs to take a <em>positive action</em> to give consent — click "Accept", check a box, etc.</li>
+  <li>The standard required by <strong>GDPR (Europe)</strong> and recommended by <strong>LGPD (Brazil)</strong></li>
+  <li>Consent cannot be presumed — pre-checked boxes are illegal under GDPR</li>
+  <li>Practical result: 40-70% acceptance rates in Europe</li>
+</ul>
+<strong>Opt-out (actively refuse):</strong>
+<ul>
+  <li>Consent is presumed — user is already "in" by default and must take action to leave</li>
+  <li>Historically used in email marketing</li>
+  <li>In programmatic advertising: opt-out via NAI or DAA</li>
+  <li>No longer considered valid for advertising cookies under GDPR/LGPD</li>
+</ul>
+<strong>In practice for AdOps:</strong>
+<ul>
+  <li>Opt-in cookie banner: users who accept → 3rd party cookies set → behavioral targeting available</li>
+  <li>Users who refuse → contextual targeting only</li>
+  <li>CMP records each user's status → TCF string passes status in bid requests</li>
+  <li>DSPs and SSPs respect status: no consent = no behavioral targeting = lower CPM</li>
+</ul>`,
+      es:`<strong>Opt-in</strong> y <strong>opt-out</strong> son los dos mecanismos de consentimiento para el uso de datos personales en publicidad.<br><br>
+<strong>Opt-in (aceptar activamente):</strong>
+<ul>
+  <li>El usuario necesita tomar una <em>acción positiva</em> para dar consentimiento</li>
+  <li>El estándar requerido por el <strong>GDPR (Europa)</strong> y recomendado por la <strong>LGPD (Brasil)</strong></li>
+  <li>Las casillas preseleccionadas son ilegales bajo el GDPR</li>
+  <li>Tasas de aceptación: 40-70% en Europa</li>
+</ul>
+<strong>Opt-out (rechazar activamente):</strong>
+<ul>
+  <li>El consentimiento se presume — el usuario ya está "dentro" por defecto</li>
+  <li>Ya no se considera válido para cookies publicitarias bajo GDPR/LGPD</li>
+</ul>
+<strong>En la práctica para AdOps:</strong>
+<ul>
+  <li>Banner con opt-in: usuarios que aceptan → cookies de 3rd party disponibles → targeting conductual</li>
+  <li>Usuarios que rechazan → solo targeting contextual → menor CPM</li>
+</ul>`,
+    },
+    tags:['opt-in','opt-out','consentimento','GDPR','LGPD','cookie-banner','CMP','TCF'],
+  }
+);
+
+// ──────────────────────────────────────────────────────────────
+})();

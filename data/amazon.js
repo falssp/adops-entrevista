@@ -622,3 +622,85 @@ window.__adopsData['amazon'].tiers[1].questions.push(
     tags: ['Retail-Media', 'Amazon', 'on-site', 'off-site', 'shopper-data', 'ROAS', 'NTB', 'ACOS'],
   }
 );
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['amazon'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Como criar uma campanha de Sponsored Products na Amazon do zero?',en:'How to create a Sponsored Products campaign on Amazon from scratch?',es:'¿Cómo crear una campaña de Sponsored Products en Amazon desde cero?'},
+    a:{
+      pt:`<strong>Pré-requisito:</strong> ter conta de vendedor ativa na Amazon com produtos listados e elegíveis (Buy Box ativa).<br><br>
+<strong>Acessar o Amazon Ads:</strong>
+<ul>
+  <li>Via Seller Central: <code>sellercentral.amazon.com.br → Publicidade → Campaign Manager</code></li>
+  <li>Ou diretamente: <code>advertising.amazon.com</code></li>
+</ul>
+<strong>Criar campanha passo a passo:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Criar Campanha → Sponsored Products</strong></li>
+  <li><strong>Configurações da campanha:</strong>
+    <ul>
+      <li>Nome da campanha (use naming convention)</li>
+      <li>Data de início e fim (ou sem fim definido)</li>
+      <li>Budget diário: mínimo R$10/dia — defina o que cabe no budget</li>
+      <li>Tipo de targeting: <strong>Automático</strong> (Amazon decide as keywords) ou <strong>Manual</strong> (você define)</li>
+    </ul>
+  </li>
+  <li><strong>Criar Grupo de Anúncios:</strong>
+    <ul>
+      <li>Nome do grupo</li>
+      <li>Selecionar os produtos (ASINs) que vão aparecer nesta campanha</li>
+      <li>Lance padrão sugerido pelo Amazon (baseado em CPC histórico)</li>
+    </ul>
+  </li>
+  <li><strong>Se Manual — adicionar targeting:</strong>
+    <ul>
+      <li><strong>Keyword Targeting:</strong> adicionar keywords manualmente ou usar as sugestões da Amazon. Match types: Broad, Phrase, Exact.</li>
+      <li><strong>Product Targeting:</strong> segmentar categorias específicas ou ASINs de concorrentes</li>
+    </ul>
+  </li>
+  <li>Revisar e <strong>Lançar</strong></li>
+</ol>
+<strong>Após lançar:</strong>
+<ul>
+  <li>Aguardar 48-72h para acumular dados antes de otimizar</li>
+  <li>Verificar Search Term Report: quais termos geraram cliques e conversões</li>
+  <li>Negativar termos irrelevantes para não desperdiçar budget</li>
+</ul>`,
+      en:`<strong>Prerequisite:</strong> have active seller account on Amazon with listed and eligible products (active Buy Box).<br><br>
+<strong>Create campaign step by step:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Create Campaign → Sponsored Products</strong></li>
+  <li><strong>Campaign settings:</strong> name, start/end date, daily budget (min $1/day), targeting type: <strong>Automatic</strong> (Amazon decides keywords) or <strong>Manual</strong> (you define)</li>
+  <li><strong>Create Ad Group:</strong> name, select products (ASINs), default bid</li>
+  <li><strong>If Manual — add targeting:</strong> Keyword Targeting (Broad, Phrase, Exact match types) or Product Targeting (categories or competitor ASINs)</li>
+  <li>Review and <strong>Launch</strong></li>
+</ol>
+<strong>After launching:</strong>
+<ul>
+  <li>Wait 48-72h to accumulate data before optimizing</li>
+  <li>Check Search Term Report: which terms generated clicks and conversions</li>
+  <li>Negate irrelevant terms to avoid wasting budget</li>
+</ul>`,
+      es:`<strong>Prerrequisito:</strong> tener cuenta de vendedor activa en Amazon con productos listados y elegibles (Buy Box activa).<br><br>
+<strong>Crear campaña paso a paso:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Crear Campaña → Sponsored Products</strong></li>
+  <li><strong>Configuración:</strong> nombre, fechas, presupuesto diario (mín. $1/día), tipo de targeting: <strong>Automático</strong> o <strong>Manual</strong></li>
+  <li><strong>Crear Grupo de Anuncios:</strong> nombre, seleccionar productos (ASINs), puja predeterminada</li>
+  <li><strong>Si Manual — agregar targeting:</strong> Keyword Targeting (Broad, Phrase, Exact) o Product Targeting</li>
+  <li>Revisar y <strong>Lanzar</strong></li>
+</ol>
+<strong>Tras el lanzamiento:</strong>
+<ul>
+  <li>Esperar 48-72h para acumular datos antes de optimizar</li>
+  <li>Revisar el Search Term Report y negativar términos irrelevantes</li>
+</ul>`,
+    },
+    tags:['Amazon','Sponsored-Products','campanha','criação','keyword','ASIN','targeting','Manual'],
+  }
+);
+
+// ──────────────────────────────────────────────────────────────
+})();

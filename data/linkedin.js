@@ -1004,3 +1004,151 @@ window.__adopsData['linkedin'] = {
     },
   ],
 };
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['linkedin'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Como criar uma campanha no LinkedIn Ads do zero?',en:'How to create a LinkedIn Ads campaign from scratch?',es:'¿Cómo crear una campaña en LinkedIn Ads desde cero?'},
+    a:{
+      pt:`O LinkedIn Campaign Manager tem 3 níveis: <strong>Grupo de Campanhas → Campanha → Anúncio</strong>.<br><br>
+<strong>Passo 1 — Criar Grupo de Campanhas:</strong>
+<ol>
+  <li>Acesse <code>linkedin.com/campaignmanager</code></li>
+  <li>Selecione a Conta de Anúncios (ou crie uma)</li>
+  <li>Clique em <strong>Criar → Grupo de Campanhas</strong></li>
+  <li>Defina: nome, status (ativo), budget total do grupo (opcional) e datas</li>
+</ol>
+<strong>Passo 2 — Criar Campanha:</strong>
+<ol>
+  <li>Dentro do Grupo, clique em <strong>Criar Campanha</strong></li>
+  <li><strong>Objetivo:</strong> Conhecimento (Awareness), Consideração (Visitas ao site, Engajamento, Visualizações de vídeo), Conversões (Geração de leads, Conversões no site, Candidatos a emprego)</li>
+  <li><strong>Público:</strong> localização (obrigatório) + atributos profissionais: cargo, setor, empresa, senioridade, habilidades, grupos, grau de instrução</li>
+  <li><strong>Formato do anúncio:</strong> Single Image, Carousel, Video, Text Ad, Spotlight, Message Ad, Conversation Ad, Document Ad</li>
+  <li><strong>Placement:</strong> LinkedIn Feed + LinkedIn Audience Network (opcional — sites parceiros)</li>
+  <li><strong>Budget:</strong> diário ou total. Lance: CPC, CPM ou CPV automatizado</li>
+  <li><strong>Conversão:</strong> vincular o LinkedIn Insight Tag e evento de conversão</li>
+</ol>
+<strong>Passo 3 — Criar Anúncio:</strong>
+<ol>
+  <li>Dentro da Campanha, clique em <strong>Criar Anúncio</strong></li>
+  <li>Escolha: usar conteúdo existente da Página ou criar novo</li>
+  <li>Preencha: imagem/vídeo, texto introdutório (150 caracteres visíveis), headline (70 char), descrição, URL de destino e CTA</li>
+  <li>Preview em desktop e mobile antes de salvar</li>
+</ol>
+<strong>Revisão e publicação:</strong> o LinkedIn revisa anúncios em até 24h antes de ativar. Status inicial: "Em revisão".`,
+      en:`LinkedIn Campaign Manager has 3 levels: <strong>Campaign Group → Campaign → Ad</strong>.<br><br>
+<strong>Step 1 — Create Campaign Group:</strong>
+<ol>
+  <li>Access <code>linkedin.com/campaignmanager</code></li>
+  <li>Select Ad Account (or create one)</li>
+  <li>Click <strong>Create → Campaign Group</strong></li>
+  <li>Define: name, status (active), group total budget (optional) and dates</li>
+</ol>
+<strong>Step 2 — Create Campaign:</strong>
+<ol>
+  <li>Inside Group, click <strong>Create Campaign</strong></li>
+  <li><strong>Objective:</strong> Awareness, Consideration (Website visits, Engagement, Video views), Conversions (Lead generation, Website conversions, Job applicants)</li>
+  <li><strong>Audience:</strong> location (required) + professional attributes: job title, industry, company, seniority, skills, groups, education</li>
+  <li><strong>Ad format:</strong> Single Image, Carousel, Video, Text Ad, Spotlight, Message Ad, Conversation Ad, Document Ad</li>
+  <li><strong>Budget:</strong> daily or total. Bid: CPC, CPM or automated CPV</li>
+</ol>
+<strong>Step 3 — Create Ad:</strong>
+<ol>
+  <li>Inside Campaign, click <strong>Create Ad</strong></li>
+  <li>Fill in: image/video, introductory text (150 visible characters), headline (70 char), description, destination URL and CTA</li>
+  <li>Preview in desktop and mobile before saving</li>
+</ol>`,
+      es:`LinkedIn Campaign Manager tiene 3 niveles: <strong>Grupo de Campañas → Campaña → Anuncio</strong>.<br><br>
+<strong>Paso 1 — Crear Grupo de Campañas:</strong>
+<ol>
+  <li>Accede a <code>linkedin.com/campaignmanager</code></li>
+  <li>Selecciona la Cuenta de Anuncios</li>
+  <li>Haz clic en <strong>Crear → Grupo de Campañas</strong></li>
+  <li>Define: nombre, estado (activo), presupuesto total del grupo y fechas</li>
+</ol>
+<strong>Paso 2 — Crear Campaña:</strong>
+<ol>
+  <li>Dentro del Grupo, haz clic en <strong>Crear Campaña</strong></li>
+  <li><strong>Objetivo:</strong> Conocimiento, Consideración (Visitas al sitio, Interacción, Visualizaciones de video), Conversiones (Generación de leads, Conversiones en el sitio)</li>
+  <li><strong>Audiencia:</strong> ubicación (obligatoria) + atributos profesionales</li>
+  <li><strong>Formato del anuncio, Presupuesto, Lance</strong></li>
+</ol>
+<strong>Paso 3 — Crear Anuncio:</strong>
+<ol>
+  <li>Dentro de la Campaña, haz clic en <strong>Crear Anuncio</strong></li>
+  <li>Rellena: imagen/video, texto introductorio, headline, descripción, URL de destino y CTA</li>
+</ol>`,
+    },
+    tags:['LinkedIn','campanha','Campaign-Manager','Lead-Gen','objetivo','criação'],
+  },
+  {
+    q:{pt:'Como instalar o LinkedIn Insight Tag e criar conversões?',en:'How to install the LinkedIn Insight Tag and create conversions?',es:'¿Cómo instalar el LinkedIn Insight Tag y crear conversiones?'},
+    a:{
+      pt:`O <strong>LinkedIn Insight Tag</strong> é o pixel do LinkedIn — rastreia visitas ao site, permite retargeting e mede conversões após clique ou visualização de anúncio.<br><br>
+<strong>Criar e instalar o Insight Tag:</strong>
+<ol>
+  <li>No Campaign Manager → <strong>Recursos da Conta → Insight Tag</strong></li>
+  <li>Copie o snippet JavaScript gerado (único por conta)</li>
+  <li><strong>Via GTM (recomendado):</strong> nova Tag → Custom HTML → cole o snippet → disparo All Pages → Preview → Publish</li>
+  <li><strong>Manual:</strong> cole antes do <code>&lt;/body&gt;</code> em todas as páginas</li>
+  <li>Verificar: o domínio aparece como "Verificado" no Campaign Manager em até 24h</li>
+</ol>
+<strong>Criar Conversão:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Conversões → Criar Conversão</strong></li>
+  <li>Nome: ex. "Lead - Formulário de Contato"</li>
+  <li>Tipo: Compra, Adição ao carrinho, Download, Instalação de app, Inscrição, Geração de leads, Página visualizada, Outro</li>
+  <li>Valor: valor monetário opcional da conversão</li>
+  <li>Janela de atribuição: 1, 7, 30 ou 90 dias pós-clique; 1 ou 7 dias pós-impressão</li>
+  <li>Método de rastreamento:
+    <ul>
+      <li><strong>Insight Tag + URL específica:</strong> dispara quando o usuário chega à URL de obrigado</li>
+      <li><strong>Insight Tag + evento:</strong> dispara em evento específico no site</li>
+      <li><strong>Conversão API:</strong> server-side, similar ao CAPI do Meta</li>
+    </ul>
+  </li>
+</ol>
+<strong>Público de retargeting com Insight Tag:</strong>
+<ul>
+  <li>Campaign Manager → Públicos Correspondentes → Criar público → Retargeting de site</li>
+  <li>Segmentar por: todos os visitantes, URL específica, evento específico, tempo na página</li>
+  <li>Mínimo de 300 membros para ativar o público</li>
+</ul>`,
+      en:`The <strong>LinkedIn Insight Tag</strong> is LinkedIn's pixel — tracks site visits, enables retargeting and measures conversions after ad click or view.<br><br>
+<strong>Create and install Insight Tag:</strong>
+<ol>
+  <li>In Campaign Manager → <strong>Account Assets → Insight Tag</strong></li>
+  <li>Copy the generated JavaScript snippet (unique per account)</li>
+  <li><strong>Via GTM (recommended):</strong> new Tag → Custom HTML → paste snippet → All Pages trigger → Preview → Publish</li>
+  <li>Verify: domain appears as "Verified" in Campaign Manager within 24h</li>
+</ol>
+<strong>Create Conversion:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Conversions → Create Conversion</strong></li>
+  <li>Name, Type (Purchase, Lead, Page View, etc.), optional monetary value</li>
+  <li>Attribution window: 1, 7, 30 or 90 days post-click; 1 or 7 days post-impression</li>
+  <li>Tracking method: Insight Tag + specific URL, Insight Tag + event, or Conversions API</li>
+</ol>`,
+      es:`El <strong>LinkedIn Insight Tag</strong> es el píxel de LinkedIn — rastrea visitas al sitio, permite retargeting y mide conversiones.<br><br>
+<strong>Crear e instalar Insight Tag:</strong>
+<ol>
+  <li>En Campaign Manager → <strong>Recursos de la Cuenta → Insight Tag</strong></li>
+  <li>Copia el snippet JavaScript generado</li>
+  <li>Via GTM: nueva Tag → Custom HTML → pega el snippet → All Pages → Publish</li>
+  <li>Verificar: el dominio aparece como "Verificado" en Campaign Manager en hasta 24h</li>
+</ol>
+<strong>Crear Conversión:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Conversiones → Crear Conversión</strong></li>
+  <li>Nombre, Tipo, Valor opcional, Ventana de atribución</li>
+  <li>Método: Insight Tag + URL específica, Insight Tag + evento, o API de Conversiones</li>
+</ol>`,
+    },
+    tags:['LinkedIn','Insight-Tag','GTM','conversão','retargeting','pixel','instalação'],
+  }
+);
+
+// ──────────────────────────────────────────────────────────────
+})();

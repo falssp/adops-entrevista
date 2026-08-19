@@ -909,3 +909,133 @@ utm_term      = targeting o keyword</pre>
     },
   ],
 };
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['fundamentos'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que é CPM, CPC, CPA, CPV e CPL — e quando cada modelo é usado?',en:'What is CPM, CPC, CPA, CPV and CPL — and when is each model used?',es:'¿Qué es CPM, CPC, CPA, CPV y CPL — y cuándo se usa cada modelo?'},
+    a:{
+      pt:`Os modelos de precificação em publicidade digital definem como o anunciante paga pela mídia. Entender cada um é o ABC do AdOps.<br><br>
+<table>
+<tr><th>Modelo</th><th>Significa</th><th>Fórmula</th><th>Quando usar</th></tr>
+<tr><td><strong>CPM</strong></td><td>Cost Per Mille (por mil impressões)</td><td>Gasto ÷ Impressões × 1.000</td><td>Awareness, branding, video — quando o objetivo é alcance máximo. Benchmark BR display: R$3-60 dependendo do publisher e formato.</td></tr>
+<tr><td><strong>CPC</strong></td><td>Cost Per Click</td><td>Gasto ÷ Cliques</td><td>Tráfego para o site, Search, quando o objetivo é visita. Benchmark Search BR: R$1-15 dependendo da competição da keyword.</td></tr>
+<tr><td><strong>CPA</strong></td><td>Cost Per Action/Acquisition</td><td>Gasto ÷ Conversões</td><td>Performance — quando o objetivo é uma ação específica (compra, lead, cadastro). Ideal para campanhas com pixel instalado e histórico de dados.</td></tr>
+<tr><td><strong>CPV</strong></td><td>Cost Per View</td><td>Gasto ÷ Visualizações</td><td>Campanhas de vídeo (YouTube TrueView) — paga apenas quando o usuário assiste 30s ou completa o vídeo. Eficiente para video awareness.</td></tr>
+<tr><td><strong>CPL</strong></td><td>Cost Per Lead</td><td>Gasto ÷ Leads gerados</td><td>Geração de leads — formulários, cadastros, solicitações de contato. Subconjunto do CPA com foco em leads.</td></tr>
+<tr><td><strong>CPCV</strong></td><td>Cost Per Completed View</td><td>Gasto ÷ Visualizações completas</td><td>Vídeo premium — paga apenas quando o usuário assiste 100% do vídeo. Usado em CTV e video programático.</td></tr>
+</table><br>
+<strong>Relação entre os modelos:</strong>
+<ul>
+  <li>CPM → CPC: <code>CPC = CPM / (CTR × 1.000)</code>. CPM de R$10 com CTR 0,1% = CPC de R$10.</li>
+  <li>CPC → CPA: <code>CPA = CPC / taxa de conversão</code>. CPC R$1 com CVR 2% = CPA R$50.</li>
+</ul>`,
+      en:`Pricing models in digital advertising define how the advertiser pays for media.<br><br>
+<table>
+<tr><th>Model</th><th>Means</th><th>Formula</th><th>When to use</th></tr>
+<tr><td><strong>CPM</strong></td><td>Cost Per Mille (per thousand impressions)</td><td>Spend ÷ Impressions × 1,000</td><td>Awareness, branding, video — when goal is maximum reach.</td></tr>
+<tr><td><strong>CPC</strong></td><td>Cost Per Click</td><td>Spend ÷ Clicks</td><td>Site traffic, Search, when goal is visit.</td></tr>
+<tr><td><strong>CPA</strong></td><td>Cost Per Action/Acquisition</td><td>Spend ÷ Conversions</td><td>Performance — when goal is a specific action (purchase, lead, sign-up).</td></tr>
+<tr><td><strong>CPV</strong></td><td>Cost Per View</td><td>Spend ÷ Views</td><td>Video campaigns (YouTube TrueView) — pay only when user watches 30s or completes video.</td></tr>
+<tr><td><strong>CPL</strong></td><td>Cost Per Lead</td><td>Spend ÷ Leads generated</td><td>Lead generation — forms, registrations, contact requests.</td></tr>
+<tr><td><strong>CPCV</strong></td><td>Cost Per Completed View</td><td>Spend ÷ Completed views</td><td>Premium video — pay only when user watches 100% of video. Used in CTV.</td></tr>
+</table><br>
+<strong>Relationship between models:</strong>
+<ul>
+  <li>CPM → CPC: <code>CPC = CPM / (CTR × 1,000)</code></li>
+  <li>CPC → CPA: <code>CPA = CPC / conversion rate</code></li>
+</ul>`,
+      es:`Los modelos de precios en publicidad digital definen cómo el anunciante paga por los medios.<br><br>
+<table>
+<tr><th>Modelo</th><th>Significa</th><th>Fórmula</th><th>Cuándo usar</th></tr>
+<tr><td><strong>CPM</strong></td><td>Costo Por Mil impresiones</td><td>Gasto ÷ Impresiones × 1.000</td><td>Awareness, branding, video — cuando el objetivo es alcance máximo.</td></tr>
+<tr><td><strong>CPC</strong></td><td>Costo Por Clic</td><td>Gasto ÷ Clics</td><td>Tráfico al sitio, Search, cuando el objetivo es visita.</td></tr>
+<tr><td><strong>CPA</strong></td><td>Costo Por Acción/Adquisición</td><td>Gasto ÷ Conversiones</td><td>Performance — cuando el objetivo es una acción específica.</td></tr>
+<tr><td><strong>CPV</strong></td><td>Costo Por Visualización</td><td>Gasto ÷ Visualizaciones</td><td>Campañas de video — paga solo cuando el usuario ve 30s o completa el video.</td></tr>
+<tr><td><strong>CPL</strong></td><td>Costo Por Lead</td><td>Gasto ÷ Leads generados</td><td>Generación de leads — formularios, registros.</td></tr>
+</table>`,
+    },
+    tags:['CPM','CPC','CPA','CPV','CPL','CPCV','modelo-de-compra','métricas','fundamentos'],
+  },
+  {
+    q:{pt:'O que é um DSP, SSP, DMP e Ad Exchange — e como eles se relacionam?',en:'What is a DSP, SSP, DMP and Ad Exchange — and how are they related?',es:'¿Qué es un DSP, SSP, DMP y Ad Exchange — y cómo se relacionan?'},
+    a:{
+      pt:`Esses 4 termos formam o núcleo do ecossistema de publicidade programática. Entender cada um e como se conectam é essencial para AdOps.<br><br>
+<strong>DSP — Demand-Side Platform (Plataforma do Lado da Demanda):</strong>
+<ul>
+  <li>Ferramenta usada pelos <strong>anunciantes e agências</strong> para comprar mídia programática</li>
+  <li>Permite definir targeting, lances e criativos e participar de leilões RTB automaticamente</li>
+  <li>Exemplos: DV360 (Google), The Trade Desk, Amazon DSP, Xandr</li>
+</ul>
+<strong>SSP — Supply-Side Platform (Plataforma do Lado da Oferta):</strong>
+<ul>
+  <li>Ferramenta usada pelos <strong>publishers</strong> para vender e monetizar seu inventário de anúncios</li>
+  <li>Gerencia os leilões, aplica floor prices, controla regras de brand safety do publisher</li>
+  <li>Exemplos: Google Ad Manager (GAM/DFP), Magnite, PubMatic, Index Exchange</li>
+</ul>
+<strong>Ad Exchange:</strong>
+<ul>
+  <li>O <strong>marketplace</strong> onde DSPs e SSPs se encontram para realizar as transações</li>
+  <li>Historicamente era uma entidade separada; hoje a maioria dos SSPs também opera como exchange</li>
+  <li>Exemplos: Google Ad Exchange (AdX), OpenX, Index Exchange</li>
+</ul>
+<strong>DMP — Data Management Platform (Plataforma de Gestão de Dados):</strong>
+<ul>
+  <li>Sistema que coleta, organiza e ativa dados de audiência de múltiplas fontes</li>
+  <li>Cria segmentos de audiência que podem ser exportados para DSPs para targeting</li>
+  <li>Exemplos: Oracle BlueKai (histórico), Adobe Audience Manager, Salesforce DMP</li>
+  <li><strong>Atenção:</strong> DMPs baseadas em 3rd party cookies estão em declínio → substituídas por CDPs (Customer Data Platforms) que trabalham com 1st party data</li>
+</ul>
+<strong>Como se conectam no fluxo de uma campanha:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Anunciante → DSP → Ad Exchange ← SSP ← Publisher
+               ↑                        ↑
+              DMP (dados de audiência) DMP (dados do publisher)</pre>`,
+      en:`These 4 terms form the core of the programmatic advertising ecosystem.<br><br>
+<strong>DSP — Demand-Side Platform:</strong>
+<ul>
+  <li>Tool used by <strong>advertisers and agencies</strong> to buy programmatic media</li>
+  <li>Examples: DV360, The Trade Desk, Amazon DSP, Xandr</li>
+</ul>
+<strong>SSP — Supply-Side Platform:</strong>
+<ul>
+  <li>Tool used by <strong>publishers</strong> to sell and monetize their ad inventory</li>
+  <li>Examples: Google Ad Manager, Magnite, PubMatic, Index Exchange</li>
+</ul>
+<strong>Ad Exchange:</strong>
+<ul>
+  <li>The <strong>marketplace</strong> where DSPs and SSPs meet to transact</li>
+  <li>Today most SSPs also operate as exchanges</li>
+</ul>
+<strong>DMP — Data Management Platform:</strong>
+<ul>
+  <li>System that collects, organizes and activates audience data from multiple sources</li>
+  <li><strong>Note:</strong> 3rd party cookie-based DMPs are declining → replaced by CDPs working with 1st party data</li>
+</ul>`,
+      es:`Estos 4 términos forman el núcleo del ecosistema de publicidad programática.<br><br>
+<strong>DSP — Demand-Side Platform:</strong>
+<ul>
+  <li>Herramienta usada por <strong>anunciantes y agencias</strong> para comprar medios programáticos</li>
+  <li>Ejemplos: DV360, The Trade Desk, Amazon DSP, Xandr</li>
+</ul>
+<strong>SSP — Supply-Side Platform:</strong>
+<ul>
+  <li>Herramienta usada por <strong>publishers</strong> para vender y monetizar su inventario de anuncios</li>
+  <li>Ejemplos: Google Ad Manager, Magnite, PubMatic, Index Exchange</li>
+</ul>
+<strong>Ad Exchange:</strong>
+<ul>
+  <li>El <strong>marketplace</strong> donde DSPs y SSPs se encuentran para realizar transacciones</li>
+</ul>
+<strong>DMP — Data Management Platform:</strong>
+<ul>
+  <li>Sistema que recopila, organiza y activa datos de audiencia de múltiplas fuentes</li>
+  <li><strong>Nota:</strong> las DMPs basadas en cookies de 3rd party están en declive → reemplazadas por CDPs con 1st party data</li>
+</ul>`,
+    },
+    tags:['DSP','SSP','DMP','Ad-Exchange','programático','ecossistema','CDP','fundamentos'],
+  }
+);
+
+})();

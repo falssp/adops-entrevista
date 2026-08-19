@@ -1063,3 +1063,65 @@ window.__adopsData['programatico'].tiers[2].questions.push(
     tags: ['audio', 'Spotify', 'podcast', 'programático', 'RTB', 'completion-rate', 'AdsWizz'],
   }
 );
+
+// ── APPEND: básicos práticos (patch) ──
+;(function(){
+const d = window.__adopsData['programatico'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Como funciona o leilão de RTB passo a passo — do clique do usuário ao anúncio na tela?',en:'How does the RTB auction work step by step — from user click to ad on screen?',es:'¿Cómo funciona la subasta de RTB paso a paso — del clic del usuario al anuncio en pantalla?'},
+    a:{
+      pt:`O <strong>RTB (Real-Time Bidding)</strong> é um leilão que acontece em menos de 100 milissegundos — o tempo que a página leva para carregar. Nesse intervalo, centenas de anunciantes competem pela impressão.<br><br>
+<strong>Passo a passo do leilão RTB:</strong>
+<ol>
+  <li><strong>Usuário acessa uma página</strong> com espaço publicitário (ex: G1.com)</li>
+  <li><strong>Ad Server do Publisher (GAM/DFP)</strong> detecta o espaço disponível e envia um <strong>bid request</strong> ao SSP</li>
+  <li><strong>SSP (ex: Magnite)</strong> enriquece o bid request com dados do usuário (ID, contexto, device, geo) e o distribui simultaneamente para múltiplos DSPs</li>
+  <li><strong>DSPs (ex: DV360, TTD)</strong> recebem o bid request, consultam os dados do usuário, verificam se ele corresponde a alguma campanha ativa e calculam o valor que estão dispostos a pagar (em &lt;50ms)</li>
+  <li><strong>DSPs enviam bid responses</strong> com o valor do lance de volta ao SSP</li>
+  <li><strong>SSP seleciona o maior lance</strong> compatível com o floor price do publisher. O vencedor paga o segundo maior lance + R$0,01 (leilão de segundo preço) — ou o valor exato em leilões de primeiro preço (modelo atual dominante)</li>
+  <li><strong>SSP notifica o DSP vencedor</strong> — o DSP envia o criativo (ou a URL do ad server para buscar o criativo)</li>
+  <li><strong>O anúncio é renderizado na página do usuário</strong></li>
+</ol>
+<strong>Tempo total:</strong> ~80-100ms — imperceptível para o usuário.<br><br>
+<strong>Participantes do ecossistema:</strong>
+<ul>
+  <li><strong>Anunciante:</strong> define o targeting, o criativo e o lance máximo</li>
+  <li><strong>DSP:</strong> plataforma de compra — automatiza o lance</li>
+  <li><strong>Ad Exchange / SSP:</strong> marketplace que conecta compradores e vendedores</li>
+  <li><strong>Publisher:</strong> dono do espaço (site, app)</li>
+  <li><strong>Ad Server do Publisher:</strong> gerencia as regras de monetização do publisher</li>
+  <li><strong>Data Providers:</strong> fornecem dados de audiência para enriquecer o bid request (DMP, CDP)</li>
+</ul>`,
+      en:`<strong>RTB (Real-Time Bidding)</strong> is an auction that happens in less than 100 milliseconds — the time the page takes to load.<br><br>
+<strong>RTB auction step by step:</strong>
+<ol>
+  <li><strong>User accesses a page</strong> with ad space</li>
+  <li><strong>Publisher Ad Server</strong> detects available space and sends <strong>bid request</strong> to SSP</li>
+  <li><strong>SSP</strong> enriches bid request with user data and distributes simultaneously to multiple DSPs</li>
+  <li><strong>DSPs</strong> receive bid request, check user data, verify if it matches an active campaign and calculate bid value (in &lt;50ms)</li>
+  <li><strong>DSPs send bid responses</strong> with bid value back to SSP</li>
+  <li><strong>SSP selects highest bid</strong> compatible with publisher floor price. Winner pays second highest bid + $0.01 (second-price auction) — or exact value in first-price auctions (current dominant model)</li>
+  <li><strong>SSP notifies winning DSP</strong> — DSP sends creative</li>
+  <li><strong>Ad renders on user's page</strong></li>
+</ol>
+<strong>Total time:</strong> ~80-100ms — imperceptible to user.`,
+      es:`El <strong>RTB (Real-Time Bidding)</strong> es una subasta que ocurre en menos de 100 milisegundos — el tiempo que tarda la página en cargarse.<br><br>
+<strong>Subasta RTB paso a paso:</strong>
+<ol>
+  <li><strong>El usuario accede a una página</strong> con espacio publicitario</li>
+  <li><strong>Ad Server del Publisher</strong> detecta el espacio disponible y envía un <strong>bid request</strong> al SSP</li>
+  <li><strong>SSP</strong> enriquece el bid request con datos del usuario y lo distribuye simultáneamente a múltiples DSPs</li>
+  <li><strong>DSPs</strong> reciben el bid request, consultan los datos del usuario, verifican si corresponde a alguna campaña activa y calculan el valor que están dispuestos a pagar (en &lt;50ms)</li>
+  <li><strong>DSPs envían bid responses</strong> con el valor de la puja de vuelta al SSP</li>
+  <li><strong>SSP selecciona la puja más alta</strong> compatible con el floor price del publisher</li>
+  <li><strong>El anuncio se renderiza en la página del usuario</strong></li>
+</ol>
+<strong>Tiempo total:</strong> ~80-100ms — imperceptible para el usuario.`,
+    },
+    tags:['RTB','leilão','DSP','SSP','bid-request','programático','ecossistema','100ms'],
+  }
+);
+
+// ──────────────────────────────────────────────────────────────
+})();
