@@ -808,3 +808,175 @@ d.tiers[0].questions.push(
 
 // ──────────────────────────────────────────────────────────────
 })();
+
+;(function(){
+const d = window.__adopsData['dv360'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha de display no DV360 do zero?',en:'Step by step: how to create a display campaign in DV360 from scratch?',es:'Paso a paso: ¿cómo crear una campaña de display en DV360 desde cero?'},
+    a:{
+      pt:`<strong>Pré-requisitos:</strong>
+<ul>
+  <li>Acesso ao DV360 com permissão de Standard ou Admin no Advertiser</li>
+  <li>Floodlight configurado (nativo ou linkado ao CM360)</li>
+  <li>Criativos prontos (HTML5 ou imagens estáticas nos tamanhos IAB)</li>
+</ul>
+<strong>Passo 1 — Criar Campaign:</strong>
+<ol>
+  <li>No DV360, selecione o Advertiser → clique em <strong>+ New Campaign</strong></li>
+  <li>Nome: ex: <code>Marca_Display_Awareness_BR_Q3-2025</code></li>
+  <li>Objetivo: Awareness, Consideration ou Action</li>
+  <li>Período da campanha: data início e fim</li>
+  <li>Budget total da campanha (opcional)</li>
+</ol>
+<strong>Passo 2 — Criar Insertion Order (IO):</strong>
+<ol>
+  <li>Dentro da Campaign → <strong>+ New Insertion Order</strong></li>
+  <li>Nome: ex: <code>IO_Display_OpenWeb_R$50k</code></li>
+  <li>Tipo: Display</li>
+  <li>Budget: total (ex: R$50.000) ou diário</li>
+  <li>Pacing: Even (distribuição uniforme ao longo do período)</li>
+  <li>KPI: CPM, CTR, Viewability — define como o DV360 vai otimizar</li>
+  <li>Período do IO (pode ser diferente da campaign)</li>
+</ol>
+<strong>Passo 3 — Criar Line Item:</strong>
+<ol>
+  <li>Dentro do IO → <strong>+ New Line Item</strong></li>
+  <li>Nome: ex: <code>LI_Prospecting_InMarket_SP</code></li>
+  <li>Tipo: Display (RTB)</li>
+  <li>Budget do LI: parcela do IO</li>
+  <li><strong>Targeting:</strong>
+    <ul>
+      <li>Geo: Brasil / São Paulo</li>
+      <li>Idioma: Português</li>
+      <li>Dispositivo: Desktop + Mobile</li>
+      <li>Audience: Google In-Market Audiences → selecionar categoria relevante</li>
+      <li>Brand Safety: ativar filtros de conteúdo (excluir adult, violência, etc.)</li>
+      <li>Viewability: ativar Active View, mínimo 50%</li>
+    </ul>
+  </li>
+  <li>Frequency: ex: máximo 3 impressões/usuário/dia</li>
+  <li>Lance: CPM alvo ou Smart Bidding (CPA target se Floodlight disponível)</li>
+</ol>
+<strong>Passo 4 — Adicionar Criativos:</strong>
+<ol>
+  <li>No Line Item → aba <strong>Creatives → + Add Creative</strong></li>
+  <li>Selecionar criativos já upados no DV360 OU traficar via CM360</li>
+  <li>Associar os tamanhos corretos (300×250, 728×90, 300×600, 320×50)</li>
+</ol>
+<strong>Passo 5 — Ativar e monitorar:</strong>
+<ol>
+  <li>Mudar status do IO e do LI para <strong>Ativo</strong></li>
+  <li>Verificar nas primeiras horas: impressões iniciando, pacing correto (80-120%), nenhum criativo com erro</li>
+</ol>`,
+      en:`<strong>Prerequisites:</strong>
+<ul>
+  <li>DV360 access with Standard or Admin permission in Advertiser</li>
+  <li>Floodlight configured (native or linked to CM360)</li>
+  <li>Creatives ready (HTML5 or static images in IAB sizes)</li>
+</ul>
+<strong>Step 1 — Create Campaign:</strong> name, objective, period, optional total budget.<br><br>
+<strong>Step 2 — Create Insertion Order (IO):</strong> name, type (Display), budget, pacing (Even), KPI (CPM/CTR/Viewability).<br><br>
+<strong>Step 3 — Create Line Item:</strong>
+<ol>
+  <li>Name, type (Display RTB), budget</li>
+  <li>Targeting: geo, language, device, audience (Google In-Market), brand safety, viewability (Active View min 50%)</li>
+  <li>Frequency cap</li>
+  <li>Bid: target CPM or Smart Bidding</li>
+</ol>
+<strong>Step 4 — Add Creatives:</strong> select from DV360 library or traffic via CM360. Associate correct sizes.<br><br>
+<strong>Step 5 — Activate and monitor:</strong> change IO and LI status to Active. Check in first hours: impressions starting, correct pacing (80-120%), no creative errors.`,
+      es:`<strong>Prerequisitos:</strong>
+<ul>
+  <li>Acceso a DV360 con permiso Standard o Admin en el Advertiser</li>
+  <li>Floodlight configurado (nativo o vinculado a CM360)</li>
+  <li>Creativos listos (HTML5 o imágenes estáticas en tamaños IAB)</li>
+</ul>
+<strong>Paso 1 — Crear Campaign:</strong> nombre, objetivo, período, presupuesto total opcional.<br><br>
+<strong>Paso 2 — Crear Insertion Order (IO):</strong> nombre, tipo (Display), presupuesto, pacing (Even), KPI (CPM/CTR/Viewability).<br><br>
+<strong>Paso 3 — Crear Line Item:</strong>
+<ol>
+  <li>Nombre, tipo (Display RTB), presupuesto</li>
+  <li>Targeting: geo, idioma, dispositivo, audiencia (Google In-Market), brand safety, viewability</li>
+  <li>Frequency cap</li>
+  <li>Puja: CPM objetivo o Smart Bidding</li>
+</ol>
+<strong>Paso 4 — Agregar Creativos:</strong> seleccionar de la biblioteca de DV360 o traficar via CM360.<br><br>
+<strong>Paso 5 — Activar y monitorear:</strong> cambiar estado del IO y del LI a Activo. Verificar en las primeras horas: impresiones iniciando, pacing correcto (80-120%).`,
+    },
+    tags:['DV360','display','passo-a-passo','IO','Line-Item','targeting','criativos','pacing'],
+  }
+);
+d.tiers[1].questions.push(
+  {
+    q:{pt:'O que é um Deal ID (PMP) no DV360 e como configurar?',en:'What is a Deal ID (PMP) in DV360 and how to configure it?',es:'¿Qué es un Deal ID (PMP) en DV360 y cómo configurarlo?'},
+    a:{
+      pt:`Um <strong>Deal ID</strong> é um identificador único que representa um acordo privado (PMP — Private Marketplace) entre um publisher e um comprador — o publisher reserva inventário premium para aquele anunciante específico.<br><br>
+<strong>Como o Deal ID funciona:</strong>
+<ol>
+  <li>Equipe comercial negocia com o publisher (ex: UOL, G1, Grupo Globo): CPM, volume, período, posições</li>
+  <li>O publisher configura o deal no SSP (ex: Magnite, PubMatic) e gera um <strong>Deal ID único</strong> (ex: <code>DX-12345-ABC</code>)</li>
+  <li>O publisher passa o Deal ID para o comprador (agência/anunciante)</li>
+  <li>O comprador configura o Deal ID no DSP (DV360)</li>
+  <li>Quando o publisher tem uma impressão disponível naquele deal, o SSP envia o bid request com o Deal ID — o DV360 reconhece e lança o lance</li>
+</ol>
+<strong>Configurar um Deal ID no DV360:</strong>
+<ol>
+  <li>No DV360 → <strong>Inventory → My Inventory → + New Deal</strong></li>
+  <li>Selecione a fonte: Exchange/SSP onde o deal foi configurado (ex: Magnite, Google AdX)</li>
+  <li>Insira o <strong>Deal ID</strong> fornecido pelo publisher</li>
+  <li>Defina o nome interno para identificação (ex: <code>G1_HomeDesktop_Q3_CPM35</code>)</li>
+  <li>Configure o CPM acordado (para verificação)</li>
+  <li>O deal aparece em "Inventory → My Inventory" após alguns minutos</li>
+</ol>
+<strong>Associar o Deal ID a um Line Item:</strong>
+<ol>
+  <li>No Line Item → <strong>Inventory source → Specific inventory sources</strong></li>
+  <li>Selecione o Deal configurado</li>
+  <li>O LI só vai licitar para o inventário daquele deal específico</li>
+</ol>
+<strong>Vantagens do PMP vs. Open Auction:</strong>
+<ul>
+  <li>Inventário premium e viewability mais alta</li>
+  <li>Menor exposição a IVT (publisher verificado)</li>
+  <li>CPM negociado previamente (previsibilidade)</li>
+  <li>Possibilidade de posições above-the-fold garantidas</li>
+</ul>`,
+      en:`A <strong>Deal ID</strong> is a unique identifier representing a private agreement (PMP — Private Marketplace) between a publisher and a buyer — the publisher reserves premium inventory for that specific advertiser.<br><br>
+<strong>How Deal ID works:</strong>
+<ol>
+  <li>Commercial team negotiates with publisher: CPM, volume, period, positions</li>
+  <li>Publisher configures deal in SSP and generates a unique Deal ID</li>
+  <li>Publisher passes Deal ID to buyer (agency/advertiser)</li>
+  <li>Buyer configures Deal ID in DSP (DV360)</li>
+  <li>When publisher has impression available in that deal, SSP sends bid request with Deal ID — DV360 recognizes and bids</li>
+</ol>
+<strong>Configure Deal ID in DV360:</strong>
+<ol>
+  <li>DV360 → <strong>Inventory → My Inventory → + New Deal</strong></li>
+  <li>Select source: SSP/Exchange where deal was configured</li>
+  <li>Enter Deal ID provided by publisher</li>
+  <li>Define internal name for identification</li>
+</ol>
+<strong>Associate Deal ID to Line Item:</strong> Line Item → Inventory source → Specific inventory sources → select configured Deal.`,
+      es:`Un <strong>Deal ID</strong> es un identificador único que representa un acuerdo privado (PMP — Private Marketplace) entre un publisher y un comprador.<br><br>
+<strong>Cómo funciona el Deal ID:</strong>
+<ol>
+  <li>El equipo comercial negocia con el publisher: CPM, volumen, período, posiciones</li>
+  <li>El publisher configura el deal en el SSP y genera un Deal ID único</li>
+  <li>El publisher pasa el Deal ID al comprador</li>
+  <li>El comprador configura el Deal ID en el DSP (DV360)</li>
+</ol>
+<strong>Configurar un Deal ID en DV360:</strong>
+<ol>
+  <li>DV360 → <strong>Inventory → My Inventory → + New Deal</strong></li>
+  <li>Seleccionar la fuente: SSP/Exchange donde se configuró el deal</li>
+  <li>Introducir el Deal ID proporcionado por el publisher</li>
+  <li>Definir nombre interno para identificación</li>
+</ol>
+<strong>Asociar el Deal ID a un Line Item:</strong> Line Item → Inventory source → Specific inventory sources → seleccionar el Deal configurado.`,
+    },
+    tags:['DV360','Deal-ID','PMP','SSP','publisher','inventário','programático','configuração'],
+  }
+);
+})();

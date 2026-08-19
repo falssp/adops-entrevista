@@ -1039,3 +1039,275 @@ d.tiers[0].questions.push(
 );
 
 })();
+
+;(function(){
+const d = window.__adopsData['fundamentos'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que é CPM, CPC, CPV, CPA e CPL? Quando usar cada modelo de compra?',en:'What is CPM, CPC, CPV, CPA and CPL? When to use each buying model?',es:'¿Qué es CPM, CPC, CPV, CPA y CPL? ¿Cuándo usar cada modelo de compra?'},
+    a:{
+      pt:`Os <strong>modelos de compra</strong> definem como o anunciante paga pelo espaço publicitário — e cada um é mais adequado para objetivos diferentes.<br><br>
+<strong>CPM — Custo por Mil Impressões:</strong>
+<ul>
+  <li>Você paga por cada 1.000 vezes que o anúncio é exibido, independente de cliques</li>
+  <li><code>CPM = Gasto Total ÷ Impressões × 1.000</code></li>
+  <li>Quando usar: campanhas de awareness e alcance — o objetivo é ser visto, não gerar clique</li>
+  <li>Exemplo: banner de awareness de marca, video de lançamento, CTV</li>
+  <li>Benchmark BR: R$3-15 (open web display), R$15-50 (premium/video)</li>
+</ul>
+<strong>CPC — Custo por Clique:</strong>
+<ul>
+  <li>Você paga apenas quando alguém clica no anúncio</li>
+  <li><code>CPC = Gasto Total ÷ Cliques</code></li>
+  <li>Quando usar: campanhas de tráfego — quando o objetivo é levar pessoas para o site</li>
+  <li>Padrão no Search (Google/Bing), disponível em display e social</li>
+  <li>Benchmark Search BR: R$0,50-5 (varia muito por setor)</li>
+</ul>
+<strong>CPV — Custo por Visualização:</strong>
+<ul>
+  <li>Você paga quando o usuário assiste uma porcentagem do vídeo (no YouTube TrueView: 30s ou vídeo completo)</li>
+  <li><code>CPV = Gasto Total ÷ Visualizações qualificadas</code></li>
+  <li>Quando usar: campanhas de vídeo onde o objetivo é garantir que a mensagem seja assistida</li>
+  <li>Benchmark: R$0,05-0,30 por view</li>
+</ul>
+<strong>CPA — Custo por Aquisição (ou Ação):</strong>
+<ul>
+  <li>Você paga por cada conversão — compra, cadastro, download, etc.</li>
+  <li><code>CPA = Gasto Total ÷ Conversões</code></li>
+  <li>Quando usar: campanhas de conversão onde você quer pagar pelo resultado real</li>
+  <li>Requer pixel/tag de conversão instalado para mensurar</li>
+</ul>
+<strong>CPL — Custo por Lead:</strong>
+<ul>
+  <li>Variação do CPA especificamente para geração de leads (preenchimento de formulário, cadastro)</li>
+  <li><code>CPL = Gasto Total ÷ Leads gerados</code></li>
+  <li>Quando usar: campanhas B2B ou de captação de contatos</li>
+</ul>
+<strong>ROAS — Return on Ad Spend:</strong>
+<ul>
+  <li>Não é modelo de compra — é métrica de resultado</li>
+  <li><code>ROAS = Receita atribuída ÷ Gasto em anúncios</code></li>
+  <li>ROAS 3x significa: para cada R$1 gasto, R$3 de receita atribuída</li>
+</ul>`,
+      en:`<strong>Buying models</strong> define how the advertiser pays for advertising space — each is most suitable for different objectives.<br><br>
+<strong>CPM — Cost Per Mille (Thousand Impressions):</strong>
+<ul>
+  <li>Pay for every 1,000 times ad is displayed, regardless of clicks</li>
+  <li>When to use: awareness and reach campaigns — goal is to be seen, not generate clicks</li>
+</ul>
+<strong>CPC — Cost Per Click:</strong>
+<ul>
+  <li>Pay only when someone clicks the ad</li>
+  <li>When to use: traffic campaigns — goal is bringing people to the site</li>
+  <li>Standard in Search (Google/Bing)</li>
+</ul>
+<strong>CPV — Cost Per View:</strong>
+<ul>
+  <li>Pay when user watches a percentage of video (YouTube TrueView: 30s or complete video)</li>
+  <li>When to use: video campaigns where goal is ensuring message is watched</li>
+</ul>
+<strong>CPA — Cost Per Acquisition (or Action):</strong>
+<ul>
+  <li>Pay per conversion — purchase, registration, download, etc.</li>
+  <li>When to use: conversion campaigns where you want to pay for real result</li>
+  <li>Requires conversion pixel/tag installed to measure</li>
+</ul>
+<strong>CPL — Cost Per Lead:</strong>
+<ul>
+  <li>CPA variation specifically for lead generation</li>
+  <li>When to use: B2B campaigns or contact capture</li>
+</ul>
+<strong>ROAS — Return on Ad Spend:</strong>
+<ul>
+  <li>Not a buying model — it's a result metric</li>
+  <li><code>ROAS = Attributed revenue ÷ Ad spend</code>. ROAS 3x = $3 revenue per $1 spent.</li>
+</ul>`,
+      es:`Los <strong>modelos de compra</strong> definen cómo el anunciante paga el espacio publicitario — cada uno es más adecuado para objetivos diferentes.<br><br>
+<strong>CPM — Coste por Mil Impresiones:</strong>
+<ul>
+  <li>Pagas por cada 1.000 veces que el anuncio se muestra, independientemente de los clics</li>
+  <li>Cuándo usar: campañas de awareness y alcance</li>
+</ul>
+<strong>CPC — Coste por Clic:</strong>
+<ul>
+  <li>Pagas solo cuando alguien hace clic en el anuncio</li>
+  <li>Cuándo usar: campañas de tráfico. Estándar en Search.</li>
+</ul>
+<strong>CPV — Coste por Visualización:</strong>
+<ul>
+  <li>Pagas cuando el usuario ve un porcentaje del video</li>
+  <li>Cuándo usar: campañas de video donde el objetivo es que el mensaje sea visto</li>
+</ul>
+<strong>CPA — Coste por Adquisición:</strong>
+<ul>
+  <li>Pagas por cada conversión</li>
+  <li>Cuándo usar: campañas de conversión donde quieres pagar por el resultado real</li>
+</ul>
+<strong>CPL — Coste por Lead:</strong>
+<ul>
+  <li>Variación del CPA específicamente para generación de leads</li>
+</ul>
+<strong>ROAS — Return on Ad Spend:</strong>
+<ul>
+  <li>No es modelo de compra — es métrica de resultado. <code>ROAS = Ingresos atribuidos ÷ Gasto en anuncios</code></li>
+</ul>`,
+    },
+    tags:['CPM','CPC','CPV','CPA','CPL','ROAS','modelo-compra','métricas','fundamentos'],
+  },
+  {
+    q:{pt:'O que é a diferença entre DSP, SSP, Ad Exchange, Ad Network e DMP?',en:'What is the difference between DSP, SSP, Ad Exchange, Ad Network and DMP?',es:'¿Cuál es la diferencia entre DSP, SSP, Ad Exchange, Ad Network y DMP?'},
+    a:{
+      pt:`O ecossistema de AdTech tem muitas siglas — entender o papel de cada player é fundamental.<br><br>
+<strong>DSP — Demand Side Platform:</strong>
+<ul>
+  <li>Plataforma usada pelo <strong>lado comprador</strong> (anunciantes e agências) para comprar impressões programáticas</li>
+  <li>Automatiza o processo de lance em tempo real (RTB) em múltiplos exchanges simultaneamente</li>
+  <li>Oferece targeting de audiência, brand safety, frequência e otimização</li>
+  <li>Exemplos: DV360 (Google), The Trade Desk, Amazon DSP, Xandr, Adobe Advertising Cloud</li>
+</ul>
+<strong>SSP — Supply Side Platform:</strong>
+<ul>
+  <li>Plataforma usada pelo <strong>lado vendedor</strong> (publishers/veículos) para monetizar seu inventário programaticamente</li>
+  <li>Conecta o inventário do publisher a múltiplos DSPs e exchanges simultaneamente — maximizando o CPM</li>
+  <li>Implementa Header Bidding para leilões simultâneos</li>
+  <li>Exemplos: Magnite (maior independente), PubMatic, Index Exchange, Google Ad Manager (GAM/AdX)</li>
+</ul>
+<strong>Ad Exchange:</strong>
+<ul>
+  <li>Marketplace digital onde DSPs e SSPs se conectam para transacionar impressões em tempo real</li>
+  <li>É a "bolsa de valores" das impressões — leilão acontece em milissegundos</li>
+  <li>Exemplos: Google Ad Exchange (AdX), OpenX, Rubicon</li>
+  <li>Hoje, a fronteira entre SSP e Ad Exchange está borrada — muitas SSPs funcionam como exchange também</li>
+</ul>
+<strong>Ad Network:</strong>
+<ul>
+  <li>Intermediário tradicional (pré-programático) que agrega inventário de múltiplos publishers e vende de forma empacotada para anunciantes</li>
+  <li>Modelo opaco: anunciante não sabe exatamente onde seu anúncio vai aparecer</li>
+  <li>Ainda existe mas perdeu espaço para o modelo programático mais transparente</li>
+  <li>Exemplos BR: UOL Ads, Grupo Ativacao, redes de publishers locais</li>
+</ul>
+<strong>DMP — Data Management Platform:</strong>
+<ul>
+  <li>Plataforma de gerenciamento de dados de audiência — coleta, organiza e ativa dados 1st, 2nd e 3rd party</li>
+  <li>Cria segmentos de audiência que são usados no DSP para targeting</li>
+  <li>Exemplos: Oracle BlueKai, Adobe Audience Manager, Nielsen DMP</li>
+  <li>Perdendo relevância com fim dos 3rd party cookies — sendo substituído por CDPs (Customer Data Platforms)</li>
+</ul>`,
+      en:`The AdTech ecosystem has many acronyms — understanding each player's role is fundamental.<br><br>
+<strong>DSP — Demand Side Platform:</strong>
+<ul>
+  <li>Platform used by the <strong>buy side</strong> (advertisers and agencies) to buy programmatic impressions</li>
+  <li>Automates real-time bidding (RTB) across multiple exchanges simultaneously</li>
+  <li>Examples: DV360 (Google), The Trade Desk, Amazon DSP, Xandr</li>
+</ul>
+<strong>SSP — Supply Side Platform:</strong>
+<ul>
+  <li>Platform used by the <strong>sell side</strong> (publishers) to monetize inventory programmatically</li>
+  <li>Connects publisher inventory to multiple DSPs and exchanges simultaneously — maximizing CPM</li>
+  <li>Examples: Magnite, PubMatic, Index Exchange, Google Ad Manager</li>
+</ul>
+<strong>Ad Exchange:</strong>
+<ul>
+  <li>Digital marketplace where DSPs and SSPs connect to transact impressions in real time</li>
+  <li>The "stock exchange" of impressions — auction happens in milliseconds</li>
+  <li>Examples: Google Ad Exchange (AdX), OpenX, Rubicon</li>
+</ul>
+<strong>Ad Network:</strong>
+<ul>
+  <li>Traditional intermediary that aggregates inventory from multiple publishers and sells packaged to advertisers</li>
+  <li>Opaque model: advertiser doesn't know exactly where their ad will appear</li>
+  <li>Still exists but lost ground to the more transparent programmatic model</li>
+</ul>
+<strong>DMP — Data Management Platform:</strong>
+<ul>
+  <li>Audience data management platform — collects, organizes and activates 1st, 2nd and 3rd party data</li>
+  <li>Losing relevance with end of 3rd party cookies — being replaced by CDPs</li>
+  <li>Examples: Oracle BlueKai, Adobe Audience Manager, Nielsen DMP</li>
+</ul>`,
+      es:`El ecosistema de AdTech tiene muchas siglas — entender el papel de cada actor es fundamental.<br><br>
+<strong>DSP — Demand Side Platform:</strong>
+<ul>
+  <li>Plataforma usada por el <strong>lado comprador</strong> para comprar impresiones programáticas</li>
+  <li>Automatiza el proceso de puja en tiempo real (RTB) en múltiples exchanges simultáneamente</li>
+  <li>Ejemplos: DV360, The Trade Desk, Amazon DSP, Xandr</li>
+</ul>
+<strong>SSP — Supply Side Platform:</strong>
+<ul>
+  <li>Plataforma usada por el <strong>lado vendedor</strong> (publishers) para monetizar su inventario programáticamente</li>
+  <li>Conecta el inventario del publisher a múltiples DSPs y exchanges simultáneamente</li>
+  <li>Ejemplos: Magnite, PubMatic, Index Exchange, Google Ad Manager</li>
+</ul>
+<strong>Ad Exchange:</strong>
+<ul>
+  <li>Marketplace digital donde DSPs y SSPs se conectan para transaccionar impresiones en tiempo real</li>
+  <li>La "bolsa de valores" de las impresiones — la subasta ocurre en milisegundos</li>
+</ul>
+<strong>Ad Network:</strong>
+<ul>
+  <li>Intermediario tradicional que agrega inventario de múltiples publishers y vende empaquetado a anunciantes</li>
+  <li>Modelo opaco — el anunciante no sabe exactamente dónde aparecerá su anuncio</li>
+</ul>
+<strong>DMP — Data Management Platform:</strong>
+<ul>
+  <li>Plataforma de gestión de datos de audiencia — recopila, organiza y activa datos 1st, 2nd y 3rd party</li>
+  <li>Perdiendo relevancia con el fin de las cookies de terceros — siendo reemplazado por CDPs</li>
+</ul>`,
+    },
+    tags:['DSP','SSP','Ad-Exchange','Ad-Network','DMP','programático','RTB','ecossistema','fundamentos'],
+  },
+  {
+    q:{pt:'O que é RTB (Real-Time Bidding) e como funciona um leilão programático?',en:'What is RTB (Real-Time Bidding) and how does a programmatic auction work?',es:'¿Qué es el RTB (Real-Time Bidding) y cómo funciona una subasta programática?'},
+    a:{
+      pt:`O <strong>RTB (Real-Time Bidding)</strong> é o mecanismo de leilão em tempo real que permite a compra e venda automatizada de impressões publicitárias — tudo acontece em menos de 100 milissegundos.<br><br>
+<strong>O processo passo a passo:</strong>
+<ol>
+  <li><strong>Usuário acessa uma página</strong> que tem espaço publicitário disponível</li>
+  <li><strong>O publisher/SSP detecta o espaço</strong> disponível e prepara um <strong>Bid Request</strong> — um pacote com informações sobre o usuário (cookies/IP/device), o contexto (URL, categoria do conteúdo), e o espaço (tamanho, posição)</li>
+  <li><strong>O Bid Request é enviado simultaneamente</strong> para múltiplos DSPs</li>
+  <li><strong>Cada DSP avalia o Bid Request:</strong> "esse usuário está no nosso targeting? Qual o valor máximo que devemos dar?"</li>
+  <li><strong>DSPs interessados enviam um Bid Response</strong> com o valor do lance em milissegundos</li>
+  <li><strong>O Ad Exchange/SSP seleciona o maior lance</strong> que atende ao floor price do publisher</li>
+  <li><strong>O vencedor paga:</strong> em leilão de 2º preço (Second Price): paga o lance do 2º colocado + $0.01. Em leilão de 1º preço (First Price — padrão atual): paga o próprio lance.</li>
+  <li><strong>O anúncio é renderizado</strong> na página do usuário — tudo isso em ~100ms</li>
+</ol>
+<strong>First-price vs. Second-price auction:</strong>
+<ul>
+  <li>Até ~2019: segundo preço era padrão. Vencedor pagava o lance do 2º colocado + $0.01 — incentivava lances altos.</li>
+  <li>Hoje: primeiro preço é o padrão da indústria. Vencedor paga o próprio lance — incentiva lances mais calculados e uso de bid shading.</li>
+</ul>
+<strong>Bid Shading:</strong>
+<ul>
+  <li>Algoritmo dos DSPs que reduz automaticamente o lance para economizar custo em leilões de 1º preço</li>
+  <li>Ex: se o DSP acha que o clearing price será R$5, pode dar um lance de R$5.50 (não R$10) — ganha o leilão pagando menos</li>
+</ul>`,
+      en:`<strong>RTB (Real-Time Bidding)</strong> is the real-time auction mechanism that enables automated buying and selling of ad impressions — all happening in under 100 milliseconds.<br><br>
+<strong>The step-by-step process:</strong>
+<ol>
+  <li>User accesses a page with available advertising space</li>
+  <li>Publisher/SSP detects available space and prepares a <strong>Bid Request</strong> — package with user info (cookies/IP/device), context (URL, content category) and space (size, position)</li>
+  <li>Bid Request sent simultaneously to multiple DSPs</li>
+  <li>Each DSP evaluates: "is this user in our targeting? What's the max we should bid?"</li>
+  <li>Interested DSPs send a Bid Response with bid value in milliseconds</li>
+  <li>Ad Exchange/SSP selects the highest bid meeting publisher's floor price</li>
+  <li>Winner pays: first-price auction (current standard) = pays own bid</li>
+  <li>Ad is rendered on user's page — all in ~100ms</li>
+</ol>
+<strong>Bid Shading:</strong> DSP algorithm that automatically reduces bid to save cost in first-price auctions.`,
+      es:`El <strong>RTB (Real-Time Bidding)</strong> es el mecanismo de subasta en tiempo real que permite la compra y venta automatizada de impresiones publicitarias — todo ocurre en menos de 100 milisegundos.<br><br>
+<strong>El proceso paso a paso:</strong>
+<ol>
+  <li>El usuario accede a una página con espacio publicitario disponible</li>
+  <li>El publisher/SSP detecta el espacio y prepara un <strong>Bid Request</strong> con información sobre el usuario, el contexto y el espacio</li>
+  <li>El Bid Request se envía simultáneamente a múltiples DSPs</li>
+  <li>Cada DSP evalúa: "¿está este usuario en nuestro targeting? ¿Cuánto debemos pujar?"</li>
+  <li>Los DSPs interesados envían un Bid Response con el valor de la puja en milisegundos</li>
+  <li>El Ad Exchange/SSP selecciona la puja más alta que cumple el floor price del publisher</li>
+  <li>El ganador paga: subasta de 1er precio (estándar actual) = paga su propia puja</li>
+  <li>El anuncio se renderiza en la página del usuario — todo en ~100ms</li>
+</ol>
+<strong>Bid Shading:</strong> algoritmo de los DSPs que reduce automáticamente la puja para ahorrar costes en subastas de 1er precio.`,
+    },
+    tags:['RTB','leilão','bid-request','bid-response','DSP','SSP','first-price','programático','fundamentos'],
+  }
+);
+})();

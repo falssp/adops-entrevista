@@ -1125,3 +1125,74 @@ d.tiers[0].questions.push(
 
 // ──────────────────────────────────────────────────────────────
 })();
+
+;(function(){
+const d = window.__adopsData['programatico'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'O que é Header Bidding e como ele funciona?',en:'What is Header Bidding and how does it work?',es:'¿Qué es Header Bidding y cómo funciona?'},
+    a:{
+      pt:`O <strong>Header Bidding</strong> é uma técnica de monetização programática que permite ao publisher realizar leilões simultâneos com múltiplos compradores antes de chamar o ad server — maximizando a competição e o CPM obtido.<br><br>
+<strong>O problema que o Header Bidding resolve:</strong>
+<ul>
+  <li>No modelo antigo (Waterfall), o publisher enviava a impressão para compradores em sequência — primeiro o Google AdX, depois rede 2, depois rede 3, etc.</li>
+  <li>Se o Google AdX ganhasse com R$2, o publisher nunca descobria que a rede 2 pagaria R$5</li>
+  <li>O publisher perdia receita por não ter visibilidade de todos os compradores simultaneamente</li>
+</ul>
+<strong>Como o Header Bidding funciona:</strong>
+<ol>
+  <li>O publisher instala o código de Header Bidding (ex: Prebid.js) no <code>&lt;head&gt;</code> do site</li>
+  <li>Quando o usuário carrega a página, o script chama <strong>todos os SSPs/DSPs parceiros simultaneamente</strong></li>
+  <li>Cada parceiro retorna seu lance em milissegundos</li>
+  <li>O maior lance de todos vai competir com o Google AdX (ou o ad server do publisher) no leilão final</li>
+  <li>O maior lance ganha — publisher recebe o CPM mais alto disponível para aquela impressão</li>
+</ol>
+<strong>Vantagens para o publisher:</strong>
+<ul>
+  <li>Mais competição = CPMs mais altos (publishers relatam aumento de 30-50% de receita)</li>
+  <li>Visibilidade de todos os compradores interessados na mesma impressão</li>
+</ul>
+<strong>Vantagens para o anunciante/DSP:</strong>
+<ul>
+  <li>Acesso ao mesmo inventário que antes era reservado ao Google</li>
+  <li>Mais oportunidades de lance em inventário premium</li>
+</ul>
+<strong>Prebid.js:</strong> a biblioteca open-source mais usada para implementar Header Bidding. Suportada por centenas de SSPs. Mantida pela Prebid.org (organização independente).`,
+      en:`<strong>Header Bidding</strong> is a programmatic monetization technique that allows publishers to run simultaneous auctions with multiple buyers before calling the ad server — maximizing competition and earned CPM.<br><br>
+<strong>The problem Header Bidding solves:</strong>
+<ul>
+  <li>In the old Waterfall model, publisher sent impression to buyers sequentially</li>
+  <li>Publisher was missing revenue by not having visibility of all buyers simultaneously</li>
+</ul>
+<strong>How Header Bidding works:</strong>
+<ol>
+  <li>Publisher installs Header Bidding code (e.g. Prebid.js) in site <code>&lt;head&gt;</code></li>
+  <li>When user loads page, script calls <strong>all partner SSPs/DSPs simultaneously</strong></li>
+  <li>Each partner returns bid in milliseconds</li>
+  <li>Highest bid competes with Google AdX in final auction</li>
+  <li>Highest bid wins — publisher receives highest available CPM</li>
+</ol>
+<strong>Publisher benefits:</strong> more competition = higher CPMs (publishers report 30-50% revenue increase).<br><br>
+<strong>Advertiser/DSP benefits:</strong> access to inventory previously reserved for Google.<br><br>
+<strong>Prebid.js:</strong> most used open-source library for implementing Header Bidding. Maintained by Prebid.org.`,
+      es:`El <strong>Header Bidding</strong> es una técnica de monetización programática que permite al publisher realizar subastas simultáneas con múltiples compradores antes de llamar al ad server.<br><br>
+<strong>El problema que resuelve:</strong>
+<ul>
+  <li>En el modelo antiguo (Waterfall), el publisher enviaba la impresión a los compradores en secuencia</li>
+  <li>El publisher perdía ingresos por no tener visibilidad de todos los compradores simultáneamente</li>
+</ul>
+<strong>Cómo funciona:</strong>
+<ol>
+  <li>El publisher instala el código de Header Bidding (ej: Prebid.js) en el <code>&lt;head&gt;</code> del sitio</li>
+  <li>Cuando el usuario carga la página, el script llama <strong>a todos los SSPs/DSPs socios simultáneamente</strong></li>
+  <li>Cada socio devuelve su puja en milisegundos</li>
+  <li>La puja más alta compite con Google AdX en la subasta final</li>
+  <li>El publisher recibe el CPM más alto disponible para esa impresión</li>
+</ol>
+<strong>Ventajas para el publisher:</strong> más competencia = CPMs más altos (los publishers reportan aumento del 30-50% de ingresos).<br><br>
+<strong>Prebid.js:</strong> la biblioteca open-source más usada para implementar Header Bidding.`,
+    },
+    tags:['Header-Bidding','Prebid','SSP','publisher','CPM','Waterfall','RTB','monetização'],
+  }
+);
+})();

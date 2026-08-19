@@ -1306,3 +1306,344 @@ d.tiers[0].questions.push(
 
 // ──────────────────────────────────────────────────────────────
 })();
+
+;(function(){
+const d = window.__adopsData['googleads'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha de Search no Google Ads do zero?',en:'Step by step: how to create a Search campaign in Google Ads from scratch?',es:'Paso a paso: ¿cómo crear una campaña de Search en Google Ads desde cero?'},
+    a:{
+      pt:`<strong>Pré-requisitos:</strong>
+<ul>
+  <li>Conta Google Ads criada (ads.google.com)</li>
+  <li>Faturamento configurado (cartão de crédito ou boleto)</li>
+  <li>Tag de conversão do Google Ads ou Floodlight no site (para medir resultados)</li>
+  <li>Landing page pronta e funcionando</li>
+</ul>
+<strong>Passo 1 — Nova Campanha:</strong>
+<ol>
+  <li>No Google Ads, clique em <strong>+ Nova campanha</strong></li>
+  <li>Objetivo: selecione "Vendas", "Leads" ou "Tráfego do site" — ou crie sem objetivo</li>
+  <li>Tipo de campanha: <strong>Pesquisa (Search)</strong></li>
+  <li>Resultados que você quer: marque "Visitas ao site" e insira a URL do site</li>
+  <li>Nome da campanha: ex: <code>Search_Marca_Produto_BR_Ago25</code></li>
+</ol>
+<strong>Passo 2 — Configurações da Campanha:</strong>
+<ol>
+  <li><strong>Rede:</strong> desmarque "Rede de Display" (evitar misturar canais)</li>
+  <li><strong>Localização:</strong> Brasil ou estado/cidade específico</li>
+  <li><strong>Idioma:</strong> Português</li>
+  <li><strong>Orçamento diário:</strong> ex: R$50/dia</li>
+  <li><strong>Lances:</strong> Conversões maximizadas (se já tem dados) ou CPC manual (se começando)</li>
+</ol>
+<strong>Passo 3 — Criar Grupo de Anúncios (Ad Group):</strong>
+<ol>
+  <li>Nome: ex: <code>Produto X - Intenção Alta</code></li>
+  <li><strong>Keywords:</strong> adicionar palavras-chave relevantes com o tipo de correspondência correto:
+    <ul>
+      <li><code>[palavra exata]</code> → correspondência exata</li>
+      <li><code>"frase de correspondência"</code> → correspondência de frase</li>
+      <li><code>palavra ampla</code> → correspondência ampla (cuidado — pode trazer tráfego irrelevante)</li>
+    </ul>
+  </li>
+</ol>
+<strong>Passo 4 — Criar Anúncios (Responsive Search Ad):</strong>
+<ol>
+  <li>URL final: landing page com UTMs</li>
+  <li>Headlines: adicionar 8-15 títulos diferentes (Google testa automaticamente as combinações)</li>
+  <li>Descrições: adicionar 2-4 descrições</li>
+  <li>O Google monta automaticamente as melhores combinações para cada busca</li>
+</ol>
+<strong>Passo 5 — Publicar e monitorar:</strong>
+<ol>
+  <li>Salvar → campanha entra em análise (aprovação de anúncios: 1-3 dias)</li>
+  <li>Verificar: impressões, cliques, CTR e posição média nas primeiras 24-48h</li>
+  <li>Checar Relatório de Termos de Pesquisa (Search Terms): ver quais buscas ativaram seus anúncios</li>
+  <li>Adicionar negativos para buscas irrelevantes</li>
+</ol>`,
+      en:`<strong>Prerequisites:</strong>
+<ul>
+  <li>Google Ads account created (ads.google.com)</li>
+  <li>Billing configured</li>
+  <li>Google Ads conversion tag or Floodlight on site</li>
+  <li>Landing page ready and working</li>
+</ul>
+<strong>Step 1 — New Campaign:</strong>
+<ol>
+  <li>In Google Ads, click <strong>+ New campaign</strong></li>
+  <li>Goal: "Sales", "Leads" or "Website traffic"</li>
+  <li>Campaign type: <strong>Search</strong></li>
+  <li>Campaign name: e.g. <code>Search_Brand_Product_US_Aug25</code></li>
+</ol>
+<strong>Step 2 — Campaign Settings:</strong>
+<ol>
+  <li>Network: uncheck "Display Network"</li>
+  <li>Location: target country/region</li>
+  <li>Daily budget: e.g. $20/day</li>
+  <li>Bidding: Maximize Conversions (with data) or Manual CPC (starting out)</li>
+</ol>
+<strong>Step 3 — Create Ad Group:</strong>
+<ol>
+  <li>Add keywords with correct match type: [exact match], "phrase match", broad match</li>
+</ol>
+<strong>Step 4 — Create Responsive Search Ads:</strong>
+<ol>
+  <li>Final URL with UTMs</li>
+  <li>Add 8-15 headlines and 2-4 descriptions — Google auto-tests combinations</li>
+</ol>
+<strong>Step 5 — Publish and monitor:</strong>
+<ol>
+  <li>Check Search Terms Report to see which searches triggered your ads</li>
+  <li>Add negatives for irrelevant searches</li>
+</ol>`,
+      es:`<strong>Prerequisitos:</strong>
+<ul>
+  <li>Cuenta de Google Ads creada (ads.google.com)</li>
+  <li>Facturación configurada</li>
+  <li>Tag de conversión de Google Ads o Floodlight en el sitio</li>
+</ul>
+<strong>Paso 1 — Nueva Campaña:</strong>
+<ol>
+  <li>En Google Ads, haz clic en <strong>+ Nueva campaña</strong></li>
+  <li>Objetivo: "Ventas", "Clientes potenciales" o "Tráfico del sitio web"</li>
+  <li>Tipo de campaña: <strong>Búsqueda (Search)</strong></li>
+</ol>
+<strong>Paso 2 — Configuración:</strong>
+<ol>
+  <li>Red: desmarcar "Red de Display"</li>
+  <li>Ubicación: Brasil u otra región objetivo</li>
+  <li>Presupuesto diario</li>
+  <li>Pujas: Maximizar conversiones o CPC manual</li>
+</ol>
+<strong>Paso 3 — Crear Grupo de Anuncios:</strong>
+<ol>
+  <li>Agregar palabras clave con el tipo de concordancia correcto: [exacta], "frase", amplia</li>
+</ol>
+<strong>Paso 4 — Crear Anuncios de Búsqueda Responsivos:</strong>
+<ol>
+  <li>URL final con UTMs</li>
+  <li>Agregar 8-15 títulos y 2-4 descripciones — Google prueba automáticamente las combinaciones</li>
+</ol>
+<strong>Paso 5 — Publicar y monitorear:</strong>
+<ol>
+  <li>Verificar el Informe de Términos de Búsqueda — agregar negativos para búsquedas irrelevantes</li>
+</ol>`,
+    },
+    tags:['Google-Ads','Search','passo-a-passo','keywords','RSA','CPC','campanha','negativos'],
+  },
+  {
+    q:{pt:'O que são tipos de correspondência de palavras-chave no Google Ads e como escolher?',en:'What are keyword match types in Google Ads and how to choose?',es:'¿Qué son los tipos de concordancia de palabras clave en Google Ads y cómo elegirlos?'},
+    a:{
+      pt:`Os <strong>tipos de correspondência</strong> controlam quais buscas ativam seus anúncios — a escolha errada pode desperdiçar budget ou perder clientes.<br><br>
+<strong>1. Correspondência Exata <code>[palavra-chave]</code>:</strong>
+<ul>
+  <li>Anúncio aparece apenas quando a busca é exatamente a keyword (ou variações muito próximas: plurais, erros de digitação, reordenação de palavras sem mudança de significado)</li>
+  <li>Ex: <code>[tênis nike masculino]</code> → ativa para "tenis nike masculino", "tênis masculino nike" — mas NÃO para "comprar tênis nike masculino barato"</li>
+  <li>Menor volume, maior precisão, CTR mais alto, menor CPC desperdiçado</li>
+  <li>Usar para: keywords de alta conversão que você já conhece, branded terms, produtos específicos</li>
+</ul>
+<strong>2. Correspondência de Frase <code>"palavra-chave"</code>:</strong>
+<ul>
+  <li>Anúncio aparece quando a busca contém a keyword como parte de uma frase, preservando o significado</li>
+  <li>Ex: <code>"tênis nike"</code> → ativa para "comprar tênis nike barato", "tênis nike air max" — mas NÃO para "nike tênis" (ordem alterada com mudança de significado)</li>
+  <li>Volume médio, precisão média — bom equilíbrio para a maioria dos casos</li>
+</ul>
+<strong>3. Correspondência Ampla <code>palavra-chave</code> (sem símbolos):</strong>
+<ul>
+  <li>Anúncio pode aparecer para buscas relacionadas, sinônimos, tópicos relacionados — Google decide</li>
+  <li>Ex: <code>tênis esportivo</code> → pode ativar para "calçado para corrida", "adidas running", "sapato fitness"</li>
+  <li>Maior volume, menor precisão — pode gerar muito tráfego irrelevante</li>
+  <li>Usar apenas com Smart Bidding e com budget para absorver tráfego indesejado + negativos bem configurados</li>
+</ul>
+<strong>Estratégia prática recomendada:</strong>
+<ul>
+  <li>Comece com <strong>exata e frase</strong> para ter controle</li>
+  <li>Monitore o Relatório de Termos de Pesquisa diariamente e adicione negativos</li>
+  <li>Adicione ampla apenas depois de ter dados suficientes e com Smart Bidding ativo</li>
+  <li>Nunca misture todos os tipos no mesmo ad group — dificulta a análise</li>
+</ul>`,
+      en:`<strong>Match types</strong> control which searches trigger your ads — the wrong choice can waste budget or miss customers.<br><br>
+<strong>1. Exact Match <code>[keyword]</code>:</strong>
+<ul>
+  <li>Ad appears only when search is exactly the keyword (or very close variations: plurals, typos, word reordering without meaning change)</li>
+  <li>Lowest volume, highest precision, highest CTR, least wasted CPC</li>
+  <li>Use for: high-conversion keywords you already know, branded terms, specific products</li>
+</ul>
+<strong>2. Phrase Match <code>"keyword"</code>:</strong>
+<ul>
+  <li>Ad appears when search contains keyword as part of a phrase, preserving meaning</li>
+  <li>Medium volume, medium precision — good balance for most cases</li>
+</ul>
+<strong>3. Broad Match <code>keyword</code> (no symbols):</strong>
+<ul>
+  <li>Ad can appear for related searches, synonyms, related topics — Google decides</li>
+  <li>Highest volume, lowest precision — can generate lots of irrelevant traffic</li>
+  <li>Use only with Smart Bidding and budget to absorb unwanted traffic + well-configured negatives</li>
+</ul>
+<strong>Recommended practical strategy:</strong>
+<ul>
+  <li>Start with <strong>exact and phrase</strong> for control</li>
+  <li>Monitor Search Terms Report daily and add negatives</li>
+  <li>Add broad only after having sufficient data with active Smart Bidding</li>
+</ul>`,
+      es:`Los <strong>tipos de concordancia</strong> controlan qué búsquedas activan tus anuncios.<br><br>
+<strong>1. Concordancia Exacta <code>[palabra clave]</code>:</strong>
+<ul>
+  <li>El anuncio aparece solo cuando la búsqueda es exactamente la keyword (o variaciones muy cercanas)</li>
+  <li>Menor volumen, mayor precisión, mayor CTR, menor CPC desperdiciado</li>
+  <li>Usar para: keywords de alta conversión, términos de marca, productos específicos</li>
+</ul>
+<strong>2. Concordancia de Frase <code>"palabra clave"</code>:</strong>
+<ul>
+  <li>El anuncio aparece cuando la búsqueda contiene la keyword como parte de una frase, preservando el significado</li>
+  <li>Volumen medio, precisión media — buen equilibrio para la mayoría de los casos</li>
+</ul>
+<strong>3. Concordancia Amplia <code>palabra clave</code> (sin símbolos):</strong>
+<ul>
+  <li>El anuncio puede aparecer para búsquedas relacionadas, sinónimos, temas relacionados — Google decide</li>
+  <li>Mayor volumen, menor precisión — puede generar mucho tráfico irrelevante</li>
+  <li>Usar solo con Smart Bidding y negativos bien configurados</li>
+</ul>
+<strong>Estrategia práctica recomendada:</strong>
+<ul>
+  <li>Comenzar con <strong>exacta y frase</strong> para tener control</li>
+  <li>Monitorear el Informe de Términos de Búsqueda diariamente y agregar negativos</li>
+</ul>`,
+    },
+    tags:['Google-Ads','correspondência','match-type','exata','frase','ampla','keywords','negativos'],
+  },
+  {
+    q:{pt:'O que são palavras-chave negativas e por que são essenciais no Search?',en:'What are negative keywords and why are they essential in Search?',es:'¿Qué son las palabras clave negativas y por qué son esenciales en Search?'},
+    a:{
+      pt:`<strong>Palavras-chave negativas</strong> excluem buscas que você NÃO quer que ativem seus anúncios — essenciais para evitar desperdício de budget e manter o tráfego relevante.<br><br>
+<strong>Por que são críticas:</strong>
+<ul>
+  <li>Sem negativos bem configurados, campanhas com correspondência ampla ou de frase podem mostrar anúncios para buscas completamente irrelevantes</li>
+  <li>Ex: campanha de "advogado trabalhista" sem negativos pode ativar para "série de advogado netflix" ou "jogo de advogado"</li>
+  <li>Cada clique irrelevante = budget desperdiçado + CTR baixo = Quality Score ruim</li>
+</ul>
+<strong>Tipos de correspondência de negativos:</strong>
+<ul>
+  <li><code>-palavra</code>: exclui buscas que contenham essa palavra em qualquer posição</li>
+  <li><code>-"frase negativa"</code>: exclui buscas que contenham exatamente essa sequência</li>
+  <li><code>-[exata negativa]</code>: exclui apenas buscas exatas para essa keyword</li>
+</ul>
+<strong>Categorias de negativos mais comuns:</strong>
+<ul>
+  <li><strong>Concorrentes gratuitos ou alternativos:</strong> "grátis", "gratuito", "free", "open source", "alternativa a"</li>
+  <li><strong>Busca por emprego (se você vende produto):</strong> "vaga", "emprego", "salário", "curriculo"</li>
+  <li><strong>Conteúdo informacional (se quer compra):</strong> "o que é", "como funciona", "definição", "wikipedia"</li>
+  <li><strong>Localização errada:</strong> se serve só BR, excluir países/cidades que aparecem nas buscas mas não atende</li>
+  <li><strong>Produtos que não vende:</strong> modelos ou variantes fora do seu catálogo</li>
+</ul>
+<strong>Como gerenciar negativos:</strong>
+<ul>
+  <li>Verificar o <strong>Relatório de Termos de Pesquisa</strong> (Keywords → Termos de pesquisa) pelo menos 2x/semana</li>
+  <li>Criar <strong>Lista de Negativos compartilhada</strong> (Biblioteca compartilhada → Listas de palavras-chave negativas) — aplica em múltiplas campanhas de uma vez</li>
+  <li>Adicionar negativos por campanha ou ad group conforme a especificidade da exclusão</li>
+</ul>`,
+      en:`<strong>Negative keywords</strong> exclude searches you do NOT want to trigger your ads — essential to avoid budget waste and maintain relevant traffic.<br><br>
+<strong>Why they're critical:</strong>
+<ul>
+  <li>Without well-configured negatives, broad or phrase match campaigns can show ads for completely irrelevant searches</li>
+  <li>E.g.: "employment lawyer" campaign without negatives may trigger for "lawyer TV series netflix" or "lawyer game"</li>
+  <li>Each irrelevant click = wasted budget + low CTR = poor Quality Score</li>
+</ul>
+<strong>Common negative categories:</strong>
+<ul>
+  <li>Free/alternative seekers: "free", "open source", "alternative to"</li>
+  <li>Job seekers: "job", "salary", "resume", "vacancy"</li>
+  <li>Informational searches (if you want purchases): "what is", "how does it work", "definition", "wikipedia"</li>
+  <li>Products you don't sell: models or variants outside your catalog</li>
+</ul>
+<strong>How to manage negatives:</strong>
+<ul>
+  <li>Check <strong>Search Terms Report</strong> at least 2x/week</li>
+  <li>Create <strong>Shared Negative Lists</strong> (Shared library → Negative keyword lists) — applies across multiple campaigns</li>
+</ul>`,
+      es:`Las <strong>palabras clave negativas</strong> excluyen búsquedas que NO quieres que activen tus anuncios.<br><br>
+<strong>Por qué son críticas:</strong>
+<ul>
+  <li>Sin negativos bien configurados, las campañas pueden mostrar anuncios para búsquedas completamente irrelevantes</li>
+  <li>Cada clic irrelevante = presupuesto desperdiciado + CTR bajo = peor Quality Score</li>
+</ul>
+<strong>Categorías de negativos más comunes:</strong>
+<ul>
+  <li>Búsquedas de gratuidad: "gratis", "free", "alternativa a"</li>
+  <li>Búsquedas de empleo: "trabajo", "salario", "currículum"</li>
+  <li>Contenido informacional: "qué es", "cómo funciona", "definición", "wikipedia"</li>
+  <li>Productos que no vendes</li>
+</ul>
+<strong>Cómo gestionar negativos:</strong>
+<ul>
+  <li>Revisar el <strong>Informe de Términos de Búsqueda</strong> al menos 2 veces/semana</li>
+  <li>Crear <strong>Listas de Negativos compartidas</strong> — se aplica en múltiplas campañas a la vez</li>
+</ul>`,
+    },
+    tags:['Google-Ads','negativos','Search','keywords','Quality-Score','budget','Search-Terms-Report'],
+  },
+  {
+    q:{pt:'O que é Quality Score no Google Ads e como melhorá-lo?',en:'What is Quality Score in Google Ads and how to improve it?',es:'¿Qué es el Quality Score en Google Ads y cómo mejorarlo?'},
+    a:{
+      pt:`O <strong>Quality Score (QS)</strong> é uma pontuação de 1-10 que o Google dá para cada palavra-chave, baseada na relevância do anúncio para a busca do usuário. Afeta diretamente o custo e a posição dos anúncios.<br><br>
+<strong>Os 3 componentes do Quality Score:</strong>
+<ul>
+  <li><strong>CTR Esperado (Expected CTR):</strong> com base no histórico da keyword, qual a probabilidade de alguém clicar no anúncio? Acima/Na Média/Abaixo da Média</li>
+  <li><strong>Relevância do Anúncio (Ad Relevance):</strong> o anúncio corresponde à intenção da busca? A keyword aparece no título e descrição?</li>
+  <li><strong>Experiência na Página de Destino (Landing Page Experience):</strong> a landing page é relevante, rápida e fácil de navegar? Contém o conteúdo prometido no anúncio?</li>
+</ul>
+<strong>Como o QS afeta os custos (Ad Rank):</strong>
+<ul>
+  <li><code>Ad Rank = Lance × Quality Score × Extensões e outros fatores</code></li>
+  <li>QS 10 pode pagar menos e aparecer em posição maior que concorrente com lance mais alto mas QS 4</li>
+  <li>Diferença de 1 ponto no QS pode reduzir o CPC real em 5-16%</li>
+</ul>
+<strong>Como melhorar o Quality Score:</strong>
+<ul>
+  <li><strong>Aumentar CTR:</strong> escrever anúncios mais atraentes, usar números/ofertas/USP, testar diferentes headlines</li>
+  <li><strong>Aumentar Relevância do Anúncio:</strong> incluir a keyword principal no headline 1, agrupar keywords por tema próximo (ad groups temáticos pequenos)</li>
+  <li><strong>Melhorar Landing Page:</strong> velocidade (Core Web Vitals), conteúdo relevante à keyword, CTA claro, mobile-friendly, HTTPS</li>
+  <li><strong>Estrutura de Ad Groups:</strong> SKAGs (Single Keyword Ad Groups) ou ad groups bem temáticos garantem máxima relevância anúncio-keyword</li>
+</ul>`,
+      en:`<strong>Quality Score (QS)</strong> is a 1-10 score Google gives to each keyword, based on ad relevance to the user's search. Directly affects cost and ad position.<br><br>
+<strong>The 3 Quality Score components:</strong>
+<ul>
+  <li><strong>Expected CTR:</strong> based on keyword history, what's the probability someone will click the ad?</li>
+  <li><strong>Ad Relevance:</strong> does the ad match the search intent? Does the keyword appear in title and description?</li>
+  <li><strong>Landing Page Experience:</strong> is the landing page relevant, fast and easy to navigate?</li>
+</ul>
+<strong>How QS affects costs (Ad Rank):</strong>
+<ul>
+  <li><code>Ad Rank = Bid × Quality Score × Extensions and other factors</code></li>
+  <li>QS 10 can pay less and appear higher than competitor with higher bid but QS 4</li>
+  <li>1 point difference in QS can reduce actual CPC by 5-16%</li>
+</ul>
+<strong>How to improve Quality Score:</strong>
+<ul>
+  <li>Increase CTR: more compelling ads, numbers/offers/USP, test different headlines</li>
+  <li>Increase Ad Relevance: include main keyword in headline 1, thematic ad groups</li>
+  <li>Improve Landing Page: speed, relevant content, clear CTA, mobile-friendly, HTTPS</li>
+</ul>`,
+      es:`El <strong>Quality Score (QS)</strong> es una puntuación de 1-10 que Google da a cada palabra clave, basada en la relevancia del anuncio para la búsqueda del usuario. Afecta directamente el coste y la posición de los anuncios.<br><br>
+<strong>Los 3 componentes del Quality Score:</strong>
+<ul>
+  <li><strong>CTR Esperado:</strong> ¿cuál es la probabilidad de que alguien haga clic en el anuncio?</li>
+  <li><strong>Relevancia del Anuncio:</strong> ¿el anuncio corresponde a la intención de la búsqueda?</li>
+  <li><strong>Experiencia en la Página de Destino:</strong> ¿la landing page es relevante, rápida y fácil de navegar?</li>
+</ul>
+<strong>Cómo el QS afecta los costes:</strong>
+<ul>
+  <li><code>Ad Rank = Puja × Quality Score × Extensiones y otros factores</code></li>
+  <li>QS 10 puede pagar menos y aparecer en posición mayor que un competidor con puja más alta pero QS 4</li>
+</ul>
+<strong>Cómo mejorar el Quality Score:</strong>
+<ul>
+  <li>Aumentar CTR: anuncios más atractivos, números/ofertas/USP</li>
+  <li>Aumentar Relevancia: incluir la keyword principal en el título 1, grupos de anuncios temáticos</li>
+  <li>Mejorar Landing Page: velocidad, contenido relevante, CTA claro, mobile-friendly, HTTPS</li>
+</ul>`,
+    },
+    tags:['Google-Ads','Quality-Score','CTR','Ad-Rank','landing-page','relevância','CPC'],
+  }
+);
+})();

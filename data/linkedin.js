@@ -1152,3 +1152,174 @@ d.tiers[0].questions.push(
 
 // ──────────────────────────────────────────────────────────────
 })();
+
+;(function(){
+const d = window.__adopsData['linkedin'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha no LinkedIn Campaign Manager?',en:'Step by step: how to create a campaign in LinkedIn Campaign Manager?',es:'Paso a paso: ¿cómo crear una campaña en LinkedIn Campaign Manager?'},
+    a:{
+      pt:`<strong>Pré-requisitos:</strong>
+<ul>
+  <li>Página de empresa no LinkedIn criada</li>
+  <li>Conta de anúncios criada em <strong>linkedin.com/campaignmanager</strong></li>
+  <li>Método de pagamento adicionado</li>
+  <li>LinkedIn Insight Tag instalada no site (para conversões e retargeting)</li>
+</ul>
+<strong>Estrutura do LinkedIn Campaign Manager:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign Group (agrupa campanhas por objetivo/período)
+  └── Campaign (targeting + formato + budget)
+        └── Ad (criativo)</pre>
+<strong>Passo 1 — Criar Campaign Group:</strong>
+<ol>
+  <li>Clique em <strong>+ Criar → Campaign Group</strong></li>
+  <li>Nome: ex: <code>Grupo_Awareness_Q3-2025</code></li>
+  <li>Status: Ativo</li>
+  <li>Orçamento e datas do grupo (opcional — pode deixar no nível de campanha)</li>
+</ol>
+<strong>Passo 2 — Criar Campaign (dentro do grupo):</strong>
+<ol>
+  <li>Objetivo: Awareness (Reconhecimento de marca), Consideração (Visitas ao site, Engajamento, Visualizações de vídeo, Geração de leads) ou Conversões (Conversões no site, Candidatos a vagas)</li>
+  <li>Nome: ex: <code>Decision-Makers_TI_SP_Lead-Gen_Ago25</code></li>
+  <li><strong>Audience (Público-alvo):</strong>
+    <ul>
+      <li>Localização: Brasil, São Paulo, etc.</li>
+      <li>Segmentação profissional:
+        <ul>
+          <li>Cargo: "IT Manager", "CTO", "Head of Technology"</li>
+          <li>Setor: "Tecnologia da Informação", "Serviços financeiros"</li>
+          <li>Tamanho da empresa: 200-10.000 funcionários</li>
+          <li>Habilidades: "Cloud Computing", "Cybersecurity"</li>
+          <li>Nível de senioridade: Diretor, Gerente, C-suite</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Formato do anúncio:</strong> Single Image Ad, Video Ad, Carousel, Document Ad, Message Ad, Lead Gen Form</li>
+  <li><strong>Orçamento:</strong> diário (mínimo ~R$25/dia) ou total</li>
+  <li><strong>Lance:</strong> automático (recomendado) ou manual (CPC, CPM, CPV)</li>
+</ol>
+<strong>Passo 3 — Criar Ad (criativo):</strong>
+<ol>
+  <li>Selecione ou crie um anúncio</li>
+  <li>Headline: até 150 caracteres</li>
+  <li>Texto introdutório: até 600 caracteres</li>
+  <li>Imagem: 1200×627px recomendado</li>
+  <li>URL de destino com UTM parameters</li>
+  <li>CTA: "Saiba mais", "Baixar", "Inscreva-se", "Obter orçamento"</li>
+</ol>
+<strong>Passo 4 — Revisar e Lançar:</strong>
+<ol>
+  <li>Revisar targeting e estimativa de alcance (mínimo recomendado: 50.000 pessoas)</li>
+  <li>Salvar e Lançar — aprovação em até 24h</li>
+</ol>`,
+      en:`<strong>Prerequisites:</strong>
+<ul>
+  <li>Company LinkedIn Page created</li>
+  <li>Ad account created at <strong>linkedin.com/campaignmanager</strong></li>
+  <li>Payment method added</li>
+  <li>LinkedIn Insight Tag installed on site</li>
+</ul>
+<strong>LinkedIn Campaign Manager structure:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign Group → Campaign (targeting + format + budget) → Ad (creative)</pre>
+<strong>Step 1 — Create Campaign Group:</strong> name, status, optional budget/dates.<br><br>
+<strong>Step 2 — Create Campaign:</strong>
+<ol>
+  <li>Objective: Awareness, Consideration or Conversions</li>
+  <li>Audience: location + professional targeting (job title, industry, company size, skills, seniority)</li>
+  <li>Ad format: Single Image, Video, Carousel, Document, Message Ad, Lead Gen Form</li>
+  <li>Budget: daily (minimum ~$5/day) or total</li>
+  <li>Bid: automatic (recommended) or manual</li>
+</ol>
+<strong>Step 3 — Create Ad:</strong> headline (150 chars), intro text (600 chars), image (1200×627px), destination URL with UTMs, CTA.<br><br>
+<strong>Step 4 — Review and Launch:</strong> check audience estimate (minimum 50,000 people recommended). Approval up to 24h.`,
+      es:`<strong>Prerequisitos:</strong>
+<ul>
+  <li>Página de empresa en LinkedIn creada</li>
+  <li>Cuenta de anuncios creada en <strong>linkedin.com/campaignmanager</strong></li>
+  <li>Método de pago agregado</li>
+  <li>LinkedIn Insight Tag instalada en el sitio</li>
+</ul>
+<strong>Estructura de LinkedIn Campaign Manager:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign Group → Campaign (targeting + formato + presupuesto) → Ad (creativo)</pre>
+<strong>Paso 2 — Crear Campaign:</strong>
+<ol>
+  <li>Objetivo: Awareness, Consideración o Conversiones</li>
+  <li>Audiencia: ubicación + segmentación profesional (cargo, sector, tamaño de empresa, habilidades, antigüedad)</li>
+  <li>Formato del anuncio: Single Image, Video, Carousel, Document, Message Ad, Lead Gen Form</li>
+  <li>Presupuesto: diario (mínimo ~R$25/día) o total</li>
+</ol>
+<strong>Paso 3 — Crear Ad:</strong> titular (150 caracteres), texto introductorio (600 caracteres), imagen (1200×627px), URL de destino con UTMs, CTA.<br><br>
+<strong>Paso 4 — Revisar y Lanzar:</strong> verificar estimativa de alcance (mínimo recomendado: 50.000 personas). Aprobación en hasta 24h.`,
+    },
+    tags:['LinkedIn','Campaign-Manager','passo-a-passo','targeting','Lead-Gen-Form','B2B','campanha'],
+  },
+  {
+    q:{pt:'O que é o LinkedIn Insight Tag e como funciona?',en:'What is LinkedIn Insight Tag and how does it work?',es:'¿Qué es el LinkedIn Insight Tag y cómo funciona?'},
+    a:{
+      pt:`O <strong>LinkedIn Insight Tag</strong> é o pixel do LinkedIn — um snippet JavaScript instalado no site que permite rastrear visitas, mensurar conversões de campanhas e criar audiências de retargeting.<br><br>
+<strong>O que o Insight Tag faz:</strong>
+<ul>
+  <li>Rastreia quais páginas do site os usuários visitam</li>
+  <li>Identifica se os visitantes são membros do LinkedIn (via cookie) — sem expor dados pessoais</li>
+  <li>Registra conversões: formulários preenchidos, compras, cadastros após clique/visualização de anúncio</li>
+  <li>Gera <strong>Website Demographics:</strong> relatório que mostra o perfil profissional (cargo, setor, tamanho de empresa) dos visitantes do seu site — mesmo sem campanha ativa</li>
+</ul>
+<strong>Como instalar:</strong>
+<ol>
+  <li>No Campaign Manager → <strong>Ativos da conta → Insight Tag</strong></li>
+  <li>Copie o código JavaScript</li>
+  <li>Cole antes do fechamento do <code>&lt;/body&gt;</code> em todas as páginas</li>
+  <li>Ou instale via GTM: Tag Custom HTML, disparo All Pages</li>
+  <li>Verificar: Campaign Manager → Insight Tag → status "Ativo" (pode demorar 24h para confirmar)</li>
+</ol>
+<strong>Configurar Conversões:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Ativos da conta → Conversões → Criar conversão</strong></li>
+  <li>Definir: nome, tipo (Download, Lead, Compra, etc.), valor (opcional), janela de atribuição</li>
+  <li>Método de rastreamento: URL (dispara quando usuário visita URL específica — ex: /obrigado) ou por evento JavaScript</li>
+  <li>Associar à campanha no momento da criação</li>
+</ol>
+<strong>Criar Website Retargeting Audience:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Audiences → Criar audience → Retargeting → Website</strong></li>
+  <li>Selecionar: todos os visitantes, visitantes de URL específica, ou baseado em tempo na página</li>
+  <li>Janela: últimos 30, 90 ou 180 dias</li>
+  <li>Mínimo de 300 membros para ativar o targeting</li>
+</ol>`,
+      en:`The <strong>LinkedIn Insight Tag</strong> is LinkedIn's pixel — a JavaScript snippet installed on site that enables tracking visits, measuring campaign conversions and creating retargeting audiences.<br><br>
+<strong>What Insight Tag does:</strong>
+<ul>
+  <li>Tracks which site pages users visit</li>
+  <li>Identifies if visitors are LinkedIn members</li>
+  <li>Records conversions after ad click/view</li>
+  <li>Generates <strong>Website Demographics:</strong> report showing professional profile (job title, industry, company size) of site visitors</li>
+</ul>
+<strong>How to install:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Account assets → Insight Tag</strong></li>
+  <li>Copy JavaScript code → paste before <code>&lt;/body&gt;</code> on all pages, or install via GTM</li>
+  <li>Verify: status "Active" (may take 24h)</li>
+</ol>
+<strong>Configure Conversions:</strong> Account assets → Conversions → Create conversion → define name, type, attribution window, tracking method (URL or JavaScript event).<br><br>
+<strong>Create Website Retargeting Audience:</strong> minimum 300 members to activate targeting.`,
+      es:`El <strong>LinkedIn Insight Tag</strong> es el píxel de LinkedIn — un snippet JavaScript instalado en el sitio que permite rastrear visitas, medir conversiones y crear audiencias de retargeting.<br><br>
+<strong>Qué hace el Insight Tag:</strong>
+<ul>
+  <li>Rastrea qué páginas del sitio visitan los usuarios</li>
+  <li>Identifica si los visitantes son miembros de LinkedIn</li>
+  <li>Registra conversiones tras clic/visualización de anuncio</li>
+  <li>Genera <strong>Website Demographics:</strong> informe con el perfil profesional (cargo, sector, tamaño de empresa) de los visitantes del sitio</li>
+</ul>
+<strong>Cómo instalar:</strong>
+<ol>
+  <li>Campaign Manager → <strong>Activos de la cuenta → Insight Tag</strong></li>
+  <li>Copiar el código → pegar antes del cierre del <code>&lt;/body&gt;</code>, o instalar via GTM</li>
+</ol>
+<strong>Configurar Conversiones:</strong> Activos de la cuenta → Conversiones → Crear conversión → nombre, tipo, ventana de atribución, método de rastreo.<br><br>
+<strong>Crear Audience de Retargeting:</strong> mínimo 300 miembros para activar el targeting.`,
+    },
+    tags:['LinkedIn','Insight-Tag','pixel','conversão','retargeting','Website-Demographics','GTM'],
+  }
+);
+})();

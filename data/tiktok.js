@@ -620,3 +620,111 @@ d.tiers[2].questions.push(
   }
 );
 })();
+
+;(function(){
+const d = window.__adopsData['tiktok'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha no TikTok Ads Manager?',en:'Step by step: how to create a campaign in TikTok Ads Manager?',es:'Paso a paso: ¿cómo crear una campaña en TikTok Ads Manager?'},
+    a:{
+      pt:`<strong>Pré-requisitos:</strong>
+<ul>
+  <li>Conta de negócios no TikTok Ads Manager (<strong>ads.tiktok.com</strong>)</li>
+  <li>Método de pagamento adicionado</li>
+  <li>TikTok Pixel instalado (para campanhas de conversão)</li>
+  <li>Criativo em formato vertical 9:16 pronto</li>
+</ul>
+<strong>Estrutura do TikTok Ads:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign (objetivo + budget da campanha)
+  └── Ad Group (targeting + budget + período)
+        └── Ad (criativo)</pre>
+<strong>Passo 1 — Criar Campaign:</strong>
+<ol>
+  <li>Acesse o TikTok Ads Manager → <strong>+ Criar</strong></li>
+  <li>Objetivo:
+    <ul>
+      <li>Awareness: Alcance</li>
+      <li>Consideração: Tráfego, Visualizações de vídeo, Interação com o perfil</li>
+      <li>Conversão: Geração de leads, Promoção de app, Conversões de site, Vendas de catálogo</li>
+    </ul>
+  </li>
+  <li>Nome: ex: <code>TT_Conversao_Produto_BR_Ago25</code></li>
+  <li>Orçamento da campanha: ativar se quiser limite total (ou definir no Ad Group)</li>
+</ol>
+<strong>Passo 2 — Criar Ad Group:</strong>
+<ol>
+  <li>Nome: ex: <code>AdGroup_Prospecting_18-34_BR</code></li>
+  <li>Locais de promoção: TikTok (recomendado) — ou adicionar Pangle/outros apps da rede</li>
+  <li><strong>Targeting:</strong>
+    <ul>
+      <li>Localização: Brasil</li>
+      <li>Idioma: Português</li>
+      <li>Idade: ex 18-34</li>
+      <li>Gênero: todos ou específico</li>
+      <li>Interesses e comportamentos: selecionar categorias relevantes</li>
+      <li>Expansão de público: ativar para o TikTok expandir automaticamente</li>
+    </ul>
+  </li>
+  <li><strong>Orçamento do Ad Group:</strong> diário (mínimo R$50/dia) ou total do período</li>
+  <li><strong>Período:</strong> data início e fim</li>
+  <li><strong>Otimização:</strong> selecionar o evento de otimização (ex: Compra, Lead) e o Pixel correto</li>
+  <li><strong>Lance:</strong> custo mais baixo (automático) ou lance limite</li>
+</ol>
+<strong>Passo 3 — Criar Ad (criativo):</strong>
+<ol>
+  <li>Nome: ex: <code>Video_Hook_Produto_v1</code></li>
+  <li>Identidade: selecione a conta TikTok da marca</li>
+  <li>Upload do vídeo (9:16, mínimo 5s, máximo 60s para In-Feed)</li>
+  <li>Texto do anúncio: até 100 caracteres</li>
+  <li>CTA: "Compre agora", "Saiba mais", "Baixar app", etc.</li>
+  <li>URL de destino com UTM parameters</li>
+</ol>
+<strong>Passo 4 — Publicar:</strong>
+<ol>
+  <li>Revisar tudo → <strong>Enviar</strong></li>
+  <li>Status: Em revisão → Ativo (aprovação: geralmente 1-2 horas, máximo 24h)</li>
+  <li>Nas primeiras horas: verificar se impressões iniciaram e o vídeo está renderizando corretamente</li>
+</ol>`,
+      en:`<strong>Prerequisites:</strong>
+<ul>
+  <li>Business account at TikTok Ads Manager (<strong>ads.tiktok.com</strong>)</li>
+  <li>Payment method added</li>
+  <li>TikTok Pixel installed (for conversion campaigns)</li>
+  <li>Vertical 9:16 creative ready</li>
+</ul>
+<strong>TikTok Ads structure:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign → Ad Group (targeting + budget) → Ad (creative)</pre>
+<strong>Step 1 — Create Campaign:</strong> objective (Awareness/Consideration/Conversion), name, optional campaign budget.<br><br>
+<strong>Step 2 — Create Ad Group:</strong>
+<ol>
+  <li>Promotion locations: TikTok (recommended)</li>
+  <li>Targeting: location, language, age, gender, interests & behaviors, audience expansion</li>
+  <li>Budget: daily (minimum ~$10/day) or total period</li>
+  <li>Optimization event: select event (e.g. Purchase) and correct Pixel</li>
+  <li>Bid: lowest cost (automatic) or bid cap</li>
+</ol>
+<strong>Step 3 — Create Ad:</strong> upload video (9:16, 5-60s), ad text (100 chars), CTA, destination URL with UTMs.<br><br>
+<strong>Step 4 — Publish:</strong> Review → Submit. Approval: usually 1-2 hours, max 24h.`,
+      es:`<strong>Prerequisitos:</strong>
+<ul>
+  <li>Cuenta de negocio en TikTok Ads Manager (<strong>ads.tiktok.com</strong>)</li>
+  <li>Método de pago agregado</li>
+  <li>TikTok Pixel instalado</li>
+  <li>Creativo vertical 9:16 listo</li>
+</ul>
+<strong>Estructura de TikTok Ads:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign → Ad Group (targeting + presupuesto) → Ad (creativo)</pre>
+<strong>Paso 2 — Crear Ad Group:</strong>
+<ol>
+  <li>Targeting: ubicación, idioma, edad, género, intereses y comportamientos</li>
+  <li>Presupuesto: diario (mínimo R$50/día) o total del período</li>
+  <li>Optimización: seleccionar evento (ej: Compra) y Pixel correcto</li>
+  <li>Puja: costo más bajo (automático) o límite de puja</li>
+</ol>
+<strong>Paso 3 — Crear Ad:</strong> subir video (9:16, 5-60s), texto del anuncio (100 caracteres), CTA, URL de destino con UTMs.<br><br>
+<strong>Paso 4 — Publicar:</strong> Revisar → Enviar. Aprobación: generalmente 1-2 horas, máximo 24h.`,
+    },
+    tags:['TikTok','passo-a-passo','campanha','Ad-Group','targeting','criativo','conversão','Pixel'],
+  }
+);
+})();

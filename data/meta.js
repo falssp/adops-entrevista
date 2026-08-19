@@ -596,3 +596,207 @@ d.tiers[2].questions.push(
   }
 );
 })();
+
+;(function(){
+const d = window.__adopsData['meta'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha de conversão no Meta Ads Manager do zero?',en:'Step by step: how to create a conversion campaign in Meta Ads Manager from scratch?',es:'Paso a paso: ¿cómo crear una campaña de conversión en Meta Ads Manager desde cero?'},
+    a:{
+      pt:`<strong>Pré-requisitos antes de criar:</strong>
+<ul>
+  <li>Business Manager criado e verificado</li>
+  <li>Conta de anúncios ativa com método de pagamento</li>
+  <li>Meta Pixel instalado no site com evento de conversão configurado (ex: Purchase)</li>
+  <li>Page do Facebook e/ou conta do Instagram vinculadas</li>
+</ul>
+<strong>Passo 1 — Criar a Campanha:</strong>
+<ol>
+  <li>Acesse <strong>Ads Manager → + Criar</strong></li>
+  <li>Objetivo: selecione <strong>"Vendas"</strong> (para conversão no site)</li>
+  <li>Nome da campanha: use naming convention padrão (ex: <code>Marca_Produto_Conversão_Ago25</code>)</li>
+  <li>Advantage Campaign Budget: opcional — ativa o CBO (Meta distribui o budget entre Ad Sets)</li>
+  <li>Limite de gasto da campanha: opcional — útil para controlar gasto máximo total</li>
+  <li>Clique em <strong>Avançar</strong></li>
+</ol>
+<strong>Passo 2 — Criar o Conjunto de Anúncios (Ad Set):</strong>
+<ol>
+  <li>Nome do Ad Set: ex: <code>Prospecting_Lookalike_1pct_BR</code></li>
+  <li><strong>Local de conversão:</strong> selecione "Site"</li>
+  <li><strong>Evento de desempenho:</strong> selecione o evento do Pixel (ex: "Compra")</li>
+  <li><strong>Orçamento:</strong> diário (ex: R$100/dia) ou total do período</li>
+  <li><strong>Período:</strong> datas de início e fim</li>
+  <li><strong>Público:</strong>
+    <ul>
+      <li>Localização: Brasil</li>
+      <li>Idade: 25-54 (ajustar conforme produto)</li>
+      <li>Interesses: adicionar categorias relevantes OU usar Advantage+ Audience (automático)</li>
+    </ul>
+  </li>
+  <li><strong>Placements:</strong> Posicionamentos Advantage+ (recomendado) — Meta decide onde entregar</li>
+  <li>Clique em <strong>Avançar</strong></li>
+</ol>
+<strong>Passo 3 — Criar o Anúncio (Ad):</strong>
+<ol>
+  <li>Nome do anúncio: ex: <code>Video_30s_OfertaVerao_v1</code></li>
+  <li>Identidade: selecione a Page e a conta do Instagram</li>
+  <li>Formato: Imagem, Vídeo ou Carrossel</li>
+  <li>Mídia: fazer upload do criativo</li>
+  <li>Texto principal: copy do anúncio</li>
+  <li>Headline: título em destaque</li>
+  <li>CTA: selecionar (ex: "Comprar agora", "Saiba mais")</li>
+  <li>URL do site: landing page com UTM parameters</li>
+  <li>Pixel: confirmar que o Pixel correto está selecionado</li>
+</ol>
+<strong>Passo 4 — Revisar e Publicar:</strong>
+<ol>
+  <li>Clique em <strong>"Publicar"</strong> — a campanha entra em análise (até 24h)</li>
+  <li>Acompanhar status: "Em análise" → "Ativo" → verificar se entrega está iniciando</li>
+  <li>Nas primeiras 24h: confirmar que impressões aparecem no dashboard</li>
+</ol>`,
+      en:`<strong>Prerequisites before creating:</strong>
+<ul>
+  <li>Business Manager created and verified</li>
+  <li>Active ad account with payment method</li>
+  <li>Meta Pixel installed with conversion event configured (e.g. Purchase)</li>
+  <li>Facebook Page and/or Instagram account linked</li>
+</ul>
+<strong>Step 1 — Create Campaign:</strong>
+<ol>
+  <li>Access <strong>Ads Manager → + Create</strong></li>
+  <li>Objective: select <strong>"Sales"</strong></li>
+  <li>Campaign name: use naming convention (e.g. <code>Brand_Product_Conversion_Aug25</code>)</li>
+  <li>Click <strong>Next</strong></li>
+</ol>
+<strong>Step 2 — Create Ad Set:</strong>
+<ol>
+  <li>Conversion location: "Website"</li>
+  <li>Performance goal: select Pixel event (e.g. "Purchase")</li>
+  <li>Budget: daily or total period</li>
+  <li>Audience: location, age, interests OR Advantage+ Audience</li>
+  <li>Placements: Advantage+ Placements (recommended)</li>
+</ol>
+<strong>Step 3 — Create Ad:</strong>
+<ol>
+  <li>Identity: select Page and Instagram account</li>
+  <li>Format: Image, Video or Carousel</li>
+  <li>Upload creative, add copy, headline, CTA</li>
+  <li>Website URL: landing page with UTM parameters</li>
+  <li>Confirm correct Pixel is selected</li>
+</ol>
+<strong>Step 4 — Review and Publish:</strong>
+<ol>
+  <li>Click <strong>"Publish"</strong> — enters review (up to 24h)</li>
+  <li>Monitor: "In Review" → "Active" → verify delivery is starting</li>
+</ol>`,
+      es:`<strong>Prerequisitos antes de crear:</strong>
+<ul>
+  <li>Business Manager creado y verificado</li>
+  <li>Cuenta de anuncios activa con método de pago</li>
+  <li>Meta Pixel instalado con evento de conversión configurado</li>
+  <li>Página de Facebook y/o cuenta de Instagram vinculadas</li>
+</ul>
+<strong>Paso 1 — Crear la Campaña:</strong>
+<ol>
+  <li>Accede a <strong>Ads Manager → + Crear</strong></li>
+  <li>Objetivo: selecciona <strong>"Ventas"</strong></li>
+  <li>Nombre: usa naming convention estándar</li>
+  <li>Haz clic en <strong>Siguiente</strong></li>
+</ol>
+<strong>Paso 2 — Crear el Conjunto de Anuncios:</strong>
+<ol>
+  <li>Lugar de conversión: "Sitio web"</li>
+  <li>Evento de rendimiento: selecciona el evento del Píxel (ej: "Compra")</li>
+  <li>Presupuesto: diario o total del período</li>
+  <li>Público: ubicación, edad, intereses O Advantage+ Audience</li>
+  <li>Placements: Advantage+ (recomendado)</li>
+</ol>
+<strong>Paso 3 — Crear el Anuncio:</strong>
+<ol>
+  <li>Identidad: selecciona la Página y la cuenta de Instagram</li>
+  <li>Formato: Imagen, Video o Carrusel</li>
+  <li>Subir creativo, agregar copy, headline, CTA</li>
+  <li>URL: landing page con parámetros UTM</li>
+</ol>
+<strong>Paso 4 — Publicar:</strong>
+<ol>
+  <li>Haz clic en <strong>"Publicar"</strong> — entra en revisión (hasta 24h)</li>
+  <li>Seguimiento: "En revisión" → "Activo" → verificar que la entrega está iniciando</li>
+</ol>`,
+    },
+    tags:['Meta','campanha','conversão','passo-a-passo','Ad-Set','Pixel','publicar','Ads-Manager'],
+  },
+  {
+    q:{pt:'Quais são as principais métricas do Meta Ads e o que cada uma significa?',en:'What are the main Meta Ads metrics and what does each one mean?',es:'¿Cuáles son las principales métricas de Meta Ads y qué significa cada una?'},
+    a:{
+      pt:`<strong>Métricas de entrega:</strong>
+<ul>
+  <li><strong>Alcance (Reach):</strong> número de pessoas únicas que viram seu anúncio pelo menos uma vez. Diferente de impressões — 1 pessoa vista 3x = 1 alcance, 3 impressões.</li>
+  <li><strong>Impressões:</strong> total de vezes que o anúncio foi exibido (inclui repetições para a mesma pessoa)</li>
+  <li><strong>Frequência:</strong> média de vezes que cada pessoa viu o anúncio. <code>Frequência = Impressões ÷ Alcance</code>. Acima de 3 em 7 dias = possível fadiga</li>
+  <li><strong>CPM (Custo por Mil Impressões):</strong> quanto custa atingir 1.000 pessoas. Sobe em períodos de alta concorrência (Black Friday, Natal)</li>
+</ul>
+<strong>Métricas de engajamento:</strong>
+<ul>
+  <li><strong>Cliques no link:</strong> cliques que levam para fora do Meta (landing page, app store). Diferente de "todos os cliques" que inclui curtidas, comentários</li>
+  <li><strong>CTR (Link):</strong> <code>Cliques no link ÷ Impressões × 100</code>. Benchmark: 0.5-2% para display/social</li>
+  <li><strong>CPC (Link):</strong> <code>Gasto ÷ Cliques no link</code>. Custo de cada visita ao site</li>
+  <li><strong>Taxa de reprodução de vídeo:</strong> % que assistiu 25%, 50%, 75%, 95%, 100% do vídeo</li>
+  <li><strong>ThruPlay:</strong> visualizações de 15s+ (ou vídeo completo se menor). Métrica principal para vídeo no Meta</li>
+</ul>
+<strong>Métricas de conversão:</strong>
+<ul>
+  <li><strong>Resultados:</strong> o evento principal otimizado (compras, leads, instalações)</li>
+  <li><strong>Custo por Resultado (CPA):</strong> <code>Gasto ÷ Resultados</code>. A métrica mais importante para campanhas de performance</li>
+  <li><strong>ROAS:</strong> <code>Receita atribuída ÷ Gasto em anúncios</code>. Benchmark varia por margem de produto — ROAS 3x é o mínimo comum</li>
+  <li><strong>Valor de conversão:</strong> receita total atribuída ao Meta na janela de atribuição configurada</li>
+</ul>
+<strong>Métricas de qualidade:</strong>
+<ul>
+  <li><strong>Pontuação de qualidade / Classificação de qualidade:</strong> Meta compara seu anúncio com anúncios similares em qualidade percebida, taxa de engajamento e conversão</li>
+  <li><strong>Diagnóstico de relevância do anúncio:</strong> Acima da média / Média / Abaixo da média para qualidade, engajamento e conversão</li>
+</ul>`,
+      en:`<strong>Delivery metrics:</strong>
+<ul>
+  <li><strong>Reach:</strong> unique people who saw your ad at least once. Different from impressions — 1 person seen 3x = 1 reach, 3 impressions.</li>
+  <li><strong>Impressions:</strong> total times ad was displayed (includes repetitions for same person)</li>
+  <li><strong>Frequency:</strong> average times each person saw the ad. <code>Frequency = Impressions ÷ Reach</code>. Above 3 in 7 days = possible fatigue</li>
+  <li><strong>CPM:</strong> cost to reach 1,000 people. Rises during high-competition periods</li>
+</ul>
+<strong>Engagement metrics:</strong>
+<ul>
+  <li><strong>Link Clicks:</strong> clicks leading outside Meta (landing page, app store)</li>
+  <li><strong>CTR (Link):</strong> benchmark: 0.5-2% for display/social</li>
+  <li><strong>CPC (Link):</strong> cost per site visit</li>
+  <li><strong>ThruPlay:</strong> 15s+ views (or complete video if shorter). Main video metric on Meta</li>
+</ul>
+<strong>Conversion metrics:</strong>
+<ul>
+  <li><strong>Results:</strong> main optimized event (purchases, leads, installs)</li>
+  <li><strong>Cost per Result (CPA):</strong> most important metric for performance campaigns</li>
+  <li><strong>ROAS:</strong> <code>Attributed revenue ÷ Ad spend</code>. ROAS 3x is common minimum</li>
+</ul>`,
+      es:`<strong>Métricas de entrega:</strong>
+<ul>
+  <li><strong>Alcance:</strong> personas únicas que vieron tu anuncio al menos una vez</li>
+  <li><strong>Impresiones:</strong> total de veces que el anuncio fue mostrado</li>
+  <li><strong>Frecuencia:</strong> <code>Impresiones ÷ Alcance</code>. Por encima de 3 en 7 días = posible fatiga</li>
+  <li><strong>CPM:</strong> costo por mil impresiones</li>
+</ul>
+<strong>Métricas de interacción:</strong>
+<ul>
+  <li><strong>Clics en el enlace:</strong> clics que llevan fuera de Meta (landing page, tienda de apps)</li>
+  <li><strong>CTR (enlace):</strong> benchmark: 0.5-2% para display/social</li>
+  <li><strong>ThruPlay:</strong> reproducciones de 15s+ (o video completo si es más corto)</li>
+</ul>
+<strong>Métricas de conversión:</strong>
+<ul>
+  <li><strong>Resultados:</strong> el evento principal optimizado</li>
+  <li><strong>Costo por Resultado (CPA):</strong> la métrica más importante para campañas de performance</li>
+  <li><strong>ROAS:</strong> <code>Ingresos atribuidos ÷ Gasto en anuncios</code></li>
+</ul>`,
+    },
+    tags:['Meta','métricas','CTR','CPM','CPA','ROAS','frequência','ThruPlay','alcance'],
+  }
+);
+})();

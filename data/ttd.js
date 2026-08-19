@@ -602,3 +602,92 @@ d.tiers[2].questions.push(
   }
 );
 })();
+
+;(function(){
+const d = window.__adopsData['ttd'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha no The Trade Desk?',en:'Step by step: how to create a campaign in The Trade Desk?',es:'Paso a paso: ¿cómo crear una campaña en The Trade Desk?'},
+    a:{
+      pt:`<strong>Estrutura do TTD:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Partner (agência)
+  └── Advertiser (anunciante)
+        └── Campaign
+              └── Ad Group (IO)
+                    └── Ad (Line Item) → Creative</pre>
+<strong>Passo 1 — Criar Campaign:</strong>
+<ol>
+  <li>Dentro do Advertiser → <strong>+ New Campaign</strong></li>
+  <li>Nome: ex: <code>Marca_Display_Prospecting_BR_Q3</code></li>
+  <li>Budget total da campanha e datas</li>
+  <li>Associar os Floodlight pixels de conversão (se linkado ao CM360)</li>
+</ol>
+<strong>Passo 2 — Criar Ad Group (Insertion Order):</strong>
+<ol>
+  <li>Dentro da Campaign → <strong>+ New Ad Group</strong></li>
+  <li>Nome: ex: <code>IO_Display_OpenAuction_R$30k</code></li>
+  <li>Canal: Display, Video, Audio, CTV, Native</li>
+  <li>Budget do Ad Group e período</li>
+  <li>Pacing: Even ou Front Loaded</li>
+  <li>KPI principal: CTR, CPA, ROAS, Viewability</li>
+</ol>
+<strong>Passo 3 — Criar Ad (Line Item):</strong>
+<ol>
+  <li>Dentro do Ad Group → <strong>+ New Ad</strong></li>
+  <li>Nome: ex: <code>LI_InMarket_Auto_SP_CPM25</code></li>
+  <li>Canal: Display</li>
+  <li>Budget do Line Item</li>
+  <li><strong>Targeting:</strong>
+    <ul>
+      <li>Geo: Brazil → São Paulo State</li>
+      <li>Device: Desktop + Mobile Web</li>
+      <li>Audience: Third-party data → selecionar segmentos (In-Market, Interest)</li>
+      <li>Brand Safety: ativar filtros (DV / IAS pre-bid se disponível)</li>
+      <li>Supply: Open Exchange ou Deal IDs específicos</li>
+      <li>Viewability target: Active View 50%+ por ≥1s</li>
+    </ul>
+  </li>
+  <li>Frequency: ex: 5 impressões/usuário/semana</li>
+  <li><strong>Bid:</strong> Dynamic CPM (Koa AI otimiza) ou Fixed CPM</li>
+  <li>Bid floor: CPM mínimo para qualidade de inventário</li>
+</ol>
+<strong>Passo 4 — Adicionar Criativos:</strong>
+<ol>
+  <li>No Line Item → aba Creatives → <strong>+ Add Creative</strong></li>
+  <li>Upload de HTML5 ou imagens estáticas (300×250, 728×90, 300×600, 320×50)</li>
+  <li>Ou fazer 3rd party ad call via tag do CM360</li>
+</ol>
+<strong>Passo 5 — Ativar:</strong>
+<ol>
+  <li>Mudar status do Ad Group e do Ad para <strong>Running</strong></li>
+  <li>Verificar nas primeiras horas: bid requests recebidos, win rate, impressões iniciando</li>
+</ol>`,
+      en:`<strong>TTD structure:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Partner → Advertiser → Campaign → Ad Group (IO) → Ad (Line Item) → Creative</pre>
+<strong>Step 1 — Create Campaign:</strong> name, total budget, dates, conversion pixels.<br><br>
+<strong>Step 2 — Create Ad Group (IO):</strong> channel (Display/Video/Audio/CTV/Native), budget, period, pacing, primary KPI.<br><br>
+<strong>Step 3 — Create Ad (Line Item):</strong>
+<ol>
+  <li>Channel, budget</li>
+  <li>Targeting: geo, device, audience (3rd party segments), brand safety, supply (open exchange or Deal IDs), viewability target</li>
+  <li>Frequency cap</li>
+  <li>Bid: Dynamic CPM (Koa AI) or Fixed CPM</li>
+</ol>
+<strong>Step 4 — Add Creatives:</strong> upload HTML5 or static images, or 3rd party ad call via CM360 tag.<br><br>
+<strong>Step 5 — Activate:</strong> change Ad Group and Ad status to Running. Monitor first hours: bid requests received, win rate, impressions starting.`,
+      es:`<strong>Estructura del TTD:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Partner → Advertiser → Campaign → Ad Group (IO) → Ad (Line Item) → Creative</pre>
+<strong>Paso 3 — Crear Ad (Line Item):</strong>
+<ol>
+  <li>Canal, presupuesto</li>
+  <li>Targeting: geo, dispositivo, audiencia (segmentos de 3rd party), brand safety, supply (open exchange o Deal IDs), target de viewability</li>
+  <li>Frequency cap</li>
+  <li>Puja: Dynamic CPM (Koa AI) o Fixed CPM</li>
+</ol>
+<strong>Paso 4 — Agregar Creativos:</strong> subir HTML5 o imágenes estáticas, o ad call de 3rd party via tag de CM360.<br><br>
+<strong>Paso 5 — Activar:</strong> cambiar estado del Ad Group y del Ad a Running.`,
+    },
+    tags:['TTD','Trade-Desk','passo-a-passo','campanha','Line-Item','Ad-Group','Koa-AI','targeting'],
+  }
+);
+})();

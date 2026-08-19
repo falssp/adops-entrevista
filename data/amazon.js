@@ -704,3 +704,91 @@ d.tiers[0].questions.push(
 
 // ──────────────────────────────────────────────────────────────
 })();
+
+;(function(){
+const d = window.__adopsData['amazon'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha de Sponsored Products na Amazon?',en:'Step by step: how to create a Sponsored Products campaign on Amazon?',es:'Paso a paso: ¿cómo crear una campaña de Sponsored Products en Amazon?'},
+    a:{
+      pt:`<strong>Pré-requisitos:</strong>
+<ul>
+  <li>Conta de vendedor na Amazon (Seller Central ou Vendor Central)</li>
+  <li>Produtos listados e elegíveis para anúncio (Buy Box ativa)</li>
+  <li>Brand Registry (recomendado para acesso a mais formatos)</li>
+</ul>
+<strong>Passo 1 — Acessar o Amazon Ads:</strong>
+<ol>
+  <li>No Seller Central → <strong>Advertising → Campaign Manager</strong></li>
+  <li>Ou acesse diretamente: <strong>advertising.amazon.com</strong></li>
+  <li>Clique em <strong>+ Criar campanha</strong> → <strong>Sponsored Products</strong></li>
+</ol>
+<strong>Passo 2 — Configurar a Campanha:</strong>
+<ol>
+  <li>Nome: ex: <code>SP_ProdutoX_Auto_Ago25</code></li>
+  <li>Datas: início e fim (ou sem fim definido)</li>
+  <li>Orçamento diário: ex: R$50/dia (mínimo R$1)</li>
+  <li>Estratégia de lances:
+    <ul>
+      <li><strong>Lances dinâmicos — somente redução:</strong> Amazon reduz o lance quando conversão é improvável</li>
+      <li><strong>Lances dinâmicos — aumento e redução:</strong> Amazon ajusta automaticamente para maximizar conversões</li>
+      <li><strong>Lance fixo:</strong> você define, Amazon não altera</li>
+    </ul>
+  </li>
+</ol>
+<strong>Passo 3 — Criar Grupo de Anúncios:</strong>
+<ol>
+  <li>Nome: ex: <code>Grupo_ProdutoX_Automatico</code></li>
+  <li>Selecionar produtos a anunciar (ASINs específicos)</li>
+  <li>Segmentação:
+    <ul>
+      <li><strong>Automática:</strong> Amazon define quais buscas ativam o anúncio. Ideal para começar — coleta dados. Subtipo: Close match, Loose match, Substitutos, Complementos</li>
+      <li><strong>Manual por palavras-chave:</strong> você define as keywords e tipos de correspondência (exata, frase, ampla)</li>
+      <li><strong>Manual por produto (ASIN targeting):</strong> anúncio aparece nas páginas de produtos específicos da Amazon</li>
+    </ul>
+  </li>
+</ol>
+<strong>Passo 4 — Definir lances e lançar:</strong>
+<ol>
+  <li>Lance sugerido pela Amazon: use como referência</li>
+  <li>Revisar → <strong>Lançar campanha</strong></li>
+  <li>Aprovação: geralmente imediata ou em até 1h</li>
+</ol>
+<strong>Monitoramento essencial:</strong>
+<ul>
+  <li>ACOS (Advertising Cost of Sales): <code>Gasto ÷ Receita atribuída × 100</code>. Meta: abaixo da sua margem</li>
+  <li>Para campanha automática: após 1-2 semanas, verificar o Relatório de Termos de Busca e migrar keywords performantes para campanha manual</li>
+</ul>`,
+      en:`<strong>Prerequisites:</strong>
+<ul>
+  <li>Amazon seller account (Seller Central or Vendor Central)</li>
+  <li>Products listed and eligible for advertising (active Buy Box)</li>
+</ul>
+<strong>Step 1 — Access Amazon Ads:</strong> Seller Central → Advertising → Campaign Manager → + Create campaign → Sponsored Products.<br><br>
+<strong>Step 2 — Configure Campaign:</strong> name, dates, daily budget, bid strategy (dynamic bids down only / up and down / fixed).<br><br>
+<strong>Step 3 — Create Ad Group:</strong>
+<ol>
+  <li>Select products to advertise (specific ASINs)</li>
+  <li>Targeting: Automatic (Amazon decides) or Manual keywords or Manual product (ASIN targeting)</li>
+</ol>
+<strong>Step 4 — Set bids and launch:</strong> use Amazon's suggested bid as reference → Launch. Approval: usually immediate.<br><br>
+<strong>Essential monitoring:</strong> ACOS = Spend ÷ Attributed revenue × 100. For auto campaigns: after 1-2 weeks, check Search Terms Report and migrate performing keywords to manual campaign.`,
+      es:`<strong>Prerequisitos:</strong>
+<ul>
+  <li>Cuenta de vendedor en Amazon (Seller Central o Vendor Central)</li>
+  <li>Productos listados y elegibles para anuncio (Buy Box activa)</li>
+</ul>
+<strong>Paso 1 — Acceder a Amazon Ads:</strong> Seller Central → Advertising → Campaign Manager → + Crear campaña → Sponsored Products.<br><br>
+<strong>Paso 2 — Configurar la Campaña:</strong> nombre, fechas, presupuesto diario, estrategia de pujas.<br><br>
+<strong>Paso 3 — Crear Grupo de Anuncios:</strong>
+<ol>
+  <li>Seleccionar productos a anunciar (ASINs específicos)</li>
+  <li>Segmentación: Automática (Amazon decide) o Manual por palabras clave o por ASIN</li>
+</ol>
+<strong>Paso 4 — Definir pujas y lanzar:</strong> usar la puja sugerida por Amazon como referencia → Lanzar.<br><br>
+<strong>Monitoreo esencial:</strong> ACOS = Gasto ÷ Ingresos atribuidos × 100. Para campaña automática: tras 1-2 semanas, verificar el Informe de Términos de Búsqueda y migrar keywords a campaña manual.`,
+    },
+    tags:['Amazon','Sponsored-Products','passo-a-passo','ASIN','ACOS','Auto','Manual','campanha'],
+  }
+);
+})();

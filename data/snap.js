@@ -547,3 +547,90 @@ d.tiers[2].questions.push(
   }
 );
 })();
+
+;(function(){
+const d = window.__adopsData['snap'];
+d.tiers[0].questions.push(
+  {
+    q:{pt:'Passo a passo: como criar uma campanha no Snapchat Ads Manager?',en:'Step by step: how to create a campaign in Snapchat Ads Manager?',es:'Paso a paso: ¿cómo crear una campaña en Snapchat Ads Manager?'},
+    a:{
+      pt:`<strong>Pré-requisitos:</strong>
+<ul>
+  <li>Conta de negócios no Snap (<strong>ads.snapchat.com</strong>)</li>
+  <li>Perfil público do Snapchat (para o anúncio ter identidade)</li>
+  <li>Snap Pixel instalado (para conversão e retargeting)</li>
+  <li>Criativo vertical 9:16 (imagem ou vídeo)</li>
+</ul>
+<strong>Estrutura do Snap Ads:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign (objetivo + budget da campanha)
+  └── Ad Set (targeting + budget + período + placement)
+        └── Ad (criativo)</pre>
+<strong>Passo 1 — Criar Campaign:</strong>
+<ol>
+  <li>Acesse Snap Ads Manager → <strong>+ Criar campanha</strong></li>
+  <li>Objetivo: Awareness (Reconhecimento de marca, Alcance), Consideração (Tráfego, Engajamento, Instalações de app, Visualizações de vídeo, Geração de leads), Conversões (Conversões no site, Vendas de catálogo)</li>
+  <li>Nome da campanha</li>
+  <li>Budget da campanha (opcional — pode definir por Ad Set)</li>
+</ol>
+<strong>Passo 2 — Criar Ad Set:</strong>
+<ol>
+  <li>Nome: ex: <code>AdSet_Prospecting_18-24_BR</code></li>
+  <li>Placements: automático (Stories, Feed, Spotlight) ou manual</li>
+  <li><strong>Audience:</strong>
+    <ul>
+      <li>Localização: Brasil</li>
+      <li>Idade: 13-17, 18-24, 25-34, etc. (Snap tem público jovem)</li>
+      <li>Gênero</li>
+      <li>Interesses e comportamentos</li>
+      <li>Custom Audiences (Snap Pixel visitors, Customer List)</li>
+    </ul>
+  </li>
+  <li>Orçamento: diário ou total</li>
+  <li>Período: início e fim</li>
+  <li>Otimização: Impressões, Swipe Ups, Visualizações de vídeo, Conversões (pixel)</li>
+  <li>Lance: automático (recomendado) ou manual</li>
+</ol>
+<strong>Passo 3 — Criar Ad:</strong>
+<ol>
+  <li>Formato: Single Image, Single Video, Story, Collection</li>
+  <li>Upload do criativo (9:16 obrigatório)</li>
+  <li>Headline: até 34 caracteres</li>
+  <li>Brand name: nome da marca</li>
+  <li>Call to action: "Deslize para cima", "Comprar", "Saiba mais"</li>
+  <li>URL de destino</li>
+</ol>
+<strong>Passo 4 — Publicar:</strong>
+<ol>
+  <li>Revisar → <strong>Publicar</strong></li>
+  <li>Aprovação: até 24h (geralmente mais rápido)</li>
+  <li>Monitorar nas primeiras horas: impressões e Swipe-Up Rate</li>
+</ol>`,
+      en:`<strong>Snapchat Ads structure:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign → Ad Set (targeting + budget + placement) → Ad (creative)</pre>
+<strong>Step 1 — Create Campaign:</strong> objective (Awareness/Consideration/Conversions), name, optional campaign budget.<br><br>
+<strong>Step 2 — Create Ad Set:</strong>
+<ol>
+  <li>Placements: automatic or manual</li>
+  <li>Audience: location, age (13+), gender, interests, Custom Audiences</li>
+  <li>Budget: daily or total</li>
+  <li>Optimization: Impressions, Swipe Ups, Video Views, Conversions (pixel)</li>
+  <li>Bid: automatic (recommended) or manual</li>
+</ol>
+<strong>Step 3 — Create Ad:</strong> format (Single Image/Video/Story/Collection), upload 9:16 creative, headline (34 chars), brand name, CTA, destination URL.<br><br>
+<strong>Step 4 — Publish:</strong> Review → Publish. Approval: up to 24h. Monitor first hours: impressions and Swipe-Up Rate.`,
+      es:`<strong>Estructura de Snap Ads:</strong>
+<pre style="background:#0a0c10;padding:12px;border-radius:6px;font-size:13px">Campaign → Ad Set (targeting + presupuesto + placement) → Ad (creativo)</pre>
+<strong>Paso 2 — Crear Ad Set:</strong>
+<ol>
+  <li>Placements: automático o manual</li>
+  <li>Audiencia: ubicación, edad (13+), género, intereses, Custom Audiences</li>
+  <li>Presupuesto: diario o total</li>
+  <li>Optimización: Impresiones, Swipe Ups, Vistas de video, Conversiones</li>
+</ol>
+<strong>Paso 3 — Crear Ad:</strong> formato (Single Image/Video/Story/Collection), subir creativo 9:16, titular (34 caracteres), nombre de marca, CTA, URL de destino.<br><br>
+<strong>Paso 4 — Publicar:</strong> Revisar → Publicar. Aprobación: hasta 24h.`,
+    },
+    tags:['Snapchat','passo-a-passo','campanha','Ad-Set','9:16','Swipe-Up','Pixel','Ads-Manager'],
+  }
+);
+})();
