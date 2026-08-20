@@ -263,7 +263,7 @@ let quizState = null;
 function loadQuizModule(callback) {
   if (window.__quizData) { if (callback) callback(); return; }
   const s = document.createElement('script');
-  s.src = 'data/quiz_certs.js?v=4';
+  s.src = 'data/quiz_certs.js?v=5';
   s.onload = () => { if (callback) callback(); };
   document.head.appendChild(s);
 }
