@@ -261,7 +261,7 @@ function collapseAll() { document.querySelectorAll('#main-content .q-card').forE
 let quizState = null;
 
 function loadQuizModule(callback) {
-  if (window.__quizData) { if (callback) callback(); return; }
+  if (window.__quizData && Object.keys(window.__quizData).length > 0) { if (callback) callback(); return; }
   const s = document.createElement('script');
   s.src = 'data/quiz_certs.js?v=5';
   s.onload = () => { if (callback) callback(); };
