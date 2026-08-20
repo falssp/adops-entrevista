@@ -256,3 +256,170 @@ function setLang(newLang) {
 function toggleQ(card) { card.classList.toggle('open'); }
 function expandAll()   { document.querySelectorAll('#main-content .q-card').forEach(c => c.classList.add('open')); }
 function collapseAll() { document.querySelectorAll('#main-content .q-card').forEach(c => c.classList.remove('open')); }
+
+// ── QUIZ MODE ────────────────────────────────────────────
+let quizState = null;
+
+function loadQuizModule(callback) {
+  if (window.__quizData) { if (callback) callback(); return; }
+  const s = document.createElement('script');
+  s.src = 'data/quiz_certs.js?v=4';
+  s.onload = () => { if (callback) callback(); };
+  document.head.appendChild(s);
+}
+
+function openQuizMenu() {
+  loadQuizModule(() => {
+    const main = document.getElementById('main-content');
+    const certs = Object.values(window.__quizData);
+    let html = `<div class="platform-header">
+      <div class="platform-icon">🎓</div>
+      <div>
+        <div class="platform-name">Simulados de Certificação</div>
+        <div class="platform-desc">Questões reais das provas — múltipla escolha com feedback imediato</div>
+      </div>
+    </div>
+    <div class="quiz-menu">`;
+    certs.forEach(c => {
+      html += `<div class="quiz-cert-card" onclick="startQuiz('${c.id}')">
+        <span class="quiz-cert-icon">${c.icon}</span>
+        <div>
+          <div class="quiz-cert-name">${c.cert}</div>
+          <div class="quiz-cert-meta">${c.source} • ${c.questions.length} questões</div>
+        </div>
+        <span class="quiz-start-btn">Iniciar →</span>
+      </div>`;
+    });
+    html += `</div>`;
+    main.innerHTML = html;
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('btn-quiz') && document.getElementById('btn-quiz').classList.add('active');
+  });
+}
+
+function startQuiz(certId) {
+  const cert = window.__quizData[certId];
+  const shuffled = [...cert.questions].sort(() => Math.random() - 0.5);
+  quizState = { cert, questions: shuffled, current: 0, score: 0, answers: [] };
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  const { questions, current, score, cert } = quizState;
+  const q = questions[current];
+  const total = questions.length;
+  const main = document.getElementById('main-content');
+  const pct = Math.round((current / total) * 100);
+  const isMulti = Array.isArray(q.correct);
+
+  let optHtml = q.options.map((opt, i) =>
+    `<div class="quiz-option" data-idx="${i}" onclick="selectOption(this, ${i})">${String.fromCharCode(65+i)}. ${opt}</div>`
+  ).join('');
+
+  main.innerHTML = `
+    <div class="quiz-header">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
+      <div class="quiz-meta"><span>${cert.icon} ${cert.cert}</span><span>${current + 1} / ${total}</span><span>✅ ${score}</span></div>
+    </div>
+    <div class="quiz-question-block">
+      <div class="quiz-q-text">${q.q}</div>
+      ${isMulti ? '<div class="quiz-hint">Selecione todas as corretas</div>' : ''}
+      <div class="quiz-options" id="quiz-opts">${optHtml}</div>
+      <div class="quiz-feedback" id="quiz-feedback" style="display:none"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn" id="btn-confirm" onclick="confirmAnswer()" disabled>Confirmar</button>
+      </div>
+    </div>`;
+
+  if (isMulti) {
+    document.querySelectorAll('.quiz-option').forEach(el => {
+      el.onclick = () => {
+        el.classList.toggle('selected');
+        document.getElementById('btn-confirm').disabled = document.querySelectorAll('.quiz-option.selected').length === 0;
+      };
+    });
+  }
+}
+
+function selectOption(el, idx) {
+  if (el.classList.contains('answered')) return;
+  const q = quizState.questions[quizState.current];
+  if (Array.isArray(q.correct)) return;
+  document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('btn-confirm').disabled = false;
+}
+
+function confirmAnswer() {
+  const q = quizState.questions[quizState.current];
+  const opts = document.querySelectorAll('.quiz-option');
+  const isMulti = Array.isArray(q.correct);
+  let isCorrect = false;
+
+  if (isMulti) {
+    const selected = [...document.querySelectorAll('.quiz-option.selected')].map(e => parseInt(e.dataset.idx));
+    const correctSet = [...q.correct].sort().join(',');
+    const selectedSet = selected.sort().join(',');
+    isCorrect = correctSet === selectedSet;
+    opts.forEach((el, i) => {
+      if (q.correct.includes(i)) el.classList.add('correct');
+      else if (selected.includes(i)) el.classList.add('incorrect');
+      el.style.pointerEvents = 'none';
+    });
+  } else {
+    const selected = document.querySelector('.quiz-option.selected');
+    if (!selected) return;
+    const idx = parseInt(selected.dataset.idx);
+    isCorrect = idx === q.correct;
+    opts.forEach((el, i) => {
+      if (i === q.correct) el.classList.add('correct');
+      else if (el.classList.contains('selected')) el.classList.add('incorrect');
+      el.style.pointerEvents = 'none';
+    });
+  }
+
+  if (isCorrect) quizState.score++;
+  quizState.answers.push({ q, isCorrect });
+
+  const fb = document.getElementById('quiz-feedback');
+  fb.style.display = 'block';
+  fb.className = `quiz-feedback ${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}`;
+  fb.innerHTML = `<strong>${isCorrect ? '✅ Correto!' : '❌ Incorreto'}</strong><br>${q.explanation}`;
+
+  const btn = document.getElementById('btn-confirm');
+  const isLast = quizState.current === quizState.questions.length - 1;
+  btn.textContent = isLast ? 'Ver Resultado' : 'Próxima →';
+  btn.onclick = isLast ? showQuizResult : nextQuestion;
+}
+
+function nextQuestion() {
+  quizState.current++;
+  renderQuizQuestion();
+}
+
+function showQuizResult() {
+  const { score, questions, cert, answers } = quizState;
+  const total = questions.length;
+  const pct = Math.round((score / total) * 100);
+  const passed = pct >= 80;
+  const main = document.getElementById('main-content');
+  let wrongHtml = answers.filter(a => !a.isCorrect).map(a =>
+    `<div class="result-wrong-item">
+      <div class="result-wrong-q">❌ ${a.q.q}</div>
+      <div class="result-wrong-exp">${a.q.explanation}</div>
+    </div>`
+  ).join('');
+
+  main.innerHTML = `
+    <div class="quiz-result">
+      <div class="result-score-circle ${passed ? 'passed' : 'failed'}">${pct}%</div>
+      <div class="result-title">${passed ? '🎉 Aprovado!' : '📚 Continue estudando'}</div>
+      <div class="result-detail">${score} de ${total} corretas • Mínimo para passar: 80%</div>
+      <div class="result-cert">${cert.icon} ${cert.cert}</div>
+      <div class="result-actions">
+        <button class="quiz-btn" onclick="startQuiz('${cert.id}')">🔄 Tentar novamente</button>
+        <button class="quiz-btn quiz-btn-secondary" onclick="openQuizMenu()">← Voltar ao menu</button>
+      </div>
+      ${wrongHtml ? `<div class="result-wrong"><h3>Questões erradas para revisar:</h3>${wrongHtml}</div>` : ''}
+    </div>`;
+}
