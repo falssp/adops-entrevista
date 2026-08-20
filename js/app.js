@@ -186,7 +186,7 @@ function loadPlatform(id) {
 function loadModuleData(id, callback) {
   if (loadedModules[id]) { if (callback) callback(); return; }
   const script = document.createElement('script');
-  script.src = PLATFORMS.find(p => p.id === id).file + '?v=4';
+  script.src = PLATFORMS.find(p => p.id === id).file + '?v=5';
   script.onload = () => {
     if (window.__adopsData && window.__adopsData[id]) loadedModules[id] = window.__adopsData[id];
     if (callback) callback();
@@ -263,7 +263,7 @@ let quizState = null;
 function loadQuizModule(callback) {
   if (window.__quizData && Object.keys(window.__quizData).length > 0) { if (callback) callback(); return; }
   const s = document.createElement('script');
-  s.src = 'data/quiz_certs.js?v=5';
+  s.src = 'data/quiz_certs.js?v=6';
   s.onload = () => { if (callback) callback(); };
   document.head.appendChild(s);
 }
