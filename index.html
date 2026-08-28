@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdOps Interview Kit — Interview Prep & Certification Practice</title>
+
+<!-- SEO -->
+<meta name="description" content="Free Ad Operations interview prep tool. 288 trilingual questions (PT/EN/ES) across 24 platforms + 340 real certification exam questions. CM360, DV360, Meta, GA4, TikTok, TTD and more.">
+<meta name="keywords" content="ad operations, adops, interview prep, certification, CM360, DV360, Meta Ads, Google Ads, programmatic, digital advertising">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="AdOps Interview Kit">
+<meta property="og:description" content="288 interview questions + 340 certification exam questions across 24 ad platforms. Free, trilingual (PT/EN/ES), open source.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://falssp.github.io/adops-interview-kit">
+<meta property="og:image" content="https://falssp.github.io/adops-interview-kit/og-image.svg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AdOps Interview Kit">
+<meta name="twitter:description" content="288 interview questions + 340 certification exam questions across 24 ad platforms. Free & open source.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="kit-header">
+  <div class="kit-brand">
+    <h1 class="kit-title">AdOps Interview Kit</h1>
+    <p class="kit-subtitle">
+      <span data-lang="pt">Guia de preparação para entrevistas em Ad Operations</span>
+      <span data-lang="en" style="display:none">Interview preparation guide for Ad Operations</span>
+      <span data-lang="es" style="display:none">Guía de preparación para entrevistas en Ad Operations</span>
+    </p>
+  </div>
+  <div class="kit-divider"></div>
+  <div class="kit-stats">
+    <div class="stat"><span class="stat-num" id="stat-platforms">24</span><span class="stat-label">Plataformas</span></div>
+    <div class="stat"><span class="stat-num" id="stat-questions">288</span><span class="stat-label">Perguntas</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Idiomas</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Níveis</span></div>
+  </div>
+</header>
+
+<!-- Barra unificada: idioma + busca + botões -->
+<div class="control-bar" id="control-bar">
+  <span class="lang-label">Idioma</span>
+  <div class="lang-btns">
+    <button class="lang-btn active" data-lang="pt" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+  </div>
+  <div class="bar-divider"></div>
+  <div class="bar-search">
+    <span class="bar-search-icon">🔍</span>
+    <input type="text" id="search-input" class="bar-search-input"
+      placeholder="Buscar em todas as plataformas..."
+      oninput="onSearchInput(this.value)"
+      onkeydown="if(event.key==='Escape')clearSearch()" />
+    <button class="bar-search-clear" id="search-clear" onclick="clearSearch()" style="display:none">✕</button>
+  </div>
+  <div class="bar-divider"></div>
+  <div class="global-btns">
+    <button class="global-btn quiz-mode-btn" id="btn-quiz" onclick="openQuizMenu()">🎓 Simulados</button>
+    <button class="global-btn" id="btn-expand"   onclick="expandAll()">▼ Expandir tudo</button>
+    <button class="global-btn" id="btn-collapse" onclick="collapseAll()">▲ Fechar tudo</button>
+  </div>
+</div>
+
+<div class="search-status-bar" id="search-status"></div>
+
+<nav class="platform-nav" id="platform-nav"></nav>
+
+<main class="main">
+  <div id="main-content"></div>
+</main>
+
+<script src="js/app.js?v=9"></script>
+</body>
+</html>

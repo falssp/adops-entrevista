@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#1a1f2e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Top accent line -->
+  <rect width="1200" height="4" fill="#4f8ef7"/>
+  
+  <!-- Main title -->
+  <text x="600" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">AdOps Interview Kit</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#8892a4" text-anchor="middle">Interview Prep · Certification Practice · Free &amp; Open Source</text>
+  
+  <!-- Stats row -->
+  <text x="250" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#4f8ef7" text-anchor="middle">24</text>
+  <text x="250" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#8892a4" text-anchor="middle">PLATFORMS</text>
+  
+  <text x="600" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#4f8ef7" text-anchor="middle">288</text>
+  <text x="600" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#8892a4" text-anchor="middle">INTERVIEW QUESTIONS</text>
+  
+  <text x="950" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#4f8ef7" text-anchor="middle">340</text>
+  <text x="950" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#8892a4" text-anchor="middle">EXAM QUESTIONS</text>
+  
+  <!-- Dividers -->
+  <line x1="420" y1="370" x2="420" y2="450" stroke="#2a3042" stroke-width="2"/>
+  <line x1="780" y1="370" x2="780" y2="450" stroke="#2a3042" stroke-width="2"/>
+  
+  <!-- Platform tags -->
+  <text x="600" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#4a5568" text-anchor="middle">CM360 · DV360 · Meta · GA4 · Google Ads · TikTok · LinkedIn · TTD · SA360 · and more</text>
+  
+  <!-- Language badges -->
+  <rect x="480" y="565" width="50" height="26" rx="4" fill="#1e40af" opacity="0.6"/>
+  <text x="505" y="583" font-family="system-ui" font-size="14" fill="white" text-anchor="middle">PT</text>
+  <rect x="545" y="565" width="50" height="26" rx="4" fill="#1e40af" opacity="0.6"/>
+  <text x="570" y="583" font-family="system-ui" font-size="14" fill="white" text-anchor="middle">EN</text>
+  <rect x="610" y="565" width="50" height="26" rx="4" fill="#1e40af" opacity="0.6"/>
+  <text x="635" y="583" font-family="system-ui" font-size="14" fill="white" text-anchor="middle">ES</text>
+</svg>
