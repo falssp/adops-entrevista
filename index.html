@@ -81,5 +81,36 @@
 </main>
 
 <script src="js/app.js?v=9"></script>
+
+<!-- Content Protection -->
+<script>
+(function() {
+  // Bloquear clique direito
+  document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+  // Bloquear seleção de texto por arrastar
+  document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+
+  // Bloquear Ctrl+S, Ctrl+U (view source), Ctrl+Shift+I (devtools), F12
+  document.addEventListener('keydown', function(e) {
+    if (
+      (e.ctrlKey && (e.key === 's' || e.key === 'S')) ||
+      (e.ctrlKey && (e.key === 'u' || e.key === 'U')) ||
+      (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I' || e.key === 'j' || e.key === 'J')) ||
+      e.key === 'F12'
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  // Bloquear drag de elementos
+  document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+
+  // Copyright no console
+  console.log('%c⛔ AdOps Interview Kit', 'color:#ef4444;font-size:20px;font-weight:bold');
+  console.log('%c© 2025 Todos os direitos reservados. Uso pessoal apenas.', 'color:#8892a4;font-size:13px');
+  console.log('%cReproduções não autorizadas estão sujeitas a medidas legais.', 'color:#8892a4;font-size:13px');
+})();
+</script>
 </body>
 </html>

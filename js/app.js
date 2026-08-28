@@ -1,3 +1,4 @@
+// © 2025 AdOps Interview Kit — Todos os direitos reservados. Reprodução proibida.
 // ── CONFIG ──────────────────────────────────────────────
 const PLATFORMS = [
   { id: 'amazon',       label: 'Amazon Ads',              icon: '📦', file: 'data/amazon.js'       },

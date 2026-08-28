@@ -1,3 +1,4 @@
+// © 2025 AdOps Interview Kit — Todos os direitos reservados. Reprodução proibida.
 // Módulo Quiz de Certificações — AdOps Interview Kit v2
 // Questões reais extraídas das provas públicas (geektonight.com)
 window.__quizData = window.__quizData || {};

@@ -1,3 +1,4 @@
+// © 2025 AdOps Interview Kit — Todos os direitos reservados. Reprodução proibida.
 // Módulo The Trade Desk — AdOps Interview Kit v2
 window.__adopsData = window.__adopsData || {};
 window.__adopsData['ttd'] = {

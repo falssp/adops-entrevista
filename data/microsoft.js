@@ -1,3 +1,4 @@
+// © 2025 AdOps Interview Kit — Todos os direitos reservados. Reprodução proibida.
 window.__adopsData = window.__adopsData || {};
 window.__adopsData['microsoft'] = {
   icon: '🪟',
