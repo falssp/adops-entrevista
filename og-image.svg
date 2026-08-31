@@ -13,10 +13,10 @@
   <rect width="1200" height="4" fill="#4f8ef7"/>
   
   <!-- Main title -->
-  <text x="600" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">AdOps Interview Kit</text>
+  <text x="600" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">AdOps Reference</text>
   
   <!-- Subtitle -->
-  <text x="600" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#8892a4" text-anchor="middle">Interview Prep · Certification Practice · Free &amp; Open Source</text>
+  <text x="600" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="#8892a4" text-anchor="middle">Ad Operations Knowledge Base · Trilingual PT/EN/ES</text>
   
   <!-- Stats row -->
   <text x="250" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#4f8ef7" text-anchor="middle">24</text>
